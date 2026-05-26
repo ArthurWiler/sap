@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SAP - Página inicial</title>
+    <title>Treinamento - Página inicial</title>
     <style>
       :root {
         --bg: #f5f6f7;
@@ -13,12 +13,19 @@
         --text: #32363a;
         --text-secondary: #6a6d70;
         --text-disabled: #89919a;
-        --link: #0a6ed1;
-        --link-hover: #0854a0;
-        --highlight-bg: #d3e8fd;
-        --tab-active: #0a6ed1;
+        /* CEMIG green palette */
+        --link: #00833e;
+        --link-hover: #006830;
+        --link-light: #76bc21;
+        --highlight-bg: #d6f0dd;
+        --tab-active: #00833e;
+        /* SAP brand logo stays SAP blue, not CEMIG */
         --sap-blue-logo: #1b90ff;
         --sap-blue-dark: #003a6a;
+        /* CEMIG accent for app chrome */
+        --cemig-green: #00833e;
+        --cemig-green-dark: #004d24;
+        --cemig-green-light: #76bc21;
         --button-bg: #ffffff;
         --button-border: #b3b3b3;
         --section-bg: #fafafa;
@@ -26,7 +33,7 @@
         --tile-shadow:
           0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
         --tile-shadow-hover:
-          0 0 0 1px rgba(10, 110, 209, 0.3), 0 4px 12px rgba(0, 0, 0, 0.08);
+          0 0 0 1px rgba(0, 131, 62, 0.3), 0 4px 12px rgba(0, 131, 62, 0.12);
       }
 
       * {
@@ -113,8 +120,8 @@
       .home-header .avatar {
         width: 32px;
         height: 32px;
-        background: #d1eafe;
-        color: #0854a0;
+        background: #d6f0dd;
+        color: #006830;
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
@@ -218,6 +225,473 @@
         color: var(--text-secondary);
       }
 
+      /* ===== TRAINING INDEX ===== */
+      .training-page {
+        flex: 1;
+        background: linear-gradient(180deg, #f3f8f5 0%, #e6efe8 100%);
+        overflow: auto;
+      }
+      .training-hero {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 28px 40px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .training-hero .hero-mark {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(
+          135deg,
+          var(--cemig-green-light),
+          var(--cemig-green)
+        );
+        color: white;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 700;
+        box-shadow: 0 4px 12px rgba(0, 131, 62, 0.25);
+      }
+      .training-hero h1 {
+        margin: 0 0 4px 0;
+        font-size: 22px;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .training-hero p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+      .training-body {
+        padding: 32px 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .training-section-title {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--text-secondary);
+        margin: 0 0 12px 4px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .training-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+      }
+      .training-card {
+        background: var(--surface);
+        border-radius: 10px;
+        padding: 18px 18px 16px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
+        transition:
+          box-shadow 150ms ease,
+          transform 150ms ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 160px;
+      }
+      .training-card.available:hover {
+        box-shadow:
+          0 4px 16px rgba(0, 131, 62, 0.12),
+          0 0 0 1px rgba(0, 131, 62, 0.25);
+        transform: translateY(-2px);
+      }
+      .training-card.locked {
+        opacity: 0.62;
+        cursor: not-allowed;
+      }
+      .training-card .card-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: #e8f5ee;
+        color: var(--link);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .training-card.locked .card-icon {
+        background: #ececec;
+        color: #8a8d90;
+      }
+      .training-card h3 {
+        margin: 0 0 6px 0;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.3;
+      }
+      .training-card p {
+        margin: 0;
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.45;
+        flex: 1;
+      }
+      .training-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      .training-tag {
+        font-size: 11px;
+        background: #f0f3f7;
+        color: var(--text-secondary);
+        padding: 2px 8px;
+        border-radius: 10px;
+      }
+      .training-card .start-link {
+        margin-top: 12px;
+        color: var(--link);
+        font-size: 13px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .training-card.locked .start-link {
+        color: #999;
+      }
+      .locked-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #f0f3f7;
+        color: #6a6d70;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+
+      /* ===== TRAINING TOP BAR ===== */
+      .training-topbar {
+        height: 44px;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        gap: 12px;
+        flex-shrink: 0;
+        border-top: 3px solid var(--cemig-green);
+      }
+      .training-topbar .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .training-topbar .cemig-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background: linear-gradient(
+          135deg,
+          var(--cemig-green-light),
+          var(--cemig-green)
+        );
+        color: white;
+        font-weight: 800;
+        font-size: 14px;
+        box-shadow: 0 1px 3px rgba(0, 131, 62, 0.3);
+      }
+      .training-topbar .spacer {
+        flex: 1;
+      }
+      .training-topbar .breadcrumb-link {
+        color: var(--link);
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .training-topbar .breadcrumb-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Difficulty groups */
+      .training-group {
+        margin-bottom: 28px;
+      }
+      .diff-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+      }
+      .diff-dot.diff-iniciante {
+        background: #76bc21;
+      }
+      .diff-dot.diff-intermediario {
+        background: #f0a020;
+      }
+      .diff-dot.diff-avancado {
+        background: #c8412c;
+      }
+
+      /* Platform badge */
+      .platform-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: var(--cemig-green);
+        color: white;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      /* When both locked-badge and platform-badge present, stack them */
+      .training-card .platform-badge ~ .locked-badge,
+      .training-card .locked-badge + .platform-badge {
+        /* if both, locked goes above the platform badge */
+      }
+      .training-card.locked .platform-badge {
+        top: 38px; /* push below the EM BREVE badge */
+        background: #aeb8b0;
+      }
+
+      /* Submodules tag */
+      .submods-tag {
+        background: #e6f3ec !important;
+        color: var(--cemig-green-dark) !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 3px;
+        font-weight: 600;
+      }
+
+      /* ===== PROGRESS BAR ===== */
+      .progress-wrap {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .progress-bar {
+        flex: 1;
+        height: 6px;
+        background: #e9ecef;
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+      }
+      .progress-bar .fill {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--cemig-green-light),
+          var(--cemig-green)
+        );
+        border-radius: 3px;
+        transition: width 300ms ease;
+      }
+      .progress-label {
+        font-size: 11px;
+        color: var(--text-secondary);
+        font-weight: 600;
+        min-width: 36px;
+        text-align: right;
+      }
+      /* Big progress (hero) */
+      .hero-progress {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 460px;
+      }
+      .hero-progress .progress-bar {
+        height: 8px;
+      }
+      .hero-progress .progress-label {
+        font-size: 13px;
+        color: var(--text);
+      }
+
+      /* ===== SUBMODULE PAGE ===== */
+      .sub-hero {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 24px 40px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .sub-hero .back-circle {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #f0f3f5;
+        color: #515559;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: background 150ms ease;
+      }
+      .sub-hero .back-circle:hover {
+        background: var(--cemig-green);
+        color: white;
+      }
+      .sub-hero h1 {
+        margin: 0 0 4px 0;
+        font-size: 20px;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .sub-hero .crumb {
+        color: var(--text-secondary);
+        font-size: 13px;
+        margin-bottom: 2px;
+      }
+      .sub-hero .difficulty-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 2px 10px;
+        background: #f0f3f5;
+        border-radius: 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      .sub-body {
+        padding: 24px 40px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .sub-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .sub-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        transition:
+          box-shadow 150ms ease,
+          border-color 150ms ease,
+          transform 150ms ease;
+      }
+      .sub-item:hover {
+        border-color: var(--cemig-green);
+        box-shadow: 0 2px 10px rgba(0, 131, 62, 0.08);
+        transform: translateY(-1px);
+      }
+      .sub-item.locked {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .sub-item.locked:hover {
+        border-color: var(--border);
+        box-shadow: none;
+        transform: none;
+      }
+      .sub-item .sub-num {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #f0f3f5;
+        color: var(--text-secondary);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+      .sub-item.done .sub-num {
+        background: var(--cemig-green);
+        color: white;
+      }
+      .sub-item .sub-content {
+        flex: 1;
+        min-width: 0;
+      }
+      .sub-item h3 {
+        margin: 0 0 2px 0;
+        font-size: 15px;
+        color: var(--text);
+        font-weight: 600;
+      }
+      .sub-item p {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+      .sub-item .sub-action {
+        color: var(--link);
+        font-size: 13px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .sub-item.locked .sub-action {
+        color: var(--text-disabled);
+      }
+
+      /* "Voltar" button used in headers */
+      .back-btn-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        height: 28px;
+        padding: 0 12px;
+        background: white;
+        border: 1px solid var(--button-border);
+        border-radius: 14px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 150ms ease;
+      }
+      .back-btn-pill:hover {
+        border-color: var(--cemig-green);
+        color: var(--cemig-green);
+      }
+
       /* ===== DETAIL HEADER ===== */
       .det-header {
         display: flex;
@@ -270,8 +744,8 @@
       .det-header .avatar {
         width: 32px;
         height: 32px;
-        background: #d1eafe;
-        color: #0854a0;
+        background: #d6f0dd;
+        color: #006830;
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
@@ -306,7 +780,7 @@
       }
       .det-toolbar .tool-btn:hover,
       .det-toolbar .menu-btn:hover {
-        background: #ebf5fe;
+        background: #e8f5ee;
       }
       .det-toolbar .tool-icon {
         display: inline-flex;
@@ -319,7 +793,7 @@
         color: var(--link);
       }
       .det-toolbar .tool-icon:hover {
-        background: #ebf5fe;
+        background: #e8f5ee;
       }
       .det-toolbar .right {
         margin-left: auto;
@@ -506,7 +980,7 @@
         height: 18px;
       }
       .icon-small:hover {
-        background: #ebf5fe;
+        background: #e8f5ee;
         border-radius: 3px;
       }
 
@@ -651,7 +1125,7 @@
         font-size: 13px;
       }
       .sap-btn:hover:not(:disabled) {
-        background: #ebf5fe;
+        background: #e8f5ee;
         border-color: var(--link);
       }
       .sap-btn:disabled {
@@ -791,7 +1265,7 @@
       }
       .nota-card input:focus {
         border-color: var(--link);
-        box-shadow: 0 0 0 2px rgba(10, 110, 209, 0.15);
+        box-shadow: 0 0 0 2px rgba(0, 131, 62, 0.15);
       }
       .nota-card .actions {
         display: flex;
@@ -921,9 +1395,596 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel" data-presets="react">
-      const { useState, useCallback, Fragment } = React;
+      const { useState, useCallback, useMemo, Fragment } = React;
 
-      /* ============ ICONS (inline SVG) ============ */
+      /* ============ DATA GENERATOR ============ */
+      /* Generates a coherent dataset for a "nota" — used across all screens. */
+
+      const NOMES_F = [
+        "MARIA CLARA COSTA",
+        "ANA BEATRIZ SILVA",
+        "JULIANA PEREIRA",
+        "FERNANDA OLIVEIRA",
+        "CAMILA SANTOS",
+        "PATRÍCIA LIMA",
+        "RAQUEL FERREIRA",
+        "TATIANA RODRIGUES",
+        "LUCIANA MARTINS",
+        "ADRIANA SOUZA",
+        "BEATRIZ ALVES",
+        "CARLA RIBEIRO",
+        "DANIELA NUNES",
+        "ELAINE BARBOSA",
+        "FABIANA PINTO",
+      ];
+      const NOMES_M = [
+        "ARTHUR HENRIQUE LIMA",
+        "BRUNO CARVALHO",
+        "CARLOS EDUARDO ROCHA",
+        "DIEGO PEREIRA",
+        "EDUARDO SANTOS",
+        "FELIPE OLIVEIRA",
+        "GUILHERME COSTA",
+        "HENRIQUE ALVES",
+        "IGOR FERREIRA",
+        "JOÃO PAULO MOREIRA",
+        "LEONARDO SILVA",
+        "MARCELO RIBEIRO",
+        "NICOLAS NUNES",
+        "OTÁVIO PINTO",
+        "PAULO ROBERTO DIAS",
+      ];
+      const SOBRENOMES_RUA = [
+        "WEMERSON DOS SANTOS FARIA",
+        "JOSÉ DE ALENCAR",
+        "ANTÔNIO CARLOS MAGALHÃES",
+        "JOAQUIM NABUCO",
+        "DA INDEPENDÊNCIA",
+        "DOS PIONEIROS",
+        "MARIA EDUARDA",
+        "BARÃO DO RIO BRANCO",
+        "CASTRO ALVES",
+        "RUI BARBOSA",
+        "JÚLIO DE CASTILHOS",
+        "SETE DE SETEMBRO",
+        "DAS ACÁCIAS",
+        "DAS PALMEIRAS",
+        "MONTE CASTELO",
+      ];
+      const BAIRROS = [
+        "SANTA FELICIDADE",
+        "CENTRO",
+        "JARDIM AMÉRICA",
+        "SÃO BENEDITO",
+        "BOA VISTA",
+        "CIDADE JARDIM",
+        "JARDIM EUROPA",
+        "SANTA EFIGÊNIA",
+        "SÃO PEDRO",
+        "VILA NOVA",
+        "PLANALTO",
+        "SANTA TEREZINHA",
+        "NOVA SUÍÇA",
+        "SANTO ANTÔNIO",
+        "FUNCIONÁRIOS",
+      ];
+      const CIDADES_MG = [
+        "SETE LAGOAS",
+        "BELO HORIZONTE",
+        "CONTAGEM",
+        "BETIM",
+        "UBERLÂNDIA",
+        "JUIZ DE FORA",
+        "MONTES CLAROS",
+        "UBERABA",
+        "GOVERNADOR VALADARES",
+        "IPATINGA",
+        "DIVINÓPOLIS",
+        "SANTA LUZIA",
+        "IBIRITÉ",
+        "POÇOS DE CALDAS",
+        "PATOS DE MINAS",
+      ];
+      const CEPS = [
+        "35703-570",
+        "30130-010",
+        "32010-010",
+        "32600-000",
+        "38400-000",
+        "36010-000",
+        "39400-000",
+        "38010-000",
+        "35020-000",
+        "35160-000",
+        "35500-000",
+        "33010-000",
+        "32400-000",
+        "37700-000",
+        "38700-000",
+      ];
+
+      const TIPOS_LOC = [
+        "Urbano Áereo",
+        "Urbano Subterrâneo",
+        "Rural Aéreo",
+        "Rural Subterrâneo",
+      ];
+      const TP_LOC_CONSUMO = [
+        "CS Casa",
+        "CS Apto",
+        "CR Casa",
+        "CR Apto",
+        "CC Comércio",
+        "IN Indústria",
+      ];
+      const GRUPOS = ["BT", "MT", "AT"];
+      const TRAFOS = ["Coletivo", "Exclusivo", "Compartilhado"];
+      const TIPOS_LIG = ["Monofásico", "Bifásico", "Trifásico"];
+      const DISJUNTORES = [
+        { cod: "A040", desc: "MONOPOLAR 40A" },
+        { cod: "A050", desc: "MONOPOLAR 50A" },
+        { cod: "A063", desc: "MONOPOLAR 63A" },
+        { cod: "A070", desc: "MONOPOLAR 70A" },
+        { cod: "B040", desc: "BIPOLAR 40A" },
+        { cod: "B050", desc: "BIPOLAR 50A" },
+        { cod: "B063", desc: "BIPOLAR 63A" },
+        { cod: "T040", desc: "TRIPOLAR 40A" },
+        { cod: "T063", desc: "TRIPOLAR 63A" },
+        { cod: "T100", desc: "TRIPOLAR 100A" },
+      ];
+      const TIPOS_SERV = [
+        { cod: "A01", desc: "Analisar Carga Rede Aérea" },
+        { cod: "A02", desc: "Analisar Carga Rede Subterrânea" },
+        { cod: "A03", desc: "Aumento de Carga" },
+        { cod: "A04", desc: "Religação" },
+        { cod: "A05", desc: "Mudança de Titularidade" },
+      ];
+      const MERCADOS = [
+        "URBANO_AEREO",
+        "URBANO_SUB",
+        "RURAL_AEREO",
+        "RURAL_SUB",
+      ];
+      const STATUS_NOTA = [
+        { p1: "MEAB MSPN", p2: "CANC" },
+        { p1: "MEAB ABER", p2: "ATEN" },
+        { p1: "MEAB ENCB", p2: "CONC" },
+        { p1: "MEAB ANAL", p2: "PEND" },
+      ];
+      const STATUS_SOLIC = [
+        "Liberado para geração de dados mestres",
+        "Aguardando análise técnica",
+        "Em execução",
+        "Concluído pendente faturamento",
+        "Aguardando documentação do cliente",
+      ];
+      const MODALIDADES_AC = [
+        "Distribuidora",
+        "Permissionária",
+        "Concessionária",
+      ];
+      const SIM_NAO = ["Sim", "Não"];
+      const RUA_PREFIX = ["RUA", "AV", "TRAVESSA", "ALAMEDA", "PRAÇA"];
+
+      /* PRNG seedable (Mulberry32) */
+      function makeRng(seed) {
+        let t = seed >>> 0;
+        return function () {
+          t = (t + 0x6d2b79f5) >>> 0;
+          let x = Math.imul(t ^ (t >>> 15), 1 | t);
+          x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+          return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+      function hashStr(s) {
+        let h = 2166136261 >>> 0;
+        for (let i = 0; i < s.length; i++) {
+          h ^= s.charCodeAt(i);
+          h = Math.imul(h, 16777619);
+        }
+        return h >>> 0;
+      }
+      const pick = (rng, arr) => arr[Math.floor(rng() * arr.length)];
+      const padNum = (n, len) => String(n).padStart(len, "0");
+      const randDigits = (rng, len) => {
+        let s = "";
+        for (let i = 0; i < len; i++) s += Math.floor(rng() * 10);
+        return s;
+      };
+      const formatDateBR = (d) => {
+        const dd = String(d.getDate()).padStart(2, "0");
+        const mm = String(d.getMonth() + 1).padStart(2, "0");
+        const yy = d.getFullYear();
+        return `${dd}.${mm}.${yy}`;
+      };
+      const slugifyName = (nome) =>
+        nome
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .split(" ")
+          .filter(Boolean)
+          .slice(0, 2)
+          .join("");
+
+      /**
+       * Build a full dataset deterministically from a seed key (e.g. nota number).
+       * Same seed → same dataset, every time.
+       */
+      function generateDataset(seedKey) {
+        const rng = makeRng(hashStr(String(seedKey)));
+
+        const isFem = rng() < 0.55;
+        const nome = pick(rng, isFem ? NOMES_F : NOMES_M);
+        const slug = slugifyName(nome);
+
+        const tipoServ = pick(rng, TIPOS_SERV);
+        const statusNota = pick(rng, STATUS_NOTA);
+        const statusSolic = pick(rng, STATUS_SOLIC);
+        const disj = pick(rng, DISJUNTORES);
+        const tipoLig = pick(rng, TIPOS_LIG);
+        const grupo = pick(rng, GRUPOS);
+        const trafo = pick(rng, TRAFOS);
+        const tpLoc = pick(rng, TP_LOC_CONSUMO);
+        const locFis = pick(rng, TIPOS_LOC);
+        const mercado = pick(rng, MERCADOS);
+        const modalidadeAC = pick(rng, MODALIDADES_AC);
+
+        const cidade = pick(rng, CIDADES_MG);
+        const bairro = pick(rng, BAIRROS);
+        const cep = pick(rng, CEPS);
+        const ruaNome = pick(rng, SOBRENOMES_RUA);
+        const ruaPref = pick(rng, RUA_PREFIX);
+        const numCasa = String(Math.floor(rng() * 999) + 1);
+
+        // Reference date: between today-180d and today+30d
+        const today = new Date(2026, 4, 25); // May 25 2026 (matches our cutoff context)
+        const dtOffset = Math.floor(rng() * 210) - 30;
+        const dtStatus = new Date(today.getTime() + dtOffset * 86400000);
+
+        const possuiCadunico = pick(rng, SIM_NAO);
+        const cadAtualizado = pick(rng, SIM_NAO);
+        const padraoPronto = pick(rng, SIM_NAO);
+
+        // Disjuntor geral radio choice
+        const disjOpt = ["com", "sem", "estimado", "projeto"][
+          Math.floor(rng() * 4)
+        ];
+
+        // Latitude/longitude near Sete Lagoas / Belo Horizonte
+        const lat = -(19 + rng() * 2).toFixed(7);
+        const lng = -(43 + rng() * 2).toFixed(7);
+
+        // Cargas/medidas
+        const cargaKw = (rng() * 50).toFixed(1).replace(".", ",");
+        const consumoEst = String(Math.floor(rng() * 800));
+
+        return {
+          seedKey: String(seedKey),
+          // Nota
+          notaNumero: String(seedKey),
+          notaTipo: "EO",
+          notaTipoDesc: "Consumidor de BT",
+          statusP1: statusNota.p1,
+          statusP2: statusNota.p2,
+          tipoNota: "ZCUM01 - Solic de Obra",
+          dataCriacao: formatDateBR(dtStatus),
+
+          // Dados Comp (image 3)
+          modalidade: "CEMIG",
+          mercado,
+          nivelTensaoUC: pick(rng, ["BT1", "BT2", "MT3", "MT5"]),
+          tipoAtendimento: String(Math.floor(rng() * 5)),
+          enquadramentoReg: String(Math.floor(rng() * 4)),
+          tipoObra: String(Math.floor(rng() * 6)),
+          universalizacao: String(Math.floor(rng() * 2)),
+          programa: String(Math.floor(rng() * 3)),
+          tensaoObjetivo: pick(rng, ["127/220", "220/380", "13800"]),
+          microObjetivo: pick(rng, ["LIG-N", "LIG-A", "REL", "TRF"]),
+          objetivo: pick(rng, ["NOVA", "AMPL", "SUBS", "RELI"]),
+          objetivoCompl: pick(rng, ["URB", "RUR", "COM", "RES"]),
+          tipoObraAneel: pick(rng, ["EXT", "REF", "NOV", "AMP"]),
+
+          // Solicitação
+          solicitacaoNum: randDigits(rng, 8),
+          tipoServCod: tipoServ.cod,
+          tipoServDesc: tipoServ.desc,
+          statusSolic,
+          parcNegoc: randDigits(rng, 10),
+          nomeParc: nome,
+          dtStatus: formatDateBR(dtStatus),
+          instalacao: randDigits(rng, 10),
+          objetoLigacao: randDigits(rng, 10),
+          notaServico: String(seedKey),
+          protocolo: randDigits(rng, 10),
+
+          // Endereço
+          regiao: "MG",
+          cidade,
+          cep,
+          bairro,
+          rua: `${ruaPref} ${ruaNome}`,
+          numero: numCasa,
+          compl1: pick(rng, ["CS", "AP", "CA", "FD", "ST"]),
+          compl2: pick(rng, ["A", "B", "C", "D", "E", " "]),
+          bloco1: pick(rng, ["NR", "BL", "TR", "QD"]),
+          bloco2: String(Math.floor(rng() * 30) + 1),
+          lat,
+          lng,
+
+          // Comunicação
+          nomeSolic: nome,
+          tel:
+            rng() < 0.4
+              ? ""
+              : `(31) ${randDigits(rng, 4)}-${randDigits(rng, 4)}`,
+          cel: `31${randDigits(rng, 9)}`,
+          email1: `${slug}${randDigits(rng, 3)}@gmail.com`,
+          email2: `${slug}${randDigits(rng, 3)}@gmail.com`,
+          assuntoNS: `${slug}${randDigits(rng, 3)}@gmail.com`,
+
+          // Características
+          locFis,
+          progElet: String(Math.floor(rng() * 4)),
+          grupo,
+          tpLocConsumo: tpLoc,
+          ramoAtividade: "X" + padNum(Math.floor(rng() * 999) + 1, 3),
+          classeSubClasse: padNum(Math.floor(rng() * 9000) + 1000, 4),
+          trafo,
+          tipoLig,
+          disjuntorCod: disj.cod,
+          disjuntorDesc: disj.desc,
+          tipoSolicitacao: pick(rng, ["AC", "DC", "AL", "DE"]),
+          assentIrreg: pick(rng, SIM_NAO),
+
+          // Outras informações
+          possuiCadunico,
+          cadAtualizado,
+          transfereTSEE: rng() < 0.5 ? "Sim" : "Não",
+          possuiLaudoMed: rng() < 0.2,
+          possuiVE: rng() < 0.15,
+          padraoGratuito: rng() < 0.3,
+
+          // Disjuntor geral
+          numCaixas: String(Math.floor(rng() * 3) + 1),
+          tipoUsuario: pick(rng, [
+            "Consumidor sem geração distribuída",
+            "Consumidor com microgeração",
+            "Consumidor com minigeração",
+          ]),
+          disjOpt,
+          qtdDisjGeral:
+            disjOpt === "com" ? String(Math.floor(rng() * 3) + 1) : "",
+          disjGeralVal: disjOpt === "com" ? pick(rng, DISJUNTORES).cod : "",
+          cargaKw,
+          atendHibrido: rng() < 0.3,
+
+          // Previsão
+          padraoPronto,
+
+          // Aprovação
+          artProjeto: rng() < 0.5 ? "ART" + randDigits(rng, 7) : "",
+          artExecucao: rng() < 0.3 ? "ART" + randDigits(rng, 7) : "",
+
+          // Análise de carga
+          modalidadeAC,
+
+          // Outros dados
+          classGrandes: rng() < 0.2 ? pick(rng, ["A", "B", "C"]) : "",
+          consumoEstimado: consumoEst,
+        };
+      }
+
+      /* ============ TRAINING INDEX ============ */
+      const TRAININGS = [
+        {
+          id: "navegacao-basica",
+          title: "Navegação básica no SAP",
+          desc: "Aprenda a utilizar as principais funcionalidades do sistema, incluindo Página Inicial, Modificação de Notas de Serviço e navegação entre abas.",
+          available: true,
+          difficulty: "Iniciante",
+          platform: "web",
+          tags: ["Iniciante", "Navegação"],
+        },
+        {
+          id: "navegacao-intermediaria",
+          title: "Navegação intermediária no SAP",
+          desc: "Aprofunde-se em buscas avançadas, filtros, variantes de tela e atalhos de produtividade no SAP Fiori.",
+          available: false,
+          difficulty: "Intermediário",
+          platform: "web",
+          tags: ["Intermediário", "Navegação"],
+        },
+        {
+          id: "navegacao-avancada",
+          title: "Navegação avançada no SAP",
+          desc: "Explore funcionalidades avançadas: transações múltiplas, navegação cruzada entre módulos e personalização de layout.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          tags: ["Avançado", "Navegação"],
+        },
+        {
+          id: "navegacao-ccs",
+          title: "Navegação no SAP CCS (Desktop)",
+          desc: "Domine a navegação no SAP CCS desktop, incluindo telas SAPGUI, transações específicas e fluxos exclusivos do cliente.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "desktop",
+          tags: ["Avançado", "CCS", "Desktop"],
+        },
+        {
+          id: "tratamento-notas",
+          title: "Tratamento de notas",
+          desc: "Simule o fluxo completo de análise e tratamento de notas, incluindo revisão de informações, atualizações e registro de ações.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Avançado", "Tratamento"],
+        },
+        {
+          id: "medidas",
+          title: "Criação de medidas no SAP",
+          desc: "Aprenda a identificar, selecionar e cadastrar corretamente as medidas no SAP, compreendendo os critérios e regras aplicáveis a cada situação.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Avançado", "Medidas"],
+        },
+        {
+          id: "criar-acoes-iw52",
+          title: "Criar ações na IW52",
+          desc: "Aprenda a cadastrar e gerenciar ações em ordens de serviço, seguindo regras e critérios de validação internos.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Avançado", "IW52", "Ações"],
+        },
+        {
+          id: "fundiario",
+          title: "Treinamento fundiário",
+          desc: "Capacitação em processos fundiários, incluindo envio de documentos, preenchimento de informações técnicas e conclusão de solicitações.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Avançado", "Processos", "Documentação"],
+        },
+        {
+          id: "ambiental",
+          title: "Treinamento ambiental",
+          desc: "Aprenda os procedimentos relacionados à gestão ambiental, documentação necessária e etapas para finalização de demandas.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Avançado", "Processos", "Documentação"],
+        },
+        {
+          id: "documental",
+          title: "Treinamento documental",
+          desc: "Orientações para envio, conferência e organização de documentos, garantindo conformidade e correta tramitação dos processos.",
+          available: false,
+          difficulty: "Intermediário",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Intermediário", "Documentação", "Processos"],
+        },
+        {
+          id: "carga-i",
+          title: "Treinamento carga – Conceitos básicos",
+          desc: "Introdução aos principais conceitos e fundamentos necessários para atuação nos processos de carga.",
+          available: false,
+          difficulty: "Iniciante",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Iniciante", "Carga", "Fundamentos"],
+        },
+        {
+          id: "carga-ii",
+          title: "Treinamento carga – Aplicações práticas",
+          desc: "Desenvolva habilidades práticas para execução das rotinas de carga em cenários reais de operação.",
+          available: false,
+          difficulty: "Intermediário",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Intermediário", "Carga", "Aplicações"],
+        },
+        {
+          id: "carga-iii",
+          title: "Treinamento carga – Aplicações e normas",
+          desc: "Aprofundamento em aplicações avançadas e nas principais normas e diretrizes relacionadas aos processos de carga.",
+          available: false,
+          difficulty: "Avançado",
+          platform: "web",
+          hasSubmodules: true,
+          tags: ["Avançado", "Carga", "Normas"],
+        },
+      ];
+
+      /* Sort order: difficulty asc, then by available (available first within same level) */
+      const DIFFICULTY_ORDER = { Iniciante: 0, Intermediário: 1, Avançado: 2 };
+      const SORTED_TRAININGS = [...TRAININGS].sort((a, b) => {
+        const d =
+          DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty];
+        if (d !== 0) return d;
+        if (a.available !== b.available) return a.available ? -1 : 1;
+        return 0;
+      });
+
+      /* Attach 3 placeholder submódulos to every training.
+   Edit later by adding a `submodules:[...]` to a training above — it overrides this. */
+      TRAININGS.forEach((t) => {
+        if (!t.submodules) {
+          t.submodules = [
+            {
+              id: t.id + "-sub1",
+              title: "sub1",
+              desc: "Submódulo 1 — descreva aqui.",
+              available: t.id === "navegacao-basica",
+            },
+            {
+              id: t.id + "-sub2",
+              title: "sub2",
+              desc: "Submódulo 2 — descreva aqui.",
+              available: false,
+            },
+            {
+              id: t.id + "-sub3",
+              title: "sub3",
+              desc: "Submódulo 3 — descreva aqui.",
+              available: false,
+            },
+          ];
+        }
+        // Mark every training as having submódulos
+        t.hasSubmodules = true;
+      });
+
+      /* ============ PROGRESS STORAGE (localStorage) ============ */
+      const PROGRESS_KEY = "cemig-training-progress-v1";
+
+      function loadProgress() {
+        try {
+          const raw = localStorage.getItem(PROGRESS_KEY);
+          return raw ? JSON.parse(raw) : {};
+        } catch {
+          return {};
+        }
+      }
+      function saveProgress(p) {
+        try {
+          localStorage.setItem(PROGRESS_KEY, JSON.stringify(p));
+        } catch {}
+      }
+      /** progress shape: { [trainingId]: { [submoduleId]: true } } */
+      function trainingProgress(progress, training) {
+        if (!training.submodules || training.submodules.length === 0) {
+          return { done: progress[training.id]?.__done ? 1 : 0, total: 1 };
+        }
+        const completed = training.submodules.filter(
+          (s) => progress[training.id]?.[s.id],
+        ).length;
+        return { done: completed, total: training.submodules.length };
+      }
+      function totalProgress(progress) {
+        let done = 0,
+          total = 0;
+        TRAININGS.forEach((t) => {
+          const p = trainingProgress(progress, t);
+          done += p.done;
+          total += p.total;
+        });
+        return {
+          done,
+          total,
+          pct: total ? Math.round((done / total) * 100) : 0,
+        };
+      }
+
       const Icon = ({ name, size = 16, color = "currentColor" }) => {
         const props = {
           width: size,
@@ -1141,6 +2202,49 @@
                 <line x1="10" x2="21" y1="14" y2="3" />
               </svg>
             );
+          case "play":
+            return (
+              <svg {...props}>
+                <polygon
+                  points="6 3 20 12 6 21 6 3"
+                  fill={color}
+                  stroke={color}
+                  strokeLinejoin="round"
+                />
+              </svg>
+            );
+          case "lock":
+            return (
+              <svg {...props}>
+                <rect width="14" height="11" x="5" y="11" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+            );
+          case "refresh":
+            return (
+              <svg {...props}>
+                <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+                <path d="M21 3v5h-5" />
+                <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+                <path d="M3 21v-5h5" />
+              </svg>
+            );
+          case "monitor":
+            return (
+              <svg {...props}>
+                <rect width="20" height="14" x="2" y="3" rx="2" />
+                <line x1="8" x2="16" y1="21" y2="21" />
+                <line x1="12" x2="12" y1="17" y2="21" />
+              </svg>
+            );
+          case "layers":
+            return (
+              <svg {...props}>
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            );
           case "spinner":
             return (
               <svg {...props}>
@@ -1180,7 +2284,7 @@
       }
 
       /* ============ HOME PAGE ============ */
-      function HomePage({ onOpenModificar }) {
+      function HomePage({ onOpenModificar, onBackToIndex }) {
         return (
           <Fragment>
             <HomeTopBar />
@@ -1190,6 +2294,24 @@
               </div>
               <div className="home-tab">Minha página inicial</div>
               <div className="home-tab-sep" />
+              <div style={{ flex: 1 }} />
+              {onBackToIndex && (
+                <span
+                  onClick={onBackToIndex}
+                  style={{
+                    color: "var(--link)",
+                    fontSize: 13,
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 4,
+                    alignSelf: "center",
+                  }}
+                  title="Voltar ao índice de treinamentos"
+                >
+                  <Icon name="arrow-left" size={13} /> Treinamentos
+                </span>
+              )}
             </div>
             <div className="home-body">
               <h1 className="home-section-title">Carga - Relatório e edição</h1>
@@ -1225,8 +2347,12 @@
       }
 
       /* ============ NOTA INPUT ============ */
-      function NotaInputPage({ onBack, onSubmit }) {
-        const [value, setValue] = useState("1252714058");
+      function NotaInputPage({
+        onBack,
+        onSubmit,
+        initialValue = "1252714058",
+      }) {
+        const [value, setValue] = useState(initialValue);
         const handle = () => {
           if (value.trim()) onSubmit(value.trim());
         };
@@ -1302,7 +2428,12 @@
       }
 
       /* ============ NOTA DETAIL ============ */
-      function NotaDetailPage({ notaNumero, onBack, onOpenSolicitacao }) {
+      function NotaDetailPage({
+        data,
+        onBack,
+        onOpenSolicitacao,
+        onRegenerate,
+      }) {
         const [mainTab, setMainTab] = useState("solicitacao");
         const [subTab, setSubTab] = useState("dados-comp");
 
@@ -1337,6 +2468,16 @@
                 <Icon name="chevron-down" size={14} />
               </div>
               <div className="spacer" />
+              {onRegenerate && (
+                <div
+                  className="icon-btn"
+                  onClick={onRegenerate}
+                  title="Gerar novos valores aleatórios"
+                  style={{ color: "var(--link)" }}
+                >
+                  <Icon name="refresh" size={18} />
+                </div>
+              )}
               <div className="icon-btn">
                 <Icon name="search" size={18} />
               </div>
@@ -1417,11 +2558,15 @@
                 <div className="value-row">
                   <input
                     className="sap-input w-md"
-                    value={notaNumero}
+                    value={data.notaNumero}
                     readOnly
                   />
-                  <input className="sap-input w-sm" value="EO" readOnly />
-                  <a className="sap-link">Consumidor de BT</a>
+                  <input
+                    className="sap-input w-sm"
+                    value={data.notaTipo}
+                    readOnly
+                  />
+                  <a className="sap-link">{data.notaTipoDesc}</a>
                   <span className="icon-small">
                     <Icon name="edit" size={14} />
                   </span>
@@ -1430,13 +2575,17 @@
                 <div className="value-row">
                   <input
                     className="sap-input w-md"
-                    value="MEAB MSPN"
+                    value={data.statusP1}
                     readOnly
                   />
                   <span className="icon-small">
                     <Icon name="info" size={14} />
                   </span>
-                  <input className="sap-input w-md" value="CANC" readOnly />
+                  <input
+                    className="sap-input w-md"
+                    value={data.statusP2}
+                    readOnly
+                  />
                   <span className="icon-small">
                     <Icon name="check" size={14} />
                   </span>
@@ -1528,9 +2677,10 @@
               </div>
 
               {/* Tab content */}
-              {mainTab === "solicitacao" && <DadosSolicitacaoTab />}
+              {mainTab === "solicitacao" && <DadosSolicitacaoTab data={data} />}
               {mainTab === "complementares" && (
                 <DadosComplementaresTab
+                  data={data}
                   subTab={subTab}
                   onSubTab={setSubTab}
                   onOpenSolicitacao={onOpenSolicitacao}
@@ -1560,7 +2710,7 @@
       }
 
       /* ============ TAB CONTENTS ============ */
-      function DadosSolicitacaoTab() {
+      function DadosSolicitacaoTab({ data }) {
         return (
           <div
             style={{
@@ -1576,7 +2726,7 @@
                   <div className="label">Tipo de nota:</div>
                   <input
                     className="sap-input w-md"
-                    value="ZCUM01 - Solic de Obra"
+                    value={data.tipoNota}
                     readOnly
                     style={{ width: 200 }}
                   />
@@ -1585,7 +2735,7 @@
                   <div className="label">Data de criação:</div>
                   <input
                     className="sap-input w-md"
-                    value="25.05.2026"
+                    value={data.dataCriacao}
                     readOnly
                   />
                 </div>
@@ -1615,7 +2765,12 @@
         );
       }
 
-      function DadosComplementaresTab({ subTab, onSubTab, onOpenSolicitacao }) {
+      function DadosComplementaresTab({
+        data,
+        subTab,
+        onSubTab,
+        onOpenSolicitacao,
+      }) {
         return (
           <Fragment>
             <div className="sub-tabs">
@@ -1674,7 +2829,10 @@
             </div>
 
             {subTab === "dados-comp" ? (
-              <DadosCompContent onOpenSolicitacao={onOpenSolicitacao} />
+              <DadosCompContent
+                data={data}
+                onOpenSolicitacao={onOpenSolicitacao}
+              />
             ) : (
               <div
                 style={{
@@ -1693,7 +2851,7 @@
         );
       }
 
-      function DadosCompContent({ onOpenSolicitacao }) {
+      function DadosCompContent({ data, onOpenSolicitacao }) {
         return (
           <div>
             {/* === Dados Básicos da Solicitação === */}
@@ -1707,7 +2865,7 @@
                     <div className="inline-row">
                       <input
                         className="sap-input w-md"
-                        value="CEMIG"
+                        value={data.modalidade}
                         readOnly
                       />
                       <label
@@ -1723,7 +2881,7 @@
                     <div className="inline-row">
                       <input
                         className="sap-input w-md highlighted"
-                        value="URBANO_AEREO"
+                        value={data.mercado}
                         readOnly
                       />
                       <span className="icon-small">
@@ -1733,23 +2891,43 @@
                   </div>
                   <div className="field-row">
                     <div className="label">Nível de Tensão da UC:</div>
-                    <input className="sap-input w-sm" value="" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.nivelTensaoUC}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Tipo de Atendimento:</div>
-                    <input className="sap-input w-sm" value="0" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.tipoAtendimento}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Enquadramento Regulatório:</div>
-                    <input className="sap-input w-sm" value="0" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.enquadramentoReg}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Tipo de Obra:</div>
-                    <input className="sap-input w-sm" value="0" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.tipoObra}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Universalização:</div>
-                    <input className="sap-input w-sm" value="0" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.universalizacao}
+                      readOnly
+                    />
                   </div>
                 </div>
 
@@ -1757,27 +2935,51 @@
                 <div>
                   <div className="field-row">
                     <div className="label">Programa:</div>
-                    <input className="sap-input w-sm" value="0" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.programa}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Tensão objetivo:</div>
-                    <input className="sap-input w-md" value="" readOnly />
+                    <input
+                      className="sap-input w-md"
+                      value={data.tensaoObjetivo}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Micro-objetivo:</div>
-                    <input className="sap-input w-md" value="" readOnly />
+                    <input
+                      className="sap-input w-md"
+                      value={data.microObjetivo}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Objetivo:</div>
-                    <input className="sap-input w-md" value="" readOnly />
+                    <input
+                      className="sap-input w-md"
+                      value={data.objetivo}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Objetivo Compleme.:</div>
-                    <input className="sap-input w-md" value="" readOnly />
+                    <input
+                      className="sap-input w-md"
+                      value={data.objetivoCompl}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Tipo de Obra ANEEL:</div>
-                    <input className="sap-input w-md" value="" readOnly />
+                    <input
+                      className="sap-input w-md"
+                      value={data.tipoObraAneel}
+                      readOnly
+                    />
                   </div>
                   <div className="field-row">
                     <div className="label">Solicitação:</div>
@@ -1786,7 +2988,7 @@
                       onClick={onOpenSolicitacao}
                       title="Abrir solicitação"
                     >
-                      0023815521
+                      {data.solicitacaoNum}
                     </a>
                   </div>
                 </div>
@@ -1974,8 +3176,8 @@
             style={
               checked
                 ? {
-                    background: "#0a6ed1",
-                    borderColor: "#0a6ed1",
+                    background: "#00833e",
+                    borderColor: "#00833e",
                     color: "white",
                     display: "flex",
                     alignItems: "center",
@@ -1990,7 +3192,7 @@
         </label>
       );
 
-      function SolicitacaoPage({ onBack }) {
+      function SolicitacaoPage({ data, onBack }) {
         const [tab, setTab] = useState("dados-basicos");
 
         return (
@@ -2060,24 +3262,26 @@
                 <div className="frow">
                   <Field
                     label="Solicitação"
-                    value="23815521"
+                    value={data.solicitacaoNum}
                     w="md"
                     lw="sm"
                     highlight
                   />
                   <div className="ffield">
                     <span className="flabel lw-md">Tipo de Serviço:</span>
-                    <input className="sap-input w-sm" value="A01" readOnly />
+                    <input
+                      className="sap-input w-sm"
+                      value={data.tipoServCod}
+                      readOnly
+                    />
                     <input
                       className="sap-input w-lg"
-                      value="Analisar Carga Rede Aérea"
+                      value={data.tipoServDesc}
                       readOnly
                       style={{ width: 200 }}
                     />
                   </div>
-                  <div className="status-box">
-                    Liberado para geração de dados mestres
-                  </div>
+                  <div className="status-box">{data.statusSolic}</div>
                 </div>
 
                 <div className="frow">
@@ -2085,30 +3289,40 @@
                     <span className="flabel lw-sm">Parc.negóc.:</span>
                     <input
                       className="sap-input w-md"
-                      value="7207373285"
+                      value={data.parcNegoc}
                       readOnly
                     />
                     <input
                       className="sap-input w-lg"
-                      value="MARIA CLARA COSTA"
+                      value={data.nomeParc}
                       readOnly
                     />
                   </div>
                   <div className="grow" />
-                  <Field label="Dt.Status" value="12.05.2026" w="md" lw="sm" />
+                  <Field
+                    label="Dt.Status"
+                    value={data.dtStatus}
+                    w="md"
+                    lw="sm"
+                  />
                 </div>
 
                 <div className="frow">
-                  <Field label="Instalação" value="3016142113" w="md" lw="sm" />
+                  <Field
+                    label="Instalação"
+                    value={data.instalacao}
+                    w="md"
+                    lw="sm"
+                  />
                   <Field
                     label="Objeto de ligação"
-                    value="1036320591"
+                    value={data.objetoLigacao}
                     w="md"
                     lw="md"
                   />
                   <Field
                     label="Nota de serviço"
-                    value="1252714058"
+                    value={data.notaServico}
                     w="md"
                     lw="md"
                     link
@@ -2116,7 +3330,7 @@
                   />
                   <Field
                     label="Nº do Protocolo"
-                    value="4275980907"
+                    value={data.protocolo}
                     w="md"
                     lw="md"
                   />
@@ -2187,10 +3401,15 @@
                     <div className="solic-section-title">Endereço</div>
 
                     <div className="frow">
-                      <Field label="Região" value="MG" w="sm" lw="sm" />
+                      <Field
+                        label="Região"
+                        value={data.regiao}
+                        w="sm"
+                        lw="sm"
+                      />
                       <Field
                         label="Cidade"
-                        value="SETE LAGOAS"
+                        value={data.cidade}
                         w="xl"
                         lw="sm"
                       />
@@ -2205,40 +3424,51 @@
                       <div className="grow" />
                       <Field
                         label="Código postal"
-                        value="35703-570"
+                        value={data.cep}
                         w="md"
                         lw="md"
                       />
                       <Field
                         label="Bairro"
-                        value="SANTA FELICIDADE"
+                        value={data.bairro}
                         w="xl"
                         lw="sm"
                       />
                     </div>
 
                     <div className="frow">
-                      <Field
-                        label="Rua"
-                        value="RUA WEMERSON DOS SANTOS FARIA"
-                        w="xl"
-                        lw="sm"
-                      />
+                      <Field label="Rua" value={data.rua} w="xl" lw="sm" />
                       <div className="grow" />
-                      <Field label="Nº" value="136" w="sm" lw="sm" />
+                      <Field label="Nº" value={data.numero} w="sm" lw="sm" />
                     </div>
 
                     <div className="frow">
                       <div className="grow" />
                       <div className="ffield">
                         <span className="flabel lw-sm">Compl:</span>
-                        <input className="sap-input w-sm" value="CS" readOnly />
-                        <input className="sap-input w-sm" value="D" readOnly />
+                        <input
+                          className="sap-input w-sm"
+                          value={data.compl1}
+                          readOnly
+                        />
+                        <input
+                          className="sap-input w-sm"
+                          value={data.compl2}
+                          readOnly
+                        />
                       </div>
                       <div className="ffield">
                         <span className="flabel lw-sm">Bloco:</span>
-                        <input className="sap-input w-sm" value="NR" readOnly />
-                        <input className="sap-input w-sm" value="8" readOnly />
+                        <input
+                          className="sap-input w-sm"
+                          value={data.bloco1}
+                          readOnly
+                        />
+                        <input
+                          className="sap-input w-sm"
+                          value={data.bloco2}
+                          readOnly
+                        />
                       </div>
                     </div>
 
@@ -2249,15 +3479,10 @@
                         w="xl"
                         lw="md"
                       />
-                      <Field
-                        label="Latitude"
-                        value="0,0000000"
-                        w="md"
-                        lw="sm"
-                      />
+                      <Field label="Latitude" value={data.lat} w="md" lw="sm" />
                       <Field
                         label="Longitude"
-                        value="0,0000000"
+                        value={data.lng}
                         w="md"
                         lw="sm"
                       />
@@ -2273,18 +3498,18 @@
                     <div className="frow">
                       <Field
                         label="Nome do solicitante"
-                        value="MARIA CLARA COSTA"
+                        value={data.nomeSolic}
                         w="xl"
                         lw="lg"
                       />
                       <div className="grow" />
-                      <Field label="Tel" value="" w="md" lw="sm" />
-                      <Field label="Cel" value="31996334212" w="md" lw="sm" />
+                      <Field label="Tel" value={data.tel} w="md" lw="sm" />
+                      <Field label="Cel" value={data.cel} w="md" lw="sm" />
                     </div>
                     <div className="frow">
                       <Field
                         label="E-mail do Cliente"
-                        value="mariaccosta737@gmail.com"
+                        value={data.email1}
                         w="xl"
                         lw="lg"
                       />
@@ -2292,7 +3517,7 @@
                     <div className="frow">
                       <Field
                         label="E-mail Resp Técnico"
-                        value="mariaccosta727@gmail.coM"
+                        value={data.email2}
                         w="xl"
                         lw="lg"
                       />
@@ -2313,7 +3538,7 @@
                     <div className="frow">
                       <Field
                         label="Assunto da NS"
-                        value="mariaccosta727@gmail.com"
+                        value={data.assuntoNS}
                         w="xl"
                         lw="md"
                       />
@@ -2327,17 +3552,22 @@
                     <div className="frow">
                       <Select
                         label="Loc.Física"
-                        value="Urbano Áereo"
+                        value={data.locFis}
                         w="lg"
                         lw="md"
                       />
-                      <Select label="Prog. elet." value="0" w="sm" lw="md" />
-                      <Select label="Grupo" value="BT" w="sm" lw="md" />
+                      <Select
+                        label="Prog. elet."
+                        value={data.progElet}
+                        w="sm"
+                        lw="md"
+                      />
+                      <Select label="Grupo" value={data.grupo} w="sm" lw="md" />
                     </div>
                     <div className="frow">
                       <Select
                         label="Tp.loc.consumo"
-                        value="CS Casa"
+                        value={data.tpLocConsumo}
                         w="lg"
                         lw="md"
                       />
@@ -2345,7 +3575,7 @@
                         <span className="flabel lw-md">Ramo Atividade:</span>
                         <input
                           className="sap-input w-sm"
-                          value="X001"
+                          value={data.ramoAtividade}
                           readOnly
                         />
                         <input className="sap-input w-md" value="" readOnly />
@@ -2354,16 +3584,16 @@
                         <span className="flabel lw-md">Classe/Sub.Classe:</span>
                         <input
                           className="sap-input w-sm"
-                          value="1001"
+                          value={data.classeSubClasse}
                           readOnly
                         />
                       </div>
                     </div>
                     <div className="frow">
-                      <Select label="Trafo" value="Coletivo" w="md" lw="md" />
+                      <Select label="Trafo" value={data.trafo} w="md" lw="md" />
                       <Select
                         label="Tipo de ligação"
-                        value="Monofásico"
+                        value={data.tipoLig}
                         w="md"
                         lw="md"
                       />
@@ -2371,11 +3601,11 @@
                         <span className="flabel lw-md">Disjuntor:</span>
                         <input
                           className="sap-input w-sm"
-                          value="A063"
+                          value={data.disjuntorCod}
                           readOnly
                         />
                         <span style={{ fontSize: 13, color: "var(--text)" }}>
-                          MONOPOLAR 63A
+                          {data.disjuntorDesc}
                         </span>
                       </div>
                       <Field label="Opção de vencto" value="" w="md" lw="md" />
@@ -2383,7 +3613,7 @@
                     <div className="frow">
                       <Field
                         label="Tipo Solicitação"
-                        value="AC"
+                        value={data.tipoSolicitacao}
                         w="sm"
                         lw="md"
                       />
@@ -2391,7 +3621,7 @@
                     <div className="frow">
                       <Select
                         label="Assentamento Irregular"
-                        value="Não"
+                        value={data.assentIrreg}
                         w="sm"
                         lw="lg"
                       />
@@ -2425,29 +3655,38 @@
                       Outras informações
                     </div>
                     <div className="frow">
-                      <Check label="Possui Laudo Médico" />
+                      <Check
+                        checked={data.possuiLaudoMed}
+                        label="Possui Laudo Médico"
+                      />
                       <Select
                         label="Possui CADUNICO ou BPC ?"
-                        value="Não"
+                        value={data.possuiCadunico}
                         w="sm"
                         lw="xl"
                       />
                       <Select
                         label="Cad. atualizado < 60 dias"
-                        value="Não"
+                        value={data.cadAtualizado}
                         w="sm"
                         lw="xl"
                       />
                       <Select
                         label="Transfere TSEE p/ IN"
-                        value=""
+                        value={data.transfereTSEE}
                         w="sm"
                         lw="lg"
                       />
                     </div>
                     <div className="frow">
-                      <Check label="Possui estação de recarga para veículo elétrico" />
-                      <Check label="Padrão Gratuito" />
+                      <Check
+                        checked={data.possuiVE}
+                        label="Possui estação de recarga para veículo elétrico"
+                      />
+                      <Check
+                        checked={data.padraoGratuito}
+                        label="Padrão Gratuito"
+                      />
                     </div>
                   </div>
 
@@ -2457,45 +3696,67 @@
                       Informações do disjuntor geral
                     </div>
                     <div className="frow">
-                      <Field label="Nº caixas" value="1" w="sm" lw="md" />
+                      <Field
+                        label="Nº caixas"
+                        value={data.numCaixas}
+                        w="sm"
+                        lw="md"
+                      />
                       <Select
                         label="Tipo de usuário"
-                        value="Consumidor sem geração distribuída"
+                        value={data.tipoUsuario}
                         w="xl"
                         lw="md"
                       />
                     </div>
                     <div className="frow">
-                      <Radio label="Apresentação Projeto Elétrico" />
-                      <div className="grow" />
-                      <Check label="Atendimento Híbrido" />
-                    </div>
-                    <div className="frow">
-                      <Radio label="Orçamento de Conexão com Disj Geral" />
-                      <div className="grow" />
-                      <Field
-                        label="Quantidade disjuntor geral"
-                        value=""
-                        w="sm"
-                        lw="lg"
+                      <Radio
+                        checked={data.disjOpt === "projeto"}
+                        label="Apresentação Projeto Elétrico"
                       />
-                      <Field label="Disjuntor Geral" value="" w="sm" lw="md" />
+                      <div className="grow" />
+                      <Check
+                        checked={data.atendHibrido}
+                        label="Atendimento Híbrido"
+                      />
                     </div>
                     <div className="frow">
                       <Radio
-                        checked
+                        checked={data.disjOpt === "com"}
+                        label="Orçamento de Conexão com Disj Geral"
+                      />
+                      <div className="grow" />
+                      <Field
+                        label="Quantidade disjuntor geral"
+                        value={data.qtdDisjGeral}
+                        w="sm"
+                        lw="lg"
+                      />
+                      <Field
+                        label="Disjuntor Geral"
+                        value={data.disjGeralVal}
+                        w="sm"
+                        lw="md"
+                      />
+                    </div>
+                    <div className="frow">
+                      <Radio
+                        checked={data.disjOpt === "sem"}
                         label="Orçamento de Conexão sem Disj Geral"
                       />
                       <div className="grow" />
                       <Field
                         label="Carga Instalada ou Demanda(kW)"
-                        value="0"
+                        value={data.cargaKw}
                         w="md"
                         lw="xl"
                       />
                     </div>
                     <div className="frow">
-                      <Radio label="Orçamento Estimado" />
+                      <Radio
+                        checked={data.disjOpt === "estimado"}
+                        label="Orçamento Estimado"
+                      />
                     </div>
                   </div>
 
@@ -2507,7 +3768,7 @@
                     <div className="frow">
                       <Select
                         label="Padrão/Subestação/Usina está(ão) pronto(s)?"
-                        value="Sim"
+                        value={data.padraoPronto}
                         w="sm"
                         lw="xl"
                       />
@@ -2520,8 +3781,18 @@
                       Aprovação de projeto
                     </div>
                     <div className="frow">
-                      <Field label="ART de projeto" value="" w="lg" lw="md" />
-                      <Field label="ART de execução" value="" w="lg" lw="md" />
+                      <Field
+                        label="ART de projeto"
+                        value={data.artProjeto}
+                        w="lg"
+                        lw="md"
+                      />
+                      <Field
+                        label="ART de execução"
+                        value={data.artExecucao}
+                        w="lg"
+                        lw="md"
+                      />
                     </div>
                   </div>
 
@@ -2531,7 +3802,7 @@
                     <div className="frow">
                       <Select
                         label="Modalidade"
-                        value="Distribuidora"
+                        value={data.modalidadeAC}
                         w="md"
                         lw="md"
                       />
@@ -2544,13 +3815,13 @@
                     <div className="frow">
                       <Field
                         label="Class grandes clientes"
-                        value=""
+                        value={data.classGrandes}
                         w="sm"
                         lw="lg"
                       />
                       <Field
                         label="Consumo estimado"
-                        value="0"
+                        value={data.consumoEstimado}
                         w="md"
                         lw="md"
                       />
@@ -2563,49 +3834,417 @@
         );
       }
 
+      /* ============ PROGRESS BAR COMPONENT ============ */
+      function ProgressBar({ done, total, big = false }) {
+        const pct = total ? Math.round((done / total) * 100) : 0;
+        return (
+          <div className={"progress-wrap" + (big ? " hero-progress" : "")}>
+            <div className="progress-bar">
+              <div className="fill" style={{ width: pct + "%" }} />
+            </div>
+            <span className="progress-label">
+              {done}/{total}
+            </span>
+          </div>
+        );
+      }
+
+      /* ============ TRAINING INDEX PAGE ============ */
+      function TrainingIndexPage({ progress, onOpenTraining }) {
+        // Group sorted trainings by difficulty
+        const groups = useMemo(() => {
+          const g = { Iniciante: [], Intermediário: [], Avançado: [] };
+          SORTED_TRAININGS.forEach((t) => {
+            g[t.difficulty].push(t);
+          });
+          return g;
+        }, []);
+
+        const overall = useMemo(() => totalProgress(progress), [progress]);
+
+        return (
+          <div className="training-page">
+            <div className="training-topbar">
+              <div className="brand">
+                <div className="cemig-mark" title="CEMIG">
+                  <span>C</span>
+                </div>
+                <span>Treinamentos PE/EM</span>
+              </div>
+              <div className="spacer" />
+            </div>
+
+            <div className="training-hero">
+              <div className="hero-mark">🎓</div>
+              <div style={{ flex: 1 }}>
+                <h1>Análise inicial: Equipe Carga</h1>
+                <p>
+                  Escolha um treinamento abaixo para começar. Cada módulo simula
+                  um fluxo real ou processo de navegação do SAP com telas e
+                  dados gerados sob medida.
+                </p>
+                <ProgressBar done={overall.done} total={overall.total} big />
+              </div>
+            </div>
+
+            <div className="training-body">
+              {["Iniciante", "Intermediário", "Avançado"].map(
+                (level) =>
+                  groups[level].length > 0 && (
+                    <div key={level} className="training-group">
+                      <div className="training-section-title">
+                        <span
+                          className={
+                            "diff-dot diff-" +
+                            level
+                              .toLowerCase()
+                              .normalize("NFD")
+                              .replace(/[\u0300-\u036f]/g, "")
+                          }
+                        />
+                        {level}
+                      </div>
+                      <div className="training-grid">
+                        {groups[level].map((t) => {
+                          const tp = trainingProgress(progress, t);
+                          return (
+                            <div
+                              key={t.id}
+                              className={
+                                "training-card " +
+                                (t.available ? "available" : "locked")
+                              }
+                              onClick={() =>
+                                t.available && onOpenTraining(t.id)
+                              }
+                            >
+                              {!t.available && (
+                                <span className="locked-badge">Em breve</span>
+                              )}
+                              {t.platform === "desktop" && (
+                                <span
+                                  className="platform-badge"
+                                  title="Treinamento desktop"
+                                >
+                                  <Icon name="monitor" size={11} /> Desktop
+                                </span>
+                              )}
+                              <div className="card-icon">
+                                <Icon
+                                  name={t.available ? "play" : "lock"}
+                                  size={18}
+                                />
+                              </div>
+                              <h3>{t.title}</h3>
+                              <p>{t.desc}</p>
+                              <div className="training-tags">
+                                {t.tags.map((tag) => (
+                                  <span key={tag} className="training-tag">
+                                    {tag}
+                                  </span>
+                                ))}
+                                {t.hasSubmodules && (
+                                  <span className="training-tag submods-tag">
+                                    <Icon name="layers" size={10} /> Submódulos
+                                  </span>
+                                )}
+                              </div>
+                              <ProgressBar done={tp.done} total={tp.total} />
+                              {t.available && (
+                                <div className="start-link">
+                                  {tp.done > 0 ? "Continuar" : "Iniciar"}{" "}
+                                  <Icon name="chevron-right" size={14} />
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ),
+              )}
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ SUBMODULE INDEX PAGE ============ */
+      function SubmoduleIndexPage({
+        training,
+        progress,
+        onBackToIndex,
+        onStartSubmodule,
+      }) {
+        const tp = trainingProgress(progress, training);
+        const trainingDone = progress[training.id] || {};
+
+        return (
+          <div className="training-page">
+            <div className="training-topbar">
+              <div className="brand">
+                <div className="cemig-mark" title="CEMIG">
+                  <span>C</span>
+                </div>
+                <span>Treinamentos PE/EM</span>
+              </div>
+              <div className="spacer" />
+              <button className="back-btn-pill" onClick={onBackToIndex}>
+                <Icon name="arrow-left" size={13} /> Voltar à página principal
+              </button>
+            </div>
+
+            <div className="sub-hero">
+              <div
+                className="back-circle"
+                onClick={onBackToIndex}
+                title="Voltar ao índice"
+              >
+                <Icon name="arrow-left" size={18} />
+              </div>
+              <div style={{ flex: 1 }}>
+                <div className="crumb">
+                  Treinamentos / {training.difficulty}
+                </div>
+                <h1>
+                  {training.title}
+                  <span className="difficulty-pill">
+                    <span
+                      className={
+                        "diff-dot diff-" +
+                        training.difficulty
+                          .toLowerCase()
+                          .normalize("NFD")
+                          .replace(/[\u0300-\u036f]/g, "")
+                      }
+                    />
+                    {training.difficulty}
+                  </span>
+                </h1>
+                <ProgressBar done={tp.done} total={tp.total} big />
+              </div>
+            </div>
+
+            <div className="sub-body">
+              <div className="training-section-title">Submódulos</div>
+              <div className="sub-list">
+                {training.submodules.map((s, i) => {
+                  const isDone = !!trainingDone[s.id];
+                  const available = s.available;
+                  return (
+                    <div
+                      key={s.id}
+                      className={
+                        "sub-item" +
+                        (available ? "" : " locked") +
+                        (isDone ? " done" : "")
+                      }
+                      onClick={() =>
+                        available && onStartSubmodule(training.id, s.id)
+                      }
+                    >
+                      <div className="sub-num">
+                        {isDone ? (
+                          <Icon name="check" size={14} color="white" />
+                        ) : (
+                          i + 1
+                        )}
+                      </div>
+                      <div className="sub-content">
+                        <h3>{s.title}</h3>
+                        <p>{s.desc}</p>
+                      </div>
+                      <div className="sub-action">
+                        {!available ? (
+                          <>
+                            <Icon name="lock" size={13} /> Em breve
+                          </>
+                        ) : isDone ? (
+                          <>
+                            <Icon name="check" size={13} /> Concluído
+                          </>
+                        ) : (
+                          <>
+                            Iniciar <Icon name="chevron-right" size={14} />
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      }
+
       /* ============ APP ============ */
       function App() {
-        const [route, setRoute] = useState({ page: "home" });
+        // route: training-index | submodule-index | home | nota-input | nota-detail | solicitacao
+        const [route, setRoute] = useState({ page: "training-index" });
+        const [seed, setSeed] = useState("1252714058");
 
+        // Persistent progress { [trainingId]: { [submoduleId]: true } }
+        const [progress, setProgress] = useState(() => loadProgress());
+        // Helper that mutates and persists
+        const markSubmoduleDone = useCallback((trainingId, submoduleId) => {
+          setProgress((prev) => {
+            const next = {
+              ...prev,
+              [trainingId]: {
+                ...(prev[trainingId] || {}),
+                [submoduleId]: true,
+              },
+            };
+            saveProgress(next);
+            return next;
+          });
+        }, []);
+
+        // Track which training+submodule we're running (so completion can mark progress)
+        const [activeSubmodule, setActiveSubmodule] = useState(null); // { trainingId, submoduleId }
+
+        const dataset = useMemo(() => generateDataset(seed), [seed]);
+        const visibleData = useMemo(
+          () => ({
+            ...dataset,
+            notaNumero: seed.split("|")[0],
+            notaServico: seed.split("|")[0],
+          }),
+          [dataset, seed],
+        );
+
+        // === Navigation ===
+        const goTrainingIndex = useCallback(() => {
+          setActiveSubmodule(null);
+          setRoute({ page: "training-index" });
+        }, []);
+
+        // Click on a training card -> go to its submodule list
+        const openTraining = useCallback((trainingId) => {
+          const t = TRAININGS.find((x) => x.id === trainingId);
+          if (!t) return;
+          setRoute({ page: "submodule-index", trainingId });
+        }, []);
+
+        // Click on a submodule -> start the corresponding flow
+        // Currently only "navegacao-basica" has a flow implemented; others reuse the same demo
+        const startSubmodule = useCallback((trainingId, submoduleId) => {
+          setActiveSubmodule({ trainingId, submoduleId });
+          setRoute({ page: "home", trainingId, submoduleId });
+        }, []);
+
+        // Submodule index navigation
+        const goSubmoduleIndex = useCallback(() => {
+          if (activeSubmodule) {
+            setRoute({
+              page: "submodule-index",
+              trainingId: activeSubmodule.trainingId,
+            });
+          } else {
+            goTrainingIndex();
+          }
+        }, [activeSubmodule, goTrainingIndex]);
+
+        // Going home (within the flow) means returning to the submodule index and marking the
+        // submodule as completed. Treat reaching SAP "home" as "navigated" but completion
+        // happens when the user explicitly goes back from the SAP flow (via the back arrow).
         const goHome = useCallback(() => setRoute({ page: "home" }), []);
         const goNotaInput = useCallback(
           () => setRoute({ page: "nota-input" }),
           [],
         );
-        const goNotaDetail = useCallback(
-          (numero) => setRoute({ page: "nota-detail", numero }),
-          [],
-        );
+        const goNotaDetail = useCallback((numero) => {
+          setSeed(numero);
+          setRoute({ page: "nota-detail" });
+        }, []);
         const goSolicitacao = useCallback(
-          () => setRoute((prev) => ({ ...prev, page: "solicitacao" })),
+          () => setRoute({ page: "solicitacao" }),
           [],
         );
         const backToDetail = useCallback(
-          () =>
-            setRoute((prev) => ({
-              page: "nota-detail",
-              numero: prev.numero || "1252714058",
-            })),
+          () => setRoute({ page: "nota-detail" }),
           [],
         );
 
+        // When leaving the SAP flow (back to home or training index), mark the current
+        // submodule as done if there was one active.
+        const exitFlow = useCallback(() => {
+          if (activeSubmodule) {
+            markSubmoduleDone(
+              activeSubmodule.trainingId,
+              activeSubmodule.submoduleId,
+            );
+            setRoute({
+              page: "submodule-index",
+              trainingId: activeSubmodule.trainingId,
+            });
+          } else {
+            goTrainingIndex();
+          }
+        }, [activeSubmodule, markSubmoduleDone, goTrainingIndex]);
+
+        const regenerate = useCallback(() => {
+          const salt = String(Math.floor(Math.random() * 1e9));
+          setSeed((prev) => {
+            const base = prev.split("|")[0];
+            return base + "|" + salt;
+          });
+        }, []);
+
+        if (route.page === "training-index") {
+          return (
+            <TrainingIndexPage
+              progress={progress}
+              onOpenTraining={openTraining}
+            />
+          );
+        }
+        if (route.page === "submodule-index") {
+          const training = TRAININGS.find((t) => t.id === route.trainingId);
+          if (!training) {
+            // Defensive: bad route, fall back to index
+            return (
+              <TrainingIndexPage
+                progress={progress}
+                onOpenTraining={openTraining}
+              />
+            );
+          }
+          return (
+            <SubmoduleIndexPage
+              training={training}
+              progress={progress}
+              onBackToIndex={goTrainingIndex}
+              onStartSubmodule={startSubmodule}
+            />
+          );
+        }
         if (route.page === "home") {
-          return <HomePage onOpenModificar={goNotaInput} />;
+          return (
+            <HomePage onOpenModificar={goNotaInput} onBackToIndex={exitFlow} />
+          );
         }
         if (route.page === "nota-input") {
-          return <NotaInputPage onBack={goHome} onSubmit={goNotaDetail} />;
+          return (
+            <NotaInputPage
+              initialValue={seed.split("|")[0]}
+              onBack={goHome}
+              onSubmit={goNotaDetail}
+            />
+          );
         }
         if (route.page === "nota-detail") {
           return (
             <NotaDetailPage
-              notaNumero={route.numero}
+              data={visibleData}
               onBack={goHome}
               onOpenSolicitacao={goSolicitacao}
+              onRegenerate={regenerate}
             />
           );
         }
         if (route.page === "solicitacao") {
-          return <SolicitacaoPage onBack={backToDetail} />;
+          return <SolicitacaoPage data={visibleData} onBack={backToDetail} />;
         }
         return null;
       }
