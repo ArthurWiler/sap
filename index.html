@@ -2480,7 +2480,7 @@
         {
           cod: "0080",
           grp: "ZEO-EXP",
-          desc: "Elaborar Orçamento de Co...",
+          desc: "Elaborar Orçamento de Conexão",
           textoMedida: "VER NOTA >>>>",
         },
         {
@@ -2489,7 +2489,7 @@
           desc: "Elaborar Solução de Cone...",
           textoMedida: "OK",
         },
-        { cod: "0590", grp: "ZEO-RLC", desc: "Encaminhar Orçamento Co..." },
+        { cod: "0590", grp: "ZEO-RLC", desc: "Encaminhar Orçamento Conexão" },
       ];
 
       function generateMedidas(rng, seedKey) {
@@ -2592,9 +2592,9 @@
           tags: ["Avançado", "Medidas"],
         },
         {
-          id: "criar-acoes-iw52",
-          title: "Criar ações na IW52",
-          desc: "Aprenda a cadastrar e gerenciar ações em ordens de serviço, seguindo regras e critérios de validação internos.",
+          id: "deletar-acoes-iw52",
+          title: "Deletar ações na IW52",
+          desc: "Aprenda a gerenciar ações em ordens de serviço, seguindo regras e critérios de validação internos.",
           available: false,
           difficulty: "Avançado",
           platform: "web",
@@ -2673,27 +2673,25 @@
         return 0;
       });
 
-      /* Attach 3 placeholder submódulos to every training.
-   Edit later by adding a `submodules:[...]` to a training above — it overrides this. */
       TRAININGS.forEach((t) => {
         if (!t.submodules) {
           t.submodules = [
             {
-              id: t.id + "-sub1",
-              title: "sub1",
-              desc: "Submódulo 1 — descreva aqui.",
+              id: t.id + "-details",
+              title: "Detalhes da Solicitação no SAP",
+              desc: "Aprenda a acessar e interpretar os detalhes da nota através da aba de Solicitação no SAP.",
               available: t.id === "navegacao-basica",
             },
             {
-              id: t.id + "-sub2",
-              title: "sub2",
-              desc: "Submódulo 2 — descreva aqui.",
+              id: t.id + "-med_status",
+              title: "Fechamento de Medidas",
+              desc: "Entenda como realizar o fechamento de medidas dentro do SAP de forma correta e segura.",
               available: t.id === "navegacao-basica",
             },
             {
-              id: t.id + "-sub3",
-              title: "sub3",
-              desc: "Submódulo 3 — descreva aqui.",
+              id: t.id + "-acoes",
+              title: "Cadastro de Ações em Medidas",
+              desc: "Veja como consultar e cadastrar ações vinculadas a uma medida no SAP.",
               available: t.id === "navegacao-basica",
             },
           ];
@@ -4009,8 +4007,9 @@
         highlight = false,
         link = false,
         onClick,
+        tourId,
       }) => (
-        <div className="ffield">
+        <div className="ffield" data-tour-id={tourId}>
           <span className={"flabel lw-" + lw}>{label}:</span>
           {link ? (
             <a className="sap-link" onClick={onClick}>
@@ -4026,8 +4025,8 @@
         </div>
       );
 
-      const Select = ({ label, value, w = "md", lw = "md" }) => (
-        <div className="ffield">
+      const Select = ({ label, value, w = "md", lw = "md", tourId }) => (
+        <div className="ffield" data-tour-id={tourId}>
           <span className={"flabel lw-" + lw}>{label}:</span>
           <div className={"sap-select w-" + w}>
             <span>{value}</span>
@@ -4163,7 +4162,7 @@
                 </div>
 
                 <div className="frow">
-                  <div className="ffield">
+                  <div className="ffield" data-tour-id="parc_neg">
                     <span className="flabel lw-sm">Parc.negóc.:</span>
                     <input
                       className="sap-input w-md"
@@ -4191,6 +4190,7 @@
                     value={data.instalacao}
                     w="md"
                     lw="sm"
+                    tourId="inst_cliente"
                   />
                   <Field
                     label="Objeto de ligação"
@@ -4290,6 +4290,7 @@
                         value={data.cidade}
                         w="xl"
                         lw="sm"
+                        tourId="munic"
                       />
                       <div className="grow" />
                       <Check checked label="Apresentou documentos" />
@@ -4311,18 +4312,25 @@
                         value={data.bairro}
                         w="xl"
                         lw="sm"
+                        tourId="bairro"
                       />
                     </div>
 
                     <div className="frow">
-                      <Field label="Rua" value={data.rua} w="xl" lw="sm" />
+                      <Field
+                        label="Rua"
+                        value={data.rua}
+                        w="xl"
+                        lw="sm"
+                        tourId="ender"
+                      />
                       <div className="grow" />
                       <Field label="Nº" value={data.numero} w="sm" lw="sm" />
                     </div>
 
                     <div className="frow">
                       <div className="grow" />
-                      <div className="ffield">
+                      <div className="ffield" data-tour-id="complemento">
                         <span className="flabel lw-sm">Compl:</span>
                         <input
                           className="sap-input w-sm"
@@ -4356,6 +4364,7 @@
                         value=""
                         w="xl"
                         lw="md"
+                        tourId="ref"
                       />
                       <Field label="Latitude" value={data.lat} w="md" lw="sm" />
                       <Field
@@ -4379,6 +4388,7 @@
                         value={data.nomeSolic}
                         w="xl"
                         lw="lg"
+                        tourId="nome_solic"
                       />
                       <div className="grow" />
                       <Field label="Tel" value={data.tel} w="md" lw="sm" />
@@ -4433,6 +4443,7 @@
                         value={data.locFis}
                         w="lg"
                         lw="md"
+                        tourId="localiz"
                       />
                       <Select
                         label="Prog. elet."
@@ -4440,7 +4451,13 @@
                         w="sm"
                         lw="md"
                       />
-                      <Select label="Grupo" value={data.grupo} w="sm" lw="md" />
+                      <Select
+                        label="Grupo"
+                        value={data.grupo}
+                        w="sm"
+                        lw="md"
+                        tourId="grp"
+                      />
                     </div>
                     <div className="frow">
                       <Select
@@ -4448,8 +4465,9 @@
                         value={data.tpLocConsumo}
                         w="lg"
                         lw="md"
+                        tourId="loc_consumo"
                       />
-                      <div className="ffield">
+                      <div className="ffield" data-tour-id="ramo_atv">
                         <span className="flabel lw-md">Ramo Atividade:</span>
                         <input
                           className="sap-input w-sm"
@@ -4458,7 +4476,7 @@
                         />
                         <input className="sap-input w-md" value="" readOnly />
                       </div>
-                      <div className="ffield">
+                      <div className="ffield" data-tour-id="class_subclass">
                         <span className="flabel lw-md">Classe/Sub.Classe:</span>
                         <input
                           className="sap-input w-sm"
@@ -4474,8 +4492,9 @@
                         value={data.tipoLig}
                         w="md"
                         lw="md"
+                        tourId="tp_lig"
                       />
-                      <div className="ffield">
+                      <div className="ffield" data-tour-id="disjunt">
                         <span className="flabel lw-md">Disjuntor:</span>
                         <input
                           className="sap-input w-sm"
@@ -4494,6 +4513,7 @@
                         value={data.tipoSolicitacao}
                         w="sm"
                         lw="md"
+                        tourId="tp_solicit"
                       />
                     </div>
                     <div className="frow">
@@ -4609,12 +4629,14 @@
                         value={data.qtdDisjGeral}
                         w="sm"
                         lw="lg"
+                        tourId="qtd_geral"
                       />
                       <Field
                         label="Disjuntor Geral"
                         value={data.disjGeralVal}
                         w="sm"
                         lw="md"
+                        tourId="disj_ger"
                       />
                     </div>
                     <div className="frow">
@@ -5646,13 +5668,32 @@
               `[data-tour-id="${step.target}"]`,
             );
             if (el) {
-              const r = el.getBoundingClientRect();
-              setRect({
-                left: r.left,
-                top: r.top,
-                width: r.width,
-                height: r.height,
-              });
+              // Scroll the element into view if it's offscreen,
+              // so the spotlight + tooltip fit within the viewport.
+              const r0 = el.getBoundingClientRect();
+              const vh = window.innerHeight;
+              const margin = 200; // leave room for tooltip
+              if (r0.top < 60 || r0.bottom > vh - margin) {
+                el.scrollIntoView({ block: "center", behavior: "smooth" });
+                // wait a tick for scroll, then re-measure
+                setTimeout(() => {
+                  if (cancelled) return;
+                  const r2 = el.getBoundingClientRect();
+                  setRect({
+                    left: r2.left,
+                    top: r2.top,
+                    width: r2.width,
+                    height: r2.height,
+                  });
+                }, 250);
+              } else {
+                setRect({
+                  left: r0.left,
+                  top: r0.top,
+                  width: r0.width,
+                  height: r0.height,
+                });
+              }
               // Attach click handler ONLY if no waitFor is defined.
               // If waitFor is defined, the parent fires onTourEvent which advances the tour.
               // Having both would double-advance.
@@ -5845,8 +5886,8 @@
    - waitFor: optional event from onTourEvent that advances the step
 */
       const TOUR_STEPS = {
-        "navegacao-basica-sub1": {
-          title: "sub1 — Acessar Solicitação via Dados Complementares",
+        "navegacao-basica-details": {
+          title: "Acessar Solicitação via Dados Complementares",
           steps: [
             {
               target: null,
@@ -5871,13 +5912,127 @@
             {
               target: null,
               title: "Solicitação aberta",
-              body: "Pronto! Você acessou a tela de detalhes da Solicitação. Aqui ficam todos os dados do solicitante, endereço, características técnicas e mais.",
+              body: "Pronto! Você acessou a tela de detalhes da Solicitação. Agora vamos conhecer cada um dos campos principais.",
+              advanceOn: "next",
+            },
+            {
+              target: "parc_neg",
+              title: "Parceiro de negócios",
+              body: "Identificação principal do cliente na CEMIG. Cada cliente possui apenas um parceiro de negócios, vinculado ao CPF ou CNPJ informado no cadastro.",
+              advanceOn: "next",
+            },
+            {
+              target: "nome_solic",
+              title: "Nome do solicitante",
+              body: "Nome do responsável pela solicitação. Deve ser exatamente igual ao que consta na documentação apresentada.",
+              advanceOn: "next",
+            },
+            {
+              target: "inst_cliente",
+              title: "Instalação",
+              body: "Número da instalação vinculado ao parceiro de negócios. Um novo número é gerado para cada solicitação, mas alterações podem ser feitas usando a mesma instalação já existente.",
+              advanceOn: "next",
+            },
+            {
+              target: "munic",
+              title: "Município",
+              body: "Cidade onde está localizada a instalação do cliente.",
+              advanceOn: "next",
+            },
+            {
+              target: "ender",
+              title: "Endereço",
+              body: "Localização completa da instalação, conforme informado pelo solicitante.",
+              advanceOn: "next",
+            },
+            {
+              target: "ref",
+              title: "Referência",
+              body: "Informação adicional para facilitar a identificação do endereço da instalação.",
+              advanceOn: "next",
+            },
+            {
+              target: "bairro",
+              title: "Bairro",
+              body: "Bairro onde está situada a instalação do cliente.",
+              advanceOn: "next",
+            },
+            {
+              target: "complemento",
+              title: "Complemento",
+              body: "Detalhes extras do endereço, como bloco, apartamento ou ponto de referência.",
+              advanceOn: "next",
+            },
+            {
+              target: "localiz",
+              title: "Loc. Física",
+              body: "Indica se a instalação está localizada em área urbana ou rural.",
+              advanceOn: "next",
+            },
+            {
+              target: "loc_consumo",
+              title: "Tipo do local de consumo",
+              body: "Classificação do consumo do cliente: residencial, comercial, industrial, entre outros.",
+              advanceOn: "next",
+            },
+            {
+              target: "ramo_atv",
+              title: "Ramo de atividade",
+              body: "Código da atividade exercida pelo cliente, vinculado ao tipo de consumo informado.",
+              advanceOn: "next",
+            },
+            {
+              target: "grp",
+              title: "Grupo",
+              body: "Grupo de faturamento do cliente, classificado em BT (baixa tensão), MT (média tensão) ou AT (alta tensão).",
+              advanceOn: "next",
+            },
+            {
+              target: "class_subclass",
+              title: "Classe/Subclasse",
+              body: "Especificação detalhada da atividade do cliente, vinculada ao ramo de atividade.",
+              advanceOn: "next",
+            },
+            {
+              target: "tp_solicit",
+              title: "Tipo Solicitação",
+              body: "Classificação do pedido: LN (Ligação nova), AC (Alteração de carga), LP (Ligação provisória), OIP (Obra de iluminação pública), TR (Trifásico desligado há mais de 6 meses), ML (Mudança de local).",
+              advanceOn: "next",
+            },
+            {
+              target: "tp_lig",
+              title: "Tipo de ligação",
+              body: "Número de fases da ligação solicitada pelo cliente.",
+              advanceOn: "next",
+            },
+            {
+              target: "disjunt",
+              title: "Disjuntor",
+              body: "Disjuntor solicitado pelo cliente, conforme normas ND 5.1/5.2. Uma mesma nota pode conter mais de um disjuntor.",
+              advanceOn: "next",
+            },
+            {
+              target: "disj_ger",
+              title: "Disjuntor geral",
+              body: "Disjuntor principal da instalação, também padronizado pelas normas técnicas. Pode haver mais de um em uma mesma nota.",
+              advanceOn: "next",
+            },
+            {
+              target: "qtd_geral",
+              title: "Quantidade de disjuntor geral",
+              body: "Número de disjuntores gerais incluídos no pedido. É comum em solicitações que envolvem vários blocos ou prédios.",
+              advanceOn: "next",
+            },
+            {
+              target: null,
+              title: "Concluído!",
+              body: "Você conheceu os campos principais da tela de Solicitação. Clique em Concluir para finalizar este submódulo.",
               advanceOn: "next",
             },
           ],
         },
-        "navegacao-basica-sub2": {
-          title: "sub2 — Conclusão de medidas",
+        "navegacao-basica-med_status": {
+          title: "Conclusão de medidas",
           steps: [
             {
               target: null,
@@ -5920,8 +6075,8 @@
             },
           ],
         },
-        "navegacao-basica-sub3": {
-          title: "sub3 — Verificar ações de uma medida",
+        "navegacao-basica-acoes": {
+          title: "Verificar e cadastrar ações em uma medida",
           steps: [
             {
               target: null,
