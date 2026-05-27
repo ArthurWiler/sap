@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Treinamento - Página inicial</title>
+    <title>SAP - Página inicial</title>
     <style>
       :root {
         --bg: #f5f6f7;
@@ -690,6 +690,661 @@
       .back-btn-pill:hover {
         border-color: var(--cemig-green);
         color: var(--cemig-green);
+      }
+
+      /* ===== MEDIDAS TABLE ===== */
+      .med-table-wrap {
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        background: white;
+        overflow: auto;
+        max-width: 100%;
+        margin-top: 8px;
+      }
+      .med-table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12px;
+      }
+      .med-table th {
+        background: #f7f7f7;
+        color: var(--text);
+        text-align: left;
+        font-weight: 400;
+        padding: 5px 8px;
+        border-bottom: 1px solid var(--border);
+        border-right: 1px solid #ececec;
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+      .med-table td {
+        padding: 4px 8px;
+        border-bottom: 1px solid #ececec;
+        border-right: 1px solid #ececec;
+        color: var(--text);
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .med-table tr.selected td {
+        background: #d6f0dd;
+      }
+      .med-table tr:hover:not(.selected) td {
+        background: #f6faf8;
+      }
+      .med-table .row-cb {
+        width: 22px;
+        text-align: center;
+      }
+      .med-table .row-cb input {
+        margin: 0;
+      }
+      .med-table .pencil-cell {
+        width: 26px;
+        text-align: center;
+        cursor: pointer;
+        color: var(--cemig-green);
+      }
+      .med-table .pencil-cell:hover {
+        background: #e8f5ee;
+      }
+      .med-table .truncate {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .med-table .empty-row td {
+        color: transparent;
+        height: 22px;
+      }
+      .med-table .empty-row .row-cb input[type="checkbox"] {
+        opacity: 0.5;
+      }
+      .med-table .empty-row .empty-num {
+        color: var(--text-secondary);
+      }
+
+      .med-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 4px;
+        border-top: 1px solid #ececec;
+        background: #fafafa;
+        flex-wrap: wrap;
+      }
+      .med-toolbar .tool-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 4px;
+        cursor: pointer;
+        color: var(--link);
+      }
+      .med-toolbar .tool-icon:hover {
+        background: #e8f5ee;
+      }
+      .med-toolbar .tool-icon.disabled {
+        color: var(--text-disabled);
+        cursor: not-allowed;
+      }
+      .med-toolbar .tool-icon.disabled:hover {
+        background: transparent;
+      }
+      .med-toolbar .pager-info {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--text);
+      }
+
+      /* Ações tab subheader */
+      .acoes-subheader {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 6px 4px;
+        font-size: 12px;
+        color: var(--text);
+      }
+      .acoes-subheader .label {
+        color: var(--text-secondary);
+      }
+      .acoes-table-wrap {
+        /* same as med-table-wrap */
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        background: white;
+        overflow: auto;
+        margin-top: 4px;
+        max-height: 480px;
+      }
+      .acoes-table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12px;
+      }
+      .acoes-table th {
+        background: #f7f7f7;
+        text-align: left;
+        font-weight: 400;
+        padding: 5px 8px;
+        border-bottom: 1px solid var(--border);
+        border-right: 1px solid #ececec;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .acoes-table td {
+        padding: 3px 8px;
+        border-bottom: 1px solid #ececec;
+        border-right: 1px solid #ececec;
+        height: 22px;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .acoes-table .row-radio {
+        width: 22px;
+        text-align: center;
+      }
+      .acoes-table .inicio-cell {
+        background: #ebf5fe;
+      }
+
+      /* ===== MODAL OVERLAY ===== */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(35, 40, 47, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        animation: fadeIn 120ms ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .modal {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        min-width: 460px;
+        max-width: 720px;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .modal-header {
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border);
+      }
+      .modal-header h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .modal-close {
+        color: var(--text-secondary);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+      }
+      .modal-close:hover {
+        background: #f0f3f5;
+        color: var(--text);
+      }
+      .modal-body {
+        padding: 16px 18px;
+        overflow: auto;
+        flex: 1;
+      }
+      .modal-footer {
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        border-top: 1px solid var(--border);
+      }
+      .modal-footer .icon-action {
+        width: 28px;
+        height: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .modal-footer .icon-action.confirm {
+        color: #2eb872;
+      }
+      .modal-footer .icon-action.confirm:hover {
+        background: #e6f7ee;
+      }
+      .modal-footer .icon-action.cancel {
+        color: #c8412c;
+      }
+      .modal-footer .icon-action.cancel:hover {
+        background: #fbeae7;
+      }
+
+      .modal .info-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        background: #f0f3f5;
+        border-radius: 4px;
+        padding: 10px 12px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .modal .info-note .info-mark {
+        background: var(--cemig-green);
+        color: white;
+        border-radius: 3px;
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        flex-shrink: 0;
+        font-size: 12px;
+      }
+
+      .modal-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      .modal-table th {
+        text-align: left;
+        background: #f7f7f7;
+        padding: 6px 10px;
+        border-bottom: 1px solid var(--border);
+        font-weight: 400;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .modal-table td {
+        padding: 5px 10px;
+        border-bottom: 1px solid #ececec;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .modal-table tr {
+        cursor: pointer;
+      }
+      .modal-table tr:hover td {
+        background: #f6faf8;
+      }
+      .modal-table tr.selected td {
+        background: #d6f0dd;
+      }
+      .modal-table .row-radio {
+        width: 22px;
+        text-align: center;
+      }
+      .modal-table .row-radio input {
+        margin: 0;
+      }
+
+      .modal-section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+        margin: 14px 0 6px 0;
+      }
+      .modal-section-title:first-child {
+        margin-top: 0;
+      }
+
+      /* ===== SERVIÇOS PARA OBJETO DROPDOWN ===== */
+      .menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 90;
+      }
+      .dropdown-panel {
+        position: absolute;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        min-width: 220px;
+        padding: 4px 0;
+        z-index: 95;
+      }
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 7px 14px;
+        font-size: 13px;
+        color: var(--text);
+        cursor: pointer;
+        white-space: nowrap;
+        gap: 16px;
+        position: relative;
+      }
+      .dropdown-item:hover:not(.disabled) {
+        background: var(--cemig-green);
+        color: white;
+      }
+      .dropdown-item.disabled {
+        color: var(--text-disabled);
+        cursor: default;
+      }
+      .dropdown-separator {
+        height: 1px;
+        background: #ececec;
+        margin: 4px 0;
+      }
+      .dropdown-section-label {
+        font-size: 11px;
+        color: var(--text-disabled);
+        padding: 4px 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* ===== TEXT EDITOR PAGE ===== */
+      .text-editor-page {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .text-editor-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 16px;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+      }
+      .text-editor-toolbar .tool-btn {
+        border: 1px solid var(--button-border);
+        background: white;
+        height: 26px;
+        padding: 0 10px;
+        color: var(--link);
+        border-radius: 4px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .text-editor-toolbar .tool-btn:hover {
+        background: #e8f5ee;
+        border-color: var(--link);
+      }
+      .text-editor-body {
+        flex: 1;
+        overflow: auto;
+        padding: 16px;
+        background: var(--bg);
+      }
+      .editor-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        font-family: "Consolas", "Monaco", "Courier New", monospace;
+        font-size: 12px;
+      }
+      .editor-table th,
+      .editor-table td {
+        border: 1px solid #d9d9d9;
+        padding: 3px 8px;
+        vertical-align: top;
+      }
+      .editor-table th {
+        background: #f7f7f7;
+        font-weight: 400;
+        color: var(--text);
+      }
+      .editor-table .col-f {
+        width: 38px;
+      }
+      .editor-table .col-l {
+        width: 28px;
+        text-align: center;
+      }
+      .editor-table .col-r {
+        width: 38px;
+      }
+      .editor-table .ruler-cell {
+        background: white;
+        color: #515559;
+      }
+      .editor-table .text-line {
+        background: #ebf5fe;
+      }
+      .editor-table .empty-line {
+        height: 18px;
+      }
+      .editor-table .marker {
+        color: var(--text-secondary);
+        text-align: center;
+      }
+      .editor-status-line {
+        margin-top: 16px;
+        padding: 8px 16px;
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 12px;
+        font-family: "Consolas", "Monaco", "Courier New", monospace;
+        border-top: 1px dashed var(--border-strong);
+      }
+
+      /* ===== GUIDED TOUR ===== */
+      .tour-spotlight-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1000;
+      }
+      .tour-mask {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        transition: clip-path 250ms ease;
+      }
+      .tour-spotlight {
+        position: absolute;
+        border: 2px solid var(--cemig-green-light);
+        border-radius: 6px;
+        box-shadow:
+          0 0 0 4px rgba(118, 188, 33, 0.3),
+          0 0 30px rgba(118, 188, 33, 0.5);
+        pointer-events: none;
+        transition: all 250ms ease;
+        animation: tour-pulse 1.6s ease-in-out infinite;
+      }
+      @keyframes tour-pulse {
+        0%,
+        100% {
+          box-shadow:
+            0 0 0 4px rgba(118, 188, 33, 0.3),
+            0 0 30px rgba(118, 188, 33, 0.5);
+        }
+        50% {
+          box-shadow:
+            0 0 0 8px rgba(118, 188, 33, 0.2),
+            0 0 40px rgba(118, 188, 33, 0.7);
+        }
+      }
+      .tour-tooltip {
+        position: absolute;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        padding: 16px 18px;
+        width: 320px;
+        pointer-events: auto;
+        z-index: 1002;
+        border-top: 3px solid var(--cemig-green);
+      }
+      .tour-tooltip .step-label {
+        font-size: 11px;
+        color: var(--cemig-green);
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .tour-tooltip h4 {
+        margin: 0 0 6px 0;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .tour-tooltip p {
+        margin: 0;
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.45;
+      }
+      .tour-tooltip .tour-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 12px;
+        gap: 8px;
+      }
+      .tour-tooltip .tour-progress {
+        font-size: 11px;
+        color: var(--text-secondary);
+        font-weight: 600;
+      }
+      .tour-tooltip .tour-buttons {
+        display: flex;
+        gap: 6px;
+      }
+      .tour-tooltip .tour-btn {
+        border: 1px solid var(--button-border);
+        background: white;
+        color: var(--text);
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        font: inherit;
+      }
+      .tour-tooltip .tour-btn:hover {
+        background: #f0f3f5;
+      }
+      .tour-tooltip .tour-btn.primary {
+        background: var(--cemig-green);
+        color: white;
+        border-color: var(--cemig-green);
+        font-weight: 600;
+      }
+      .tour-tooltip .tour-btn.primary:hover {
+        background: var(--cemig-green-dark);
+      }
+      .tour-tooltip .tour-skip {
+        color: var(--text-secondary);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 11px;
+        text-decoration: underline;
+      }
+      .tour-arrow {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: white;
+        transform: rotate(45deg);
+        border-top: 3px solid var(--cemig-green);
+        border-left: 0;
+        border-right: 0;
+      }
+
+      /* Click hint cursor animation */
+      .tour-click-hint {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        pointer-events: none;
+        z-index: 1001;
+        animation: tour-click 1.6s ease-in-out infinite;
+      }
+      @keyframes tour-click {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(0.85);
+          opacity: 0.6;
+        }
+      }
+      .tour-click-hint svg {
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+      }
+
+      /* Tour banner showing current submodule */
+      .tour-banner {
+        background: linear-gradient(
+          90deg,
+          var(--cemig-green),
+          var(--cemig-green-dark)
+        );
+        color: white;
+        padding: 6px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 50;
+      }
+      .tour-banner .tour-label {
+        background: rgba(255, 255, 255, 0.18);
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tour-banner .tour-title {
+        font-weight: 600;
+        flex: 1;
+      }
+      .tour-banner .tour-exit {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .tour-banner .tour-exit:hover {
+        background: rgba(255, 255, 255, 0.25);
       }
 
       /* ===== DETAIL HEADER ===== */
@@ -1772,7 +2427,110 @@
           // Outros dados
           classGrandes: rng() < 0.2 ? pick(rng, ["A", "B", "C"]) : "",
           consumoEstimado: consumoEst,
+
+          // === Atividades / Medidas ===
+          medidas: generateMedidas(rng, seedKey),
         };
+      }
+
+      /* ============ MEDIDAS GENERATOR ============ */
+      const GRP_CODIGOS = [
+        "ZEO-NTC",
+        "ZEO-EXP",
+        "ZEO-RLC",
+        "ZEO-PRJ",
+        "ZEO-VIS",
+      ];
+      const STATUS_USUARIOS = [
+        "CANC CTEC",
+        "CANC",
+        "CANC SOBR",
+        "CANC CORE",
+        "CONC CTEC",
+        "CONC",
+        "ENCE",
+        "ABER",
+        "ANDM",
+        "PEND",
+      ];
+      const RESPONSAVEIS_MED = [
+        "PE-NTC",
+        "LE-EXP",
+        "LE-RLC",
+        "PE-EXP",
+        "WF-BATCH",
+        "PE-NCT",
+      ];
+      const CRIADO_POR_OPTS = [
+        "E267680",
+        "E261211",
+        "E260497",
+        "E236271",
+        "ALEREMOTE",
+      ];
+      const MED_TEMPLATES = [
+        { cod: "0019", grp: "ZEO-NTC", desc: "Analisar Documentação MT/BT" },
+        { cod: "0800", grp: "ZEO-EXP", desc: "Análise Ambiental" },
+        { cod: "0514", grp: "ZEO-RLC", desc: "Comunicar Deferimento da..." },
+        { cod: "0020", grp: "ZEO-NTC", desc: "Analisar Carga MT/BT Orça..." },
+        { cod: "0550", grp: "ZEO-RLC", desc: "Encaminhar Orçamento Co..." },
+        { cod: "0557", grp: "ZEO-RLC", desc: "Realizar Vistoria/Conexão ..." },
+        { cod: "0083", grp: "ZEO-EXP", desc: "Corrigir /Completar inform..." },
+        { cod: "0019", grp: "ZEO-NTC", desc: "Analisar Documentação MT/BT" },
+        {
+          cod: "0080",
+          grp: "ZEO-EXP",
+          desc: "Elaborar Orçamento de Co...",
+          textoMedida: "VER NOTA >>>>",
+        },
+        {
+          cod: "0070",
+          grp: "ZEO-EXP",
+          desc: "Elaborar Solução de Cone...",
+          textoMedida: "OK",
+        },
+        { cod: "0590", grp: "ZEO-RLC", desc: "Encaminhar Orçamento Co..." },
+      ];
+
+      function generateMedidas(rng, seedKey) {
+        const baseId = String(seedKey).padStart(10, "0");
+        const baseDate = new Date(2026, 0, 23);
+        return MED_TEMPLATES.map((m, i) => {
+          const planIni = new Date(baseDate.getTime() + i * 3 * 86400000);
+          const planFim = new Date(
+            planIni.getTime() + (5 + Math.floor(rng() * 8)) * 86400000,
+          );
+          const concluido = i < 8;
+          const criadoPor = pick(rng, CRIADO_POR_OPTS);
+          const status = pick(rng, STATUS_USUARIOS);
+          return {
+            id: baseId + "190" + String(i + 1).padStart(3, "0"),
+            n: i + 1,
+            grpCodigo: m.grp,
+            codigo: m.cod,
+            texto: m.desc,
+            textoMedida: m.textoMedida || "",
+            statusUsuario: status,
+            dataPlanIni: formatDateBR(planIni),
+            fimPlanejado: formatDateBR(planFim),
+            responsavel: pick(rng, RESPONSAVEIS_MED),
+            concluidoPor: concluido ? pick(rng, CRIADO_POR_OPTS) : "",
+            dataConclusao: concluido
+              ? formatDateBR(new Date(planFim.getTime() + 86400000))
+              : "",
+            criadoPor: pick(rng, CRIADO_POR_OPTS),
+            criadoEm: formatDateBR(planIni),
+            criadoHora:
+              String(8 + Math.floor(rng() * 10)).padStart(2, "0") +
+              ":" +
+              String(Math.floor(rng() * 60)).padStart(2, "0"),
+            modificadoPor: pick(rng, CRIADO_POR_OPTS),
+            modificadoEm: formatDateBR(
+              new Date(planFim.getTime() + 14 * 86400000),
+            ),
+            selected: i === 0, // first row pre-selected like the screenshot
+          };
+        });
       }
 
       /* ============ TRAINING INDEX ============ */
@@ -1930,13 +2688,13 @@
               id: t.id + "-sub2",
               title: "sub2",
               desc: "Submódulo 2 — descreva aqui.",
-              available: false,
+              available: t.id === "navegacao-basica",
             },
             {
               id: t.id + "-sub3",
               title: "sub3",
               desc: "Submódulo 3 — descreva aqui.",
-              available: false,
+              available: t.id === "navegacao-basica",
             },
           ];
         }
@@ -2245,6 +3003,19 @@
                 <polyline points="2 12 12 17 22 12" />
               </svg>
             );
+          case "x":
+            return (
+              <svg {...props}>
+                <line x1="18" x2="6" y1="6" y2="18" />
+                <line x1="6" x2="18" y1="6" y2="18" />
+              </svg>
+            );
+          case "cursor":
+            return (
+              <svg {...props}>
+                <path d="m4 4 7 17 2.5-7L20 11.5 4 4z" fill={color} />
+              </svg>
+            );
           case "spinner":
             return (
               <svg {...props}>
@@ -2433,9 +3204,59 @@
         onBack,
         onOpenSolicitacao,
         onRegenerate,
+        onOpenTextEditor,
+        initialTab,
+        // tour controls
+        tour,
+        onTourEvent,
       }) {
-        const [mainTab, setMainTab] = useState("solicitacao");
+        const [mainTab, setMainTab] = useState(initialTab || "solicitacao");
         const [subTab, setSubTab] = useState("dados-comp");
+        const [selectedMedidaIdx, setSelectedMedidaIdx] = useState(0);
+        const [showStatusModal, setShowStatusModal] = useState(false);
+        const [showServicosMenu, setShowServicosMenu] = useState(false);
+        const [showCriarSubmenu, setShowCriarSubmenu] = useState(false);
+        const [showSelObjModal, setShowSelObjModal] = useState(false);
+        const [servicosBtnRect, setServicosBtnRect] = useState(null);
+
+        const handleTabClick = (tab) => {
+          setMainTab(tab);
+          onTourEvent && onTourEvent({ type: "tab-change", tab });
+        };
+
+        const handleSelectMedida = (idx) => {
+          setSelectedMedidaIdx(idx);
+          onTourEvent && onTourEvent({ type: "medida-selected", idx });
+        };
+
+        const handleOpenStatusModal = () => {
+          setShowStatusModal(true);
+          onTourEvent && onTourEvent({ type: "open-status-modal" });
+        };
+
+        const handleOpenServicos = (e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          setServicosBtnRect({ left: rect.left, top: rect.bottom + 4 });
+          setShowServicosMenu(true);
+          setShowCriarSubmenu(false);
+          onTourEvent && onTourEvent({ type: "open-servicos-menu" });
+        };
+
+        const handleOpenSelObj = () => {
+          setShowServicosMenu(false);
+          setShowCriarSubmenu(false);
+          setShowSelObjModal(true);
+          onTourEvent && onTourEvent({ type: "open-selecionar-objeto" });
+        };
+
+        const handleOpenTextEditor = (medida) => {
+          onOpenTextEditor && onOpenTextEditor(medida);
+        };
+
+        const handleOpenSolicitacaoLink = () => {
+          onTourEvent && onTourEvent({ type: "open-solicitacao" });
+          onOpenSolicitacao && onOpenSolicitacao();
+        };
 
         return (
           <Fragment>
@@ -2538,7 +3359,11 @@
               </button>
               <button className="tool-btn">Organização...</button>
               <button className="tool-btn">Seleção de contrato</button>
-              <button className="tool-btn">
+              <button
+                className="tool-btn"
+                data-tour-id="servicos-para-objeto"
+                onClick={handleOpenServicos}
+              >
                 Serviços para objeto <Icon name="chevron-down" size={12} />
               </button>
               <div className="right">
@@ -2605,7 +3430,8 @@
                   className={
                     "tab" + (mainTab === "solicitacao" ? " active" : "")
                   }
-                  onClick={() => setMainTab("solicitacao")}
+                  onClick={() => handleTabClick("solicitacao")}
+                  data-tour-id="tab-solicitacao"
                 >
                   <span className="tab-icon">
                     <Icon name="tab-solic" size={14} />
@@ -2616,7 +3442,7 @@
                   className={
                     "tab" + (mainTab === "solicitante" ? " active" : "")
                   }
-                  onClick={() => setMainTab("solicitante")}
+                  onClick={() => handleTabClick("solicitante")}
                 >
                   <span className="tab-icon">
                     <Icon name="tab-people" size={14} />
@@ -2627,7 +3453,7 @@
                   className={
                     "tab" + (mainTab === "localizacao" ? " active" : "")
                   }
-                  onClick={() => setMainTab("localizacao")}
+                  onClick={() => handleTabClick("localizacao")}
                 >
                   <span className="tab-icon">
                     <Icon name="tab-pin" size={14} />
@@ -2638,7 +3464,8 @@
                   className={
                     "tab" + (mainTab === "complementares" ? " active" : "")
                   }
-                  onClick={() => setMainTab("complementares")}
+                  onClick={() => handleTabClick("complementares")}
+                  data-tour-id="tab-complementares"
                 >
                   <span className="tab-icon">
                     <Icon name="tab-doc" size={14} />
@@ -2649,7 +3476,8 @@
                   className={
                     "tab" + (mainTab === "atividades" ? " active" : "")
                   }
-                  onClick={() => setMainTab("atividades")}
+                  onClick={() => handleTabClick("atividades")}
+                  data-tour-id="tab-atividades"
                 >
                   <span className="tab-icon">
                     <Icon name="tab-arrow" size={14} />
@@ -2658,7 +3486,8 @@
                 </div>
                 <div
                   className={"tab" + (mainTab === "acoes" ? " active" : "")}
-                  onClick={() => setMainTab("acoes")}
+                  onClick={() => handleTabClick("acoes")}
+                  data-tour-id="tab-acoes"
                 >
                   <span className="tab-icon">
                     <Icon name="tab-cog" size={14} />
@@ -2667,7 +3496,7 @@
                 </div>
                 <div
                   className={"tab" + (mainTab === "coletores" ? " active" : "")}
-                  onClick={() => setMainTab("coletores")}
+                  onClick={() => handleTabClick("coletores")}
                 >
                   <span className="tab-icon">
                     <Icon name="tab-cost" size={14} />
@@ -2683,28 +3512,76 @@
                   data={data}
                   subTab={subTab}
                   onSubTab={setSubTab}
-                  onOpenSolicitacao={onOpenSolicitacao}
+                  onOpenSolicitacao={handleOpenSolicitacaoLink}
                 />
               )}
-              {mainTab !== "solicitacao" && mainTab !== "complementares" && (
-                <div
-                  style={{
-                    padding: "24px 12px",
-                    color: "var(--text-secondary)",
-                    fontSize: 13,
-                  }}
-                >
-                  <em>
-                    Conteúdo da aba não implementado nesta demonstração visual.
-                  </em>
-                </div>
+              {mainTab === "atividades" && (
+                <AtividadesTab
+                  data={data}
+                  selectedIdx={selectedMedidaIdx}
+                  onSelect={handleSelectMedida}
+                  onOpenEditor={handleOpenTextEditor}
+                  onOpenStatusModal={handleOpenStatusModal}
+                />
               )}
+              {mainTab === "acoes" && (
+                <AcoesTab data={data} selectedIdx={selectedMedidaIdx} />
+              )}
+              {mainTab !== "solicitacao" &&
+                mainTab !== "complementares" &&
+                mainTab !== "atividades" &&
+                mainTab !== "acoes" && (
+                  <div
+                    style={{
+                      padding: "24px 12px",
+                      color: "var(--text-secondary)",
+                      fontSize: 13,
+                    }}
+                  >
+                    <em>
+                      Conteúdo da aba não implementado nesta demonstração
+                      visual.
+                    </em>
+                  </div>
+                )}
             </div>
 
             <div className="det-footer">
               <button className="sap-btn primary">Gravar</button>
               <button className="sap-btn">Cancelar</button>
             </div>
+
+            {/* === Modals & menus === */}
+            {showServicosMenu && (
+              <ServicosParaObjetoMenu
+                anchorRect={servicosBtnRect}
+                showCriarSubmenu={showCriarSubmenu}
+                onCriarHover={() => setShowCriarSubmenu(true)}
+                onCriarLeave={() => setShowCriarSubmenu(false)}
+                onClickServicos={handleOpenSelObj}
+                onClose={() => {
+                  setShowServicosMenu(false);
+                  setShowCriarSubmenu(false);
+                }}
+              />
+            )}
+            {showSelObjModal && (
+              <SelecionarObjetoModal
+                data={data}
+                onClose={() => setShowSelObjModal(false)}
+                onConfirm={() => setShowSelObjModal(false)}
+              />
+            )}
+            {showStatusModal && (
+              <DefinirStatusModal
+                medida={data.medidas[selectedMedidaIdx]}
+                onClose={() => setShowStatusModal(false)}
+                onConfirm={() => {
+                  setShowStatusModal(false);
+                  onTourEvent && onTourEvent({ type: "confirm-status" });
+                }}
+              />
+            )}
           </Fragment>
         );
       }
@@ -2985,6 +3862,7 @@
                     <div className="label">Solicitação:</div>
                     <a
                       className="sap-link"
+                      data-tour-id="solicitacao-link"
                       onClick={onOpenSolicitacao}
                       title="Abrir solicitação"
                     >
@@ -4077,15 +4955,1031 @@
         );
       }
 
+      /* ============ ATIVIDADES TAB ============ */
+      function AtividadesTab({
+        data,
+        selectedIdx,
+        onSelect,
+        onOpenEditor,
+        onOpenStatusModal,
+      }) {
+        const medidas = data.medidas || [];
+        const emptyRows = 5;
+
+        return (
+          <div style={{ padding: "4px 0" }}>
+            <div className="med-table-wrap" data-tour-id="med-table">
+              <table className="med-table">
+                <thead>
+                  <tr>
+                    <th className="row-cb"></th>
+                    <th>Nº</th>
+                    <th>GrpCódi...</th>
+                    <th>Cód...</th>
+                    <th>Texto do código da medida</th>
+                    <th>Texto medida</th>
+                    <th>Tx...</th>
+                    <th>Status do us...</th>
+                    <th>Data planj.iní...</th>
+                    <th>Fim planejado</th>
+                    <th>Responsável</th>
+                    <th>Concluído por</th>
+                    <th>Data conclusão</th>
+                    <th>Criado por</th>
+                    <th>Criado em</th>
+                    <th>Criad...</th>
+                    <th>Modificado por</th>
+                    <th>Modificado em</th>
+                    <th style={{ width: "30px" }}></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {medidas.map((m, i) => (
+                    <tr
+                      key={m.id}
+                      className={selectedIdx === i ? "selected" : ""}
+                      onClick={() => onSelect(i)}
+                      data-tour-id={i === 0 ? "med-row-0" : undefined}
+                    >
+                      <td className="row-cb">
+                        <input
+                          type="checkbox"
+                          checked={selectedIdx === i}
+                          readOnly
+                        />
+                      </td>
+                      <td>{m.n}</td>
+                      <td>{m.grpCodigo}</td>
+                      <td>{m.codigo}</td>
+                      <td className="truncate">{m.texto}</td>
+                      <td>{m.textoMedida}</td>
+                      <td
+                        className="pencil-cell"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenEditor(m);
+                        }}
+                        data-tour-id={i === 0 ? "med-pencil-text" : undefined}
+                        title="Modificar texto descritivo da medida"
+                      >
+                        <Icon name="edit" size={13} />
+                      </td>
+                      <td>{m.statusUsuario}</td>
+                      <td>{m.dataPlanIni}</td>
+                      <td>{m.fimPlanejado}</td>
+                      <td>{m.responsavel}</td>
+                      <td>{m.concluidoPor}</td>
+                      <td>{m.dataConclusao}</td>
+                      <td>{m.criadoPor}</td>
+                      <td>{m.criadoEm}</td>
+                      <td>{m.criadoHora}</td>
+                      <td>{m.modificadoPor}</td>
+                      <td>{m.modificadoEm}</td>
+                      <td></td>
+                    </tr>
+                  ))}
+                  {Array.from({ length: emptyRows }).map((_, i) => (
+                    <tr key={"e" + i} className="empty-row">
+                      <td className="row-cb">
+                        <input type="checkbox" disabled />
+                      </td>
+                      <td className="empty-num">0</td>
+                      <td colSpan={17}></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <div className="med-toolbar">
+                <div className="tool-icon" title="Detalhe">
+                  <Icon name="search" size={14} />
+                </div>
+                <div className="tool-icon" title="Visão">
+                  <Icon name="table" size={14} />
+                </div>
+                <div className="tool-icon" title="Layout">
+                  <Icon name="list" size={14} />
+                </div>
+                <div className="tool-icon" title="Remover">
+                  <Icon name="info" size={14} />
+                </div>
+                <div className="tool-icon" title="Mover para cima">
+                  <Icon name="back-prev" size={14} />
+                </div>
+                <div className="tool-icon" title="Mover para baixo">
+                  <Icon name="fwd" size={14} />
+                </div>
+                <div className="tool-icon" title="Personalizar">
+                  <Icon name="edit" size={14} />
+                </div>
+                <div style={{ flex: "0 0 24px" }} />
+                <div
+                  className={
+                    "tool-icon" + (selectedIdx == null ? " disabled" : "")
+                  }
+                  title="Concluir / Definir status da medida"
+                  onClick={() => selectedIdx != null && onOpenStatusModal()}
+                  data-tour-id="med-pencil-status"
+                  style={{ background: "#fbeaea", color: "#c8412c" }}
+                >
+                  <Icon name="edit" size={14} />
+                </div>
+                <div className="tool-icon" title="Informação">
+                  <Icon name="info" size={14} />
+                </div>
+                <div className="pager-info">
+                  <span>Entrada:</span>{" "}
+                  <strong>{(selectedIdx ?? 0) + 1}</strong>
+                  <span>de:</span> <strong>{medidas.length}</strong>
+                  <div className="tool-icon" title="Primeira">
+                    <Icon name="back-prev" size={13} />
+                  </div>
+                  <div className="tool-icon" title="Anterior">
+                    <Icon name="back-prev" size={13} />
+                  </div>
+                  <div className="tool-icon" title="Próxima">
+                    <Icon name="fwd" size={13} />
+                  </div>
+                  <div className="tool-icon" title="Última">
+                    <Icon name="fwd" size={13} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ AÇÕES TAB ============ */
+      function AcoesTab({ data, selectedIdx }) {
+        const medida = data.medidas?.[selectedIdx];
+
+        return (
+          <div style={{ padding: "4px 0" }}>
+            {medida && (
+              <div className="acoes-subheader" data-tour-id="acoes-header">
+                <span className="label">Nº:</span>
+                <strong>{(selectedIdx ?? 0) + 12}</strong>
+                <span>{medida.grpCodigo}</span>
+                <span>{medida.codigo}</span>
+                <span>{medida.texto.replace("...", "").trim()}</span>
+              </div>
+            )}
+            <div className="acoes-table-wrap" data-tour-id="acoes-table">
+              <table className="acoes-table">
+                <thead>
+                  <tr>
+                    <th className="row-radio"></th>
+                    <th>Ação</th>
+                    <th>US Real</th>
+                    <th>Resp. Téc</th>
+                    <th>MOP</th>
+                    <th>Contrato</th>
+                    <th>Cod.Contratada/Sub</th>
+                    <th>Contratada/Subcontratada</th>
+                    <th>Início Previsto</th>
+                    <th>Duração (dias)</th>
+                    <th>Término previsto</th>
+                    <th>Término real</th>
+                    <th>% executado</th>
+                    <th>Motivo atraso</th>
+                    <th>Observação</th>
+                    <th>Medida</th>
+                    <th>Seq</th>
+                    <th>Data</th>
+                    <th>Responsável</th>
+                    <th>ID da ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Array.from({ length: 20 }).map((_, i) => (
+                    <tr key={i}>
+                      <td className="row-radio">
+                        <input type="radio" disabled />
+                      </td>
+                      <td colSpan={7}></td>
+                      <td className="inicio-cell"></td>
+                      <td colSpan={11}></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div style={{ display: "flex", gap: 4, padding: "6px 0" }}>
+              <div className="tool-icon" title="Remover">
+                <Icon name="info" size={14} />
+              </div>
+              <div className="tool-icon" title="Calendário">
+                <Icon name="table" size={14} />
+              </div>
+              <div className="tool-icon" title="Editar">
+                <Icon name="edit" size={14} />
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ DEFINIR STATUS MODAL ============ */
+      const STATUS_NUMERADOS = [
+        { num: "10", abr: "ABER", txt: "Aberta", selected: true },
+        { num: "20", abr: "ANDM", txt: "Andamento" },
+        { num: "30", abr: "CONC", txt: "Concluída" },
+        { num: "40", abr: "ENCE", txt: "Encerrada" },
+        { num: "50", abr: "CANC", txt: "Cancelada" },
+      ];
+      const STATUS_SEM_NUMERO = [
+        { abr: "AFRD", txt: "Afastamento de Rede" },
+        { abr: "CCCE", txt: "Com COOD. e com ERD" },
+        { abr: "CCSE", txt: "Com COOD e sem ERD" },
+        { abr: "COBR", txt: "Com Obras" },
+        { abr: "COIF", txt: "Com Inversão de Fluxo" },
+        { abr: "CORE", txt: "Correção pela Expansão" },
+      ];
+
+      function DefinirStatusModal({ medida, onClose, onConfirm }) {
+        const [selectedNum, setSelectedNum] = useState("10");
+
+        return (
+          <div className="modal-overlay" onClick={onClose}>
+            <div
+              className="modal"
+              onClick={(e) => e.stopPropagation()}
+              style={{ minWidth: 520 }}
+            >
+              <div className="modal-header">
+                <h3>Definir status do usuário</h3>
+                <span className="modal-close" onClick={onClose}>
+                  <Icon name="x" size={16} />
+                </span>
+              </div>
+              <div className="modal-body" data-tour-id="status-modal-body">
+                <div className="modal-section-title">
+                  Status usuário com número status
+                </div>
+                <table className="modal-table">
+                  <thead>
+                    <tr>
+                      <th style={{ width: 30 }}>X</th>
+                      <th style={{ width: 40 }}>Nº</th>
+                      <th style={{ width: 60 }}>Abr...</th>
+                      <th>Txt.status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {STATUS_NUMERADOS.map((s) => (
+                      <tr
+                        key={s.num}
+                        className={selectedNum === s.num ? "selected" : ""}
+                        onClick={() => setSelectedNum(s.num)}
+                      >
+                        <td className="row-radio">
+                          <input
+                            type="radio"
+                            checked={selectedNum === s.num}
+                            readOnly
+                          />
+                        </td>
+                        <td>{s.num}</td>
+                        <td>{s.abr}</td>
+                        <td>{s.txt}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                <div className="modal-section-title">
+                  Status usuário sem número status
+                </div>
+                <table className="modal-table">
+                  <thead>
+                    <tr>
+                      <th style={{ width: 30 }}>X</th>
+                      <th style={{ width: 60 }}>Abr...</th>
+                      <th>Txt.status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {STATUS_SEM_NUMERO.map((s) => (
+                      <tr key={s.abr}>
+                        <td className="row-radio">
+                          <input type="checkbox" readOnly />
+                        </td>
+                        <td>{s.abr}</td>
+                        <td>{s.txt}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="modal-footer">
+                <span
+                  className="icon-action confirm"
+                  onClick={onConfirm}
+                  title="Confirmar"
+                  data-tour-id="status-confirm"
+                >
+                  <Icon name="check" size={18} />
+                </span>
+                <span
+                  className="icon-action cancel"
+                  onClick={onClose}
+                  title="Cancelar"
+                >
+                  <Icon name="x" size={18} />
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ SELECIONAR UM OBJETO MODAL ============ */
+      function SelecionarObjetoModal({ data, onClose, onConfirm }) {
+        const [selectedIdx, setSelectedIdx] = useState(0);
+        const items = useMemo(() => {
+          const base =
+            "00" + (data.notaNumero || "").padStart(10, "0").slice(-10);
+          const medidasIds = (data.medidas || [])
+            .slice(0, 8)
+            .map((_, i) => base + "190" + String(i + 1).padStart(3, "0"));
+          return [
+            {
+              tipo: "Nota de serviço",
+              nome:
+                "00" +
+                (data.notaNumero || "").padStart(10, "0").slice(-10).slice(2),
+            },
+            ...medidasIds.map((id) => ({ tipo: "Medidas", nome: id })),
+            { tipo: "Medidas", nome: "VER NOTA >>>>" },
+          ];
+        }, [data]);
+
+        return (
+          <div className="modal-overlay" onClick={onClose}>
+            <div
+              className="modal"
+              onClick={(e) => e.stopPropagation()}
+              style={{ minWidth: 520, maxWidth: 560 }}
+            >
+              <div className="modal-header">
+                <h3>Selecionar um objeto</h3>
+                <span className="modal-close" onClick={onClose}>
+                  <Icon name="x" size={16} />
+                </span>
+              </div>
+              <div className="modal-body">
+                <div className="info-note">
+                  <span className="info-mark">i</span>
+                  <span>
+                    : Selecionar para executar a função selecionada um objeto de
+                    aplicação e pressionar 'Avançar'.
+                  </span>
+                </div>
+                <table className="modal-table">
+                  <thead>
+                    <tr>
+                      <th style={{ width: 30 }}></th>
+                      <th>Tipo de objeto</th>
+                      <th>Nome do objeto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {items.map((it, i) => (
+                      <tr
+                        key={i}
+                        className={selectedIdx === i ? "selected" : ""}
+                        onClick={() => setSelectedIdx(i)}
+                      >
+                        <td className="row-radio">
+                          <input
+                            type="radio"
+                            checked={selectedIdx === i}
+                            readOnly
+                          />
+                        </td>
+                        <td>{it.tipo}</td>
+                        <td>{it.nome}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="modal-footer">
+                <span
+                  className="icon-action confirm"
+                  onClick={onConfirm}
+                  title="Avançar"
+                >
+                  <Icon name="check" size={18} />
+                </span>
+                <span
+                  className="icon-action cancel"
+                  onClick={onClose}
+                  title="Cancelar"
+                >
+                  <Icon name="x" size={18} />
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ SERVIÇOS PARA OBJETO DROPDOWN ============ */
+      function ServicosParaObjetoMenu({
+        anchorRect,
+        showCriarSubmenu,
+        onCriarHover,
+        onCriarLeave,
+        onClickServicos,
+        onClose,
+      }) {
+        if (!anchorRect) return null;
+
+        const menuStyle = {
+          left: anchorRect.left,
+          top: anchorRect.top,
+        };
+        // submenu opens to the right
+        const submenuStyle = {
+          left: anchorRect.left + 220,
+          top: anchorRect.top,
+        };
+
+        return (
+          <Fragment>
+            <div className="menu-overlay" onClick={onClose} />
+            <div className="dropdown-panel" style={menuStyle}>
+              <div className="dropdown-item" onMouseEnter={onCriarHover}>
+                <span>Criar...</span>
+                <Icon name="chevron-right" size={12} />
+              </div>
+              <div className="dropdown-item disabled">Lista de anexos</div>
+              <div className="dropdown-item">Nota pessoal</div>
+              <div className="dropdown-item">
+                <span>Enviar</span>
+                <Icon name="chevron-right" size={12} />
+              </div>
+              <div className="dropdown-section-label">Ligações</div>
+              <div className="dropdown-item">
+                <span>Workflow</span>
+                <Icon name="chevron-right" size={12} />
+              </div>
+              <div className="dropdown-item" onClick={onClickServicos}>
+                Meus objetos
+              </div>
+              <div className="dropdown-separator" />
+              <div className="dropdown-item">Ajuda para serviços de objeto</div>
+            </div>
+
+            {showCriarSubmenu && (
+              <div
+                className="dropdown-panel"
+                style={submenuStyle}
+                onMouseLeave={onCriarLeave}
+              >
+                <div className="dropdown-item">Criar anexo</div>
+                <div className="dropdown-item">Criar nota</div>
+                <div className="dropdown-item">
+                  Criar documento externo (URL)
+                </div>
+                <div className="dropdown-item">Arquivar Business Document</div>
+                <div className="dropdown-item disabled">
+                  Entrar código de barras
+                </div>
+              </div>
+            )}
+          </Fragment>
+        );
+      }
+
+      /* ============ MODIFICAR TEXTO DESCRITIVO PARA MEDIDA (Editor) ============ */
+      function ModificarTextoMedidaPage({ medida, onBack }) {
+        const rulerStr =
+          "....+....1....+....2....+....3....+....4....+....5....+....6....+......";
+        // a brazil-style timestamp
+        const ts = new Date().toLocaleString("pt-BR").replace(",", "");
+        const timestampLine = ts + " BRAZIL (E261211)";
+
+        return (
+          <div className="text-editor-page">
+            <div className="det-header">
+              <div className="back-arrow" onClick={onBack} title="Voltar">
+                <Icon name="arrow-left" size={18} />
+              </div>
+              <div
+                className="sap-logo"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: "var(--sap-blue-logo)",
+                  color: "white",
+                  fontWeight: 700,
+                  fontSize: 13,
+                  width: 44,
+                  height: 22,
+                  letterSpacing: "0.5px",
+                  transform: "skewX(-12deg)",
+                  borderRadius: 1,
+                }}
+              >
+                <span style={{ transform: "skewX(12deg)" }}>SAP</span>
+              </div>
+              <div className="det-title">
+                Modificar Texto descritivo para medida:{" "}
+                {medida?.id || "0012471495190001"} ld...
+                <Icon name="chevron-down" size={14} />
+              </div>
+              <div className="spacer" />
+              <div className="icon-btn">
+                <Icon name="help" size={18} />
+              </div>
+              <div className="icon-btn">
+                <Icon name="bell" size={18} />
+              </div>
+              <div className="avatar">
+                <Icon name="user" size={18} />
+              </div>
+            </div>
+
+            <div className="text-editor-toolbar">
+              <button className="tool-btn">
+                Menu <Icon name="chevron-down" size={12} />
+              </button>
+              <div className="tool-icon">
+                <Icon name="search" size={16} />
+              </div>
+              <button className="tool-btn">Inserir</button>
+              <button className="tool-btn">Linha</button>
+              <button className="tool-btn">Formatar</button>
+              <button className="tool-btn">Página</button>
+              <div className="tool-icon">
+                <Icon name="doc-attach" size={16} />
+              </div>
+              <div className="tool-icon">
+                <Icon name="external" size={16} />
+              </div>
+              <div className="tool-icon">
+                <Icon name="table" size={16} />
+              </div>
+              <div className="tool-icon">
+                <Icon name="info" size={16} />
+              </div>
+              <div className="tool-icon">
+                <Icon name="info" size={16} />
+              </div>
+              <button className="tool-btn">
+                Serviços para objeto <Icon name="chevron-down" size={12} />
+              </button>
+              <div style={{ flex: 1 }} />
+              <div className="tool-icon">
+                <Icon name="search" size={16} />
+              </div>
+              <div className="tool-icon">
+                <Icon name="search" size={16} />
+              </div>
+              <div className="tool-icon">
+                <Icon name="print" size={16} />
+              </div>
+              <span
+                className="sair-btn"
+                style={{
+                  color: "var(--link)",
+                  cursor: "pointer",
+                  padding: "0 8px",
+                }}
+                onClick={onBack}
+              >
+                Sair
+              </span>
+            </div>
+
+            <div className="text-editor-body">
+              <table className="editor-table">
+                <thead>
+                  <tr>
+                    <th className="col-f">F...</th>
+                    <th className="col-l">L...</th>
+                    <th>Txt.linha</th>
+                    <th className="col-r">L...</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="ruler-cell"></td>
+                    <td className="marker"></td>
+                    <td className="ruler-cell">{rulerStr}</td>
+                    <td className="ruler-cell"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td className="marker"></td>
+                    <td className="text-line">{timestampLine}</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td className="marker">*</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  {Array.from({ length: 28 }).map((_, i) => (
+                    <tr key={i} className="empty-line">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="editor-status-line">
+                ---------------- PM_QMEL --------------------- Linhas 1 - 2 / 2
+                -------------
+              </div>
+            </div>
+
+            <div className="det-footer">
+              <button className="sap-btn primary">Parágrafo</button>
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ TOUR BANNER (top strip) ============ */
+      function TourBanner({ tour }) {
+        if (!tour) return null;
+        const step = tour.steps[tour.currentStep] || {};
+        return (
+          <div className="tour-banner">
+            <span className="tour-label">Treinamento</span>
+            <span className="tour-title">
+              {tour.title} — Passo {tour.currentStep + 1} de {tour.steps.length}
+            </span>
+            <button className="tour-exit" onClick={tour.onExit}>
+              Pular tutorial
+            </button>
+          </div>
+        );
+      }
+
+      /* ============ TOUR SPOTLIGHT (global overlay) ============ */
+      function TourSpotlight({ tour }) {
+        const [rect, setRect] = useState(null);
+
+        React.useEffect(() => {
+          if (!tour) return;
+          const step = tour.steps[tour.currentStep];
+          if (!step || !step.target) {
+            setRect(null);
+            return;
+          }
+
+          // Poll for the element to appear (handles re-renders)
+          let cancelled = false;
+          let attempts = 0;
+          const find = () => {
+            if (cancelled) return;
+            const el = document.querySelector(
+              `[data-tour-id="${step.target}"]`,
+            );
+            if (el) {
+              const r = el.getBoundingClientRect();
+              setRect({
+                left: r.left,
+                top: r.top,
+                width: r.width,
+                height: r.height,
+              });
+              // Attach click handler ONLY if no waitFor is defined.
+              // If waitFor is defined, the parent fires onTourEvent which advances the tour.
+              // Having both would double-advance.
+              if (step.advanceOn === "click" && !step.waitFor) {
+                const handler = () => {
+                  tour.onAdvance && tour.onAdvance();
+                };
+                el.addEventListener("click", handler, { once: true });
+                return () => el.removeEventListener("click", handler);
+              }
+            } else if (attempts < 20) {
+              attempts++;
+              setTimeout(find, 80);
+            }
+          };
+          find();
+
+          // also update on resize/scroll
+          const onResize = () => {
+            const el = document.querySelector(
+              `[data-tour-id="${step.target}"]`,
+            );
+            if (el) {
+              const r = el.getBoundingClientRect();
+              setRect({
+                left: r.left,
+                top: r.top,
+                width: r.width,
+                height: r.height,
+              });
+            }
+          };
+          window.addEventListener("resize", onResize);
+          window.addEventListener("scroll", onResize, true);
+          return () => {
+            cancelled = true;
+            window.removeEventListener("resize", onResize);
+            window.removeEventListener("scroll", onResize, true);
+          };
+        }, [tour && tour.currentStep, tour && tour.steps]);
+
+        if (!tour) return null;
+        const step = tour.steps[tour.currentStep];
+        if (!step) return null;
+
+        // If no spotlight (intro step), show centered tooltip
+        if (!rect) {
+          return (
+            <div
+              className="tour-spotlight-overlay"
+              style={{ pointerEvents: "auto" }}
+            >
+              <div className="tour-mask" />
+              <div
+                className="tour-tooltip"
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                <div className="step-label">Passo {tour.currentStep + 1}</div>
+                <h4>{step.title}</h4>
+                <p>{step.body}</p>
+                <div className="tour-actions">
+                  <span className="tour-progress">
+                    {tour.currentStep + 1} / {tour.steps.length}
+                  </span>
+                  <div className="tour-buttons">
+                    <button className="tour-skip" onClick={tour.onExit}>
+                      Pular
+                    </button>
+                    <button
+                      className="tour-btn primary"
+                      onClick={tour.onAdvance}
+                    >
+                      {tour.currentStep === tour.steps.length - 1
+                        ? "Concluir"
+                        : "Avançar"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        // Tooltip positioning: prefer below the target, else above
+        const VW = window.innerWidth;
+        const VH = window.innerHeight;
+        const ttWidth = 320;
+        const ttHeight = 160;
+        let ttLeft = rect.left + rect.width / 2 - ttWidth / 2;
+        let ttTop = rect.top + rect.height + 16;
+        let arrowOnTop = true;
+        if (ttTop + ttHeight > VH - 16) {
+          ttTop = rect.top - ttHeight - 16;
+          arrowOnTop = false;
+        }
+        ttLeft = Math.max(12, Math.min(ttLeft, VW - ttWidth - 12));
+
+        return (
+          <div className="tour-spotlight-overlay">
+            {/* SVG mask cutting out a rect around the target */}
+            <svg
+              width={VW}
+              height={VH}
+              style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+            >
+              <defs>
+                <mask id="tour-mask-cut">
+                  <rect width="100%" height="100%" fill="white" />
+                  <rect
+                    x={rect.left - 6}
+                    y={rect.top - 6}
+                    width={rect.width + 12}
+                    height={rect.height + 12}
+                    rx="6"
+                    ry="6"
+                    fill="black"
+                  />
+                </mask>
+              </defs>
+              <rect
+                width="100%"
+                height="100%"
+                fill="rgba(0,0,0,0.5)"
+                mask="url(#tour-mask-cut)"
+              />
+            </svg>
+
+            <div
+              className="tour-spotlight"
+              style={{
+                left: rect.left - 6,
+                top: rect.top - 6,
+                width: rect.width + 12,
+                height: rect.height + 12,
+              }}
+            />
+
+            <div
+              className="tour-tooltip"
+              style={{ left: ttLeft, top: ttTop, pointerEvents: "auto" }}
+            >
+              <div className="step-label">Passo {tour.currentStep + 1}</div>
+              <h4>{step.title}</h4>
+              <p>{step.body}</p>
+              <div className="tour-actions">
+                <span className="tour-progress">
+                  {tour.currentStep + 1} / {tour.steps.length}
+                </span>
+                <div className="tour-buttons">
+                  <button className="tour-skip" onClick={tour.onExit}>
+                    Pular
+                  </button>
+                  {step.advanceOn !== "click" && (
+                    <button
+                      className="tour-btn primary"
+                      onClick={tour.onAdvance}
+                    >
+                      {tour.currentStep === tour.steps.length - 1
+                        ? "Concluir"
+                        : "Avançar"}
+                    </button>
+                  )}
+                  {step.advanceOn === "click" && (
+                    <span
+                      style={{
+                        fontSize: 11,
+                        color: "var(--text-secondary)",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      Clique no item destacado
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      /* ============ SUBMODULE TOURS ============ */
+      /* Tour steps for each guided submodule. Each step has:
+   - target: data-tour-id selector (or null for intro screen)
+   - title, body: tooltip content
+   - advanceOn: "click" (user clicks the highlighted element) or "next" (button)
+   - waitFor: optional event from onTourEvent that advances the step
+*/
+      const TOUR_STEPS = {
+        "navegacao-basica-sub1": {
+          title: "sub1 — Acessar Solicitação via Dados Complementares",
+          steps: [
+            {
+              target: null,
+              title: "Bem-vindo!",
+              body: "Vamos aprender a navegar até os detalhes da Solicitação através da aba Dados Complementares. Clique em Avançar para começar.",
+              advanceOn: "next",
+            },
+            {
+              target: "tab-complementares",
+              title: "Aba Dados Complementares",
+              body: "Clique na aba Dados Complementares para visualizar os dados técnicos da nota.",
+              advanceOn: "click",
+              waitFor: { type: "tab-change", tab: "complementares" },
+            },
+            {
+              target: "solicitacao-link",
+              title: "Link da Solicitação",
+              body: "Aqui você encontra o número da Solicitação vinculada a esta nota. Clique nele para abrir os detalhes.",
+              advanceOn: "click",
+              waitFor: { type: "open-solicitacao" },
+            },
+            {
+              target: null,
+              title: "Solicitação aberta",
+              body: "Pronto! Você acessou a tela de detalhes da Solicitação. Aqui ficam todos os dados do solicitante, endereço, características técnicas e mais.",
+              advanceOn: "next",
+            },
+          ],
+        },
+        "navegacao-basica-sub2": {
+          title: "sub2 — Conclusão de medidas",
+          steps: [
+            {
+              target: null,
+              title: "Bem-vindo!",
+              body: "Vamos aprender a abrir a janela de conclusão (status) de uma medida. Clique em Avançar para começar.",
+              advanceOn: "next",
+            },
+            {
+              target: "tab-atividades",
+              title: "Aba Atividades",
+              body: "Clique na aba Atividades para ver a lista de medidas associadas à nota.",
+              advanceOn: "click",
+              waitFor: { type: "tab-change", tab: "atividades" },
+            },
+            {
+              target: "med-row-0",
+              title: "Selecione uma medida",
+              body: "Clique na primeira linha da tabela para selecionar a medida que deseja concluir.",
+              advanceOn: "click",
+              waitFor: { type: "medida-selected", idx: 0 },
+            },
+            {
+              target: "med-pencil-status",
+              title: "Ícone de conclusão",
+              body: "Com a medida selecionada, clique no ícone do lápis (em vermelho) na barra inferior para abrir a janela de conclusão.",
+              advanceOn: "click",
+              waitFor: { type: "open-status-modal" },
+            },
+            {
+              target: "status-modal-body",
+              title: "Definir status do usuário",
+              body: "Esta é a janela onde você define o status da medida. Selecione o status desejado e confirme com o ✓ verde.",
+              advanceOn: "next",
+            },
+            {
+              target: null,
+              title: "Concluído!",
+              body: "Você aprendeu a abrir a janela de conclusão de medidas. Para finalizar, basta confirmar a escolha do status.",
+              advanceOn: "next",
+            },
+          ],
+        },
+        "navegacao-basica-sub3": {
+          title: "sub3 — Verificar ações de uma medida",
+          steps: [
+            {
+              target: null,
+              title: "Bem-vindo!",
+              body: "Vamos aprender a verificar as ações vinculadas a uma medida. Clique em Avançar para começar.",
+              advanceOn: "next",
+            },
+            {
+              target: "tab-atividades",
+              title: "Aba Atividades",
+              body: "Acesse a aba Atividades para ver a lista de medidas.",
+              advanceOn: "click",
+              waitFor: { type: "tab-change", tab: "atividades" },
+            },
+            {
+              target: "med-row-0",
+              title: "Selecione uma medida",
+              body: "Clique na primeira medida para selecioná-la. As ações que serão exibidas a seguir pertencem a esta medida.",
+              advanceOn: "click",
+              waitFor: { type: "medida-selected", idx: 0 },
+            },
+            {
+              target: "tab-acoes",
+              title: "Aba Ações",
+              body: "Agora clique na aba Ações para visualizar todas as ações vinculadas à medida selecionada.",
+              advanceOn: "click",
+              waitFor: { type: "tab-change", tab: "acoes" },
+            },
+            {
+              target: "acoes-header",
+              title: "Cabeçalho da Ação",
+              body: "O cabeçalho mostra o código da medida selecionada (Nº, grupo, código e descrição).",
+              advanceOn: "next",
+            },
+            {
+              target: "acoes-table",
+              title: "Tabela de Ações",
+              body: "Esta tabela lista todas as ações daquela medida, com colunas como Ação, Responsável Técnico, Contrato, Datas, Status e Observações.",
+              advanceOn: "next",
+            },
+            {
+              target: null,
+              title: "Concluído!",
+              body: "Você aprendeu a navegar entre Atividades e Ações para verificar o detalhe de uma medida.",
+              advanceOn: "next",
+            },
+          ],
+        },
+      };
+
       /* ============ APP ============ */
       function App() {
-        // route: training-index | submodule-index | home | nota-input | nota-detail | solicitacao
+        // route: training-index | submodule-index | home | nota-input | nota-detail | solicitacao | text-editor
         const [route, setRoute] = useState({ page: "training-index" });
         const [seed, setSeed] = useState("1252714058");
 
-        // Persistent progress { [trainingId]: { [submoduleId]: true } }
+        // Persistent progress
         const [progress, setProgress] = useState(() => loadProgress());
-        // Helper that mutates and persists
         const markSubmoduleDone = useCallback((trainingId, submoduleId) => {
           setProgress((prev) => {
             const next = {
@@ -4100,8 +5994,16 @@
           });
         }, []);
 
-        // Track which training+submodule we're running (so completion can mark progress)
-        const [activeSubmodule, setActiveSubmodule] = useState(null); // { trainingId, submoduleId }
+        // Active submodule (controls tour and progress crediting)
+        const [activeSubmodule, setActiveSubmodule] = useState(null);
+
+        // Tour state
+        const [tourStep, setTourStep] = useState(0);
+        const [tourActive, setTourActive] = useState(false);
+        const activeTour = useMemo(() => {
+          if (!tourActive || !activeSubmodule) return null;
+          return TOUR_STEPS[activeSubmodule.submoduleId] || null;
+        }, [tourActive, activeSubmodule]);
 
         const dataset = useMemo(() => generateDataset(seed), [seed]);
         const visibleData = useMemo(
@@ -4113,41 +6015,37 @@
           [dataset, seed],
         );
 
+        // Text editor target (which medida is being edited)
+        const [editorMedida, setEditorMedida] = useState(null);
+
         // === Navigation ===
         const goTrainingIndex = useCallback(() => {
           setActiveSubmodule(null);
+          setTourActive(false);
+          setTourStep(0);
           setRoute({ page: "training-index" });
         }, []);
 
-        // Click on a training card -> go to its submodule list
         const openTraining = useCallback((trainingId) => {
           const t = TRAININGS.find((x) => x.id === trainingId);
           if (!t) return;
           setRoute({ page: "submodule-index", trainingId });
         }, []);
 
-        // Click on a submodule -> start the corresponding flow
-        // Currently only "navegacao-basica" has a flow implemented; others reuse the same demo
         const startSubmodule = useCallback((trainingId, submoduleId) => {
           setActiveSubmodule({ trainingId, submoduleId });
-          setRoute({ page: "home", trainingId, submoduleId });
+          setTourStep(0);
+          setTourActive(!!TOUR_STEPS[submoduleId]);
+          // sub1 starts on Dados Solicitação; sub2 and sub3 also start there
+          // (the tour will guide users to switch tabs)
+          setRoute({
+            page: "nota-detail",
+            trainingId,
+            submoduleId,
+            initialTab: "solicitacao",
+          });
         }, []);
 
-        // Submodule index navigation
-        const goSubmoduleIndex = useCallback(() => {
-          if (activeSubmodule) {
-            setRoute({
-              page: "submodule-index",
-              trainingId: activeSubmodule.trainingId,
-            });
-          } else {
-            goTrainingIndex();
-          }
-        }, [activeSubmodule, goTrainingIndex]);
-
-        // Going home (within the flow) means returning to the submodule index and marking the
-        // submodule as completed. Treat reaching SAP "home" as "navigated" but completion
-        // happens when the user explicitly goes back from the SAP flow (via the back arrow).
         const goHome = useCallback(() => setRoute({ page: "home" }), []);
         const goNotaInput = useCallback(
           () => setRoute({ page: "nota-input" }),
@@ -4166,14 +6064,24 @@
           [],
         );
 
-        // When leaving the SAP flow (back to home or training index), mark the current
-        // submodule as done if there was one active.
+        const openTextEditor = useCallback((medida) => {
+          setEditorMedida(medida);
+          setRoute({ page: "text-editor" });
+        }, []);
+        const closeTextEditor = useCallback(
+          () => setRoute({ page: "nota-detail" }),
+          [],
+        );
+
+        // Exit current SAP flow (back to submodule index, marking sub as done if applicable)
         const exitFlow = useCallback(() => {
           if (activeSubmodule) {
             markSubmoduleDone(
               activeSubmodule.trainingId,
               activeSubmodule.submoduleId,
             );
+            setTourActive(false);
+            setTourStep(0);
             setRoute({
               page: "submodule-index",
               trainingId: activeSubmodule.trainingId,
@@ -4191,62 +6099,135 @@
           });
         }, []);
 
+        // === Tour controls ===
+        const advanceTour = useCallback(() => {
+          setTourStep((prev) => {
+            const steps = activeTour?.steps || [];
+            if (prev + 1 >= steps.length) {
+              // last step → mark done and return to submodule index
+              if (activeSubmodule) {
+                markSubmoduleDone(
+                  activeSubmodule.trainingId,
+                  activeSubmodule.submoduleId,
+                );
+              }
+              setTourActive(false);
+              setRoute((r) =>
+                activeSubmodule
+                  ? {
+                      page: "submodule-index",
+                      trainingId: activeSubmodule.trainingId,
+                    }
+                  : { page: "training-index" },
+              );
+              return 0;
+            }
+            return prev + 1;
+          });
+        }, [activeTour, activeSubmodule, markSubmoduleDone]);
+
+        const exitTour = useCallback(() => {
+          setTourActive(false);
+          setTourStep(0);
+        }, []);
+
+        // Handle events from NotaDetailPage to auto-advance tour
+        const handleTourEvent = useCallback(
+          (evt) => {
+            if (!tourActive || !activeTour) return;
+            const step = activeTour.steps[tourStep];
+            if (!step || !step.waitFor) return;
+            // simple shallow match
+            const w = step.waitFor;
+            const matches = Object.keys(w).every((k) => evt[k] === w[k]);
+            if (matches) {
+              // small delay so the UI can update before advancing
+              setTimeout(() => advanceTour(), 200);
+            }
+          },
+          [tourActive, activeTour, tourStep, advanceTour],
+        );
+
+        // Build the tour object passed to the banner / spotlight
+        const tour = activeTour
+          ? {
+              title: activeTour.title,
+              steps: activeTour.steps,
+              currentStep: tourStep,
+              onAdvance: advanceTour,
+              onExit: exitTour,
+            }
+          : null;
+
+        // === Routing ===
+        let page;
         if (route.page === "training-index") {
-          return (
+          page = (
             <TrainingIndexPage
               progress={progress}
               onOpenTraining={openTraining}
             />
           );
-        }
-        if (route.page === "submodule-index") {
+        } else if (route.page === "submodule-index") {
           const training = TRAININGS.find((t) => t.id === route.trainingId);
-          if (!training) {
-            // Defensive: bad route, fall back to index
-            return (
-              <TrainingIndexPage
-                progress={progress}
-                onOpenTraining={openTraining}
-              />
-            );
-          }
-          return (
+          page = training ? (
             <SubmoduleIndexPage
               training={training}
               progress={progress}
               onBackToIndex={goTrainingIndex}
               onStartSubmodule={startSubmodule}
             />
+          ) : (
+            <TrainingIndexPage
+              progress={progress}
+              onOpenTraining={openTraining}
+            />
           );
-        }
-        if (route.page === "home") {
-          return (
+        } else if (route.page === "home") {
+          page = (
             <HomePage onOpenModificar={goNotaInput} onBackToIndex={exitFlow} />
           );
-        }
-        if (route.page === "nota-input") {
-          return (
+        } else if (route.page === "nota-input") {
+          page = (
             <NotaInputPage
               initialValue={seed.split("|")[0]}
               onBack={goHome}
               onSubmit={goNotaDetail}
             />
           );
-        }
-        if (route.page === "nota-detail") {
-          return (
+        } else if (route.page === "nota-detail") {
+          page = (
             <NotaDetailPage
               data={visibleData}
-              onBack={goHome}
+              onBack={exitFlow}
               onOpenSolicitacao={goSolicitacao}
               onRegenerate={regenerate}
+              onOpenTextEditor={openTextEditor}
+              initialTab={route.initialTab}
+              tour={tour}
+              onTourEvent={handleTourEvent}
             />
           );
+        } else if (route.page === "solicitacao") {
+          page = <SolicitacaoPage data={visibleData} onBack={backToDetail} />;
+        } else if (route.page === "text-editor") {
+          page = (
+            <ModificarTextoMedidaPage
+              medida={editorMedida}
+              onBack={closeTextEditor}
+            />
+          );
+        } else {
+          page = null;
         }
-        if (route.page === "solicitacao") {
-          return <SolicitacaoPage data={visibleData} onBack={backToDetail} />;
-        }
-        return null;
+
+        return (
+          <Fragment>
+            {tour && <TourBanner tour={tour} />}
+            {page}
+            {tour && <TourSpotlight tour={tour} />}
+          </Fragment>
+        );
       }
 
       ReactDOM.createRoot(document.getElementById("root")).render(<App />);
