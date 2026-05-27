@@ -2676,7 +2676,7 @@
           id: "carga-i",
           title: "Treinamento carga – Conceitos básicos",
           desc: "Introdução aos principais conceitos e fundamentos necessários para atuação nos processos de carga.",
-          available: false,
+          available: true,
           difficulty: "Iniciante",
           platform: "web",
           hasSubmodules: true,
@@ -2715,30 +2715,50 @@
       });
 
       TRAININGS.forEach((t) => {
-        if (!t.submodules) {
-          t.submodules = [
-            {
-              id: t.id + "-details",
-              title: "Detalhes da Solicitação no SAP",
-              desc: "Aprenda a acessar e interpretar os detalhes da nota através da aba de Solicitação no SAP.",
-              available: t.id === "navegacao-basica",
-            },
-            {
-              id: t.id + "-med_status",
-              title: "Fechamento de Medidas",
-              desc: "Entenda como realizar o fechamento de medidas dentro do SAP de forma correta e segura.",
-              available: t.id === "navegacao-basica",
-            },
-            {
-              id: t.id + "-acoes",
-              title: "Cadastro de Ações em Medidas",
-              desc: "Veja como consultar e cadastrar ações vinculadas a uma medida no SAP.",
-              available: t.id === "navegacao-basica",
-            },
-          ];
+        switch (t.id) {
+          case "navegacao-basica":
+            t.submodules = [
+              {
+                id: `${t.id}-details`,
+                title: "Detalhes da Solicitação no SAP",
+                desc: "Aprenda a acessar e interpretar os detalhes da nota através da aba de Solicitação no SAP.",
+                available: true,
+              },
+              {
+                id: `${t.id}-med_status`,
+                title: "Fechamento de Medidas",
+                desc: "Entenda como realizar o fechamento de medidas dentro do SAP de forma correta e segura.",
+                available: true,
+              },
+              {
+                id: `${t.id}-acoes`,
+                title: "Cadastro de Ações em Medidas",
+                desc: "Veja como consultar e cadastrar ações vinculadas a uma medida no SAP.",
+                available: true,
+              },
+            ];
+            break;
+
+          case "carga-i":
+            t.submodules = [
+              {
+                id: `${t.id}-pedidos`,
+                title: "Entrada de pedidos",
+                desc: "Apresentação dos diversos tipos de pedidos.",
+                available: true,
+              },
+              {
+                id: `${t.id}-criacao`,
+                title: "Criação de Medidas",
+                desc: "Aprenda o processo completo de cadastro de medidas no SAP.",
+                available: false,
+              },
+            ];
+            break;
         }
-        // Mark every training as having submódulos
-        t.hasSubmodules = true;
+
+        // Marca somente quem realmente possui submódulos
+        t.hasSubmodules = !!t.submodules?.length;
       });
 
       /* ============ PROGRESS STORAGE (localStorage) ============ */
