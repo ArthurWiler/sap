@@ -21,18 +21,156 @@ Este documento explica como **adicionar**, **editar** e **remover** treinamentos
 
 ---
 
-## 1. Mapa do arquivo
+## 1. Mapa do projeto
 
-| Seção do código | O que faz |
+O projeto agora está dividido em vários arquivos para facilitar manutenção. **Esta é a estrutura nova (multi-arquivo)** — a versão antiga em arquivo único ainda funciona da mesma forma, só está consolidada em `index.html`.
+
+```
+multi/
+├── index.html              ← carrega CSS + 24 JS na ordem certa
+├── styles.css              ← todo o CSS
+└── js/
+    ├── 00-header.js                    Destructuring de React (useState, useMemo, etc.)
+    ├── data.js                         Gerador de dataset (NOMES_*, BAIRROS, CIDADES_MG,
+    │                                   DISJUNTORES, MED_TEMPLATES, generateDataset, generateMedidas)
+    ├── progress.js                     loadProgress, saveProgress, trainingProgress, totalProgress
+    ├── trainings.js                    Array TRAININGS + auto-fill de submódulos
+    ├── icons.js                        Componente <Icon/>
+    ├── components-common.js            Field, Select, Radio, Check
+    ├── components-progress-bar.js      ProgressBar
+    ├── components-tour.js              TourBanner, TourSpotlight
+    ├── home-bar.js                     HomeTopBar
+    ├── modal-status.js                 DefinirStatusModal
+    ├── modal-selecionar-objeto.js      SelecionarObjetoModal
+    ├── dropdown-servicos.js            ServicosParaObjetoMenu
+    ├── screen-home.js                  HomePage
+    ├── screen-nota-input.js            NotaInputPage
+    ├── screen-tab-contents.js          DadosSolicitacaoTab, DadosComplementaresTab, DadosCompContent
+    ├── screen-atividades.js            AtividadesTab
+    ├── screen-acoes.js                 AcoesTab
+    ├── screen-nota-detail.js           NotaDetailPage
+    ├── screen-solicitacao.js           SolicitacaoPage
+    ├── screen-text-editor.js           ModificarTextoMedidaPage
+    ├── screen-training-index.js        TrainingIndexPage
+    ├── screen-submodule-index.js       SubmoduleIndexPage
+    ├── tour-steps.js                   Objeto TOUR_STEPS — passos guiados
+    └── app.js                          function App + ReactDOM.createRoot (carrega por último)
+```
+
+### Como os arquivos se enxergam
+
+Cada `.js` é carregado como `<script type="text/babel">` em `index.html`. **Babel standalone transpila cada um para um script clássico**, então as declarações de topo (`const`, `function`) ficam acessíveis globalmente após a execução — desde que o arquivo que **define** algo seja carregado antes do arquivo que **usa**. A ordem no `index.html` respeita essa regra.
+
+**Onde editar o quê:**
+
+| Quero editar… | Vou em… |
 |---|---|
-| `/* ============ DATA GENERATOR ============ */` | Define listas (nomes, ruas, cidades, disjuntores) e a função `generateDataset(seedKey)` que produz todos os campos a partir do número da nota. |
-| `/* ============ MEDIDAS GENERATOR ============ */` | `MED_TEMPLATES` e `generateMedidas()` produzem as 11 linhas da aba **Atividades**. |
-| `/* ============ TRAINING INDEX ============ */` | Array `TRAININGS` — **é aqui que você adiciona/edita treinamentos**. |
-| `/* ============ PROGRESS STORAGE ============ */` | Persistência no `localStorage` (`PROGRESS_KEY`). |
-| `/* ============ ICONS ============ */` | Componente `Icon` com SVGs inline. Veja a lista de nomes na seção 5.4. |
-| `/* ============ ATIVIDADES TAB ============ */`, `AÇÕES TAB`, modais, dropdown… | Componentes das telas SAP. |
-| `/* ============ SUBMODULE TOURS ============ */` | Objeto `TOUR_STEPS` — **é aqui que você edita o passo a passo guiado**. |
-| `/* ============ APP ============ */` | Roteamento e estado global. |
+| Adicionar/remover/editar treinamentos | `js/trainings.js` |
+| Adicionar/editar passos do tour (SAP) | `js/tour-steps.js` |
+| Adicionar/editar slides de submódulos teóricos | `js/decks.json` |
+| Listas de nomes/cidades/disjuntores (dados aleatórios) | `js/data.js` |
+| Linhas da tabela de Atividades | `js/data.js` → `MED_TEMPLATES` |
+| Componente `Icon` (adicionar SVG novo) | `js/icons.js` |
+| Estilo visual (cores, espaçamentos, layout) | `styles.css` |
+| Componentes reutilizáveis (Field, Select, etc.) | `js/components-common.js` |
+| Aba específica da nota SAP | `js/screen-atividades.js`, `js/screen-acoes.js`, etc. |
+| Tela de Solicitação (campos com tourId) | `js/screen-solicitacao.js` |
+| Tela de slides (deck) | `js/screen-deck.js` |
+| Roteamento e estado global | `js/app.js` |
+
+### Dois tipos de submódulos
+
+- **`type: undefined` (padrão)** — submódulo SAP: abre a tela de detalhes da nota e executa o tour guiado definido em `tour-steps.js`.
+- **`type: "deck"`** — submódulo teórico: abre uma sequência de slides definida em `decks.json`. Sem tour guiado, sem dados SAP — só conteúdo educacional.
+
+Para criar um submódulo teórico, marque `type: "deck"` no array `submodules` do treinamento (em `trainings.js`) e adicione uma entrada com o `id` correspondente em `decks.json`.
+
+Estrutura de uma entrada em `decks.json`:
+
+```json
+{
+  "carga-i-pedidos": {
+    "title": "Entrada de pedidos",
+    "slides": [
+      {
+        "title": "Bem-vindo!",
+        "body": "Texto explicativo do slide…",
+        "image": null,
+        "imageAlt": "Descrição da imagem (placeholder mostrado quando image é null)"
+      }
+    ]
+  }
+}
+```
+
+- `image: null` → mostra placeholder cinza com `imageAlt` como legenda.
+- `image: "url-ou-caminho"` → renderiza a imagem real.
+
+### Tipos de slides
+
+Cada slide tem um campo opcional `type`:
+
+- **`"info"` (padrão)** — slide com título, corpo de texto, opcionalmente bullets e imagem. Use para conteúdo expositivo.
+- **`"quiz"`** — slide interativo com pergunta e múltiplas opções. O usuário pode errar quantas vezes quiser. Ao acertar, todas as opções mostram explicação individual (correta + incorretas). Botão "Próximo" só ativa após acertar.
+
+Estrutura de um slide info com bullets:
+
+```json
+{
+  "title": "Os 3 códigos da área de Conexão BT",
+  "bullets": [
+    "COBT — Ligação Nova ou Alteração de Carga em BT",
+    "PSRP — Remoção de Poste ou Rede",
+    "PSIP — Obras de Iluminação Pública"
+  ],
+  "body": "Texto adicional opcional após os bullets.",
+  "image": null,
+  "imageAlt": "Tabela: COBT / PSRP / PSIP"
+}
+```
+
+Estrutura de um slide quiz:
+
+```json
+{
+  "type": "quiz",
+  "question": "Qual código corresponde a remoção de poste?",
+  "context": "Texto opcional com contexto extra (aparece em destaque acima das opções).",
+  "options": [
+    {
+      "text": "COBT",
+      "correct": false,
+      "explanation": "COBT é usado apenas para LN/AC em BT — não cobre remoção."
+    },
+    {
+      "text": "PSRP",
+      "correct": true,
+      "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+    }
+  ],
+  "summary": "Texto opcional que aparece abaixo das opções após acertar."
+}
+```
+
+**Regras do quiz:**
+
+- Exatamente uma opção deve ter `correct: true`.
+- `explanation` é opcional mas recomendado em todas as opções — aparecem só após o acerto.
+- O usuário pode errar quantas vezes quiser; cada erro reaviva animação de shake.
+- Próximo só fica habilitado após o acerto.
+- No final do deck, se houver pelo menos um quiz não respondido corretamente, o usuário fica preso na pergunta (consistente com a regra de bloqueio).
+
+### Servindo localmente
+
+Babel standalone com `<script src="...">` precisa de **HTTP** (não funciona com `file://` por causa de CORS). Para testar localmente:
+
+```bash
+cd multi/
+python3 -m http.server 8000
+# abre http://localhost:8000
+```
+
+Em produção (GitHub Pages, Firebase, servidor interno), serve igual.
 
 ---
 

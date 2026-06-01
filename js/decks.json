@@ -1,0 +1,976 @@
+{
+  "carga-i-pedidos": {
+    "title": "Entrada de pedidos",
+    "slides": [
+      {
+        "title": "Bem-vindo!",
+        "body": "Neste módulo você vai conhecer os principais tipos de pedidos que chegam à área de Carga e como cada um se diferencia em termos de origem, finalidade e fluxo de tratamento.",
+        "image": null,
+        "imageAlt": "Capa do módulo — equipe de Carga em ação"
+      },
+      {
+        "title": "Ligação Nova (LN)",
+        "body": "Pedido feito por um cliente que ainda não possui ligação com a rede CEMIG. Envolve análise de viabilidade técnica, definição do padrão de entrada e abertura da nota de serviço correspondente.",
+        "image": null,
+        "imageAlt": "Diagrama: caminho do pedido de Ligação Nova"
+      },
+      {
+        "title": "Alteração de Carga (AC)",
+        "body": "Solicitação para aumentar ou reduzir a carga instalada de uma unidade consumidora já ativa. Comum em ampliações comerciais, instalação de geração distribuída, ou troca de equipamentos.",
+        "image": null,
+        "imageAlt": "Antes/depois: instalação com carga ampliada"
+      },
+      {
+        "title": "Ligação Provisória (LP)",
+        "body": "Pedido temporário para eventos, obras ou demandas sazonais. Tem prazo de vigência definido e dispensa parte da documentação de uma ligação definitiva.",
+        "image": null,
+        "imageAlt": "Exemplo: ligação provisória em canteiro de obras"
+      },
+      {
+        "title": "Obra de Iluminação Pública (OIP)",
+        "body": "Solicitação vinda de prefeituras ou entidades públicas para nova iluminação em vias, praças e áreas comuns. Segue regras tarifárias específicas do grupo B4.",
+        "image": null,
+        "imageAlt": "Iluminação pública instalada"
+      },
+      {
+        "title": "Trifásico Desligado +6 meses (TR)",
+        "body": "Religação de unidade trifásica desligada há mais de seis meses. Exige nova vistoria do padrão e reavaliação técnica, mesmo que o cliente seja o mesmo.",
+        "image": null,
+        "imageAlt": "Padrão trifásico antigo aguardando vistoria"
+      },
+      {
+        "title": "Mudança de Local (ML)",
+        "body": "Cliente solicita transferência da unidade consumidora para outro endereço. Envolve análise da nova rede, custos de adequação e atualização do cadastro.",
+        "image": null,
+        "imageAlt": "Mapa indicando origem e destino da mudança"
+      },
+      {
+        "title": "Próximos passos",
+        "body": "Agora que você conhece os tipos de pedidos, o próximo passo é aprender o fluxo completo de cadastro de medidas no SAP. Conclua este submódulo para liberar o próximo.",
+        "image": null,
+        "imageAlt": "Checkmark — módulo concluído"
+      }
+    ]
+  },
+  "carga-i-criacao": {
+    "title": "Criação de Medidas",
+    "slides": [
+      {
+        "title": "Em construção",
+        "body": "Este submódulo ainda está sendo elaborado. Em breve você poderá aprender o processo completo de cadastro de medidas no SAP por meio deste material.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
+      }
+    ]
+  },
+  "conexao-bt-classificacao-codigos": {
+    "title": "Códigos de serviço SAP",
+    "slides": [
+      {
+        "title": "Bem-vindo ao POP de Conexão BT",
+        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "image": null,
+        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+      },
+      {
+        "title": "Por que o código importa?",
+        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
+        "image": null,
+        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
+      },
+      {
+        "title": "Os 3 códigos da área de Conexão BT",
+        "bullets": [
+          "COBT — Ligação Nova ou Alteração de Carga em BT",
+          "PSRP — Remoção de Poste ou Rede",
+          "PSIP — Obras de Iluminação Pública"
+        ],
+        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
+        "image": null,
+        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+      },
+      {
+        "title": "Como verificar o código no SAP",
+        "bullets": [
+          "Exibir ou Modificar a Nota de Serviço",
+          "Acessar a aba Dados de Solicitação",
+          "Localizar o campo Item",
+          "Conferir o Subcampo Serviços"
+        ],
+        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
+        "image": null,
+        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+      },
+      {
+        "title": "E se o código estiver errado?",
+        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "image": null,
+        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+      },
+      {
+        "title": "Texto padrão da medida 0592",
+        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "image": null,
+        "imageAlt": "Captura: texto da medida 0592"
+      },
+      {
+        "title": "Texto da 0592 — caso de dúvida",
+        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "image": null,
+        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "options": [
+          {
+            "text": "COBT",
+            "correct": false,
+            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
+          },
+          {
+            "text": "PSRP",
+            "correct": true,
+            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+          },
+          {
+            "text": "PSIP",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+          },
+          {
+            "text": "OIP",
+            "correct": false,
+            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Você abre uma nota e o código de serviço é ZXYZ, que não está entre os três da Conexão BT. O que fazer?",
+        "options": [
+          {
+            "text": "Iniciar a análise normalmente e corrigir depois",
+            "correct": false,
+            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
+          },
+          {
+            "text": "Encaminhar diretamente para o setor responsável pelo código ZXYZ",
+            "correct": false,
+            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
+          },
+          {
+            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
+            "correct": true,
+            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
+          },
+          {
+            "text": "Fechar a nota como cancelada por conta própria",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
+          }
+        ],
+        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
+      }
+    ]
+  },
+  "conexao-bt-classificacao-modulos": {
+    "title": "Módulos de classificação",
+    "slides": [
+      {
+        "title": "Os 4 módulos do POP",
+        "body": "Depois de confirmar que o código de serviço está correto, a próxima etapa é classificar a solicitação em um dos quatro módulos. A classificação é obrigatória e define todo o direcionamento da análise técnica.",
+        "image": null,
+        "imageAlt": "Diagrama: 4 módulos do POP de Conexão BT"
+      },
+      {
+        "title": "Módulo 1 — Clientes individuais",
+        "bullets": [
+          "Ligação nova (LN) — até 75 kW",
+          "Aumento de carga (AC) — até 75 kW",
+          "Religação há mais de 6 meses (TR)",
+          "Alteração de local (ML)"
+        ],
+        "body": "Atendimentos a uma única unidade consumidora de qualquer classe, em caráter definitivo. É o caso mais comum no dia a dia da equipe.",
+        "image": null,
+        "imageAlt": "Casa unifamiliar — cliente individual"
+      },
+      {
+        "title": "Módulo 2 — Ligação provisória",
+        "bullets": [
+          "Ligação para eventos (LP)"
+        ],
+        "body": "Atendimento temporário, com prazo de vigência definido. Comum em festas, shows, obras civis e canteiros. A descrição da nota sempre traz a data de início e fim do evento, além do endereço ou coordenada.",
+        "image": null,
+        "imageAlt": "Tenda de evento com ligação provisória"
+      },
+      {
+        "title": "Módulo 3 — Empreendimentos coletivos e acima de 75 kW",
+        "bullets": [
+          "Atendimento individual acima de 75 kW (LN ou AC)",
+          "Atendimento a padrão coletivo (várias UCs em um padrão)",
+          "Atendimento híbrido",
+          "Empreendimentos com múltiplas torres ou blocos",
+          "Loteamentos"
+        ],
+        "body": "Atendimentos de maior complexidade técnica. Exigem documentação mais robusta — em muitos casos vinda do APRWeb (não do GEDEX) — e podem envolver disjuntor geral, carta de opção por BT e múltiplas UCs.",
+        "image": null,
+        "imageAlt": "Prédio com várias UCs — padrão coletivo"
+      },
+      {
+        "title": "Módulo 4 — Situações especiais",
+        "bullets": [
+          "Remoção de poste ou rede",
+          "Iluminação Pública (extensão de rede para luminárias)",
+          "Adequação sem alteração de carga (SA)"
+        ],
+        "body": "Solicitações que não envolvem ligar ou aumentar a carga de uma UC, mas exigem intervenção física na rede. Códigos SAP diferentes de COBT (geralmente PSRP ou PSIP).",
+        "image": null,
+        "imageAlt": "Equipe removendo poste de iluminação"
+      },
+      {
+        "title": "Como decidir entre os módulos",
+        "bullets": [
+          "Finalidade da solicitação (ligar, alterar, remover, iluminar)",
+          "Tipo de unidade consumidora (individual ou coletiva)",
+          "Existência de carga instalada ou necessidade de alteração",
+          "Caráter temporário ou permanente",
+          "Carga total: acima ou abaixo de 75 kW",
+          "Solicitação de remoção de poste/rede ou IP"
+        ],
+        "body": "Considere TODOS estes aspectos em conjunto. Uma característica isolada pode te induzir ao erro — é a combinação delas que define o módulo.",
+        "image": null,
+        "imageAlt": "Checklist: critérios de classificação"
+      },
+      {
+        "type": "quiz",
+        "question": "Em qual módulo se enquadra um pedido de ligação provisória para uma festa de fim de ano em um clube?",
+        "context": "A solicitação informa: \"Ligação temporária para evento de Réveillon, de 28/12 a 02/01, no Clube X\".",
+        "options": [
+          {
+            "text": "Módulo 1 — Cliente individual",
+            "correct": false,
+            "explanation": "O Módulo 1 cobre clientes individuais definitivos. O caráter temporário da ligação (com data de início e fim) já a tira deste módulo."
+          },
+          {
+            "text": "Módulo 2 — Ligação provisória",
+            "correct": true,
+            "explanation": "Correto. A presença de datas de início e fim no campo descrição é a marca registrada do Módulo 2."
+          },
+          {
+            "text": "Módulo 3 — Empreendimento coletivo",
+            "correct": false,
+            "explanation": "Embora um clube possa ter múltiplas UCs, a ligação aqui é temporária e voltada a um evento específico — o caráter temporário prevalece sobre o coletivo."
+          },
+          {
+            "text": "Módulo 4 — Situação especial",
+            "correct": false,
+            "explanation": "O Módulo 4 é para remoção de infraestrutura ou iluminação pública. Aqui o cliente está pedindo energia para consumo, não uma intervenção na rede."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Um cliente pede aumento de carga de uma indústria existente, passando de 50 kW para 120 kW. Em qual módulo se enquadra?",
+        "options": [
+          {
+            "text": "Módulo 1 — Cliente individual (AC)",
+            "correct": false,
+            "explanation": "O Módulo 1 cobre atendimentos individuais até 75 kW. Como a carga final ultrapassa esse limite, sai do Módulo 1."
+          },
+          {
+            "text": "Módulo 3 — Acima de 75 kW",
+            "correct": true,
+            "explanation": "Correto. Atendimentos individuais com carga total acima de 75 kW vão direto para o Módulo 3, mesmo sendo uma UC só."
+          },
+          {
+            "text": "Módulo 4 — Situação especial",
+            "correct": false,
+            "explanation": "Aumento de carga não é situação especial — é AC, um dos serviços normais. O Módulo 4 é para remoção de poste/rede e iluminação pública."
+          },
+          {
+            "text": "Depende: se a indústria pertence ao mesmo grupo econômico, é Módulo 1; senão, Módulo 3",
+            "correct": false,
+            "explanation": "O critério não é grupo econômico, é apenas a carga total. Acima de 75 kW → Módulo 3, ponto final."
+          }
+        ],
+        "summary": "A linha divisória entre Módulo 1 e Módulo 3 para atendimentos individuais é simples: 75 kW."
+      }
+    ]
+  },
+  "conexao-bt-classificacao-regras-mod1-2": {
+    "title": "Regras práticas — Módulos 1 e 2",
+    "slides": [
+      {
+        "title": "A tabela de regras práticas",
+        "body": "O POP traz uma tabela com 15 casos práticos que cobrem as situações mais comuns do dia a dia. Cada linha indica o módulo, o código SAP, o código da solicitação, quantas caixas estão envolvidas e onde fica a documentação. Vamos passar pelos casos do Módulo 1 e 2 agora.",
+        "image": null,
+        "imageAlt": "Recorte da tabela 5.2.3 do POP"
+      },
+      {
+        "title": "Caso 1 — Ligação nova de 1 UC até 75 kW",
+        "context": "Módulo: 1 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: GEDEX",
+        "bullets": [
+          "A Instalação vinculada à NS deve estar com status \"Aguardando Ligação\"",
+          "Ao localizar o local nos sistemas, não deve haver outros clientes no mesmo endereço"
+        ],
+        "body": "Esse é o caso mais frequente: cliente novo, casa nova, uma única UC. Documentação simples, pelo GEDEX.",
+        "image": null,
+        "imageAlt": "Casa unifamiliar nova com poste novo"
+      },
+      {
+        "title": "Caso 2 — Ligação nova de 2 ou 3 UCs",
+        "context": "Módulo: 1 • Código nota: COBT • Solicitação: LN • Nº caixas: 2 ou 3 • Anexos: GEDEX",
+        "bullets": [
+          "Disjuntores até 1 tripolar de 63A, ou mono/bipolar de 63A",
+          "Instalação vinculada deve estar \"Aguardando Ligação\"",
+          "Na aba Unidades Consumidoras deve haver TODAS as UCs solicitadas"
+        ],
+        "body": "Atendimento coletivo pequeno (duas casas ou três apartamentos), ainda enquadrado no Módulo 1. Acima disso, vai para o Módulo 3.",
+        "image": null,
+        "imageAlt": "Duplex com duas UCs"
+      },
+      {
+        "title": "Caso 3 — Aumento de carga de 1 UC",
+        "context": "Módulo: 1 • Código nota: COBT • Solicitação: AC • Nº caixas: 1 • Anexos: GEDEX",
+        "bullets": [
+          "Instalação sem suspensões",
+          "Instalação sem bloqueios",
+          "Dados de contrato preenchidos"
+        ],
+        "body": "Cliente já ativo pedindo mais carga. Confira o status da instalação antes de prosseguir — se houver suspensão ou bloqueio, é necessário resolver isso primeiro.",
+        "image": null,
+        "imageAlt": "Status \"sem suspensão\" no SAP"
+      },
+      {
+        "title": "Caso 4 — Combinação AC + LN",
+        "body": "Pode haver solicitações combinando os casos anteriores. Exemplos típicos:",
+        "bullets": [
+          "Aumento de carga de uma UC e ligação nova de outra",
+          "Ligação nova de UC até tripolar 63A em endereço que já tem uma ou duas UCs com disjuntores até Bi ou Mono 63A"
+        ],
+        "context": "Continua no Módulo 1 enquanto cada UC isolada respeitar os limites do módulo (≤ 75 kW e disjuntores até Tri/63A).",
+        "image": null,
+        "imageAlt": "Diagrama: duas UCs no mesmo padrão"
+      },
+      {
+        "title": "Caso 5 — Religação após 6 meses (TR)",
+        "context": "Módulo: 1 • Código nota: COBT • Solicitação: TR • Nº caixas: 1 • Anexos: GEDEX",
+        "bullets": [
+          "Instalação vinculada à NS deve estar com status SUSPENSA"
+        ],
+        "body": "Quando uma UC fica desligada por mais de 6 meses, a religação exige nova vistoria do padrão e reentra como TR. O sinal mais óbvio é o status \"Suspensa\" da instalação.",
+        "image": null,
+        "imageAlt": "Status \"Suspensa\" na tela do SAP"
+      },
+      {
+        "title": "Caso 6 — Ligação para evento (LP)",
+        "context": "Módulo: 2 • Código nota: COBT • Solicitação: LP • Nº caixas: 1 • Anexos: GEDEX",
+        "bullets": [
+          "No campo descrição sempre haverá informações de quando e onde será realizado o evento",
+          "Endereço ou coordenadas do local do evento",
+          "Datas de início e fim"
+        ],
+        "body": "É o único caso do Módulo 2. A marca registrada é a presença de datas no campo descrição.",
+        "image": null,
+        "imageAlt": "Campo descrição com datas de evento"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual o módulo e código de solicitação para uma ligação nova de três apartamentos em um mesmo padrão, todos com disjuntor monopolar de 50A?",
+        "options": [
+          {
+            "text": "Módulo 1 — LN — Caso 1",
+            "correct": false,
+            "explanation": "O Caso 1 é para apenas 1 UC. Aqui são 3 apartamentos."
+          },
+          {
+            "text": "Módulo 1 — LN — Caso 2",
+            "correct": true,
+            "explanation": "Correto. Caso 2 cobre 2 ou 3 UCs com disjuntores até 1 tri/63A ou mono/bi 63A. Três UCs com mono 50A cabem perfeitamente."
+          },
+          {
+            "text": "Módulo 3 — LN — Caso 9 (padrão coletivo)",
+            "correct": false,
+            "explanation": "Padrão coletivo no Módulo 3 só entra quando há mais de 3 caixas OU pelo menos uma UC com disjuntor tripolar. Aqui são 3 UCs e todos monopolar 50A — ainda dentro do Módulo 1."
+          },
+          {
+            "text": "Módulo 3 — LN — Caso 11 (múltiplas torres)",
+            "correct": false,
+            "explanation": "Empreendimento com múltiplas torres pressupõe complementos divergentes do tipo \"TORRE X, AP YYY\". Não é o caso de um padrão simples com 3 apartamentos."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Uma instalação que está \"Aguardando Ligação\" recebe um pedido de aumento de carga. Está correto?",
+        "options": [
+          {
+            "text": "Sim, basta seguir o procedimento de AC normalmente",
+            "correct": false,
+            "explanation": "Não. AC pressupõe uma UC já existente e ativa. Se a instalação ainda está \"Aguardando Ligação\", ela nunca foi ligada — não há carga existente para aumentar."
+          },
+          {
+            "text": "Não, o status indica que se trata de uma Ligação Nova, não de AC",
+            "correct": true,
+            "explanation": "Exato. \"Aguardando Ligação\" é o status típico de uma LN. Provavelmente houve erro na criação da nota — solicitação foi marcada como AC quando deveria ser LN."
+          },
+          {
+            "text": "Sim, mas só após alterar o status da instalação manualmente",
+            "correct": false,
+            "explanation": "Não é função do analista BT alterar o status de uma instalação. O caminho correto é sinalizar via medida 0592 ou consultar o supervisor."
+          },
+          {
+            "text": "Depende do valor da nova carga: até 75 kW segue como AC, acima vira LN",
+            "correct": false,
+            "explanation": "O critério aqui não é a carga, é o status da instalação. \"Aguardando Ligação\" sempre indica que a UC nunca foi ativada."
+          }
+        ],
+        "summary": "Cada serviço (LN, AC, TR) tem um status esperado da instalação. Status divergente é um forte sinal de erro de classificação."
+      }
+    ]
+  },
+  "conexao-bt-classificacao-regras-mod3": {
+    "title": "Regras práticas — Módulo 3",
+    "slides": [
+      {
+        "title": "Módulo 3 — visão geral",
+        "body": "Atendimentos a clientes acima de 75 kW, padrões coletivos com várias caixas, empreendimentos com múltiplas torres e loteamentos. A complexidade aumenta — e com ela, a exigência documental: muitos casos vêm do APRWeb em vez do GEDEX.",
+        "image": null,
+        "imageAlt": "Capa: empreendimentos coletivos e grandes cargas"
+      },
+      {
+        "title": "Caso 7 — LN individual acima de 75 kW",
+        "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: APRWeb",
+        "bullets": [
+          "Instalação com status \"Aguardando Ligação\"",
+          "Na maioria das notas, o disjuntor da UC será maior que 200A",
+          "Obrigatório anexar carta de opção por BT"
+        ],
+        "body": "Uma única UC, mas de grande porte (indústria, comércio grande, posto de combustível). O cliente precisa optar formalmente pelo atendimento em BT — daí a carta de opção.",
+        "image": null,
+        "imageAlt": "Galpão industrial com padrão de grande porte"
+      },
+      {
+        "title": "Caso 8 — AC acima de 75 kW",
+        "context": "Módulo: 3 • Código nota: COBT • Solicitação: AC • Nº caixas: 1 • Anexos: APRWeb",
+        "bullets": [
+          "Instalação sem suspensões, sem bloqueios, com contratos preenchidos",
+          "Na maioria das notas, o disjuntor final será maior que 200A"
+        ],
+        "body": "Análogo ao Caso 3, mas para clientes que cruzam o limite dos 75 kW. Sempre que a carga final ultrapassar esse valor, sai do Módulo 1 e cai aqui.",
+        "image": null,
+        "imageAlt": "Indústria ampliando carga acima de 75 kW"
+      },
+      {
+        "title": "Caso 9 — Padrão coletivo grande",
+        "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN ou AC • Nº caixas: múltiplas • Anexos: APRWeb",
+        "bullets": [
+          "Mais de 3 caixas OU pelo menos 1 UC com disjuntor tripolar",
+          "Todas as UCs solicitadas devem aparecer na aba Unidades Consumidoras",
+          "Haverá disjuntor geral na solicitação"
+        ],
+        "body": "Padrão coletivo que ultrapassa os limites do Módulo 1 (4+ caixas ou presença de tripolar). A presença do disjuntor geral é uma marca registrada deste caso.",
+        "image": null,
+        "imageAlt": "Padrão coletivo com 4+ caixas e disjuntor geral"
+      },
+      {
+        "title": "Caso 10 — Atendimento híbrido",
+        "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN ou AC • Nº caixas: múltiplas • Anexos: APRWeb",
+        "bullets": [
+          "Todas as UCs solicitadas na aba Unidades Consumidoras",
+          "Pode ou não haver disjuntor geral",
+          "Haverá MARCAÇÃO de \"híbrido\" na solicitação"
+        ],
+        "body": "Atendimentos híbridos misturam clientes BT e MT no mesmo empreendimento, ou padrão único com características compartilhadas. Identifica-se pela flag explícita de híbrido na solicitação.",
+        "image": null,
+        "imageAlt": "Diagrama: atendimento híbrido BT+MT"
+      },
+      {
+        "title": "Caso 11 — Múltiplas torres",
+        "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: múltiplas • Anexos: APRWeb",
+        "bullets": [
+          "Todas as UCs com DOIS complementos divergentes",
+          "Padrão típico: \"TORRE X, AP YYY\""
+        ],
+        "body": "Condomínios e empreendimentos com mais de um bloco ou torre. O sinal mais claro é o duplo complemento nas UCs (torre + apartamento).",
+        "image": null,
+        "imageAlt": "Condomínio com duas torres residenciais"
+      },
+      {
+        "title": "Caso 12 — Loteamento",
+        "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: GEDEX",
+        "bullets": [
+          "Campo Assunto e/ou documentação indicam atendimento a um loteamento",
+          "Sem previsão das unidades consumidoras exatas no momento da abertura"
+        ],
+        "body": "Loteamento é diferente dos outros casos do Módulo 3: a documentação volta para o GEDEX e, embora seja categorizado como múltiplas torres na prática, registra-se inicialmente com 1 caixa porque as UCs específicas ainda não existem.",
+        "image": null,
+        "imageAlt": "Planta de loteamento com lotes vazios"
+      },
+      {
+        "type": "quiz",
+        "question": "Um empreendimento residencial com 6 apartamentos em um único bloco solicita ligação nova. Disjuntor geral tripolar 100A. Qual o caso aplicável?",
+        "options": [
+          {
+            "text": "Caso 2 — LN de 2 ou 3 UCs (Módulo 1)",
+            "correct": false,
+            "explanation": "Caso 2 limita-se a 2 ou 3 UCs. Aqui são 6 — sai do Módulo 1."
+          },
+          {
+            "text": "Caso 9 — Padrão coletivo grande (Módulo 3)",
+            "correct": true,
+            "explanation": "Correto. Mais de 3 caixas e presença de disjuntor geral são marcas registradas do Caso 9."
+          },
+          {
+            "text": "Caso 11 — Múltiplas torres (Módulo 3)",
+            "correct": false,
+            "explanation": "Múltiplas torres exige complementos divergentes (TORRE X, AP YYY). Aqui só temos um bloco — então é padrão coletivo, não múltiplas torres."
+          },
+          {
+            "text": "Caso 12 — Loteamento (Módulo 3)",
+            "correct": false,
+            "explanation": "Loteamento é registro de área futura sem UCs definidas. Aqui as 6 UCs já estão identificadas — não é loteamento."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Solicitação de LN para condomínio com 2 torres, 12 apartamentos cada, complementos do tipo \"TORRE A, AP 201\". Qual o caso?",
+        "options": [
+          {
+            "text": "Caso 9 — Padrão coletivo grande",
+            "correct": false,
+            "explanation": "Caso 9 cobre padrões coletivos com várias caixas em um único bloco. A presença de TORRE como complemento é o que sinaliza o Caso 11."
+          },
+          {
+            "text": "Caso 11 — Múltiplas torres",
+            "correct": true,
+            "explanation": "Correto. Empreendimento com mais de um bloco/torre e complementos divergentes do tipo \"TORRE X, AP YYY\" — é a definição exata do Caso 11."
+          },
+          {
+            "text": "Caso 12 — Loteamento",
+            "correct": false,
+            "explanation": "Loteamento é para terrenos sem UCs definidas ainda. Aqui temos 24 apartamentos já listados."
+          },
+          {
+            "text": "Caso 10 — Atendimento híbrido",
+            "correct": false,
+            "explanation": "Híbrido exige a flag explícita de \"híbrido\" na solicitação — sem essa marcação, não é Caso 10."
+          }
+        ],
+        "summary": "O complemento das UCs é o diferenciador-chave: TORRE X, AP YYY → Caso 11."
+      },
+      {
+        "type": "quiz",
+        "question": "Aumento de carga de uma única padaria, passando de 60 kW para 90 kW. Em qual caso se enquadra?",
+        "options": [
+          {
+            "text": "Caso 3 — AC de 1 UC (Módulo 1)",
+            "correct": false,
+            "explanation": "Caso 3 cobre AC até 75 kW. A carga final aqui (90 kW) ultrapassa o limite."
+          },
+          {
+            "text": "Caso 8 — AC acima de 75 kW (Módulo 3)",
+            "correct": true,
+            "explanation": "Correto. Quando a carga final passa de 75 kW, mesmo sendo uma única UC, sobe para o Módulo 3."
+          },
+          {
+            "text": "Caso 9 — Padrão coletivo",
+            "correct": false,
+            "explanation": "Não há múltiplas UCs nem disjuntor geral — só uma padaria. Não se trata de padrão coletivo."
+          },
+          {
+            "text": "Caso 4 — Combinação AC + LN",
+            "correct": false,
+            "explanation": "Caso 4 é combinação de serviços (AC de uma UC + LN de outra). Aqui só há AC de uma única UC."
+          }
+        ],
+        "summary": "O divisor entre Caso 3 e Caso 8 é a carga final. Acima de 75 kW, mesmo sendo uma UC isolada, vira Módulo 3."
+      }
+    ]
+  },
+  "conexao-bt-classificacao-regras-mod4": {
+    "title": "Regras práticas — Módulo 4",
+    "slides": [
+      {
+        "title": "Módulo 4 — situações especiais",
+        "body": "Aqui o cliente não está pedindo carga nova nem aumentando carga — está pedindo uma intervenção física na rede. O código SAP muda: deixa de ser COBT e passa a ser PSRP ou PSIP.",
+        "image": null,
+        "imageAlt": "Equipe em intervenção na rede"
+      },
+      {
+        "title": "Caso 14 — Remoção/deslocamento de poste",
+        "context": "Módulo: 4 • Código nota: PSRP • Solicitação: não possui código • Nº caixas: não possui • Anexos: GEDEX",
+        "bullets": [
+          "Campo Assunto indica que o cliente quer retirar, remover ou deslocar rede/poste próximo",
+          "Sempre há uma referência do local mencionada"
+        ],
+        "body": "Cliente quer que um poste ou trecho de rede seja removido ou movido — geralmente por motivo estético, ampliação de garagem, construção próxima ou outro impedimento físico. Não envolve mexer com UC, não tem código de solicitação.",
+        "image": null,
+        "imageAlt": "Poste sendo deslocado por equipe"
+      },
+      {
+        "title": "Caso 15 — Iluminação Pública",
+        "context": "Módulo: 4 • Código nota: PSIP • Solicitação: OIP • Nº caixas: não possui • Anexos: GEDEX",
+        "bullets": [
+          "Nos documentos sempre haverá um projeto de ligação das luminárias"
+        ],
+        "body": "Solicitação de extensão de rede para iluminação pública, geralmente vinda de prefeituras. A presença do projeto luminotécnico anexo é a confirmação visual.",
+        "image": null,
+        "imageAlt": "Luminária pública sendo instalada"
+      },
+      {
+        "title": "Adequação sem alteração de carga (SA)",
+        "body": "Outro tipo de situação especial mencionada no POP, mas que não consta na tabela de regras práticas. São pedidos de adequação técnica (troca de padrão, mudança de localização do medidor, etc.) sem aumento ou redução da carga total. Continua no Módulo 4 por não envolver alteração de consumo.",
+        "image": null,
+        "imageAlt": "Troca de padrão de entrada — sem alteração de carga"
+      },
+      {
+        "title": "Sinais de que é Módulo 4",
+        "bullets": [
+          "Código SAP é PSRP ou PSIP (já indica direto)",
+          "Não há UC sendo ligada nem carga sendo alterada",
+          "Pedido envolve intervenção física na rede (mover, remover, estender)",
+          "Solicitante muitas vezes é uma entidade pública (prefeitura) — caso OIP"
+        ],
+        "body": "Diferente dos outros módulos, no Módulo 4 a documentação descreve uma obra na rede, não um cliente final consumindo energia.",
+        "image": null,
+        "imageAlt": "Diagrama: situações especiais"
+      },
+      {
+        "type": "quiz",
+        "question": "Um cliente quer construir uma garagem maior e pede o deslocamento do poste que está em frente ao seu terreno. Como classificar?",
+        "options": [
+          {
+            "text": "Módulo 1 — AC, porque é uma demanda de cliente individual",
+            "correct": false,
+            "explanation": "AC é Aumento de Carga. Aqui o cliente não está pedindo mais energia — está pedindo movimentação de infraestrutura. Não é AC."
+          },
+          {
+            "text": "Módulo 3 — Caso 11, por envolver alteração na rede do empreendimento",
+            "correct": false,
+            "explanation": "Caso 11 é múltiplas torres. Aqui se trata de um cliente individual querendo movimentar um poste, não construção de empreendimento."
+          },
+          {
+            "text": "Módulo 4 — Caso 14, código SAP PSRP",
+            "correct": true,
+            "explanation": "Correto. Deslocamento de poste é exatamente o Caso 14, código PSRP, Módulo 4."
+          },
+          {
+            "text": "Módulo 4 — Caso 15, código SAP PSIP",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para Iluminação Pública. Para poste/rede, o código é PSRP."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Uma prefeitura solicita extensão de rede para instalar 8 novas luminárias em uma rua. A nota chega com código COBT. Como proceder?",
+        "options": [
+          {
+            "text": "Aceitar e tratar como Módulo 4, Caso 15",
+            "correct": false,
+            "explanation": "Não. Embora o conteúdo seja claramente iluminação pública (Caso 15), o código de serviço está errado. COBT é só para LN/AC. O correto é PSIP — devolver a nota."
+          },
+          {
+            "text": "Criar medida 0592 pedindo recriação da nota com código PSIP",
+            "correct": true,
+            "explanation": "Correto. Antes de classificar em qualquer módulo, o código de serviço precisa estar certo. Como aqui é iluminação pública, o código deveria ser PSIP — usa-se a medida 0592 para devolver."
+          },
+          {
+            "text": "Cancelar a nota e criar uma nova com PSIP",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas alheias por conta própria. O caminho oficial é a medida 0592, que devolve para correção pela origem."
+          },
+          {
+            "text": "Tratar como COBT mesmo, já que iluminação pública conecta-se à rede BT",
+            "correct": false,
+            "explanation": "Conectar-se à rede BT não importa para o código de serviço. O código identifica o TIPO de solicitação, e iluminação pública sempre é PSIP — não COBT."
+          }
+        ],
+        "summary": "Mesmo com o conteúdo claro, código SAP errado sempre exige medida 0592. A classificação por módulo só ocorre após o código estar correto."
+      }
+    ]
+  },
+  "conexao-bt-classificacao-revisao": {
+    "title": "Revisão geral — Quiz",
+    "slides": [
+      {
+        "title": "Hora de revisar!",
+        "body": "Você passou por todos os submódulos teóricos sobre classificação de solicitações de Conexão BT. Agora é hora de testar tudo de uma vez com 10 casos baseados na tabela 5.2.3 do POP. Pode errar à vontade — a explicação detalhada aparece após o acerto.",
+        "image": null,
+        "imageAlt": "Capa: revisão geral em formato de quiz"
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 1 — Pedido: ligação nova de uma casa unifamiliar, padrão monopolar 50A. Qual módulo e código?",
+        "options": [
+          {
+            "text": "Módulo 1, LN, COBT, 1 caixa, GEDEX",
+            "correct": true,
+            "explanation": "Correto. Uma UC, até 75 kW, anexo via GEDEX — caso 1 do POP."
+          },
+          {
+            "text": "Módulo 3, LN, COBT, 1 caixa, APRWeb",
+            "correct": false,
+            "explanation": "Casa unifamiliar com mono 50A está bem abaixo de 75 kW — fica no Módulo 1, não no 3."
+          },
+          {
+            "text": "Módulo 1, AC, COBT, 1 caixa, GEDEX",
+            "correct": false,
+            "explanation": "AC é aumento de carga, pressupõe UC já existente. Casa nova é LN."
+          },
+          {
+            "text": "Módulo 4, sem código de solicitação, PSRP, GEDEX",
+            "correct": false,
+            "explanation": "Módulo 4 é remoção/IP. Aqui o cliente está ligando uma casa — Módulo 1."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 2 — Pedido: \"Cliente solicita energia para festa de aniversário do dia 12 a 14 de junho em chácara de eventos\". O que se aplica?",
+        "options": [
+          {
+            "text": "Módulo 1, LP, COBT",
+            "correct": false,
+            "explanation": "LP não pertence ao Módulo 1. Ligação provisória é exclusiva do Módulo 2."
+          },
+          {
+            "text": "Módulo 2, LP, COBT, 1 caixa, GEDEX",
+            "correct": true,
+            "explanation": "Correto. Datas de início e fim no campo descrição = Caso 6, Módulo 2."
+          },
+          {
+            "text": "Módulo 3, LN, COBT, múltiplas caixas",
+            "correct": false,
+            "explanation": "Não é ligação definitiva, é provisória. Vai para Módulo 2."
+          },
+          {
+            "text": "Módulo 4, PSIP (evento envolve iluminação)",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para extensão de rede para iluminação pública (luminárias permanentes da prefeitura). Festa não é iluminação pública."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 3 — Indústria existente com 60 kW pede aumento para 95 kW.",
+        "options": [
+          {
+            "text": "Módulo 1, AC, COBT, Caso 3",
+            "correct": false,
+            "explanation": "Caso 3 cobre AC até 75 kW. Acima desse limite sobe para Módulo 3."
+          },
+          {
+            "text": "Módulo 3, AC, COBT, Caso 8, APRWeb",
+            "correct": true,
+            "explanation": "Correto. Carga final > 75 kW = Caso 8, com documentação via APRWeb."
+          },
+          {
+            "text": "Módulo 3, LN, COBT, Caso 7",
+            "correct": false,
+            "explanation": "Caso 7 é LN acima de 75 kW. Aqui a UC já existe — é aumento de carga, não ligação nova."
+          },
+          {
+            "text": "Módulo 4, AC, COBT, situação especial",
+            "correct": false,
+            "explanation": "AC nunca é situação especial. Aumento de carga sempre fica no Módulo 1 ou 3 dependendo da carga."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 4 — Condomínio novo de 3 torres, com 18 UCs cada, complementos \"TORRE A AP 101\", \"TORRE B AP 205\", etc.",
+        "options": [
+          {
+            "text": "Caso 9 — padrão coletivo grande",
+            "correct": false,
+            "explanation": "Caso 9 é padrão coletivo em um único bloco. A presença de múltiplas torres com complementos divergentes (TORRE X, AP YYY) caracteriza outro caso."
+          },
+          {
+            "text": "Caso 11 — múltiplas torres",
+            "correct": true,
+            "explanation": "Correto. 3 torres + complementos do tipo \"TORRE A AP 101\" = Caso 11 cravado."
+          },
+          {
+            "text": "Caso 12 — loteamento",
+            "correct": false,
+            "explanation": "Loteamento é terreno sem UCs definidas ainda. Aqui as 54 UCs já estão claras."
+          },
+          {
+            "text": "Caso 10 — atendimento híbrido",
+            "correct": false,
+            "explanation": "Híbrido precisa da flag explícita de híbrido na solicitação. Sem essa marcação, não é Caso 10."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 5 — UC desligada há 8 meses, cliente solicita religação.",
+        "options": [
+          {
+            "text": "Módulo 1, AC, COBT",
+            "correct": false,
+            "explanation": "AC é aumento de carga de UC ativa. UC desligada há mais de 6 meses tem fluxo próprio."
+          },
+          {
+            "text": "Módulo 1, LN, COBT",
+            "correct": false,
+            "explanation": "LN é para UCs novas. UCs que já existiram e foram desligadas seguem regra própria."
+          },
+          {
+            "text": "Módulo 1, TR, COBT, Caso 5",
+            "correct": true,
+            "explanation": "Correto. Religação de UC desligada há mais de 6 meses = código TR, Caso 5, instalação com status \"Suspensa\"."
+          },
+          {
+            "text": "Módulo 4, sem código de solicitação",
+            "correct": false,
+            "explanation": "Religação não é situação especial — envolve uma UC e seu consumo, não intervenção na rede."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 6 — Cliente solicita remoção de um poste antigo em frente à entrada de seu lote.",
+        "options": [
+          {
+            "text": "Módulo 1, LN, COBT",
+            "correct": false,
+            "explanation": "Não há ligação nova nem alteração de carga envolvida. É intervenção na rede."
+          },
+          {
+            "text": "Módulo 4, sem código de solicitação, PSRP, Caso 14",
+            "correct": true,
+            "explanation": "Correto. Remoção de poste é Caso 14, Módulo 4, código SAP PSRP."
+          },
+          {
+            "text": "Módulo 4, OIP, PSIP, Caso 15",
+            "correct": false,
+            "explanation": "PSIP é só iluminação pública. Remoção de poste é PSRP."
+          },
+          {
+            "text": "Módulo 3, AC, COBT, Caso 9",
+            "correct": false,
+            "explanation": "Não há alteração de carga aqui — só remoção de infraestrutura."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 7 — Prefeitura quer estender rede para iluminar 200m de uma rua nova.",
+        "options": [
+          {
+            "text": "Módulo 4, OIP, PSIP, Caso 15, com projeto luminotécnico anexo",
+            "correct": true,
+            "explanation": "Correto. Extensão de rede para iluminação pública é Caso 15, código PSIP, sempre com projeto luminotécnico anexo."
+          },
+          {
+            "text": "Módulo 4, OIP, PSRP, Caso 14",
+            "correct": false,
+            "explanation": "PSRP é para remoção de poste/rede. Iluminação pública é PSIP."
+          },
+          {
+            "text": "Módulo 1, LN, COBT, com complemento \"IP\"",
+            "correct": false,
+            "explanation": "Iluminação pública nunca usa COBT. Tem código próprio: PSIP."
+          },
+          {
+            "text": "Módulo 3, LN, COBT, APRWeb, Caso 9",
+            "correct": false,
+            "explanation": "Mesmo argumento: IP usa código próprio (PSIP), não COBT."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 8 — Cliente apresenta nota com código de serviço ZNCA (que não existe na lista de COBT/PSRP/PSIP). É claro pelo conteúdo que é uma ligação nova residencial. O que fazer?",
+        "options": [
+          {
+            "text": "Tratar como COBT e seguir com a análise normalmente",
+            "correct": false,
+            "explanation": "Nunca trate como código diferente do que está na nota. Antes da análise, o código precisa ser corrigido."
+          },
+          {
+            "text": "Criar medida 0592 indicando COBT como código correto",
+            "correct": true,
+            "explanation": "Correto. Como você consegue identificar o código que deveria ser (COBT), use a medida 0592 com o texto pedindo recriação com o código correto."
+          },
+          {
+            "text": "Criar medida 0592 com texto genérico, pedindo \"código correto e demais informações\"",
+            "correct": false,
+            "explanation": "Esse texto genérico é usado quando você NÃO consegue determinar o código correto. Aqui você consegue (é COBT), então use o texto específico."
+          },
+          {
+            "text": "Cancelar a nota direto e abrir uma nova com COBT",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas — devolve via 0592 e a unidade origem refaz."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 9 — Loteamento residencial de 80 lotes ainda em fase de aprovação. Como classificar a nota inicial?",
+        "options": [
+          {
+            "text": "Caso 9 — padrão coletivo grande, com 80 caixas",
+            "correct": false,
+            "explanation": "Em loteamento, as UCs específicas ainda não existem. Não dá para registrar 80 caixas porque não há 80 UCs definidas ainda."
+          },
+          {
+            "text": "Caso 11 — múltiplas torres (80 lotes = múltiplos)",
+            "correct": false,
+            "explanation": "Múltiplas torres exige complementos divergentes \"TORRE X, AP YYY\". Lotes não têm essa estrutura — têm endereços próprios."
+          },
+          {
+            "text": "Caso 12 — loteamento, Módulo 3, LN, COBT, 1 caixa, GEDEX",
+            "correct": true,
+            "explanation": "Correto. Loteamento tem caso próprio (12), registra-se com 1 caixa inicial e anexos via GEDEX, mesmo sendo Módulo 3."
+          },
+          {
+            "text": "Módulo 4, situação especial",
+            "correct": false,
+            "explanation": "Loteamento envolve futura ligação de UCs — é LN no Módulo 3, não situação especial."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Caso 10 — Padrão coletivo com 8 caixas (todas mono 50A) + disjuntor geral tripolar 80A.",
+        "options": [
+          {
+            "text": "Caso 2 — LN de 2 ou 3 UCs (Módulo 1)",
+            "correct": false,
+            "explanation": "Caso 2 limita a 3 UCs. Aqui são 8 — fora do Módulo 1."
+          },
+          {
+            "text": "Caso 9 — padrão coletivo grande (Módulo 3), APRWeb",
+            "correct": true,
+            "explanation": "Correto. Mais de 3 caixas + presença de disjuntor geral = Caso 9. Documentação via APRWeb."
+          },
+          {
+            "text": "Caso 11 — múltiplas torres",
+            "correct": false,
+            "explanation": "Sem complementos do tipo \"TORRE X, AP YYY\". É um único padrão coletivo grande, não múltiplas torres."
+          },
+          {
+            "text": "Caso 12 — loteamento",
+            "correct": false,
+            "explanation": "Loteamento é terreno sem UCs definidas. Aqui as 8 UCs já estão claras."
+          }
+        ],
+        "summary": "Parabéns! Você completou a revisão. Padrão coletivo com mais de 3 caixas e disjuntor geral é Caso 9, sempre com APRWeb."
+      },
+      {
+        "title": "Treinamento concluído!",
+        "body": "Você completou o treinamento de Análise de Conexão BT — Classificação. Agora você sabe identificar códigos de serviço SAP, os 4 módulos do POP, e os 15 casos práticos com seus detalhes. Os próximos treinamentos (Análise Inicial, Análise Técnica, Orçamentação) serão liberados em breve.",
+        "image": null,
+        "imageAlt": "Troféu — conclusão do treinamento"
+      }
+    ]
+  }
+}
