@@ -16,7 +16,7 @@
       },
       {
         "title": "Alteração de Carga (AC)",
-        "body": "Solicitação para aumentar ou reduzir a carga instalada de uma unidade consumidora já ativa. Comum em ampliações comerciais, instalação de geração distribuída, ou troca de equipamentos.",
+        "body": "Solicitação para aumentar ou reduzir a carga instalada de uma unidade consumidora já conectada à rede CEMIG. Comum quando é necessário aumentar a faixa de proteção do disjuntor da instalação.",
         "image": null,
         "imageAlt": "Antes/depois: instalação com carga ampliada"
       },
@@ -28,7 +28,7 @@
       },
       {
         "title": "Obra de Iluminação Pública (OIP)",
-        "body": "Solicitação vinda de prefeituras ou entidades públicas para nova iluminação em vias, praças e áreas comuns. Segue regras tarifárias específicas do grupo B4.",
+        "body": "Solicitação vinda de prefeituras ou entidades públicas para nova iluminação em vias, praças e áreas comuns. É um tipo especial de pedido e em 99% dos casos necessita de obra para atendimento.",
         "image": null,
         "imageAlt": "Iluminação pública instalada"
       },
@@ -40,7 +40,7 @@
       },
       {
         "title": "Mudança de Local (ML)",
-        "body": "Cliente solicita transferência da unidade consumidora para outro endereço. Envolve análise da nova rede, custos de adequação e atualização do cadastro.",
+        "body": "Cliente solicita alteração do ponto de conexão com a rede CEMIG. Normalmente é feito em conjunto do pedido de alteração de carga, mas pode ser feito a solicitação somente de mudança de local.",
         "image": null,
         "imageAlt": "Mapa indicando origem e destino da mudança"
       },
@@ -149,7 +149,7 @@
       },
       {
         "type": "quiz",
-        "question": "Você abre uma nota e o código de serviço é ZXYZ, que não está entre os três da Conexão BT. O que fazer?",
+        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
         "options": [
           {
             "text": "Iniciar a análise normalmente e corrigir depois",
@@ -157,7 +157,7 @@
             "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
           },
           {
-            "text": "Encaminhar diretamente para o setor responsável pelo código ZXYZ",
+            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
             "correct": false,
             "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
           },
@@ -180,7 +180,7 @@
     "title": "Módulos de classificação",
     "slides": [
       {
-        "title": "Os 4 módulos do POP",
+        "title": "Formas de classificação de pedidos de Conexão BT.",
         "body": "Depois de confirmar que o código de serviço está correto, a próxima etapa é classificar a solicitação em um dos quatro módulos. A classificação é obrigatória e define todo o direcionamento da análise técnica.",
         "image": null,
         "imageAlt": "Diagrama: 4 módulos do POP de Conexão BT"
@@ -215,7 +215,7 @@
           "Empreendimentos com múltiplas torres ou blocos",
           "Loteamentos"
         ],
-        "body": "Atendimentos de maior complexidade técnica. Exigem documentação mais robusta — em muitos casos vinda do APRWeb (não do GEDEX) — e podem envolver disjuntor geral, carta de opção por BT e múltiplas UCs.",
+        "body": "Atendimentos de maior complexidade técnica. Exigem documentação mais robusta, planta da situação, podem envolver disjuntor geral, carta de opção por BT e múltiplas UCs.",
         "image": null,
         "imageAlt": "Prédio com várias UCs — padrão coletivo"
       },
@@ -223,7 +223,7 @@
         "title": "Módulo 4 — Situações especiais",
         "bullets": [
           "Remoção de poste ou rede",
-          "Iluminação Pública (extensão de rede para luminárias)",
+          "Iluminação Pública (extensão de rede para iluminação de vias públicas)",
           "Adequação sem alteração de carga (SA)"
         ],
         "body": "Solicitações que não envolvem ligar ou aumentar a carga de uma UC, mas exigem intervenção física na rede. Códigos SAP diferentes de COBT (geralmente PSRP ou PSIP).",
@@ -304,8 +304,8 @@
     "title": "Regras práticas — Módulos 1 e 2",
     "slides": [
       {
-        "title": "A tabela de regras práticas",
-        "body": "O POP traz uma tabela com 15 casos práticos que cobrem as situações mais comuns do dia a dia. Cada linha indica o módulo, o código SAP, o código da solicitação, quantas caixas estão envolvidas e onde fica a documentação. Vamos passar pelos casos do Módulo 1 e 2 agora.",
+        "title": "Guia prático das solicitações - Módulos 1 e 2",
+        "body": "15 casos práticos que cobrem as situações mais comuns do dia a dia. Cada linha indica o módulo, o código SAP, o código da solicitação, quantas caixas estão envolvidas e onde fica a documentação. Vamos passar pelos casos do Módulo 1 e 2 agora.",
         "image": null,
         "imageAlt": "Recorte da tabela 5.2.3 do POP"
       },
@@ -340,7 +340,7 @@
           "Instalação sem bloqueios",
           "Dados de contrato preenchidos"
         ],
-        "body": "Cliente já ativo pedindo mais carga. Confira o status da instalação antes de prosseguir — se houver suspensão ou bloqueio, é necessário resolver isso primeiro.",
+        "body": "Cliente já ativo pedindo mais carga. Confira o status da instalação antes de prosseguir.",
         "image": null,
         "imageAlt": "Status \"sem suspensão\" no SAP"
       },
@@ -359,9 +359,9 @@
         "title": "Caso 5 — Religação após 6 meses (TR)",
         "context": "Módulo: 1 • Código nota: COBT • Solicitação: TR • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
-          "Instalação vinculada à NS deve estar com status SUSPENSA"
+          "Instalação vinculada à NS deve estar com status COMPLETAMENTE SUSPENSA"
         ],
-        "body": "Quando uma UC fica desligada por mais de 6 meses, a religação exige nova vistoria do padrão e reentra como TR. O sinal mais óbvio é o status \"Suspensa\" da instalação.",
+        "body": "Quando uma UC fica desligada por mais de 6 meses, a religação exige nova vistoria do padrão e reentra como TR. O sinal mais óbvio é o status \"Completamente Suspensa\" da instalação.",
         "image": null,
         "imageAlt": "Status \"Suspensa\" na tela do SAP"
       },
@@ -379,7 +379,7 @@
       },
       {
         "type": "quiz",
-        "question": "Qual o módulo e código de solicitação para uma ligação nova de três apartamentos em um mesmo padrão, todos com disjuntor monopolar de 50A?",
+        "question": "Qual o módulo e código de solicitação para uma ligação nova de três apartamentos em um mesmo padrão, todos com disjuntor monopolar de 63A?",
         "options": [
           {
             "text": "Módulo 1 — LN — Caso 1",
@@ -389,12 +389,12 @@
           {
             "text": "Módulo 1 — LN — Caso 2",
             "correct": true,
-            "explanation": "Correto. Caso 2 cobre 2 ou 3 UCs com disjuntores até 1 tri/63A ou mono/bi 63A. Três UCs com mono 50A cabem perfeitamente."
+            "explanation": "Correto. Caso 2 cobre 2 ou 3 UCs com disjuntores até 1 tri/63A ou mono/bi 63A. Três UCs com mono 63A cabem perfeitamente."
           },
           {
             "text": "Módulo 3 — LN — Caso 9 (padrão coletivo)",
             "correct": false,
-            "explanation": "Padrão coletivo no Módulo 3 só entra quando há mais de 3 caixas OU pelo menos uma UC com disjuntor tripolar. Aqui são 3 UCs e todos monopolar 50A — ainda dentro do Módulo 1."
+            "explanation": "Padrão coletivo no Módulo 3 só entra quando há mais de 3 caixas OU pelo menos uma UC com disjuntor tripolar. Aqui são 3 UCs e todos monopolar 63A — ainda dentro do Módulo 1."
           },
           {
             "text": "Módulo 3 — LN — Caso 11 (múltiplas torres)",
