@@ -195,7 +195,7 @@
         ],
         "body": "Atendimentos a uma única unidade consumidora de qualquer classe, em caráter definitivo. É o caso mais comum no dia a dia da equipe.",
         "image": null,
-        "imageAlt": "Casa unifamiliar — cliente individual"
+        "imageAlt": "Casa familiar — cliente individual"
       },
       {
         "title": "Módulo 2 — Ligação provisória",
@@ -318,7 +318,7 @@
         ],
         "body": "Esse é o caso mais frequente: cliente novo, casa nova, uma única UC. Documentação simples, pelo GEDEX.",
         "image": null,
-        "imageAlt": "Casa unifamiliar nova com poste novo"
+        "imageAlt": "Casa familiar nova com poste novo"
       },
       {
         "title": "Caso 2 — Ligação nova de 2 ou 3 UCs",
@@ -437,7 +437,7 @@
     "slides": [
       {
         "title": "Módulo 3 — visão geral",
-        "body": "Atendimentos a clientes acima de 75 kW, padrões coletivos com várias caixas, empreendimentos com múltiplas torres e loteamentos. A complexidade aumenta — e com ela, a exigência documental: muitos casos vêm do APRWeb em vez do GEDEX.",
+        "body": "Atendimentos a clientes acima de 75 kW, padrões coletivos com várias caixas, empreendimentos com múltiplas torres e loteamentos. A complexidade aumenta — e com ela, a exigência documental e técnica.",
         "image": null,
         "imageAlt": "Capa: empreendimentos coletivos e grandes cargas"
       },
@@ -468,7 +468,7 @@
         "title": "Caso 9 — Padrão coletivo grande",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN ou AC • Nº caixas: múltiplas • Anexos: APRWeb",
         "bullets": [
-          "Mais de 3 caixas OU pelo menos 1 UC com disjuntor tripolar",
+          "Mais de 3 caixas OU pelo menos 1 UC com disjuntor tripolar com corrente nominal superior a 63 A",
           "Todas as UCs solicitadas devem aparecer na aba Unidades Consumidoras",
           "Haverá disjuntor geral na solicitação"
         ],
@@ -482,18 +482,19 @@
         "bullets": [
           "Todas as UCs solicitadas na aba Unidades Consumidoras",
           "Pode ou não haver disjuntor geral",
-          "Haverá MARCAÇÃO de \"híbrido\" na solicitação"
+          "Haverá indicação de \"híbrido\" na solicitação"
         ],
-        "body": "Atendimentos híbridos misturam clientes BT e MT no mesmo empreendimento, ou padrão único com características compartilhadas. Identifica-se pela flag explícita de híbrido na solicitação.",
+        "body": "Atendimentos híbridos misturam cliente com atendimento individual e coletivo no mesmo empreendimento. Identifica-se pela flag explícita de híbrido na solicitação.",
         "image": null,
-        "imageAlt": "Diagrama: atendimento híbrido BT+MT"
+        "imageAlt": "Diagrama: atendimento híbrido"
       },
       {
         "title": "Caso 11 — Múltiplas torres",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: múltiplas • Anexos: APRWeb",
         "bullets": [
           "Todas as UCs com DOIS complementos divergentes",
-          "Padrão típico: \"TORRE X, AP YYY\""
+          "Padrão típico: \"TORRE X, AP YYY\"",
+          "Pode ou não ter rede interna CEMIG"
         ],
         "body": "Condomínios e empreendimentos com mais de um bloco ou torre. O sinal mais claro é o duplo complemento nas UCs (torre + apartamento).",
         "image": null,
@@ -504,9 +505,9 @@
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
           "Campo Assunto e/ou documentação indicam atendimento a um loteamento",
-          "Sem previsão das unidades consumidoras exatas no momento da abertura"
+          "Somente previsão das unidades consumidoras exatas no momento da abertura"
         ],
-        "body": "Loteamento é diferente dos outros casos do Módulo 3: a documentação volta para o GEDEX e, embora seja categorizado como múltiplas torres na prática, registra-se inicialmente com 1 caixa porque as UCs específicas ainda não existem.",
+        "body": "Loteamento é diferente dos outros casos do Módulo 3: a documentação volta para o GEDEX e, embora seja categorizado como múltiplas torres na prática, registra-se inicialmente com 1 caixa fictícia porque as UCs específicas ainda não existem.",
         "image": null,
         "imageAlt": "Planta de loteamento com lotes vazios"
       },
@@ -608,7 +609,7 @@
           "Campo Assunto indica que o cliente quer retirar, remover ou deslocar rede/poste próximo",
           "Sempre há uma referência do local mencionada"
         ],
-        "body": "Cliente quer que um poste ou trecho de rede seja removido ou movido — geralmente por motivo estético, ampliação de garagem, construção próxima ou outro impedimento físico. Não envolve mexer com UC, não tem código de solicitação.",
+        "body": "Cliente quer que um poste ou trecho de rede seja removido ou movido — geralmente por motivo estético, ampliação de garagem, construção próxima ou outro impedimento físico. Não envolve mexer com UC.",
         "image": null,
         "imageAlt": "Poste sendo deslocado por equipe"
       },
@@ -616,15 +617,15 @@
         "title": "Caso 15 — Iluminação Pública",
         "context": "Módulo: 4 • Código nota: PSIP • Solicitação: OIP • Nº caixas: não possui • Anexos: GEDEX",
         "bullets": [
-          "Nos documentos sempre haverá um projeto de ligação das luminárias"
+          "Nos documentos sempre haverá um projeto de rede"
         ],
-        "body": "Solicitação de extensão de rede para iluminação pública, geralmente vinda de prefeituras. A presença do projeto luminotécnico anexo é a confirmação visual.",
+        "body": "Solicitação de extensão de rede para iluminação pública, geralmente vinda de prefeituras. A presença do projeto anexo é a confirmação visual.",
         "image": null,
         "imageAlt": "Luminária pública sendo instalada"
       },
       {
         "title": "Adequação sem alteração de carga (SA)",
-        "body": "Outro tipo de situação especial mencionada no POP, mas que não consta na tabela de regras práticas. São pedidos de adequação técnica (troca de padrão, mudança de localização do medidor, etc.) sem aumento ou redução da carga total. Continua no Módulo 4 por não envolver alteração de consumo.",
+        "body": "Outro tipo de situação especial, são pedidos de adequação técnica (troca de padrão, adequação do padrão, etc.) sem aumento ou redução da carga total. Continua no Módulo 4 por não envolver alteração de consumo.",
         "image": null,
         "imageAlt": "Troca de padrão de entrada — sem alteração de carga"
       },
@@ -706,7 +707,7 @@
       },
       {
         "type": "quiz",
-        "question": "Caso 1 — Pedido: ligação nova de uma casa unifamiliar, padrão monopolar 50A. Qual módulo e código?",
+        "question": "Caso 1 — Pedido: ligação nova de uma casa familiar, padrão monopolar 63A. Qual módulo e código?",
         "options": [
           {
             "text": "Módulo 1, LN, COBT, 1 caixa, GEDEX",
@@ -716,7 +717,7 @@
           {
             "text": "Módulo 3, LN, COBT, 1 caixa, APRWeb",
             "correct": false,
-            "explanation": "Casa unifamiliar com mono 50A está bem abaixo de 75 kW — fica no Módulo 1, não no 3."
+            "explanation": "Casa familiar com mono 63A está bem abaixo de 75 kW — fica no Módulo 1, não no 3."
           },
           {
             "text": "Módulo 1, AC, COBT, 1 caixa, GEDEX",
@@ -865,9 +866,9 @@
         "question": "Caso 7 — Prefeitura quer estender rede para iluminar 200m de uma rua nova.",
         "options": [
           {
-            "text": "Módulo 4, OIP, PSIP, Caso 15, com projeto luminotécnico anexo",
+            "text": "Módulo 4, OIP, PSIP, Caso 15, com projeto anexo",
             "correct": true,
-            "explanation": "Correto. Extensão de rede para iluminação pública é Caso 15, código PSIP, sempre com projeto luminotécnico anexo."
+            "explanation": "Correto. Extensão de rede para iluminação pública é Caso 15, código PSIP, sempre com projeto anexo."
           },
           {
             "text": "Módulo 4, OIP, PSRP, Caso 14",
@@ -940,7 +941,7 @@
       },
       {
         "type": "quiz",
-        "question": "Caso 10 — Padrão coletivo com 8 caixas (todas mono 50A) + disjuntor geral tripolar 80A.",
+        "question": "Caso 10 — Padrão coletivo com 8 caixas (todas mono 63A) + disjuntor geral tripolar 80A.",
         "options": [
           {
             "text": "Caso 2 — LN de 2 ou 3 UCs (Módulo 1)",
@@ -970,6 +971,458 @@
         "body": "Você completou o treinamento de Análise de Conexão BT — Classificação. Agora você sabe identificar códigos de serviço SAP, os 4 módulos do POP, e os 15 casos práticos com seus detalhes. Os próximos treinamentos (Análise Inicial, Análise Técnica, Orçamentação) serão liberados em breve.",
         "image": null,
         "imageAlt": "Troféu — conclusão do treinamento"
+      }
+    ]
+  },
+  "documental-introducao": {
+    "title": "Introdução à análise documental",
+    "slides": [
+      {
+        "title": "Bem-vindo ao POP de Conexão BT",
+        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "image": null,
+        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+      },
+      {
+        "title": "Por que o código importa?",
+        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
+        "image": null,
+        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
+      },
+      {
+        "title": "Os 3 códigos da área de Conexão BT",
+        "bullets": [
+          "COBT — Ligação Nova ou Alteração de Carga em BT",
+          "PSRP — Remoção de Poste ou Rede",
+          "PSIP — Obras de Iluminação Pública"
+        ],
+        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
+        "image": null,
+        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+      },
+      {
+        "title": "Como verificar o código no SAP",
+        "bullets": [
+          "Exibir ou Modificar a Nota de Serviço",
+          "Acessar a aba Dados de Solicitação",
+          "Localizar o campo Item",
+          "Conferir o Subcampo Serviços"
+        ],
+        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
+        "image": null,
+        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+      },
+      {
+        "title": "E se o código estiver errado?",
+        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "image": null,
+        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+      },
+      {
+        "title": "Texto padrão da medida 0592",
+        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "image": null,
+        "imageAlt": "Captura: texto da medida 0592"
+      },
+      {
+        "title": "Texto da 0592 — caso de dúvida",
+        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "image": null,
+        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "options": [
+          {
+            "text": "COBT",
+            "correct": false,
+            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
+          },
+          {
+            "text": "PSRP",
+            "correct": true,
+            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+          },
+          {
+            "text": "PSIP",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+          },
+          {
+            "text": "OIP",
+            "correct": false,
+            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
+        "options": [
+          {
+            "text": "Iniciar a análise normalmente e corrigir depois",
+            "correct": false,
+            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
+          },
+          {
+            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
+            "correct": false,
+            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
+          },
+          {
+            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
+            "correct": true,
+            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
+          },
+          {
+            "text": "Fechar a nota como cancelada por conta própria",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
+          }
+        ],
+        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
+      }
+    ]
+  },
+  "documental-geral": {
+    "title": "Introdução à análise documental",
+    "slides": [
+      {
+        "title": "Bem-vindo ao POP de Conexão BT",
+        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "image": null,
+        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+      },
+      {
+        "title": "Por que o código importa?",
+        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
+        "image": null,
+        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
+      },
+      {
+        "title": "Os 3 códigos da área de Conexão BT",
+        "bullets": [
+          "COBT — Ligação Nova ou Alteração de Carga em BT",
+          "PSRP — Remoção de Poste ou Rede",
+          "PSIP — Obras de Iluminação Pública"
+        ],
+        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
+        "image": null,
+        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+      },
+      {
+        "title": "Como verificar o código no SAP",
+        "bullets": [
+          "Exibir ou Modificar a Nota de Serviço",
+          "Acessar a aba Dados de Solicitação",
+          "Localizar o campo Item",
+          "Conferir o Subcampo Serviços"
+        ],
+        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
+        "image": null,
+        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+      },
+      {
+        "title": "E se o código estiver errado?",
+        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "image": null,
+        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+      },
+      {
+        "title": "Texto padrão da medida 0592",
+        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "image": null,
+        "imageAlt": "Captura: texto da medida 0592"
+      },
+      {
+        "title": "Texto da 0592 — caso de dúvida",
+        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "image": null,
+        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "options": [
+          {
+            "text": "COBT",
+            "correct": false,
+            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
+          },
+          {
+            "text": "PSRP",
+            "correct": true,
+            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+          },
+          {
+            "text": "PSIP",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+          },
+          {
+            "text": "OIP",
+            "correct": false,
+            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
+        "options": [
+          {
+            "text": "Iniciar a análise normalmente e corrigir depois",
+            "correct": false,
+            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
+          },
+          {
+            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
+            "correct": false,
+            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
+          },
+          {
+            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
+            "correct": true,
+            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
+          },
+          {
+            "text": "Fechar a nota como cancelada por conta própria",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
+          }
+        ],
+        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
+      }
+    ]
+  },
+  "documental-especifica": {
+    "title": "Introdução à análise documental",
+    "slides": [
+      {
+        "title": "Bem-vindo ao POP de Conexão BT",
+        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "image": null,
+        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+      },
+      {
+        "title": "Por que o código importa?",
+        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
+        "image": null,
+        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
+      },
+      {
+        "title": "Os 3 códigos da área de Conexão BT",
+        "bullets": [
+          "COBT — Ligação Nova ou Alteração de Carga em BT",
+          "PSRP — Remoção de Poste ou Rede",
+          "PSIP — Obras de Iluminação Pública"
+        ],
+        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
+        "image": null,
+        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+      },
+      {
+        "title": "Como verificar o código no SAP",
+        "bullets": [
+          "Exibir ou Modificar a Nota de Serviço",
+          "Acessar a aba Dados de Solicitação",
+          "Localizar o campo Item",
+          "Conferir o Subcampo Serviços"
+        ],
+        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
+        "image": null,
+        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+      },
+      {
+        "title": "E se o código estiver errado?",
+        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "image": null,
+        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+      },
+      {
+        "title": "Texto padrão da medida 0592",
+        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "image": null,
+        "imageAlt": "Captura: texto da medida 0592"
+      },
+      {
+        "title": "Texto da 0592 — caso de dúvida",
+        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "image": null,
+        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "options": [
+          {
+            "text": "COBT",
+            "correct": false,
+            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
+          },
+          {
+            "text": "PSRP",
+            "correct": true,
+            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+          },
+          {
+            "text": "PSIP",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+          },
+          {
+            "text": "OIP",
+            "correct": false,
+            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
+        "options": [
+          {
+            "text": "Iniciar a análise normalmente e corrigir depois",
+            "correct": false,
+            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
+          },
+          {
+            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
+            "correct": false,
+            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
+          },
+          {
+            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
+            "correct": true,
+            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
+          },
+          {
+            "text": "Fechar a nota como cancelada por conta própria",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
+          }
+        ],
+        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
+      }
+    ]
+  },
+  "documental-especial": {
+    "title": "Introdução à análise documental",
+    "slides": [
+      {
+        "title": "Bem-vindo ao POP de Conexão BT",
+        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "image": null,
+        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+      },
+      {
+        "title": "Por que o código importa?",
+        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
+        "image": null,
+        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
+      },
+      {
+        "title": "Os 3 códigos da área de Conexão BT",
+        "bullets": [
+          "COBT — Ligação Nova ou Alteração de Carga em BT",
+          "PSRP — Remoção de Poste ou Rede",
+          "PSIP — Obras de Iluminação Pública"
+        ],
+        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
+        "image": null,
+        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+      },
+      {
+        "title": "Como verificar o código no SAP",
+        "bullets": [
+          "Exibir ou Modificar a Nota de Serviço",
+          "Acessar a aba Dados de Solicitação",
+          "Localizar o campo Item",
+          "Conferir o Subcampo Serviços"
+        ],
+        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
+        "image": null,
+        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+      },
+      {
+        "title": "E se o código estiver errado?",
+        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "image": null,
+        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+      },
+      {
+        "title": "Texto padrão da medida 0592",
+        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "image": null,
+        "imageAlt": "Captura: texto da medida 0592"
+      },
+      {
+        "title": "Texto da 0592 — caso de dúvida",
+        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
+        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "image": null,
+        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "options": [
+          {
+            "text": "COBT",
+            "correct": false,
+            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
+          },
+          {
+            "text": "PSRP",
+            "correct": true,
+            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+          },
+          {
+            "text": "PSIP",
+            "correct": false,
+            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+          },
+          {
+            "text": "OIP",
+            "correct": false,
+            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
+        "options": [
+          {
+            "text": "Iniciar a análise normalmente e corrigir depois",
+            "correct": false,
+            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
+          },
+          {
+            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
+            "correct": false,
+            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
+          },
+          {
+            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
+            "correct": true,
+            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
+          },
+          {
+            "text": "Fechar a nota como cancelada por conta própria",
+            "correct": false,
+            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
+          }
+        ],
+        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
       }
     ]
   }
