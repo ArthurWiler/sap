@@ -116,6 +116,26 @@ const TRAININGS = [
     tags: ["Avançado", "Carga", "Normas"],
   },
   {
+    id: "rede-i",
+    title: "Análise de rede I",
+    desc: "Aprofundamento em aplicações avançadas e nas principais normas e diretrizes relacionadas aos processos de carga.",
+    available: true,
+    difficulty: "Iniciante",
+    platform: "web",
+    hasSubmodules: true,
+    tags: ["Iniciante", "Carga", "Normas"],
+  },
+  {
+    id: "rede-ii",
+    title: "Análise de rede II",
+    desc: "Aprofundamento em aplicações avançadas e nas principais normas e diretrizes relacionadas aos processos de carga.",
+    available: true,
+    difficulty: "Intermediário",
+    platform: "web",
+    hasSubmodules: true,
+    tags: ["Intermediário", "Carga", "Normas"],
+  },
+  {
     id: "conexao-bt-classificacao",
     title: "Classificação dos pedidos",
     desc: "Aprenda a classificar corretamente cada solicitação de conexão em baixa tensão segundo o POP PE/EM. Inclui códigos de serviço SAP, módulos de análise e as regras práticas com exemplos e quizzes.",
@@ -169,6 +189,44 @@ TRAININGS.forEach((t) => {
       break;
 
     case "carga-i":
+      t.submodules = [
+        {
+          id: `${t.id}-pedidos`,
+          title: "Entrada de pedidos",
+          desc: "Apresentação dos diversos tipos de pedidos.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-criacao`,
+          title: "Criação de Medidas",
+          desc: "Aprenda o processo completo de cadastro de medidas no SAP.",
+          available: false,
+          type: "deck",
+        },
+      ];
+      break;
+
+    case "rede-i":
+      t.submodules = [
+        {
+          id: `${t.id}-pedidos`,
+          title: "Entrada de pedidos",
+          desc: "Apresentação dos diversos tipos de pedidos.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-criacao`,
+          title: "Criação de Medidas",
+          desc: "Aprenda o processo completo de cadastro de medidas no SAP.",
+          available: false,
+          type: "deck",
+        },
+      ];
+      break;
+
+    case "rede-ii":
       t.submodules = [
         {
           id: `${t.id}-pedidos`,
