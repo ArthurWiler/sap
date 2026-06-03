@@ -1391,13 +1391,37 @@
     ]
   },
   "analise-doc-bt-casos-ln-urbana": {
-    "title": "Ligação nova — área urbana",
+    "title": "Ligação nova: área urbana",
     "slides": [
       {
-        "title": "Em construção",
-        "body": "Este submódulo de ligação nova — área urbana ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
-        "imageAlt": "Aviso de conteúdo em construção"
+        "imageAlt": "Ligação nova urbana"
+      },
+      {
+        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova urbana"
+      },
+      {
+        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova urbana"
+      },
+      {
+        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova urbana"
+      },
+      {
+        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova urbana"
       }
     ]
   },
