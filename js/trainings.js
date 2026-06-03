@@ -1,4 +1,3 @@
-/* ============ TRAINING INDEX ============ */
 const TRAININGS = [
   {
     id: "navegacao-basica",
@@ -88,7 +87,7 @@ const TRAININGS = [
   },
   {
     id: "carga-i",
-    title: "Treinamento carga – Conceitos básicos",
+    title: "Tipos de pedidos e medidas",
     desc: "Introdução aos principais conceitos e fundamentos necessários para atuação nos processos de carga.",
     available: true,
     difficulty: "Iniciante",
@@ -98,9 +97,9 @@ const TRAININGS = [
   },
   {
     id: "carga-ii",
-    title: "Treinamento carga – Aplicações práticas",
+    title: "Aplicações práticas",
     desc: "Desenvolva habilidades práticas para execução das rotinas de carga em cenários reais de operação.",
-    available: false,
+    available: true,
     difficulty: "Intermediário",
     platform: "web",
     hasSubmodules: true,
@@ -118,7 +117,7 @@ const TRAININGS = [
   },
   {
     id: "conexao-bt-classificacao",
-    title: "Análise de Conexão BT — Classificação",
+    title: "Classificação dos pedidos",
     desc: "Aprenda a classificar corretamente cada solicitação de conexão em baixa tensão segundo o POP PE/EM. Inclui códigos de serviço SAP, módulos de análise e as regras práticas com exemplos e quizzes.",
     available: true,
     difficulty: "Intermediário",
@@ -127,25 +126,15 @@ const TRAININGS = [
   },
   {
     id: "analise-doc-bt-etapas",
-    title: "Análise Documental BT — Etapas",
-    desc: "Conheça as etapas da análise documental em solicitações de baixa tensão: documentação geral, específica e casos especiais. Inclui quizzes para fixação.",
+    title: "Fundamentos da Análise Documental",
+    desc: "Conheça as etapas da análise documental em solicitações de baixa tensão: documentação geral, específica e casos especiais.",
     available: true,
-    difficulty: "Intermediário",
+    difficulty: "Iniciante",
     platform: "web",
-    tags: ["Intermediário", "Documentação", "Análise BT"],
-  },
-  {
-    id: "analise-doc-bt-casos",
-    title: "Análise Documental BT — Casos Práticos",
-    desc: "Casos práticos da análise documental por tipo de pedido: ligação nova urbana e rural, alteração de carga, empreendimentos e cenários híbridos. (Em construção)",
-    available: true,
-    difficulty: "Intermediário",
-    platform: "web",
-    tags: ["Intermediário", "Documentação", "Casos práticos"],
+    tags: ["Iniciante", "Documentação"],
   },
 ];
 
-/* Sort order: difficulty asc, then by available (available first within same level) */
 const DIFFICULTY_ORDER = { Iniciante: 0, Intermediário: 1, Avançado: 2 };
 const SORTED_TRAININGS = [...TRAININGS].sort((a, b) => {
   const d = DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty];
@@ -198,18 +187,18 @@ TRAININGS.forEach((t) => {
       ];
       break;
 
-    case "analise-doc-bt-casos":
+    case "carga-ii":
       t.submodules = [
         {
           id: `${t.id}-ln-urbana`,
-          title: "Ligação nova — área urbana",
+          title: "Ligação nova - área urbana",
           desc: "Documentos necessários, variações permitidas e não permitidas, casos específicos urbanos.",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-ln-rural`,
-          title: "Ligação nova — área rural",
+          title: "Ligação nova - área rural",
           desc: "Documentos de posse e propriedade, coerência territorial, casos específicos rurais.",
           available: true,
           type: "deck",
@@ -237,7 +226,7 @@ TRAININGS.forEach((t) => {
         },
         {
           id: `${t.id}-hibrido`,
-          title: "Ligação nova — cenário híbrido",
+          title: "Ligação nova - cenário híbrido",
           desc: "Solicitações que combinam elementos urbanos e rurais, exigindo análise mais criteriosa.",
           available: true,
           type: "deck",
@@ -283,7 +272,7 @@ TRAININGS.forEach((t) => {
         {
           id: `${t.id}-codigos`,
           title: "Códigos de serviço SAP",
-          desc: "COBT, PSRP, PSIP — como identificar o código correto e o que fazer quando está errado (medida 0592).",
+          desc: "COBT, PSRP, PSIP - como identificar o código correto e o que fazer quando está errado (medida 0592).",
           available: true,
           type: "deck",
         },
@@ -296,28 +285,28 @@ TRAININGS.forEach((t) => {
         },
         {
           id: `${t.id}-regras-mod1-2`,
-          title: "Regras práticas — Módulos 1 e 2",
+          title: "Regras práticas - Módulos 1 e 2",
           desc: "Casos 1–6 da tabela do POP: ligações individuais, religação e ligação provisória.",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-regras-mod3`,
-          title: "Regras práticas — Módulo 3",
+          title: "Regras práticas - Módulo 3",
           desc: "Casos 7–12: empreendimentos coletivos, acima de 75 kW, atendimento híbrido, múltiplas torres e loteamentos.",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-regras-mod4`,
-          title: "Regras práticas — Módulo 4",
+          title: "Regras práticas - Módulo 4",
           desc: "Situações especiais: remoção de poste/rede (PSRP) e iluminação pública (PSIP).",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-revisao`,
-          title: "Revisão geral — Quiz",
+          title: "Revisão geral - Quiz",
           desc: "Coloque seu conhecimento à prova com 10 casos da tabela do POP em formato de quiz.",
           available: true,
           type: "deck",
@@ -326,7 +315,6 @@ TRAININGS.forEach((t) => {
       break;
   }
 
-  // Marca somente quem realmente possui submódulos
   t.hasSubmodules = !!t.submodules?.length;
 });
 

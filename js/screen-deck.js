@@ -3,8 +3,8 @@
    Slides come from decks.json (loaded once in app.js), indexed by submoduleId.
 
    Slide types:
-   - type: "info" (default) — title + body + image placeholder
-   - type: "quiz" — question + options[] with one correct.
+   - type: "info" (default) - title + body + image placeholder
+   - type: "quiz" - question + options[] with one correct.
      After correct answer, shows explanation per option. Próximo only enables on correct.
 */
 
@@ -18,7 +18,9 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
       <div className="deck-page">
         <div className="deck-topbar">
           <div className="brand">
-            <div className="cemig-mark"><span>C</span></div>
+            <div className="cemig-mark">
+              <span>C</span>
+            </div>
             <span>Treinamentos PE/EM</span>
           </div>
           <div className="spacer" />
@@ -28,7 +30,10 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
         </div>
         <div className="deck-missing">
           <h2>Conteúdo não encontrado</h2>
-          <p>O conteúdo deste submódulo ainda não foi cadastrado em <code>decks.json</code>.</p>
+          <p>
+            O conteúdo deste submódulo ainda não foi cadastrado em{" "}
+            <code>decks.json</code>.
+          </p>
         </div>
       </div>
     );
@@ -43,7 +48,8 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
 
   // Quiz advancement is blocked until user answers correctly
   const currentQuiz = quizState[idx];
-  const canAdvance = slideType !== "quiz" || (currentQuiz && currentQuiz.correct);
+  const canAdvance =
+    slideType !== "quiz" || (currentQuiz && currentQuiz.correct);
 
   const next = () => {
     if (!canAdvance) return;
@@ -60,7 +66,9 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
     const correct = slide.options[optIdx].correct === true;
     setQuizState((prev) => {
       const existing = prev[idx] || { attempts: 0, wrongs: [] };
-      const wrongs = correct ? existing.wrongs : [...new Set([...existing.wrongs, optIdx])];
+      const wrongs = correct
+        ? existing.wrongs
+        : [...new Set([...existing.wrongs, optIdx])];
       return {
         ...prev,
         [idx]: {
@@ -79,7 +87,9 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
       {/* Top bar */}
       <div className="deck-topbar">
         <div className="brand">
-          <div className="cemig-mark" title="CEMIG"><span>C</span></div>
+          <div className="cemig-mark" title="CEMIG">
+            <span>C</span>
+          </div>
           <span>Treinamentos PE/EM</span>
         </div>
         <div className="spacer" />
@@ -91,7 +101,8 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
       {/* Header */}
       <div className="deck-header">
         <div className="deck-crumb">
-          {training?.title} <Icon name="chevron-right" size={11} /> {submodule?.title}
+          {training?.title} <Icon name="chevron-right" size={11} />{" "}
+          {submodule?.title}
         </div>
         <h1>{deck.title}</h1>
         <div className="deck-progress-row">
@@ -160,9 +171,13 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
           title={!canAdvance ? "Responda corretamente para avançar" : ""}
         >
           {isLast ? (
-            <>Concluir <Icon name="check" size={13} /></>
+            <>
+              Concluir <Icon name="check" size={13} />
+            </>
           ) : (
-            <>Próximo <Icon name="fwd" size={13} /></>
+            <>
+              Próximo <Icon name="fwd" size={13} />
+            </>
           )}
         </button>
       </div>
@@ -191,7 +206,9 @@ function InfoSlide({ slide }) {
         {slide.body && <p>{slide.body}</p>}
         {slide.bullets && (
           <ul className="deck-bullets">
-            {slide.bullets.map((b, i) => <li key={i}>{b}</li>)}
+            {slide.bullets.map((b, i) => (
+              <li key={i}>{b}</li>
+            ))}
           </ul>
         )}
       </div>
@@ -224,9 +241,7 @@ function QuizSlide({ slide, state, onSelect }) {
 
       <h2 className="quiz-question">{slide.question}</h2>
 
-      {slide.context && (
-        <div className="quiz-context">{slide.context}</div>
-      )}
+      {slide.context && <div className="quiz-context">{slide.context}</div>}
 
       <div className="quiz-options">
         {slide.options.map((opt, i) => {

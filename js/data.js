@@ -1,5 +1,5 @@
 /* ============ DATA GENERATOR ============ */
-/* Generates a coherent dataset for a "nota" — used across all screens. */
+/* Generates a coherent dataset for a "nota" - used across all screens. */
 
 const NOMES_F = [
   "MARIA CLARA COSTA",
@@ -165,12 +165,7 @@ const TIPOS_SERV = [
   { cod: "A04", desc: "Religação" },
   { cod: "A05", desc: "Mudança de Titularidade" },
 ];
-const MERCADOS = [
-  "URBANO_AEREO",
-  "URBANO_SUB",
-  "RURAL_AEREO",
-  "RURAL_SUB",
-];
+const MERCADOS = ["URBANO_AEREO", "URBANO_SUB", "RURAL_AEREO", "RURAL_SUB"];
 const STATUS_NOTA = [
   { p1: "MEAB MSPN", p2: "CANC" },
   { p1: "MEAB ABER", p2: "ATEN" },
@@ -184,11 +179,7 @@ const STATUS_SOLIC = [
   "Concluído pendente faturamento",
   "Aguardando documentação do cliente",
 ];
-const MODALIDADES_AC = [
-  "Distribuidora",
-  "Permissionária",
-  "Concessionária",
-];
+const MODALIDADES_AC = ["Distribuidora", "Permissionária", "Concessionária"];
 const SIM_NAO = ["Sim", "Não"];
 const RUA_PREFIX = ["RUA", "AV", "TRAVESSA", "ALAMEDA", "PRAÇA"];
 
@@ -273,9 +264,7 @@ function generateDataset(seedKey) {
   const padraoPronto = pick(rng, SIM_NAO);
 
   // Disjuntor geral radio choice
-  const disjOpt = ["com", "sem", "estimado", "projeto"][
-    Math.floor(rng() * 4)
-  ];
+  const disjOpt = ["com", "sem", "estimado", "projeto"][Math.floor(rng() * 4)];
 
   // Latitude/longitude near Sete Lagoas / Belo Horizonte
   const lat = -(19 + rng() * 2).toFixed(7);
@@ -356,10 +345,7 @@ function generateDataset(seedKey) {
 
     // Comunicação
     nomeSolic: nome,
-    tel:
-      rng() < 0.4
-        ? ""
-        : `(31) ${randDigits(rng, 4)}-${randDigits(rng, 4)}`,
+    tel: rng() < 0.4 ? "" : `(31) ${randDigits(rng, 4)}-${randDigits(rng, 4)}`,
     cel: `31${randDigits(rng, 9)}`,
     email1: `${slug}${randDigits(rng, 3)}@gmail.com`,
     email2: `${slug}${randDigits(rng, 3)}@gmail.com`,
@@ -395,8 +381,7 @@ function generateDataset(seedKey) {
       "Consumidor com minigeração",
     ]),
     disjOpt,
-    qtdDisjGeral:
-      disjOpt === "com" ? String(Math.floor(rng() * 3) + 1) : "",
+    qtdDisjGeral: disjOpt === "com" ? String(Math.floor(rng() * 3) + 1) : "",
     disjGeralVal: disjOpt === "com" ? pick(rng, DISJUNTORES).cod : "",
     cargaKw,
     atendHibrido: rng() < 0.3,
@@ -421,13 +406,7 @@ function generateDataset(seedKey) {
 }
 
 /* ============ MEDIDAS GENERATOR ============ */
-const GRP_CODIGOS = [
-  "ZEO-NTC",
-  "ZEO-EXP",
-  "ZEO-RLC",
-  "ZEO-PRJ",
-  "ZEO-VIS",
-];
+const GRP_CODIGOS = ["ZEO-NTC", "ZEO-EXP", "ZEO-RLC", "ZEO-PRJ", "ZEO-VIS"];
 const STATUS_USUARIOS = [
   "CANC CTEC",
   "CANC",
@@ -512,11 +491,8 @@ function generateMedidas(rng, seedKey) {
         ":" +
         String(Math.floor(rng() * 60)).padStart(2, "0"),
       modificadoPor: pick(rng, CRIADO_POR_OPTS),
-      modificadoEm: formatDateBR(
-        new Date(planFim.getTime() + 14 * 86400000),
-      ),
+      modificadoEm: formatDateBR(new Date(planFim.getTime() + 14 * 86400000)),
       selected: i === 0, // first row pre-selected like the screenshot
     };
   });
 }
-

@@ -6,7 +6,7 @@ function TourBanner({ tour }) {
     <div className="tour-banner">
       <span className="tour-label">Treinamento</span>
       <span className="tour-title">
-        {tour.title} — Passo {tour.currentStep + 1} de {tour.steps.length}
+        {tour.title} - Passo {tour.currentStep + 1} de {tour.steps.length}
       </span>
       <button className="tour-exit" onClick={tour.onExit}>
         Pular tutorial
@@ -32,9 +32,7 @@ function TourSpotlight({ tour }) {
     let attempts = 0;
     const find = () => {
       if (cancelled) return;
-      const el = document.querySelector(
-        `[data-tour-id="${step.target}"]`,
-      );
+      const el = document.querySelector(`[data-tour-id="${step.target}"]`);
       if (el) {
         // Scroll the element into view if it's offscreen,
         // so the spotlight + tooltip fit within the viewport.
@@ -81,9 +79,7 @@ function TourSpotlight({ tour }) {
 
     // also update on resize/scroll
     const onResize = () => {
-      const el = document.querySelector(
-        `[data-tour-id="${step.target}"]`,
-      );
+      const el = document.querySelector(`[data-tour-id="${step.target}"]`);
       if (el) {
         const r = el.getBoundingClientRect();
         setRect({
@@ -110,10 +106,7 @@ function TourSpotlight({ tour }) {
   // If no spotlight (intro step), show centered tooltip
   if (!rect) {
     return (
-      <div
-        className="tour-spotlight-overlay"
-        style={{ pointerEvents: "auto" }}
-      >
+      <div className="tour-spotlight-overlay" style={{ pointerEvents: "auto" }}>
         <div className="tour-mask" />
         <div
           className="tour-tooltip"
@@ -134,10 +127,7 @@ function TourSpotlight({ tour }) {
               <button className="tour-skip" onClick={tour.onExit}>
                 Pular
               </button>
-              <button
-                className="tour-btn primary"
-                onClick={tour.onAdvance}
-              >
+              <button className="tour-btn primary" onClick={tour.onAdvance}>
                 {tour.currentStep === tour.steps.length - 1
                   ? "Concluir"
                   : "Avançar"}
@@ -219,10 +209,7 @@ function TourSpotlight({ tour }) {
               Pular
             </button>
             {step.advanceOn !== "click" && (
-              <button
-                className="tour-btn primary"
-                onClick={tour.onAdvance}
-              >
+              <button className="tour-btn primary" onClick={tour.onAdvance}>
                 {tour.currentStep === tour.steps.length - 1
                   ? "Concluir"
                   : "Avançar"}
@@ -245,4 +232,3 @@ function TourSpotlight({ tour }) {
     </div>
   );
 }
-

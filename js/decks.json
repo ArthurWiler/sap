@@ -6,7 +6,7 @@
         "title": "Bem-vindo!",
         "body": "Neste módulo você vai conhecer os principais tipos de pedidos que chegam à área de Carga e como cada um se diferencia em termos de origem, finalidade e fluxo de tratamento.",
         "image": null,
-        "imageAlt": "Capa do módulo — equipe de Carga em ação"
+        "imageAlt": "Capa do módulo - equipe de Carga em ação"
       },
       {
         "title": "Ligação Nova (LN)",
@@ -48,7 +48,7 @@
         "title": "Próximos passos",
         "body": "Agora que você conhece os tipos de pedidos, o próximo passo é aprender o fluxo completo de cadastro de medidas no SAP. Conclua este submódulo para liberar o próximo.",
         "image": null,
-        "imageAlt": "Checkmark — módulo concluído"
+        "imageAlt": "Checkmark - módulo concluído"
       }
     ]
   },
@@ -70,7 +70,7 @@
         "title": "Bem-vindo ao POP de Conexão BT",
         "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
         "image": null,
-        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+        "imageAlt": "Capa: códigos de serviço SAP - Conexão BT"
       },
       {
         "title": "Por que o código importa?",
@@ -81,9 +81,9 @@
       {
         "title": "Os 3 códigos da área de Conexão BT",
         "bullets": [
-          "COBT — Ligação Nova ou Alteração de Carga em BT",
-          "PSRP — Remoção de Poste ou Rede",
-          "PSIP — Obras de Iluminação Pública"
+          "COBT - Ligação Nova ou Alteração de Carga em BT",
+          "PSRP - Remoção de Poste ou Rede",
+          "PSIP - Obras de Iluminação Pública"
         ],
         "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
         "image": null,
@@ -97,7 +97,7 @@
           "Localizar o campo Item",
           "Conferir o Subcampo Serviços"
         ],
-        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
+        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir - ele determina todo o restante da análise.",
         "image": null,
         "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
       },
@@ -115,7 +115,7 @@
         "imageAlt": "Captura: texto da medida 0592"
       },
       {
-        "title": "Texto da 0592 — caso de dúvida",
+        "title": "Texto da 0592 - caso de dúvida",
         "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
         "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
         "image": null,
@@ -128,7 +128,7 @@
           {
             "text": "COBT",
             "correct": false,
-            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
+            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT - não cobre remoção de infraestrutura."
           },
           {
             "text": "PSRP",
@@ -143,7 +143,7 @@
           {
             "text": "OIP",
             "correct": false,
-            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+            "explanation": "OIP não é um código de serviço SAP - é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
           }
         ]
       },
@@ -154,7 +154,7 @@
           {
             "text": "Iniciar a análise normalmente e corrigir depois",
             "correct": false,
-            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
+            "explanation": "Nunca prossiga com a análise antes de corrigir o código - todo o fluxo seguinte depende dele."
           },
           {
             "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
@@ -186,19 +186,19 @@
         "imageAlt": "Diagrama: 4 módulos do POP de Conexão BT"
       },
       {
-        "title": "Módulo 1 — Clientes individuais",
+        "title": "Módulo 1 - Clientes individuais",
         "bullets": [
-          "Ligação nova (LN) — até 75 kW",
-          "Aumento de carga (AC) — até 75 kW",
+          "Ligação nova (LN) - até 75 kW",
+          "Aumento de carga (AC) - até 75 kW",
           "Religação há mais de 6 meses (TR)",
           "Alteração de local (ML)"
         ],
         "body": "Atendimentos a uma única unidade consumidora de qualquer classe, em caráter definitivo. É o caso mais comum no dia a dia da equipe.",
         "image": null,
-        "imageAlt": "Casa familiar — cliente individual"
+        "imageAlt": "Casa familiar - cliente individual"
       },
       {
-        "title": "Módulo 2 — Ligação provisória",
+        "title": "Módulo 2 - Ligação provisória",
         "bullets": [
           "Ligação para eventos (LP)"
         ],
@@ -207,7 +207,7 @@
         "imageAlt": "Tenda de evento com ligação provisória"
       },
       {
-        "title": "Módulo 3 — Empreendimentos coletivos e acima de 75 kW",
+        "title": "Módulo 3 - Empreendimentos coletivos e acima de 75 kW",
         "bullets": [
           "Atendimento individual acima de 75 kW (LN ou AC)",
           "Atendimento a padrão coletivo (várias UCs em um padrão)",
@@ -217,10 +217,10 @@
         ],
         "body": "Atendimentos de maior complexidade técnica. Exigem documentação mais robusta, planta da situação, podem envolver disjuntor geral, carta de opção por BT e múltiplas UCs.",
         "image": null,
-        "imageAlt": "Prédio com várias UCs — padrão coletivo"
+        "imageAlt": "Prédio com várias UCs - padrão coletivo"
       },
       {
-        "title": "Módulo 4 — Situações especiais",
+        "title": "Módulo 4 - Situações especiais",
         "bullets": [
           "Remoção de poste ou rede",
           "Iluminação Pública (extensão de rede para iluminação de vias públicas)",
@@ -240,7 +240,7 @@
           "Carga total: acima ou abaixo de 75 kW",
           "Solicitação de remoção de poste/rede ou IP"
         ],
-        "body": "Considere TODOS estes aspectos em conjunto. Uma característica isolada pode te induzir ao erro — é a combinação delas que define o módulo.",
+        "body": "Considere TODOS estes aspectos em conjunto. Uma característica isolada pode te induzir ao erro - é a combinação delas que define o módulo.",
         "image": null,
         "imageAlt": "Checklist: critérios de classificação"
       },
@@ -250,22 +250,22 @@
         "context": "A solicitação informa: \"Ligação temporária para evento de Réveillon, de 28/12 a 02/01, no Clube X\".",
         "options": [
           {
-            "text": "Módulo 1 — Cliente individual",
+            "text": "Módulo 1 - Cliente individual",
             "correct": false,
             "explanation": "O Módulo 1 cobre clientes individuais definitivos. O caráter temporário da ligação (com data de início e fim) já a tira deste módulo."
           },
           {
-            "text": "Módulo 2 — Ligação provisória",
+            "text": "Módulo 2 - Ligação provisória",
             "correct": true,
             "explanation": "Correto. A presença de datas de início e fim no campo descrição é a marca registrada do Módulo 2."
           },
           {
-            "text": "Módulo 3 — Empreendimento coletivo",
+            "text": "Módulo 3 - Empreendimento coletivo",
             "correct": false,
-            "explanation": "Embora um clube possa ter múltiplas UCs, a ligação aqui é temporária e voltada a um evento específico — o caráter temporário prevalece sobre o coletivo."
+            "explanation": "Embora um clube possa ter múltiplas UCs, a ligação aqui é temporária e voltada a um evento específico - o caráter temporário prevalece sobre o coletivo."
           },
           {
-            "text": "Módulo 4 — Situação especial",
+            "text": "Módulo 4 - Situação especial",
             "correct": false,
             "explanation": "O Módulo 4 é para remoção de infraestrutura ou iluminação pública. Aqui o cliente está pedindo energia para consumo, não uma intervenção na rede."
           }
@@ -276,19 +276,19 @@
         "question": "Um cliente pede aumento de carga de uma indústria existente, passando de 50 kW para 120 kW. Em qual módulo se enquadra?",
         "options": [
           {
-            "text": "Módulo 1 — Cliente individual (AC)",
+            "text": "Módulo 1 - Cliente individual (AC)",
             "correct": false,
             "explanation": "O Módulo 1 cobre atendimentos individuais até 75 kW. Como a carga final ultrapassa esse limite, sai do Módulo 1."
           },
           {
-            "text": "Módulo 3 — Acima de 75 kW",
+            "text": "Módulo 3 - Acima de 75 kW",
             "correct": true,
             "explanation": "Correto. Atendimentos individuais com carga total acima de 75 kW vão direto para o Módulo 3, mesmo sendo uma UC só."
           },
           {
-            "text": "Módulo 4 — Situação especial",
+            "text": "Módulo 4 - Situação especial",
             "correct": false,
-            "explanation": "Aumento de carga não é situação especial — é AC, um dos serviços normais. O Módulo 4 é para remoção de poste/rede e iluminação pública."
+            "explanation": "Aumento de carga não é situação especial - é AC, um dos serviços normais. O Módulo 4 é para remoção de poste/rede e iluminação pública."
           },
           {
             "text": "Depende: se a indústria pertence ao mesmo grupo econômico, é Módulo 1; senão, Módulo 3",
@@ -301,7 +301,7 @@
     ]
   },
   "conexao-bt-classificacao-regras-mod1-2": {
-    "title": "Regras práticas — Módulos 1 e 2",
+    "title": "Regras práticas - Módulos 1 e 2",
     "slides": [
       {
         "title": "Guia prático das solicitações - Módulos 1 e 2",
@@ -310,7 +310,7 @@
         "imageAlt": "Recorte da tabela 5.2.3 do POP"
       },
       {
-        "title": "Caso 1 — Ligação nova de 1 UC até 75 kW",
+        "title": "Caso 1 - Ligação nova de 1 UC até 75 kW",
         "context": "Módulo: 1 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
           "A Instalação vinculada à NS deve estar com status \"Aguardando Ligação\"",
@@ -321,7 +321,7 @@
         "imageAlt": "Casa familiar nova com poste novo"
       },
       {
-        "title": "Caso 2 — Ligação nova de 2 ou 3 UCs",
+        "title": "Caso 2 - Ligação nova de 2 ou 3 UCs",
         "context": "Módulo: 1 • Código nota: COBT • Solicitação: LN • Nº caixas: 2 ou 3 • Anexos: GEDEX",
         "bullets": [
           "Disjuntores até 1 tripolar de 63A, ou mono/bipolar de 63A",
@@ -333,7 +333,7 @@
         "imageAlt": "Duplex com duas UCs"
       },
       {
-        "title": "Caso 3 — Aumento de carga de 1 UC",
+        "title": "Caso 3 - Aumento de carga de 1 UC",
         "context": "Módulo: 1 • Código nota: COBT • Solicitação: AC • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
           "Instalação sem suspensões",
@@ -345,7 +345,7 @@
         "imageAlt": "Status \"sem suspensão\" no SAP"
       },
       {
-        "title": "Caso 4 — Combinação AC + LN",
+        "title": "Caso 4 - Combinação AC + LN",
         "body": "Pode haver solicitações combinando os casos anteriores. Exemplos típicos:",
         "bullets": [
           "Aumento de carga de uma UC e ligação nova de outra",
@@ -356,7 +356,7 @@
         "imageAlt": "Diagrama: duas UCs no mesmo padrão"
       },
       {
-        "title": "Caso 5 — Religação após 6 meses (TR)",
+        "title": "Caso 5 - Religação após 6 meses (TR)",
         "context": "Módulo: 1 • Código nota: COBT • Solicitação: TR • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
           "Instalação vinculada à NS deve estar com status COMPLETAMENTE SUSPENSA"
@@ -366,7 +366,7 @@
         "imageAlt": "Status \"Suspensa\" na tela do SAP"
       },
       {
-        "title": "Caso 6 — Ligação para evento (LP)",
+        "title": "Caso 6 - Ligação para evento (LP)",
         "context": "Módulo: 2 • Código nota: COBT • Solicitação: LP • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
           "No campo descrição sempre haverá informações de quando e onde será realizado o evento",
@@ -382,22 +382,22 @@
         "question": "Qual o módulo e código de solicitação para uma ligação nova de três apartamentos em um mesmo padrão, todos com disjuntor monopolar de 63A?",
         "options": [
           {
-            "text": "Módulo 1 — LN — Caso 1",
+            "text": "Módulo 1 - LN - Caso 1",
             "correct": false,
             "explanation": "O Caso 1 é para apenas 1 UC. Aqui são 3 apartamentos."
           },
           {
-            "text": "Módulo 1 — LN — Caso 2",
+            "text": "Módulo 1 - LN - Caso 2",
             "correct": true,
             "explanation": "Correto. Caso 2 cobre 2 ou 3 UCs com disjuntores até 1 tri/63A ou mono/bi 63A. Três UCs com mono 63A cabem perfeitamente."
           },
           {
-            "text": "Módulo 3 — LN — Caso 9 (padrão coletivo)",
+            "text": "Módulo 3 - LN - Caso 9 (padrão coletivo)",
             "correct": false,
-            "explanation": "Padrão coletivo no Módulo 3 só entra quando há mais de 3 caixas OU pelo menos uma UC com disjuntor tripolar. Aqui são 3 UCs e todos monopolar 63A — ainda dentro do Módulo 1."
+            "explanation": "Padrão coletivo no Módulo 3 só entra quando há mais de 3 caixas OU pelo menos uma UC com disjuntor tripolar. Aqui são 3 UCs e todos monopolar 63A - ainda dentro do Módulo 1."
           },
           {
-            "text": "Módulo 3 — LN — Caso 11 (múltiplas torres)",
+            "text": "Módulo 3 - LN - Caso 11 (múltiplas torres)",
             "correct": false,
             "explanation": "Empreendimento com múltiplas torres pressupõe complementos divergentes do tipo \"TORRE X, AP YYY\". Não é o caso de um padrão simples com 3 apartamentos."
           }
@@ -410,12 +410,12 @@
           {
             "text": "Sim, basta seguir o procedimento de AC normalmente",
             "correct": false,
-            "explanation": "Não. AC pressupõe uma UC já existente e ativa. Se a instalação ainda está \"Aguardando Ligação\", ela nunca foi ligada — não há carga existente para aumentar."
+            "explanation": "Não. AC pressupõe uma UC já existente e ativa. Se a instalação ainda está \"Aguardando Ligação\", ela nunca foi ligada - não há carga existente para aumentar."
           },
           {
             "text": "Não, o status indica que se trata de uma Ligação Nova, não de AC",
             "correct": true,
-            "explanation": "Exato. \"Aguardando Ligação\" é o status típico de uma LN. Provavelmente houve erro na criação da nota — solicitação foi marcada como AC quando deveria ser LN."
+            "explanation": "Exato. \"Aguardando Ligação\" é o status típico de uma LN. Provavelmente houve erro na criação da nota - solicitação foi marcada como AC quando deveria ser LN."
           },
           {
             "text": "Sim, mas só após alterar o status da instalação manualmente",
@@ -433,28 +433,28 @@
     ]
   },
   "conexao-bt-classificacao-regras-mod3": {
-    "title": "Regras práticas — Módulo 3",
+    "title": "Regras práticas - Módulo 3",
     "slides": [
       {
-        "title": "Módulo 3 — visão geral",
-        "body": "Atendimentos a clientes acima de 75 kW, padrões coletivos com várias caixas, empreendimentos com múltiplas torres e loteamentos. A complexidade aumenta — e com ela, a exigência documental e técnica.",
+        "title": "Módulo 3 - visão geral",
+        "body": "Atendimentos a clientes acima de 75 kW, padrões coletivos com várias caixas, empreendimentos com múltiplas torres e loteamentos. A complexidade aumenta - e com ela, a exigência documental e técnica.",
         "image": null,
         "imageAlt": "Capa: empreendimentos coletivos e grandes cargas"
       },
       {
-        "title": "Caso 7 — LN individual acima de 75 kW",
+        "title": "Caso 7 - LN individual acima de 75 kW",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: APRWeb",
         "bullets": [
           "Instalação com status \"Aguardando Ligação\"",
           "Na maioria das notas, o disjuntor da UC será maior que 200A",
           "Obrigatório anexar carta de opção por BT"
         ],
-        "body": "Uma única UC, mas de grande porte (indústria, comércio grande, posto de combustível). O cliente precisa optar formalmente pelo atendimento em BT — daí a carta de opção.",
+        "body": "Uma única UC, mas de grande porte (indústria, comércio grande, posto de combustível). O cliente precisa optar formalmente pelo atendimento em BT - daí a carta de opção.",
         "image": null,
         "imageAlt": "Galpão industrial com padrão de grande porte"
       },
       {
-        "title": "Caso 8 — AC acima de 75 kW",
+        "title": "Caso 8 - AC acima de 75 kW",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: AC • Nº caixas: 1 • Anexos: APRWeb",
         "bullets": [
           "Instalação sem suspensões, sem bloqueios, com contratos preenchidos",
@@ -465,7 +465,7 @@
         "imageAlt": "Indústria ampliando carga acima de 75 kW"
       },
       {
-        "title": "Caso 9 — Padrão coletivo grande",
+        "title": "Caso 9 - Padrão coletivo grande",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN ou AC • Nº caixas: múltiplas • Anexos: APRWeb",
         "bullets": [
           "Mais de 3 caixas OU pelo menos 1 UC com disjuntor tripolar com corrente nominal superior a 63 A",
@@ -477,7 +477,7 @@
         "imageAlt": "Padrão coletivo com 4+ caixas e disjuntor geral"
       },
       {
-        "title": "Caso 10 — Atendimento híbrido",
+        "title": "Caso 10 - Atendimento híbrido",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN ou AC • Nº caixas: múltiplas • Anexos: APRWeb",
         "bullets": [
           "Todas as UCs solicitadas na aba Unidades Consumidoras",
@@ -489,7 +489,7 @@
         "imageAlt": "Diagrama: atendimento híbrido"
       },
       {
-        "title": "Caso 11 — Múltiplas torres",
+        "title": "Caso 11 - Múltiplas torres",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: múltiplas • Anexos: APRWeb",
         "bullets": [
           "Todas as UCs com DOIS complementos divergentes",
@@ -501,7 +501,7 @@
         "imageAlt": "Condomínio com duas torres residenciais"
       },
       {
-        "title": "Caso 12 — Loteamento",
+        "title": "Caso 12 - Loteamento",
         "context": "Módulo: 3 • Código nota: COBT • Solicitação: LN • Nº caixas: 1 • Anexos: GEDEX",
         "bullets": [
           "Campo Assunto e/ou documentação indicam atendimento a um loteamento",
@@ -516,24 +516,24 @@
         "question": "Um empreendimento residencial com 6 apartamentos em um único bloco solicita ligação nova. Disjuntor geral tripolar 100A. Qual o caso aplicável?",
         "options": [
           {
-            "text": "Caso 2 — LN de 2 ou 3 UCs (Módulo 1)",
+            "text": "Caso 2 - LN de 2 ou 3 UCs (Módulo 1)",
             "correct": false,
-            "explanation": "Caso 2 limita-se a 2 ou 3 UCs. Aqui são 6 — sai do Módulo 1."
+            "explanation": "Caso 2 limita-se a 2 ou 3 UCs. Aqui são 6 - sai do Módulo 1."
           },
           {
-            "text": "Caso 9 — Padrão coletivo grande (Módulo 3)",
+            "text": "Caso 9 - Padrão coletivo grande (Módulo 3)",
             "correct": true,
             "explanation": "Correto. Mais de 3 caixas e presença de disjuntor geral são marcas registradas do Caso 9."
           },
           {
-            "text": "Caso 11 — Múltiplas torres (Módulo 3)",
+            "text": "Caso 11 - Múltiplas torres (Módulo 3)",
             "correct": false,
-            "explanation": "Múltiplas torres exige complementos divergentes (TORRE X, AP YYY). Aqui só temos um bloco — então é padrão coletivo, não múltiplas torres."
+            "explanation": "Múltiplas torres exige complementos divergentes (TORRE X, AP YYY). Aqui só temos um bloco - então é padrão coletivo, não múltiplas torres."
           },
           {
-            "text": "Caso 12 — Loteamento (Módulo 3)",
+            "text": "Caso 12 - Loteamento (Módulo 3)",
             "correct": false,
-            "explanation": "Loteamento é registro de área futura sem UCs definidas. Aqui as 6 UCs já estão identificadas — não é loteamento."
+            "explanation": "Loteamento é registro de área futura sem UCs definidas. Aqui as 6 UCs já estão identificadas - não é loteamento."
           }
         ]
       },
@@ -542,24 +542,24 @@
         "question": "Solicitação de LN para condomínio com 2 torres, 12 apartamentos cada, complementos do tipo \"TORRE A, AP 201\". Qual o caso?",
         "options": [
           {
-            "text": "Caso 9 — Padrão coletivo grande",
+            "text": "Caso 9 - Padrão coletivo grande",
             "correct": false,
             "explanation": "Caso 9 cobre padrões coletivos com várias caixas em um único bloco. A presença de TORRE como complemento é o que sinaliza o Caso 11."
           },
           {
-            "text": "Caso 11 — Múltiplas torres",
+            "text": "Caso 11 - Múltiplas torres",
             "correct": true,
-            "explanation": "Correto. Empreendimento com mais de um bloco/torre e complementos divergentes do tipo \"TORRE X, AP YYY\" — é a definição exata do Caso 11."
+            "explanation": "Correto. Empreendimento com mais de um bloco/torre e complementos divergentes do tipo \"TORRE X, AP YYY\" - é a definição exata do Caso 11."
           },
           {
-            "text": "Caso 12 — Loteamento",
+            "text": "Caso 12 - Loteamento",
             "correct": false,
             "explanation": "Loteamento é para terrenos sem UCs definidas ainda. Aqui temos 24 apartamentos já listados."
           },
           {
-            "text": "Caso 10 — Atendimento híbrido",
+            "text": "Caso 10 - Atendimento híbrido",
             "correct": false,
-            "explanation": "Híbrido exige a flag explícita de \"híbrido\" na solicitação — sem essa marcação, não é Caso 10."
+            "explanation": "Híbrido exige a flag explícita de \"híbrido\" na solicitação - sem essa marcação, não é Caso 10."
           }
         ],
         "summary": "O complemento das UCs é o diferenciador-chave: TORRE X, AP YYY → Caso 11."
@@ -569,22 +569,22 @@
         "question": "Aumento de carga de uma única padaria, passando de 60 kW para 90 kW. Em qual caso se enquadra?",
         "options": [
           {
-            "text": "Caso 3 — AC de 1 UC (Módulo 1)",
+            "text": "Caso 3 - AC de 1 UC (Módulo 1)",
             "correct": false,
             "explanation": "Caso 3 cobre AC até 75 kW. A carga final aqui (90 kW) ultrapassa o limite."
           },
           {
-            "text": "Caso 8 — AC acima de 75 kW (Módulo 3)",
+            "text": "Caso 8 - AC acima de 75 kW (Módulo 3)",
             "correct": true,
             "explanation": "Correto. Quando a carga final passa de 75 kW, mesmo sendo uma única UC, sobe para o Módulo 3."
           },
           {
-            "text": "Caso 9 — Padrão coletivo",
+            "text": "Caso 9 - Padrão coletivo",
             "correct": false,
-            "explanation": "Não há múltiplas UCs nem disjuntor geral — só uma padaria. Não se trata de padrão coletivo."
+            "explanation": "Não há múltiplas UCs nem disjuntor geral - só uma padaria. Não se trata de padrão coletivo."
           },
           {
-            "text": "Caso 4 — Combinação AC + LN",
+            "text": "Caso 4 - Combinação AC + LN",
             "correct": false,
             "explanation": "Caso 4 é combinação de serviços (AC de uma UC + LN de outra). Aqui só há AC de uma única UC."
           }
@@ -594,27 +594,27 @@
     ]
   },
   "conexao-bt-classificacao-regras-mod4": {
-    "title": "Regras práticas — Módulo 4",
+    "title": "Regras práticas - Módulo 4",
     "slides": [
       {
-        "title": "Módulo 4 — situações especiais",
-        "body": "Aqui o cliente não está pedindo carga nova nem aumentando carga — está pedindo uma intervenção física na rede. O código SAP muda: deixa de ser COBT e passa a ser PSRP ou PSIP.",
+        "title": "Módulo 4 - situações especiais",
+        "body": "Aqui o cliente não está pedindo carga nova nem aumentando carga - está pedindo uma intervenção física na rede. O código SAP muda: deixa de ser COBT e passa a ser PSRP ou PSIP.",
         "image": null,
         "imageAlt": "Equipe em intervenção na rede"
       },
       {
-        "title": "Caso 14 — Remoção/deslocamento de poste",
+        "title": "Caso 14 - Remoção/deslocamento de poste",
         "context": "Módulo: 4 • Código nota: PSRP • Solicitação: não possui código • Nº caixas: não possui • Anexos: GEDEX",
         "bullets": [
           "Campo Assunto indica que o cliente quer retirar, remover ou deslocar rede/poste próximo",
           "Sempre há uma referência do local mencionada"
         ],
-        "body": "Cliente quer que um poste ou trecho de rede seja removido ou movido — geralmente por motivo estético, ampliação de garagem, construção próxima ou outro impedimento físico. Não envolve mexer com UC.",
+        "body": "Cliente quer que um poste ou trecho de rede seja removido ou movido - geralmente por motivo estético, ampliação de garagem, construção próxima ou outro impedimento físico. Não envolve mexer com UC.",
         "image": null,
         "imageAlt": "Poste sendo deslocado por equipe"
       },
       {
-        "title": "Caso 15 — Iluminação Pública",
+        "title": "Caso 15 - Iluminação Pública",
         "context": "Módulo: 4 • Código nota: PSIP • Solicitação: OIP • Nº caixas: não possui • Anexos: GEDEX",
         "bullets": [
           "Nos documentos sempre haverá um projeto de rede"
@@ -627,7 +627,7 @@
         "title": "Adequação sem alteração de carga (SA)",
         "body": "Outro tipo de situação especial, são pedidos de adequação técnica (troca de padrão, adequação do padrão, etc.) sem aumento ou redução da carga total. Continua no Módulo 4 por não envolver alteração de consumo.",
         "image": null,
-        "imageAlt": "Troca de padrão de entrada — sem alteração de carga"
+        "imageAlt": "Troca de padrão de entrada - sem alteração de carga"
       },
       {
         "title": "Sinais de que é Módulo 4",
@@ -635,7 +635,7 @@
           "Código SAP é PSRP ou PSIP (já indica direto)",
           "Não há UC sendo ligada nem carga sendo alterada",
           "Pedido envolve intervenção física na rede (mover, remover, estender)",
-          "Solicitante muitas vezes é uma entidade pública (prefeitura) — caso OIP"
+          "Solicitante muitas vezes é uma entidade pública (prefeitura) - caso OIP"
         ],
         "body": "Diferente dos outros módulos, no Módulo 4 a documentação descreve uma obra na rede, não um cliente final consumindo energia.",
         "image": null,
@@ -646,22 +646,22 @@
         "question": "Um cliente quer construir uma garagem maior e pede o deslocamento do poste que está em frente ao seu terreno. Como classificar?",
         "options": [
           {
-            "text": "Módulo 1 — AC, porque é uma demanda de cliente individual",
+            "text": "Módulo 1 - AC, porque é uma demanda de cliente individual",
             "correct": false,
-            "explanation": "AC é Aumento de Carga. Aqui o cliente não está pedindo mais energia — está pedindo movimentação de infraestrutura. Não é AC."
+            "explanation": "AC é Aumento de Carga. Aqui o cliente não está pedindo mais energia - está pedindo movimentação de infraestrutura. Não é AC."
           },
           {
-            "text": "Módulo 3 — Caso 11, por envolver alteração na rede do empreendimento",
+            "text": "Módulo 3 - Caso 11, por envolver alteração na rede do empreendimento",
             "correct": false,
             "explanation": "Caso 11 é múltiplas torres. Aqui se trata de um cliente individual querendo movimentar um poste, não construção de empreendimento."
           },
           {
-            "text": "Módulo 4 — Caso 14, código SAP PSRP",
+            "text": "Módulo 4 - Caso 14, código SAP PSRP",
             "correct": true,
             "explanation": "Correto. Deslocamento de poste é exatamente o Caso 14, código PSRP, Módulo 4."
           },
           {
-            "text": "Módulo 4 — Caso 15, código SAP PSIP",
+            "text": "Módulo 4 - Caso 15, código SAP PSIP",
             "correct": false,
             "explanation": "PSIP é exclusivo para Iluminação Pública. Para poste/rede, o código é PSRP."
           }
@@ -674,12 +674,12 @@
           {
             "text": "Aceitar e tratar como Módulo 4, Caso 15",
             "correct": false,
-            "explanation": "Não. Embora o conteúdo seja claramente iluminação pública (Caso 15), o código de serviço está errado. COBT é só para LN/AC. O correto é PSIP — devolver a nota."
+            "explanation": "Não. Embora o conteúdo seja claramente iluminação pública (Caso 15), o código de serviço está errado. COBT é só para LN/AC. O correto é PSIP - devolver a nota."
           },
           {
             "text": "Criar medida 0592 pedindo recriação da nota com código PSIP",
             "correct": true,
-            "explanation": "Correto. Antes de classificar em qualquer módulo, o código de serviço precisa estar certo. Como aqui é iluminação pública, o código deveria ser PSIP — usa-se a medida 0592 para devolver."
+            "explanation": "Correto. Antes de classificar em qualquer módulo, o código de serviço precisa estar certo. Como aqui é iluminação pública, o código deveria ser PSIP - usa-se a medida 0592 para devolver."
           },
           {
             "text": "Cancelar a nota e criar uma nova com PSIP",
@@ -689,7 +689,7 @@
           {
             "text": "Tratar como COBT mesmo, já que iluminação pública conecta-se à rede BT",
             "correct": false,
-            "explanation": "Conectar-se à rede BT não importa para o código de serviço. O código identifica o TIPO de solicitação, e iluminação pública sempre é PSIP — não COBT."
+            "explanation": "Conectar-se à rede BT não importa para o código de serviço. O código identifica o TIPO de solicitação, e iluminação pública sempre é PSIP - não COBT."
           }
         ],
         "summary": "Mesmo com o conteúdo claro, código SAP errado sempre exige medida 0592. A classificação por módulo só ocorre após o código estar correto."
@@ -697,27 +697,27 @@
     ]
   },
   "conexao-bt-classificacao-revisao": {
-    "title": "Revisão geral — Quiz",
+    "title": "Revisão geral - Quiz",
     "slides": [
       {
         "title": "Hora de revisar!",
-        "body": "Você passou por todos os submódulos teóricos sobre classificação de solicitações de Conexão BT. Agora é hora de testar tudo de uma vez com 10 casos baseados na tabela 5.2.3 do POP. Pode errar à vontade — a explicação detalhada aparece após o acerto.",
+        "body": "Você passou por todos os submódulos teóricos sobre classificação de solicitações de Conexão BT. Agora é hora de testar tudo de uma vez com 10 casos baseados na tabela 5.2.3 do POP. Pode errar à vontade - a explicação detalhada aparece após o acerto.",
         "image": null,
         "imageAlt": "Capa: revisão geral em formato de quiz"
       },
       {
         "type": "quiz",
-        "question": "Caso 1 — Pedido: ligação nova de uma casa familiar, padrão monopolar 63A. Qual módulo e código?",
+        "question": "Caso 1 - Pedido: ligação nova de uma casa familiar, padrão monopolar 63A. Qual módulo e código?",
         "options": [
           {
             "text": "Módulo 1, LN, COBT, 1 caixa, GEDEX",
             "correct": true,
-            "explanation": "Correto. Uma UC, até 75 kW, anexo via GEDEX — caso 1 do POP."
+            "explanation": "Correto. Uma UC, até 75 kW, anexo via GEDEX - caso 1 do POP."
           },
           {
             "text": "Módulo 3, LN, COBT, 1 caixa, APRWeb",
             "correct": false,
-            "explanation": "Casa familiar com mono 63A está bem abaixo de 75 kW — fica no Módulo 1, não no 3."
+            "explanation": "Casa familiar com mono 63A está bem abaixo de 75 kW - fica no Módulo 1, não no 3."
           },
           {
             "text": "Módulo 1, AC, COBT, 1 caixa, GEDEX",
@@ -727,13 +727,13 @@
           {
             "text": "Módulo 4, sem código de solicitação, PSRP, GEDEX",
             "correct": false,
-            "explanation": "Módulo 4 é remoção/IP. Aqui o cliente está ligando uma casa — Módulo 1."
+            "explanation": "Módulo 4 é remoção/IP. Aqui o cliente está ligando uma casa - Módulo 1."
           }
         ]
       },
       {
         "type": "quiz",
-        "question": "Caso 2 — Pedido: \"Cliente solicita energia para festa de aniversário do dia 12 a 14 de junho em chácara de eventos\". O que se aplica?",
+        "question": "Caso 2 - Pedido: \"Cliente solicita energia para festa de aniversário do dia 12 a 14 de junho em chácara de eventos\". O que se aplica?",
         "options": [
           {
             "text": "Módulo 1, LP, COBT",
@@ -759,7 +759,7 @@
       },
       {
         "type": "quiz",
-        "question": "Caso 3 — Indústria existente com 60 kW pede aumento para 95 kW.",
+        "question": "Caso 3 - Indústria existente com 60 kW pede aumento para 95 kW.",
         "options": [
           {
             "text": "Módulo 1, AC, COBT, Caso 3",
@@ -774,7 +774,7 @@
           {
             "text": "Módulo 3, LN, COBT, Caso 7",
             "correct": false,
-            "explanation": "Caso 7 é LN acima de 75 kW. Aqui a UC já existe — é aumento de carga, não ligação nova."
+            "explanation": "Caso 7 é LN acima de 75 kW. Aqui a UC já existe - é aumento de carga, não ligação nova."
           },
           {
             "text": "Módulo 4, AC, COBT, situação especial",
@@ -785,25 +785,25 @@
       },
       {
         "type": "quiz",
-        "question": "Caso 4 — Condomínio novo de 3 torres, com 18 UCs cada, complementos \"TORRE A AP 101\", \"TORRE B AP 205\", etc.",
+        "question": "Caso 4 - Condomínio novo de 3 torres, com 18 UCs cada, complementos \"TORRE A AP 101\", \"TORRE B AP 205\", etc.",
         "options": [
           {
-            "text": "Caso 9 — padrão coletivo grande",
+            "text": "Caso 9 - padrão coletivo grande",
             "correct": false,
             "explanation": "Caso 9 é padrão coletivo em um único bloco. A presença de múltiplas torres com complementos divergentes (TORRE X, AP YYY) caracteriza outro caso."
           },
           {
-            "text": "Caso 11 — múltiplas torres",
+            "text": "Caso 11 - múltiplas torres",
             "correct": true,
             "explanation": "Correto. 3 torres + complementos do tipo \"TORRE A AP 101\" = Caso 11 cravado."
           },
           {
-            "text": "Caso 12 — loteamento",
+            "text": "Caso 12 - loteamento",
             "correct": false,
             "explanation": "Loteamento é terreno sem UCs definidas ainda. Aqui as 54 UCs já estão claras."
           },
           {
-            "text": "Caso 10 — atendimento híbrido",
+            "text": "Caso 10 - atendimento híbrido",
             "correct": false,
             "explanation": "Híbrido precisa da flag explícita de híbrido na solicitação. Sem essa marcação, não é Caso 10."
           }
@@ -811,7 +811,7 @@
       },
       {
         "type": "quiz",
-        "question": "Caso 5 — UC desligada há 8 meses, cliente solicita religação.",
+        "question": "Caso 5 - UC desligada há 8 meses, cliente solicita religação.",
         "options": [
           {
             "text": "Módulo 1, AC, COBT",
@@ -831,13 +831,13 @@
           {
             "text": "Módulo 4, sem código de solicitação",
             "correct": false,
-            "explanation": "Religação não é situação especial — envolve uma UC e seu consumo, não intervenção na rede."
+            "explanation": "Religação não é situação especial - envolve uma UC e seu consumo, não intervenção na rede."
           }
         ]
       },
       {
         "type": "quiz",
-        "question": "Caso 6 — Cliente solicita remoção de um poste antigo em frente à entrada de seu lote.",
+        "question": "Caso 6 - Cliente solicita remoção de um poste antigo em frente à entrada de seu lote.",
         "options": [
           {
             "text": "Módulo 1, LN, COBT",
@@ -857,13 +857,13 @@
           {
             "text": "Módulo 3, AC, COBT, Caso 9",
             "correct": false,
-            "explanation": "Não há alteração de carga aqui — só remoção de infraestrutura."
+            "explanation": "Não há alteração de carga aqui - só remoção de infraestrutura."
           }
         ]
       },
       {
         "type": "quiz",
-        "question": "Caso 7 — Prefeitura quer estender rede para iluminar 200m de uma rua nova.",
+        "question": "Caso 7 - Prefeitura quer estender rede para iluminar 200m de uma rua nova.",
         "options": [
           {
             "text": "Módulo 4, OIP, PSIP, Caso 15, com projeto anexo",
@@ -889,7 +889,7 @@
       },
       {
         "type": "quiz",
-        "question": "Caso 8 — Cliente apresenta nota com código de serviço ZNCA (que não existe na lista de COBT/PSRP/PSIP). É claro pelo conteúdo que é uma ligação nova residencial. O que fazer?",
+        "question": "Caso 8 - Cliente apresenta nota com código de serviço ZNCA (que não existe na lista de COBT/PSRP/PSIP). É claro pelo conteúdo que é uma ligação nova residencial. O que fazer?",
         "options": [
           {
             "text": "Tratar como COBT e seguir com a análise normalmente",
@@ -909,57 +909,57 @@
           {
             "text": "Cancelar a nota direto e abrir uma nova com COBT",
             "correct": false,
-            "explanation": "A Conexão BT não cancela notas — devolve via 0592 e a unidade origem refaz."
+            "explanation": "A Conexão BT não cancela notas - devolve via 0592 e a unidade origem refaz."
           }
         ]
       },
       {
         "type": "quiz",
-        "question": "Caso 9 — Loteamento residencial de 80 lotes ainda em fase de aprovação. Como classificar a nota inicial?",
+        "question": "Caso 9 - Loteamento residencial de 80 lotes ainda em fase de aprovação. Como classificar a nota inicial?",
         "options": [
           {
-            "text": "Caso 9 — padrão coletivo grande, com 80 caixas",
+            "text": "Caso 9 - padrão coletivo grande, com 80 caixas",
             "correct": false,
             "explanation": "Em loteamento, as UCs específicas ainda não existem. Não dá para registrar 80 caixas porque não há 80 UCs definidas ainda."
           },
           {
-            "text": "Caso 11 — múltiplas torres (80 lotes = múltiplos)",
+            "text": "Caso 11 - múltiplas torres (80 lotes = múltiplos)",
             "correct": false,
-            "explanation": "Múltiplas torres exige complementos divergentes \"TORRE X, AP YYY\". Lotes não têm essa estrutura — têm endereços próprios."
+            "explanation": "Múltiplas torres exige complementos divergentes \"TORRE X, AP YYY\". Lotes não têm essa estrutura - têm endereços próprios."
           },
           {
-            "text": "Caso 12 — loteamento, Módulo 3, LN, COBT, 1 caixa, GEDEX",
+            "text": "Caso 12 - loteamento, Módulo 3, LN, COBT, 1 caixa, GEDEX",
             "correct": true,
             "explanation": "Correto. Loteamento tem caso próprio (12), registra-se com 1 caixa inicial e anexos via GEDEX, mesmo sendo Módulo 3."
           },
           {
             "text": "Módulo 4, situação especial",
             "correct": false,
-            "explanation": "Loteamento envolve futura ligação de UCs — é LN no Módulo 3, não situação especial."
+            "explanation": "Loteamento envolve futura ligação de UCs - é LN no Módulo 3, não situação especial."
           }
         ]
       },
       {
         "type": "quiz",
-        "question": "Caso 10 — Padrão coletivo com 8 caixas (todas mono 63A) + disjuntor geral tripolar 80A.",
+        "question": "Caso 10 - Padrão coletivo com 8 caixas (todas mono 63A) + disjuntor geral tripolar 80A.",
         "options": [
           {
-            "text": "Caso 2 — LN de 2 ou 3 UCs (Módulo 1)",
+            "text": "Caso 2 - LN de 2 ou 3 UCs (Módulo 1)",
             "correct": false,
-            "explanation": "Caso 2 limita a 3 UCs. Aqui são 8 — fora do Módulo 1."
+            "explanation": "Caso 2 limita a 3 UCs. Aqui são 8 - fora do Módulo 1."
           },
           {
-            "text": "Caso 9 — padrão coletivo grande (Módulo 3), APRWeb",
+            "text": "Caso 9 - padrão coletivo grande (Módulo 3), APRWeb",
             "correct": true,
             "explanation": "Correto. Mais de 3 caixas + presença de disjuntor geral = Caso 9. Documentação via APRWeb."
           },
           {
-            "text": "Caso 11 — múltiplas torres",
+            "text": "Caso 11 - múltiplas torres",
             "correct": false,
             "explanation": "Sem complementos do tipo \"TORRE X, AP YYY\". É um único padrão coletivo grande, não múltiplas torres."
           },
           {
-            "text": "Caso 12 — loteamento",
+            "text": "Caso 12 - loteamento",
             "correct": false,
             "explanation": "Loteamento é terreno sem UCs definidas. Aqui as 8 UCs já estão claras."
           }
@@ -968,9 +968,9 @@
       },
       {
         "title": "Treinamento concluído!",
-        "body": "Você completou o treinamento de Análise de Conexão BT — Classificação. Agora você sabe identificar códigos de serviço SAP, os 4 módulos do POP, e os 15 casos práticos com seus detalhes. Os próximos treinamentos (Análise Inicial, Análise Técnica, Orçamentação) serão liberados em breve.",
+        "body": "Você completou o treinamento de Análise de Conexão BT - Classificação. Agora você sabe identificar códigos de serviço SAP, os 4 módulos do POP, e os 15 casos práticos com seus detalhes. Os próximos treinamentos (Análise Inicial, Análise Técnica, Orçamentação) serão liberados em breve.",
         "image": null,
-        "imageAlt": "Troféu — conclusão do treinamento"
+        "imageAlt": "Troféu - conclusão do treinamento"
       }
     ]
   },
@@ -1035,12 +1035,12 @@
           {
             "text": "Validar se o pedido possui informações e documentos suficientes para seguir corretamente",
             "correct": true,
-            "explanation": "Correto. A análise documental qualifica o pedido antes que ele avance para etapas técnicas, fundiárias ou ambientais — garante que tudo está em ordem para prosseguir."
+            "explanation": "Correto. A análise documental qualifica o pedido antes que ele avance para etapas técnicas, fundiárias ou ambientais - garante que tudo está em ordem para prosseguir."
           },
           {
             "text": "Substituir todas as demais etapas do processo",
             "correct": false,
-            "explanation": "A análise documental é apenas a PRIMEIRA validação. Ela não substitui análises técnicas, ambientais ou de campo — abre caminho para elas, organizando o que veio do cliente."
+            "explanation": "A análise documental é apenas a PRIMEIRA validação. Ela não substitui análises técnicas, ambientais ou de campo - abre caminho para elas, organizando o que veio do cliente."
           },
           {
             "text": "Registrar somente dados cadastrais do solicitante",
@@ -1129,7 +1129,7 @@
           {
             "text": "Se o pedido tem dados básicos e documentos suficientes para seguir",
             "correct": true,
-            "explanation": "Correto. A conferência geral é a base — sem ela, qualquer análise posterior fica comprometida. Dados do titular, endereço, vínculo com o imóvel e coerência das informações vêm primeiro."
+            "explanation": "Correto. A conferência geral é a base - sem ela, qualquer análise posterior fica comprometida. Dados do titular, endereço, vínculo com o imóvel e coerência das informações vêm primeiro."
           },
           {
             "text": "Se o pedido já pode ser aprovado sem conferência",
@@ -1144,7 +1144,7 @@
           {
             "text": "Se há necessidade de licenciamento ambiental",
             "correct": false,
-            "explanation": "Verificações ambientais ficam em casos especiais. A etapa geral cuida do básico — só depois é que se decide se o pedido precisa também de análise ambiental."
+            "explanation": "Verificações ambientais ficam em casos especiais. A etapa geral cuida do básico - só depois é que se decide se o pedido precisa também de análise ambiental."
           }
         ]
       }
@@ -1190,12 +1190,12 @@
         "imageAlt": "Documentos com responsável técnico"
       },
       {
-        "title": "ART, TRT e RRT — documentos de responsabilidade técnica",
+        "title": "ART, TRT e RRT - documentos de responsabilidade técnica",
         "body": "Cada documento corresponde a um conselho profissional diferente. A conferência deve confirmar se o documento apresentado é compatível com a atividade declarada e está vinculado ao responsável correto.",
         "bullets": [
-          "ART — Anotação de Responsabilidade Técnica (CREA: engenheiros e técnicos industriais)",
-          "RRT — Registro de Responsabilidade Técnica (CAU: arquitetos e urbanistas)",
-          "TRT — Termo de Responsabilidade Técnica (CFT: técnicos de nível médio)",
+          "ART - Anotação de Responsabilidade Técnica (CREA: engenheiros e técnicos industriais)",
+          "RRT - Registro de Responsabilidade Técnica (CAU: arquitetos e urbanistas)",
+          "TRT - Termo de Responsabilidade Técnica (CFT: técnicos de nível médio)",
           "Número de registro profissional ativo, compatível com a atividade"
         ],
         "image": null,
@@ -1258,7 +1258,7 @@
       },
       {
         "title": "Tarifa monômia",
-        "body": "Modalidade tarifária do grupo B (baixa tensão) em que a fatura considera apenas o consumo de energia em kWh, sem cobrança separada de demanda. É a tarifa padrão da maioria das ligações BT — residenciais, comércios pequenos, ruralistas comuns.",
+        "body": "Modalidade tarifária do grupo B (baixa tensão) em que a fatura considera apenas o consumo de energia em kWh, sem cobrança separada de demanda. É a tarifa padrão da maioria das ligações BT - residenciais, comércios pequenos, ruralistas comuns.",
         "bullets": [
           "Aplica-se ao grupo B (B1 residencial, B2 rural, B3 demais classes, B4 iluminação pública)",
           "Limite típico de carga compatível com BT: 75 kW",
@@ -1276,7 +1276,7 @@
           {
             "text": "Exigências adicionais que dependem do tipo de solicitação",
             "correct": true,
-            "explanation": "Correto. Esta etapa cobre variações documentais por tipo de pedido — provisória precisa de datas; remoção de poste precisa de localização; pedidos com RT precisam de ART/RRT/TRT; e assim por diante."
+            "explanation": "Correto. Esta etapa cobre variações documentais por tipo de pedido - provisória precisa de datas; remoção de poste precisa de localização; pedidos com RT precisam de ART/RRT/TRT; e assim por diante."
           },
           {
             "text": "Somente documentos básicos de qualquer solicitação",
@@ -1291,7 +1291,7 @@
           {
             "text": "Detalhes operacionais da execução da obra",
             "correct": false,
-            "explanation": "Execução é etapa de campo, posterior. A análise documental — geral, específica ou especial — sempre olha o pedido em si, não a execução."
+            "explanation": "Execução é etapa de campo, posterior. A análise documental - geral, específica ou especial - sempre olha o pedido em si, não a execução."
           }
         ]
       }
@@ -1369,12 +1369,12 @@
           {
             "text": "Indício de parcelamento irregular do solo",
             "correct": true,
-            "explanation": "Correto. Parcelamento irregular é um dos gatilhos clássicos de caso especial — sinais como arruamento informal, terrenos subdivididos sem aprovação ou abertura de vias exigem verificação criteriosa antes do prosseguimento."
+            "explanation": "Correto. Parcelamento irregular é um dos gatilhos clássicos de caso especial - sinais como arruamento informal, terrenos subdivididos sem aprovação ou abertura de vias exigem verificação criteriosa antes do prosseguimento."
           },
           {
             "text": "Pedido com documentação completa e sem restrições",
             "correct": false,
-            "explanation": "Documentação completa e sem restrições é o cenário ideal — segue o fluxo normal pela geral e (se aplicável) pela específica. Casos especiais surgem quando aparece algo que sai do padrão."
+            "explanation": "Documentação completa e sem restrições é o cenário ideal - segue o fluxo normal pela geral e (se aplicável) pela específica. Casos especiais surgem quando aparece algo que sai do padrão."
           },
           {
             "text": "Solicitação sem nenhum documento adicional",
@@ -1390,7 +1390,7 @@
       }
     ]
   },
-  "analise-doc-bt-casos-ln-urbana": {
+  "carga-ii-ln-urbana": {
     "title": "Ligação nova: área urbana",
     "slides": [
       {
@@ -1400,83 +1400,245 @@
         "imageAlt": "Ligação nova urbana"
       },
       {
-        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "title": "Documentação aceita",
         "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
         "imageAlt": "Ligação nova urbana"
       },
       {
-        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "title": "Variantes da documentação",
         "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
         "imageAlt": "Ligação nova urbana"
       },
       {
-        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "title": "Diferenciando um pedido de conexão nova de empreendimento",
         "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
         "imageAlt": "Ligação nova urbana"
       },
       {
-        "title": "Bem vindo ao módulo de ligação nova urbana",
+        "title": "Atenção a fraudes",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova urbana"
+      },
+      {
+        "title": "Dúvidas comuns",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova urbana"
+      },
+      {
+        "title": "Finalizando a análise",
         "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
         "imageAlt": "Ligação nova urbana"
       }
     ]
   },
-  "analise-doc-bt-casos-ln-rural": {
-    "title": "Ligação nova — área rural",
+  "carga-ii-ln-rural": {
+    "title": "Ligação nova - área rural",
     "slides": [
       {
-        "title": "Em construção",
-        "body": "Este submódulo de ligação nova — área rural ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "title": "Bem vindo ao módulo de ligação nova rural",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
-        "imageAlt": "Aviso de conteúdo em construção"
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Documentação aceita",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Variantes da documentação",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Diferenciando um pedido de conexão nova de chacreamento",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Identificando um imóvel abaixo da FMP",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Atenção a parcelamento irregular do solo",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Atenção a fraudes",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Dúvidas comuns",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
+      },
+      {
+        "title": "Finalizando a análise",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Ligação nova rural"
       }
     ]
   },
-  "analise-doc-bt-casos-ac": {
+  "carga-ii-ac": {
     "title": "Alteração de carga",
     "slides": [
       {
-        "title": "Em construção",
-        "body": "Este submódulo de alteração de carga ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "title": "Bem vindo ao módulo de Alteração de carga",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
-        "imageAlt": "Aviso de conteúdo em construção"
+        "imageAlt": "AC"
+      },
+      {
+        "title": "Documentação necessária",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "AC"
+      },
+      {
+        "title": "Atenção à Mudança de local do padrão",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "AC"
+      },
+      {
+        "title": "Dúvidas comuns",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "AC"
+      },
+      {
+        "title": "Finalizando a análise",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "AC"
       }
     ]
   },
-  "analise-doc-bt-casos-emp-rural": {
-    "title": "Empreendimento rural",
+  "carga-ii-emp-rural": {
+    "title": "Empreendimento rural - Chacreamento",
     "slides": [
       {
-        "title": "Em construção",
-        "body": "Este submódulo de empreendimento rural ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "title": "Bem vindo ao módulo de Empreendimento rural",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
-        "imageAlt": "Aviso de conteúdo em construção"
+        "imageAlt": "Empreendimento rural"
+      },
+      {
+        "title": "Documentação necessária",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento rural"
+      },
+      {
+        "title": "Variação da documentação",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento rural"
+      },
+      {
+        "title": "Dúvidas comuns",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento rural"
+      },
+      {
+        "title": "Finalizando a análise",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento rural"
       }
     ]
   },
-  "analise-doc-bt-casos-emp-urbano": {
+  "carga-ii-emp-urbano": {
     "title": "Empreendimento urbano",
     "slides": [
       {
-        "title": "Em construção",
-        "body": "Este submódulo de empreendimento urbano ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "title": "Bem vindo ao módulo de Empreendimento urbano",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
-        "imageAlt": "Aviso de conteúdo em construção"
+        "imageAlt": "Empreendimento urbano"
+      },
+      {
+        "title": "Documentação necessária",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento urbano"
+      },
+      {
+        "title": "Variação da documentação",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento urbano"
+      },
+      {
+        "title": "Dúvidas comuns",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento urbano"
+      },
+      {
+        "title": "Finalizando a análise",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Empreendimento urbano"
       }
     ]
   },
-  "analise-doc-bt-casos-hibrido": {
-    "title": "Ligação nova — cenário híbrido",
+  "carga-ii-hibrido": {
+    "title": "Atendimento híbrido",
     "slides": [
       {
-        "title": "Em construção",
-        "body": "Este submódulo de ligação nova — cenário híbrido ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "title": "Bem vindo ao módulo de Empreendimento urbano",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
-        "imageAlt": "Aviso de conteúdo em construção"
+        "imageAlt": "Atendimento híbrido"
+      },
+      {
+        "title": "Documentação necessária",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Atendimento híbrido"
+      },
+      {
+        "title": "Variação da documentação",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Atendimento híbrido"
+      },
+      {
+        "title": "Pontos de atenção",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Atendimento híbrido"
+      },
+      {
+        "title": "Dúvidas comuns",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Atendimento híbrido"
+      },
+      {
+        "title": "Finalizando a análise",
+        "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
+        "image": null,
+        "imageAlt": "Atendimento híbrido"
       }
     ]
   }

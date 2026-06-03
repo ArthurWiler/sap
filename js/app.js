@@ -73,7 +73,7 @@ function App() {
     setActiveSubmodule({ trainingId, submoduleId });
 
     if (submodule?.type === "deck") {
-      // Theoretical submódulo — slide deck, no SAP tour
+      // Theoretical submódulo - slide deck, no SAP tour
       setTourActive(false);
       setTourStep(0);
       setRoute({ page: "deck-page", trainingId, submoduleId });
@@ -91,10 +91,7 @@ function App() {
   }, []);
 
   const goHome = useCallback(() => setRoute({ page: "home" }), []);
-  const goNotaInput = useCallback(
-    () => setRoute({ page: "nota-input" }),
-    [],
-  );
+  const goNotaInput = useCallback(() => setRoute({ page: "nota-input" }), []);
   const goNotaDetail = useCallback((numero) => {
     setSeed(numero);
     setRoute({ page: "nota-detail" });
@@ -103,10 +100,7 @@ function App() {
     () => setRoute({ page: "solicitacao" }),
     [],
   );
-  const backToDetail = useCallback(
-    () => setRoute({ page: "nota-detail" }),
-    [],
-  );
+  const backToDetail = useCallback(() => setRoute({ page: "nota-detail" }), []);
 
   const openTextEditor = useCallback((medida) => {
     setEditorMedida(medida);
@@ -207,10 +201,7 @@ function App() {
   let page;
   if (route.page === "training-index") {
     page = (
-      <TrainingIndexPage
-        progress={progress}
-        onOpenTraining={openTraining}
-      />
+      <TrainingIndexPage progress={progress} onOpenTraining={openTraining} />
     );
   } else if (route.page === "submodule-index") {
     const training = TRAININGS.find((t) => t.id === route.trainingId);
@@ -222,15 +213,10 @@ function App() {
         onStartSubmodule={startSubmodule}
       />
     ) : (
-      <TrainingIndexPage
-        progress={progress}
-        onOpenTraining={openTraining}
-      />
+      <TrainingIndexPage progress={progress} onOpenTraining={openTraining} />
     );
   } else if (route.page === "home") {
-    page = (
-      <HomePage onOpenModificar={goNotaInput} onBackToIndex={exitFlow} />
-    );
+    page = <HomePage onOpenModificar={goNotaInput} onBackToIndex={exitFlow} />;
   } else if (route.page === "nota-input") {
     page = (
       <NotaInputPage

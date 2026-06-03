@@ -1,4 +1,4 @@
-# Guia de Treinamentos — `index.html`
+# Guia de Treinamentos - `index.html`
 
 Este documento explica como **adicionar**, **editar** e **remover** treinamentos e submódulos no arquivo `index.html`, e onde encontrar cada peça do código.
 
@@ -23,7 +23,7 @@ Este documento explica como **adicionar**, **editar** e **remover** treinamentos
 
 ## 1. Mapa do projeto
 
-O projeto agora está dividido em vários arquivos para facilitar manutenção. **Esta é a estrutura nova (multi-arquivo)** — a versão antiga em arquivo único ainda funciona da mesma forma, só está consolidada em `index.html`.
+O projeto agora está dividido em vários arquivos para facilitar manutenção. **Esta é a estrutura nova (multi-arquivo)** - a versão antiga em arquivo único ainda funciona da mesma forma, só está consolidada em `index.html`.
 
 ```
 multi/
@@ -53,13 +53,13 @@ multi/
     ├── screen-text-editor.js           ModificarTextoMedidaPage
     ├── screen-training-index.js        TrainingIndexPage
     ├── screen-submodule-index.js       SubmoduleIndexPage
-    ├── tour-steps.js                   Objeto TOUR_STEPS — passos guiados
+    ├── tour-steps.js                   Objeto TOUR_STEPS - passos guiados
     └── app.js                          function App + ReactDOM.createRoot (carrega por último)
 ```
 
 ### Como os arquivos se enxergam
 
-Cada `.js` é carregado como `<script type="text/babel">` em `index.html`. **Babel standalone transpila cada um para um script clássico**, então as declarações de topo (`const`, `function`) ficam acessíveis globalmente após a execução — desde que o arquivo que **define** algo seja carregado antes do arquivo que **usa**. A ordem no `index.html` respeita essa regra.
+Cada `.js` é carregado como `<script type="text/babel">` em `index.html`. **Babel standalone transpila cada um para um script clássico**, então as declarações de topo (`const`, `function`) ficam acessíveis globalmente após a execução - desde que o arquivo que **define** algo seja carregado antes do arquivo que **usa**. A ordem no `index.html` respeita essa regra.
 
 **Onde editar o quê:**
 
@@ -80,8 +80,8 @@ Cada `.js` é carregado como `<script type="text/babel">` em `index.html`. **Bab
 
 ### Dois tipos de submódulos
 
-- **`type: undefined` (padrão)** — submódulo SAP: abre a tela de detalhes da nota e executa o tour guiado definido em `tour-steps.js`.
-- **`type: "deck"`** — submódulo teórico: abre uma sequência de slides definida em `decks.json`. Sem tour guiado, sem dados SAP — só conteúdo educacional.
+- **`type: undefined` (padrão)** - submódulo SAP: abre a tela de detalhes da nota e executa o tour guiado definido em `tour-steps.js`.
+- **`type: "deck"`** - submódulo teórico: abre uma sequência de slides definida em `decks.json`. Sem tour guiado, sem dados SAP - só conteúdo educacional.
 
 Para criar um submódulo teórico, marque `type: "deck"` no array `submodules` do treinamento (em `trainings.js`) e adicione uma entrada com o `id` correspondente em `decks.json`.
 
@@ -110,8 +110,8 @@ Estrutura de uma entrada em `decks.json`:
 
 Cada slide tem um campo opcional `type`:
 
-- **`"info"` (padrão)** — slide com título, corpo de texto, opcionalmente bullets e imagem. Use para conteúdo expositivo.
-- **`"quiz"`** — slide interativo com pergunta e múltiplas opções. O usuário pode errar quantas vezes quiser. Ao acertar, todas as opções mostram explicação individual (correta + incorretas). Botão "Próximo" só ativa após acertar.
+- **`"info"` (padrão)** - slide com título, corpo de texto, opcionalmente bullets e imagem. Use para conteúdo expositivo.
+- **`"quiz"`** - slide interativo com pergunta e múltiplas opções. O usuário pode errar quantas vezes quiser. Ao acertar, todas as opções mostram explicação individual (correta + incorretas). Botão "Próximo" só ativa após acertar.
 
 Estrutura de um slide info com bullets:
 
@@ -119,9 +119,9 @@ Estrutura de um slide info com bullets:
 {
   "title": "Os 3 códigos da área de Conexão BT",
   "bullets": [
-    "COBT — Ligação Nova ou Alteração de Carga em BT",
-    "PSRP — Remoção de Poste ou Rede",
-    "PSIP — Obras de Iluminação Pública"
+    "COBT - Ligação Nova ou Alteração de Carga em BT",
+    "PSRP - Remoção de Poste ou Rede",
+    "PSIP - Obras de Iluminação Pública"
   ],
   "body": "Texto adicional opcional após os bullets.",
   "image": null,
@@ -140,7 +140,7 @@ Estrutura de um slide quiz:
     {
       "text": "COBT",
       "correct": false,
-      "explanation": "COBT é usado apenas para LN/AC em BT — não cobre remoção."
+      "explanation": "COBT é usado apenas para LN/AC em BT - não cobre remoção."
     },
     {
       "text": "PSRP",
@@ -155,7 +155,7 @@ Estrutura de um slide quiz:
 **Regras do quiz:**
 
 - Exatamente uma opção deve ter `correct: true`.
-- `explanation` é opcional mas recomendado em todas as opções — aparecem só após o acerto.
+- `explanation` é opcional mas recomendado em todas as opções - aparecem só após o acerto.
 - O usuário pode errar quantas vezes quiser; cada erro reaviva animação de shake.
 - Próximo só fica habilitado após o acerto.
 - No final do deck, se houver pelo menos um quiz não respondido corretamente, o usuário fica preso na pergunta (consistente com a regra de bloqueio).
@@ -237,7 +237,7 @@ Pronto. O treinamento vai aparecer:
 - Com chip "Submódulos"
 - Com progress bar `0/3`
 
-> Se `available: true`, o card fica clicável. Os 3 submódulos auto-gerados têm `available: false` por padrão (mostram "Em breve") — para liberar, defina `submodules` explicitamente como na seção 4.
+> Se `available: true`, o card fica clicável. Os 3 submódulos auto-gerados têm `available: false` por padrão (mostram "Em breve") - para liberar, defina `submodules` explicitamente como na seção 4.
 
 ---
 
@@ -249,16 +249,16 @@ Por padrão, **todo treinamento ganha 3 submódulos automáticos** chamados `sub
 TRAININGS.forEach(t => {
   if (!t.submodules) {
     t.submodules = [
-      { id: t.id + "-sub1", title: "sub1", desc: "Submódulo 1 — descreva aqui.", available: t.id === "navegacao-basica" },
-      { id: t.id + "-sub2", title: "sub2", desc: "Submódulo 2 — descreva aqui.", available: false },
-      { id: t.id + "-sub3", title: "sub3", desc: "Submódulo 3 — descreva aqui.", available: false }
+      { id: t.id + "-sub1", title: "sub1", desc: "Submódulo 1 - descreva aqui.", available: t.id === "navegacao-basica" },
+      { id: t.id + "-sub2", title: "sub2", desc: "Submódulo 2 - descreva aqui.", available: false },
+      { id: t.id + "-sub3", title: "sub3", desc: "Submódulo 3 - descreva aqui.", available: false }
     ];
   }
   t.hasSubmodules = true;
 });
 ```
 
-**Para customizar**, adicione `submodules: [...]` diretamente ao objeto do treinamento — o `if (!t.submodules)` impede que o auto-fill sobrescreva.
+**Para customizar**, adicione `submodules: [...]` diretamente ao objeto do treinamento - o `if (!t.submodules)` impede que o auto-fill sobrescreva.
 
 ### Campos de um submódulo
 
@@ -289,7 +289,7 @@ Customizando os submódulos do "Tratamento de notas":
 }
 ```
 
-Você pode ter **mais ou menos que 3** submódulos — o array tem tamanho livre.
+Você pode ter **mais ou menos que 3** submódulos - o array tem tamanho livre.
 
 ---
 
@@ -300,7 +300,7 @@ Tours são definidos no objeto `TOUR_STEPS`, indexado pelo `id` do submódulo:
 ```js
 const TOUR_STEPS = {
   "meu-treinamento-sub1": {
-    title: "sub1 — Título exibido na faixa de treinamento",
+    title: "sub1 - Título exibido na faixa de treinamento",
     steps: [
       { target: null, title: "Bem-vindo!", body: "Vamos aprender X.", advanceOn: "next" },
       { target: "tab-atividades", title: "Aba Atividades",
@@ -315,7 +315,7 @@ const TOUR_STEPS = {
 
 > **Importante:** A chave em `TOUR_STEPS` deve coincidir **exatamente** com o `id` do submódulo. Se o `id` for `tratamento-notas-revisar`, a chave precisa ser `"tratamento-notas-revisar"`.
 
-> Submódulos **sem entrada** em `TOUR_STEPS` ainda funcionam — eles abrem direto na tela `nota-detail` sem tutorial. Útil para um submódulo de "exploração livre".
+> Submódulos **sem entrada** em `TOUR_STEPS` ainda funcionam - eles abrem direto na tela `nota-detail` sem tutorial. Útil para um submódulo de "exploração livre".
 
 ### 5.1. Estrutura de um passo (`step`)
 
@@ -503,7 +503,7 @@ location.reload();
 
 ```js
 const all = {};
-// (precisa do array TRAININGS — abra a aba Console e cole isto após o site carregar)
+// (precisa do array TRAININGS - abra a aba Console e cole isto após o site carregar)
 TRAININGS.forEach(t => {
   all[t.id] = {};
   t.submodules.forEach(s => { all[t.id][s.id] = true; });
@@ -559,7 +559,7 @@ O ícone de refresh no header da nota chama `regenerate()`, que aplica um salt a
 
 ## 10. Receitas rápidas (copy-paste)
 
-### Receita A — Adicionar um novo treinamento básico (sem tour)
+### Receita A - Adicionar um novo treinamento básico (sem tour)
 
 No array `TRAININGS`:
 
@@ -575,9 +575,9 @@ No array `TRAININGS`:
 }
 ```
 
-Pronto — vai aparecer com 3 submódulos `sub1/sub2/sub3` bloqueados.
+Pronto - vai aparecer com 3 submódulos `sub1/sub2/sub3` bloqueados.
 
-### Receita B — Liberar um submódulo existente
+### Receita B - Liberar um submódulo existente
 
 Adicione `submodules` explícito ao treinamento:
 
@@ -586,20 +586,20 @@ Adicione `submodules` explícito ao treinamento:
   id: "documental",
   // ... outros campos ...
   submodules: [
-    { id: "documental-sub1", title: "sub1", desc: "Submódulo 1 — descreva aqui.", available: true },  // ← liberado
-    { id: "documental-sub2", title: "sub2", desc: "Submódulo 2 — descreva aqui.", available: false },
-    { id: "documental-sub3", title: "sub3", desc: "Submódulo 3 — descreva aqui.", available: false }
+    { id: "documental-sub1", title: "sub1", desc: "Submódulo 1 - descreva aqui.", available: true },  // ← liberado
+    { id: "documental-sub2", title: "sub2", desc: "Submódulo 2 - descreva aqui.", available: false },
+    { id: "documental-sub3", title: "sub3", desc: "Submódulo 3 - descreva aqui.", available: false }
   ]
 }
 ```
 
-### Receita C — Criar um tour completo para um submódulo
+### Receita C - Criar um tour completo para um submódulo
 
 Em `TOUR_STEPS`:
 
 ```js
 "documental-sub1": {
-  title: "sub1 — Acessar lista de documentos",
+  title: "sub1 - Acessar lista de documentos",
   steps: [
     {
       target: null,
@@ -624,7 +624,7 @@ Em `TOUR_STEPS`:
 }
 ```
 
-### Receita D — Adicionar um novo `data-tour-id` a um botão existente
+### Receita D - Adicionar um novo `data-tour-id` a um botão existente
 
 Encontre o componente (ex.: `AcoesTab`) e o botão (ex.: o ícone de calendário), e acrescente:
 
@@ -636,7 +636,7 @@ Encontre o componente (ex.: `AcoesTab`) e o botão (ex.: o ícone de calendário
 
 Depois use `target: "acoes-calendario"` no seu passo do tour.
 
-### Receita E — Tour que abre um modal e destaca algo dentro dele
+### Receita E - Tour que abre um modal e destaca algo dentro dele
 
 ```js
 {
@@ -655,7 +655,7 @@ Depois use `target: "acoes-calendario"` no seu passo do tour.
 }
 ```
 
-O sistema de spotlight espera até 1,6s pelo elemento aparecer no DOM — tempo suficiente para o modal renderizar.
+O sistema de spotlight espera até 1,6s pelo elemento aparecer no DOM - tempo suficiente para o modal renderizar.
 
 ---
 
