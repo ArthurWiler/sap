@@ -974,455 +974,485 @@
       }
     ]
   },
-  "documental-introducao": {
+  "analise-doc-bt-etapas-introducao": {
     "title": "Introdução à análise documental",
     "slides": [
       {
-        "title": "Bem-vindo ao POP de Conexão BT",
-        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "title": "Bem-vindo à análise documental",
+        "body": "Este módulo apresenta a lógica da análise documental nas solicitações de baixa tensão. O foco aqui é entender o objetivo da etapa, o que precisa ser conferido e como a documentação orienta o andamento do pedido.",
         "image": null,
-        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+        "imageAlt": "Capa do módulo de análise documental BT"
       },
       {
-        "title": "Por que o código importa?",
-        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
+        "title": "Qual é o objetivo desta etapa?",
+        "body": "A análise documental garante que a solicitação tenha informações e documentos suficientes para seguir corretamente. Ela serve para validar o pedido antes de qualquer encaminhamento técnico, fundiário ou ambiental.",
         "image": null,
-        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
+        "imageAlt": "Fluxo da etapa documental dentro do processo"
       },
       {
-        "title": "Os 3 códigos da área de Conexão BT",
+        "title": "Como a análise documental se organiza",
+        "body": "De forma geral, a análise documental avalia se o pedido está completo, coerente e compatível com o tipo de solicitação. O atendimento pode exigir verificações gerais, específicas ou especiais, conforme o caso.",
+        "image": null,
+        "imageAlt": "Estrutura geral da análise documental"
+      },
+      {
+        "title": "Quando aplicar cada nível",
+        "body": "Os três níveis são cumulativos: toda solicitação passa pela conferência geral; alguns tipos exigem também conferências específicas; situações com restrições legais entram em casos especiais.",
         "bullets": [
-          "COBT — Ligação Nova ou Alteração de Carga em BT",
-          "PSRP — Remoção de Poste ou Rede",
-          "PSIP — Obras de Iluminação Pública"
+          "Geral: aplica-se a toda solicitação. Cobre dados básicos, posse e regularidade.",
+          "Específica: aplica-se quando o pedido tem tipo característico (provisória, remoção de poste, RT, parcelamento, etc.).",
+          "Especial: aplica-se quando o local ou contexto tem restrição legal (APP, reserva, indígena, parcelamento irregular)."
         ],
-        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
         "image": null,
-        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+        "imageAlt": "Pirâmide: Geral → Específica → Especial"
       },
       {
-        "title": "Como verificar o código no SAP",
+        "title": "Pedidos com e sem Responsável Técnico",
+        "body": "Alguns pedidos exigem documentação assinada ou emitida por responsável técnico, enquanto outros seguem sem essa necessidade. Identificar essa diferença logo no início evita retrabalho e direciona a conferência correta dos documentos.",
         "bullets": [
-          "Exibir ou Modificar a Nota de Serviço",
-          "Acessar a aba Dados de Solicitação",
-          "Localizar o campo Item",
-          "Conferir o Subcampo Serviços"
+          "Pedidos sem RT: documentação básica e conferências gerais.",
+          "Pedidos com RT: exigem documentos técnicos adicionais (ART, RRT, TRT)."
         ],
-        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
         "image": null,
-        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+        "imageAlt": "Comparação entre pedidos com e sem RT"
       },
       {
-        "title": "E se o código estiver errado?",
-        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "title": "O que você deve observar primeiro",
+        "body": "Antes de aprofundar a análise, verifique se a documentação básica está presente, se o tipo de solicitação está claro e se há indícios de exigências especiais, como questões fundiárias, ambientais ou técnicas.",
         "image": null,
-        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+        "imageAlt": "Checklist inicial da análise documental"
       },
       {
-        "title": "Texto padrão da medida 0592",
-        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "title": "Resumo do fluxo de trabalho",
+        "body": "A sequência ideal é: identificar o tipo de pedido, conferir a documentação geral, verificar exigências específicas e, por fim, tratar casos especiais quando houver restrições ou particularidades.",
         "image": null,
-        "imageAlt": "Captura: texto da medida 0592"
-      },
-      {
-        "title": "Texto da 0592 — caso de dúvida",
-        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
-        "image": null,
-        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+        "imageAlt": "Fluxo resumido da análise documental"
       },
       {
         "type": "quiz",
-        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "question": "Qual é o principal objetivo da análise documental?",
         "options": [
           {
-            "text": "COBT",
-            "correct": false,
-            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
-          },
-          {
-            "text": "PSRP",
+            "text": "Validar se o pedido possui informações e documentos suficientes para seguir corretamente",
             "correct": true,
-            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+            "explanation": "Correto. A análise documental qualifica o pedido antes que ele avance para etapas técnicas, fundiárias ou ambientais — garante que tudo está em ordem para prosseguir."
           },
           {
-            "text": "PSIP",
+            "text": "Substituir todas as demais etapas do processo",
             "correct": false,
-            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+            "explanation": "A análise documental é apenas a PRIMEIRA validação. Ela não substitui análises técnicas, ambientais ou de campo — abre caminho para elas, organizando o que veio do cliente."
           },
           {
-            "text": "OIP",
+            "text": "Registrar somente dados cadastrais do solicitante",
             "correct": false,
-            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+            "explanation": "Cadastro é só uma parte. A análise documental vai além: verifica coerência entre informações, comprovação de vínculo com o imóvel, exigências por tipo de pedido e eventuais restrições legais."
+          },
+          {
+            "text": "Apenas registrar o protocolo da solicitação no sistema",
+            "correct": false,
+            "explanation": "Registro de protocolo é etapa administrativa anterior. A análise documental qualifica o CONTEÚDO da solicitação, não apenas seu registro."
           }
         ]
-      },
-      {
-        "type": "quiz",
-        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
-        "options": [
-          {
-            "text": "Iniciar a análise normalmente e corrigir depois",
-            "correct": false,
-            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
-          },
-          {
-            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
-            "correct": false,
-            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
-          },
-          {
-            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
-            "correct": true,
-            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
-          },
-          {
-            "text": "Fechar a nota como cancelada por conta própria",
-            "correct": false,
-            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
-          }
-        ],
-        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
       }
     ]
   },
-  "documental-geral": {
-    "title": "Introdução à análise documental",
+  "analise-doc-bt-etapas-geral": {
+    "title": "Documentação geral",
     "slides": [
       {
-        "title": "Bem-vindo ao POP de Conexão BT",
-        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "title": "Documentação geral: por onde começar",
+        "body": "Nesta etapa, o objetivo é conferir os documentos e informações que aparecem na maior parte dos pedidos. A ideia é garantir que o processo tenha base suficiente para prosseguir sem lacunas.",
         "image": null,
-        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+        "imageAlt": "Introdução à documentação geral"
       },
       {
-        "title": "Por que o código importa?",
-        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
-        "image": null,
-        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
-      },
-      {
-        "title": "Os 3 códigos da área de Conexão BT",
+        "title": "Dados que sempre devem ser conferidos",
+        "body": "Algumas informações precisam ser observadas em praticamente toda solicitação: titular, endereço, contatos, localização e coerência entre o que foi informado e o que consta na documentação.",
         "bullets": [
-          "COBT — Ligação Nova ou Alteração de Carga em BT",
-          "PSRP — Remoção de Poste ou Rede",
-          "PSIP — Obras de Iluminação Pública"
+          "Nome do titular",
+          "Endereço completo",
+          "Contatos do solicitante",
+          "Localização do imóvel ou ponto de atendimento",
+          "Tipo de solicitação"
         ],
-        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
         "image": null,
-        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+        "imageAlt": "Checklist de dados gerais do pedido"
       },
       {
-        "title": "Como verificar o código no SAP",
+        "title": "Documentos de posse e propriedade",
+        "body": "A documentação precisa demonstrar vínculo válido com o imóvel ou com a área de atendimento. Isso ajuda a confirmar que o pedido está respaldado por um documento compatível com a situação apresentada.",
         "bullets": [
-          "Exibir ou Modificar a Nota de Serviço",
-          "Acessar a aba Dados de Solicitação",
-          "Localizar o campo Item",
-          "Conferir o Subcampo Serviços"
+          "Escritura pública",
+          "Registro de imóvel",
+          "Contrato de locação, quando aplicável",
+          "Termo de doação",
+          "Termo de permissão de uso",
+          "Contrato de arrendamento ou comodato"
         ],
-        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
         "image": null,
-        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+        "imageAlt": "Documentos de posse e propriedade"
       },
       {
-        "title": "E se o código estiver errado?",
-        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
-        "image": null,
-        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+        "title": "Documentos de regularidade",
+        "body": "A documentação apresentada deve mostrar que o imóvel está regular, ou seja, em conformidade com as exigências legais. Isso ajuda a garantir que o local está apto a ser atendido, sem pendências ou irregularidades.",
+        "bullets": [
+          "Matrícula atualizada do imóvel",
+          "Certidão de registro", 
+          "IPTU (A-1)",
+          "Certidão negativa de débitos",
+          "Certidão de número emitida pela prefeitura"
+        ],
+        "imageAlt": "Comparação entre regularidade urbana e rural"
       },
       {
-        "title": "Texto padrão da medida 0592",
-        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "title": "Área urbana x área rural",
+        "body": "A documentação pode variar bastante entre imóveis localizados em área urbana e em área rural. Por isso, é importante avaliar se os documentos apresentados são compatíveis com o tipo de imóvel e com a solicitação em análise. Em geral, imóveis urbanos costumam exigir comprovação de regularidade junto ao município, além da posse ou propriedade. Já em áreas rurais, a análise foca principalmente na comprovação de posse ou propriedade.",
         "image": null,
-        "imageAlt": "Captura: texto da medida 0592"
+        "imageAlt": "Diferença entre área urbana e área rural"
       },
       {
-        "title": "Texto da 0592 — caso de dúvida",
-        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "title": "O que pode gerar inconsistência",
+        "body": "Informações divergentes entre formulário e documentos, campos incompletos, ausência de comprovação de vínculo com o imóvel e documentos incompatíveis com a área são exemplos de inconsistência.",
         "image": null,
-        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+        "imageAlt": "Exemplos de inconsistências documentais"
+      },
+      {
+        "title": "O que fazer quando encontrar divergência",
+        "body": "Sempre que houver divergência relevante, a solicitação precisa ser tratada conforme o fluxo interno do processo, com a correção ou reprovação adequada e com a observação clara do motivo.",
+        "image": null,
+        "imageAlt": "Tratamento de divergências documentais"
       },
       {
         "type": "quiz",
-        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "question": "O que a documentação geral deve confirmar primeiro?",
         "options": [
           {
-            "text": "COBT",
-            "correct": false,
-            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
-          },
-          {
-            "text": "PSRP",
+            "text": "Se o pedido tem dados básicos e documentos suficientes para seguir",
             "correct": true,
-            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+            "explanation": "Correto. A conferência geral é a base — sem ela, qualquer análise posterior fica comprometida. Dados do titular, endereço, vínculo com o imóvel e coerência das informações vêm primeiro."
           },
           {
-            "text": "PSIP",
+            "text": "Se o pedido já pode ser aprovado sem conferência",
             "correct": false,
-            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+            "explanation": "Aprovar sem conferir contraria o próprio objetivo da etapa. Mesmo pedidos aparentemente simples passam por validação básica antes de avançar."
           },
           {
-            "text": "OIP",
+            "text": "Se a obra já foi executada",
             "correct": false,
-            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+            "explanation": "Execução de obra é etapa de campo, posterior à análise documental. Aqui só se examina o que o cliente apresentou no pedido."
+          },
+          {
+            "text": "Se há necessidade de licenciamento ambiental",
+            "correct": false,
+            "explanation": "Verificações ambientais ficam em casos especiais. A etapa geral cuida do básico — só depois é que se decide se o pedido precisa também de análise ambiental."
           }
         ]
-      },
-      {
-        "type": "quiz",
-        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
-        "options": [
-          {
-            "text": "Iniciar a análise normalmente e corrigir depois",
-            "correct": false,
-            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
-          },
-          {
-            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
-            "correct": false,
-            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
-          },
-          {
-            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
-            "correct": true,
-            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
-          },
-          {
-            "text": "Fechar a nota como cancelada por conta própria",
-            "correct": false,
-            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
-          }
-        ],
-        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
       }
     ]
   },
-  "documental-especifica": {
-    "title": "Introdução à análise documental",
+  "analise-doc-bt-etapas-especifica": {
+    "title": "Documentação específica",
     "slides": [
       {
-        "title": "Bem-vindo ao POP de Conexão BT",
-        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "title": "Quando a documentação muda?",
+        "body": "Alguns tipos de solicitação exigem documentos adicionais ou regras próprias de conferência. Neste módulo, o foco é mostrar essas variações e o que precisa ser observado em cada cenário.",
         "image": null,
-        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+        "imageAlt": "Introdução à documentação específica"
       },
       {
-        "title": "Por que o código importa?",
-        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
-        "image": null,
-        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
-      },
-      {
-        "title": "Os 3 códigos da área de Conexão BT",
+        "title": "Remoção de poste ou rede",
+        "body": "Pedidos de remoção ou realocação de poste ou rede exigem atenção especial porque normalmente envolvem obra e podem demandar informações complementares para orientar corretamente o atendimento.",
         "bullets": [
-          "COBT — Ligação Nova ou Alteração de Carga em BT",
-          "PSRP — Remoção de Poste ou Rede",
-          "PSIP — Obras de Iluminação Pública"
+          "Descrição clara da solicitação",
+          "Localização do poste ou rede",
+          "Sem necessidade de comprovação de posse ou regularidade"
         ],
-        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
         "image": null,
-        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+        "imageAlt": "Documentação para remoção de poste ou rede"
       },
       {
-        "title": "Como verificar o código no SAP",
+        "title": "Ligação provisória",
+        "body": "Solicitações de ligação provisória precisam trazer informações claras sobre o período de uso, a finalidade do atendimento e as características do ponto solicitado.",
         "bullets": [
-          "Exibir ou Modificar a Nota de Serviço",
-          "Acessar a aba Dados de Solicitação",
-          "Localizar o campo Item",
-          "Conferir o Subcampo Serviços"
+          "Endereço ou coordenada do ponto",
+          "Finalidade do atendimento temporário",
+          "Período de fornecimento",
+          "Características da carga e da ligação",
+          "Sem necessidade de comprovação de posse ou regularidade"
         ],
-        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
         "image": null,
-        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+        "imageAlt": "Documentação para ligação provisória"
       },
       {
-        "title": "E se o código estiver errado?",
-        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "title": "Solicitações com responsável técnico",
+        "body": "Quando a solicitação exige responsável técnico, os documentos precisam demonstrar formalmente a responsabilidade sobre o projeto ou a obra. Isso inclui o documento técnico e a verificação do vínculo com o pedido.",
         "image": null,
-        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+        "imageAlt": "Documentos com responsável técnico"
       },
       {
-        "title": "Texto padrão da medida 0592",
-        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "title": "ART, TRT e RRT — documentos de responsabilidade técnica",
+        "body": "Cada documento corresponde a um conselho profissional diferente. A conferência deve confirmar se o documento apresentado é compatível com a atividade declarada e está vinculado ao responsável correto.",
+        "bullets": [
+          "ART — Anotação de Responsabilidade Técnica (CREA: engenheiros e técnicos industriais)",
+          "RRT — Registro de Responsabilidade Técnica (CAU: arquitetos e urbanistas)",
+          "TRT — Termo de Responsabilidade Técnica (CFT: técnicos de nível médio)",
+          "Número de registro profissional ativo, compatível com a atividade"
+        ],
         "image": null,
-        "imageAlt": "Captura: texto da medida 0592"
+        "imageAlt": "ART/RRT/TRT e os conselhos profissionais"
       },
       {
-        "title": "Texto da 0592 — caso de dúvida",
-        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "title": "Procuração e representação",
+        "body": "Quando o responsável pelo pedido não é o titular direto, a representação precisa estar formalizada por procuração. A conferência avalia tanto o conteúdo do documento quanto a coerência com o pedido apresentado.",
+        "bullets": [
+          "Identificação completa do outorgante (titular) e do procurador",
+          "Poderes expressos para representação junto à concessionária",
+          "Para pessoa jurídica: representante constando no contrato social ou ata vigente"
+        ],
         "image": null,
-        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+        "imageAlt": "Itens a conferir em uma procuração"
+      },
+      {
+        "title": "O que não aceitar em uma procuração",
+        "body": "Documentos de representação que apresentem qualquer dos itens abaixo devem ser tratados como inconsistência e exigem regularização antes do prosseguimento.",
+        "bullets": [
+          "Procuração genérica sem menção a serviços de energia ou à concessionária",
+          "Substabelecimento sem a cadeia de procurações anteriores anexa",
+          "Outorgante diferente do titular do imóvel ou da solicitação"
+        ],
+        "image": null,
+        "imageAlt": "Procurações que não devem ser aceitas"
+      },
+      {
+        "title": "Irrigação",
+        "body": "Pedidos ligados à irrigação exigem comprovações específicas do uso da área e da atividade desenvolvida, conforme a característica da solicitação.",
+        "bullets": [
+          "Documento que comprove uso insignificante de recurso hídrico",
+          "Outorga para uso de recursos hídricos"
+        ],
+        "image": null,
+        "imageAlt": "Casos de irrigação e aquicultura"
+      },
+      {
+        "title": "Parcelamento regular do solo",
+        "body": "Quando há parcelamento regular do solo, a análise documental precisa considerar a regularidade do empreendimento, a existência de documentação de aprovação e a coerência entre o loteamento e a solicitação.",
+        "bullets": [
+          "Projeto aprovado pela prefeitura com arruamento e posteamento indicado",
+          "Licensa ambiental",
+          "REURB ou lei municipal comprovando a regulalidade do empreendimento"
+        ],
+        "image": null,
+        "imageAlt": "Parcelamento regular do solo"
+      },
+      {
+        "title": "Termo de Opção de Atendimento em BT",
+        "body": "Documento formal em que o cliente declara que opta pelo atendimento em baixa tensão mesmo quando a carga ou a característica da unidade permitiria atendimento em MT. Garante que a escolha é consciente e protege ambas as partes em eventual questionamento futuro.",
+        "bullets": [
+          "Quando exigido: cargas acima de 75 kW ou casos em que MT seria o atendimento natural",
+          "Identificação clara da instalação ou do empreendimento",
+          "Declaração expressa de ciência das implicações tarifárias e técnicas",
+          "Assinatura do cliente ou representante legal"
+        ],
+        "image": null,
+        "imageAlt": "Termo de opção de atendimento em BT"
+      },
+      {
+        "title": "Tarifa monômia",
+        "body": "Modalidade tarifária do grupo B (baixa tensão) em que a fatura considera apenas o consumo de energia em kWh, sem cobrança separada de demanda. É a tarifa padrão da maioria das ligações BT — residenciais, comércios pequenos, ruralistas comuns.",
+        "bullets": [
+          "Aplica-se ao grupo B (B1 residencial, B2 rural, B3 demais classes, B4 iluminação pública)",
+          "Limite típico de carga compatível com BT: 75 kW",
+          "Acima desse limite, o atendimento natural é em MT (tarifa binômia, grupo A)",
+          "Cliente pode formalizar opção por BT acima de 75 kW via Termo de Opção",
+          "Para cliente atendidos em MT, pode ser feito a opção de faturamento em BT"
+        ],
+        "image": null,
+        "imageAlt": "Estrutura da tarifa monômia"
       },
       {
         "type": "quiz",
-        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "question": "O que a documentação específica trata?",
         "options": [
           {
-            "text": "COBT",
-            "correct": false,
-            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
-          },
-          {
-            "text": "PSRP",
+            "text": "Exigências adicionais que dependem do tipo de solicitação",
             "correct": true,
-            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+            "explanation": "Correto. Esta etapa cobre variações documentais por tipo de pedido — provisória precisa de datas; remoção de poste precisa de localização; pedidos com RT precisam de ART/RRT/TRT; e assim por diante."
           },
           {
-            "text": "PSIP",
+            "text": "Somente documentos básicos de qualquer solicitação",
             "correct": false,
-            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+            "explanation": "Documentos básicos (titular, endereço, posse) são tratados na conferência geral. A específica entra depois, quando o pedido tem características que exigem documentação extra."
           },
           {
-            "text": "OIP",
+            "text": "Somente casos ambientais",
             "correct": false,
-            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+            "explanation": "Restrições ambientais (APP, reserva, indígena) ficam nos casos especiais. A específica trata de variações documentais por tipo de pedido, não por restrição legal do local."
+          },
+          {
+            "text": "Detalhes operacionais da execução da obra",
+            "correct": false,
+            "explanation": "Execução é etapa de campo, posterior. A análise documental — geral, específica ou especial — sempre olha o pedido em si, não a execução."
           }
         ]
-      },
-      {
-        "type": "quiz",
-        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
-        "options": [
-          {
-            "text": "Iniciar a análise normalmente e corrigir depois",
-            "correct": false,
-            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
-          },
-          {
-            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
-            "correct": false,
-            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
-          },
-          {
-            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
-            "correct": true,
-            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
-          },
-          {
-            "text": "Fechar a nota como cancelada por conta própria",
-            "correct": false,
-            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
-          }
-        ],
-        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
       }
     ]
   },
-  "documental-especial": {
-    "title": "Introdução à análise documental",
+  "analise-doc-bt-etapas-especial": {
+    "title": "Casos especiais",
     "slides": [
       {
-        "title": "Bem-vindo ao POP de Conexão BT",
-        "body": "Este módulo apresenta os códigos de serviço usados no SAP para identificar solicitações de conexão em baixa tensão. Saber identificar o código correto é o primeiro passo para que a nota chegue à equipe certa e seja tratada conforme o procedimento.",
+        "title": "Casos especiais na análise documental",
+        "body": "Algumas solicitações exigem uma leitura mais cuidadosa, porque podem envolver restrições legais, limitações territoriais ou condições que alteram a forma de tratar o pedido.",
         "image": null,
-        "imageAlt": "Capa: códigos de serviço SAP — Conexão BT"
+        "imageAlt": "Introdução aos casos especiais"
       },
       {
-        "title": "Por que o código importa?",
-        "body": "Cada serviço possui um código específico que define qual equipe vai tratar a nota e qual fluxo será aplicado. Antes de iniciar qualquer análise, é obrigatório conferir se a nota foi criada com o código correto.",
-        "image": null,
-        "imageAlt": "Diagrama: o código direciona o fluxo de tratamento"
-      },
-      {
-        "title": "Os 3 códigos da área de Conexão BT",
+        "title": "Parcelamento irregular do solo",
+        "body": "Quando houver indícios de parcelamento irregular, a análise precisa ser mais criteriosa. O objetivo é identificar se a área apresenta sinais de subdivisão informal ou de ocupação irregular.",
         "bullets": [
-          "COBT — Ligação Nova ou Alteração de Carga em BT",
-          "PSRP — Remoção de Poste ou Rede",
-          "PSIP — Obras de Iluminação Pública"
+          "Terrenos subdivididos por arruamento",
+          "Possibilidade de loteamento informal",
+          "Abertura de vias",
+          "Indício de urbanização em área rural",
+          "Chacreamento irregular"
         ],
-        "body": "Toda nota tratada pela equipe de Conexão BT deve ter um destes três códigos. Qualquer outro código indica que a nota foi designada incorretamente.",
         "image": null,
-        "imageAlt": "Tabela: COBT / PSRP / PSIP"
+        "imageAlt": "Indícios de parcelamento irregular"
       },
       {
-        "title": "Como verificar o código no SAP",
+        "title": "Análise ambiental",
+        "body": "Algumas áreas exigem verificação ambiental porque estão protegidas por legislação específica. Nesses casos, a documentação deve demonstrar autorização, licença ou declaração do órgão competente, quando aplicável.",
         "bullets": [
-          "Exibir ou Modificar a Nota de Serviço",
-          "Acessar a aba Dados de Solicitação",
-          "Localizar o campo Item",
-          "Conferir o Subcampo Serviços"
+          "Unidade de conservação",
+          "Área de preservação permanente",
+          "Reserva legal",
+          "Territórios indígenas",
+          "Territórios quilombolas"
         ],
-        "body": "O código aparece no campo Serviços dentro de Dados de Solicitação. Anote-o antes de prosseguir — ele determina todo o restante da análise.",
         "image": null,
-        "imageAlt": "Tela SAP: campo Serviços em Dados de Solicitação"
+        "imageAlt": "Áreas que exigem análise ambiental"
       },
       {
-        "title": "E se o código estiver errado?",
-        "body": "Se o grupo ou código não for COBT, PSRP ou PSIP, a nota foi mal classificada. Nesse caso, você deve criar a medida 0592 e devolver a nota para correção, sem prosseguir com a análise.",
+        "title": "Área de preservação permanente",
+        "body": "Em áreas de preservação permanente, a análise depende da situação do ponto e da documentação apresentada. A verificação precisa considerar a restrição ambiental e a possibilidade legal de atendimento.",
         "image": null,
-        "imageAlt": "Fluxo: código errado → medida 0592 → devolução"
+        "imageAlt": "Análise em área de preservação permanente"
       },
       {
-        "title": "Texto padrão da medida 0592",
-        "body": "Quando você consegue identificar qual deveria ser o código correto, use esta redação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código do serviço [COBT, PSRP, PSIP] (manter o código correto)\".",
+        "title": "Reserva legal",
+        "body": "Quando o ponto estiver em reserva legal, é necessário confirmar se há documentação que permita o atendimento ou se o cliente precisa reposicionar o ponto de conexão.",
         "image": null,
-        "imageAlt": "Captura: texto da medida 0592"
+        "imageAlt": "Situação em reserva legal"
       },
       {
-        "title": "Texto da 0592 — caso de dúvida",
-        "body": "Quando não é possível determinar qual o tipo correto da solicitação:",
-        "context": "\"A NS foi criada com código de serviço incorreto, logo deve ser cancelada. Gentileza criar uma nota com código correto e demais informações necessárias conforme procedimento padrão da RC.\"\n\nEm caso de dúvida em determinar qual o tipo de solicitação, consulte o supervisor imediato antes de criar a medida.",
+        "title": "Unidade de conservação",
+        "body": "Se a solicitação estiver inserida em unidade de conservação, a documentação precisa indicar se existe autorização do órgão responsável e se o atendimento pode seguir as exigências legais.",
         "image": null,
-        "imageAlt": "Aviso: em caso de dúvida, consulte o supervisor"
+        "imageAlt": "Unidade de conservação"
+      },
+      {
+        "title": "Territórios indígenas e quilombolas",
+        "body": "Esses territórios exigem cautela especial, pois a análise documental precisa respeitar as restrições legais e os documentos emitidos pelas autoridades competentes.",
+        "image": null,
+        "imageAlt": "Territórios indígenas e quilombolas"
+      },
+      {
+        "title": "Quando realizar tratamento diferenciado",
+        "body": "Sempre que houver indício de restrição legal, conflito territorial, irregularidade fundiária ou necessidade de autorização adicional, o caso deve ser tratado como especial.",
+        "image": null,
+        "imageAlt": "Critérios para tratamento diferenciado"
       },
       {
         "type": "quiz",
-        "question": "Qual código de serviço SAP corresponde a uma solicitação de remoção de poste?",
+        "question": "Qual situação exige atenção especial na análise documental?",
         "options": [
           {
-            "text": "COBT",
-            "correct": false,
-            "explanation": "COBT é usado apenas para Ligação Nova ou Alteração de Carga em BT — não cobre remoção de infraestrutura."
-          },
-          {
-            "text": "PSRP",
+            "text": "Indício de parcelamento irregular do solo",
             "correct": true,
-            "explanation": "Correto. PSRP é o código específico para Remoção de Poste ou Rede."
+            "explanation": "Correto. Parcelamento irregular é um dos gatilhos clássicos de caso especial — sinais como arruamento informal, terrenos subdivididos sem aprovação ou abertura de vias exigem verificação criteriosa antes do prosseguimento."
           },
           {
-            "text": "PSIP",
+            "text": "Pedido com documentação completa e sem restrições",
             "correct": false,
-            "explanation": "PSIP é exclusivo para Obras de Iluminação Pública."
+            "explanation": "Documentação completa e sem restrições é o cenário ideal — segue o fluxo normal pela geral e (se aplicável) pela específica. Casos especiais surgem quando aparece algo que sai do padrão."
           },
           {
-            "text": "OIP",
+            "text": "Solicitação sem nenhum documento adicional",
             "correct": false,
-            "explanation": "OIP não é um código de serviço SAP — é um tipo de solicitação (sigla usada no campo Tipo Solicitação). O código SAP correspondente seria PSIP."
+            "explanation": "Ausência de documentos é pendência, não caso especial. Pendência se resolve solicitando os documentos faltantes; caso especial envolve restrição legal ou contexto territorial."
+          },
+          {
+            "text": "Solicitação dentro de área urbana consolidada com documentação imobiliária completa",
+            "correct": false,
+            "explanation": "Área urbana consolidada com documentação completa é justamente o cenário mais simples. Casos especiais aparecem quando há restrição (APP, reserva, indígena, quilombola) ou irregularidade fundiária."
           }
         ]
-      },
+      }
+    ]
+  },
+  "analise-doc-bt-casos-ln-urbana": {
+    "title": "Ligação nova — área urbana",
+    "slides": [
       {
-        "type": "quiz",
-        "question": "Você abre uma nota e o código de serviço é COMT, que não está entre os três da Conexão BT. O que fazer?",
-        "options": [
-          {
-            "text": "Iniciar a análise normalmente e corrigir depois",
-            "correct": false,
-            "explanation": "Nunca prossiga com a análise antes de corrigir o código — todo o fluxo seguinte depende dele."
-          },
-          {
-            "text": "Encaminhar diretamente para o setor responsável pelo código COMT",
-            "correct": false,
-            "explanation": "Não é responsabilidade da Conexão BT redirecionar para outros setores. A nota com código errado deve ser cancelada e refeita."
-          },
-          {
-            "text": "Criar a medida 0592 com o texto padrão pedindo o cancelamento e a recriação da nota com o código correto",
-            "correct": true,
-            "explanation": "Exatamente. A medida 0592 com a redação padrão é o caminho correto para devolver a nota mal classificada."
-          },
-          {
-            "text": "Fechar a nota como cancelada por conta própria",
-            "correct": false,
-            "explanation": "A Conexão BT não cancela notas de outros setores. O procedimento é sinalizar via medida 0592 e deixar a unidade origem refazer."
-          }
-        ],
-        "summary": "Medida 0592 é a porta de saída padrão sempre que a nota chega com código de serviço errado."
+        "title": "Em construção",
+        "body": "Este submódulo de ligação nova — área urbana ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
+      }
+    ]
+  },
+  "analise-doc-bt-casos-ln-rural": {
+    "title": "Ligação nova — área rural",
+    "slides": [
+      {
+        "title": "Em construção",
+        "body": "Este submódulo de ligação nova — área rural ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
+      }
+    ]
+  },
+  "analise-doc-bt-casos-ac": {
+    "title": "Alteração de carga",
+    "slides": [
+      {
+        "title": "Em construção",
+        "body": "Este submódulo de alteração de carga ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
+      }
+    ]
+  },
+  "analise-doc-bt-casos-emp-rural": {
+    "title": "Empreendimento rural",
+    "slides": [
+      {
+        "title": "Em construção",
+        "body": "Este submódulo de empreendimento rural ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
+      }
+    ]
+  },
+  "analise-doc-bt-casos-emp-urbano": {
+    "title": "Empreendimento urbano",
+    "slides": [
+      {
+        "title": "Em construção",
+        "body": "Este submódulo de empreendimento urbano ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
+      }
+    ]
+  },
+  "analise-doc-bt-casos-hibrido": {
+    "title": "Ligação nova — cenário híbrido",
+    "slides": [
+      {
+        "title": "Em construção",
+        "body": "Este submódulo de ligação nova — cenário híbrido ainda está sendo elaborado. Em breve serão apresentados os documentos necessários, variações permitidas e não permitidas, e casos específicos.",
+        "image": null,
+        "imageAlt": "Aviso de conteúdo em construção"
       }
     ]
   }

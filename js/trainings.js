@@ -87,16 +87,6 @@ const TRAININGS = [
     tags: ["Avançado", "Processos", "Documentação"],
   },
   {
-    id: "documental",
-    title: "Treinamento documental",
-    desc: "Orientações para envio, conferência e organização de documentos, garantindo conformidade e correta tramitação dos processos.",
-    available: true,
-    difficulty: "Intermediário",
-    platform: "web",
-    hasSubmodules: true,
-    tags: ["Intermediário", "Documentação", "Processos"],
-  },
-  {
     id: "carga-i",
     title: "Treinamento carga – Conceitos básicos",
     desc: "Introdução aos principais conceitos e fundamentos necessários para atuação nos processos de carga.",
@@ -134,6 +124,24 @@ const TRAININGS = [
     difficulty: "Intermediário",
     platform: "web",
     tags: ["Intermediário", "Conexão BT", "POP", "Medida 0020"],
+  },
+  {
+    id: "analise-doc-bt-etapas",
+    title: "Análise Documental BT — Etapas",
+    desc: "Conheça as etapas da análise documental em solicitações de baixa tensão: documentação geral, específica e casos especiais. Inclui quizzes para fixação.",
+    available: true,
+    difficulty: "Intermediário",
+    platform: "web",
+    tags: ["Intermediário", "Documentação", "Análise BT"],
+  },
+  {
+    id: "analise-doc-bt-casos",
+    title: "Análise Documental BT — Casos Práticos",
+    desc: "Casos práticos da análise documental por tipo de pedido: ligação nova urbana e rural, alteração de carga, empreendimentos e cenários híbridos. (Em construção)",
+    available: true,
+    difficulty: "Intermediário",
+    platform: "web",
+    tags: ["Intermediário", "Documentação", "Casos práticos"],
   },
 ];
 
@@ -190,33 +198,80 @@ TRAININGS.forEach((t) => {
       ];
       break;
 
-    case "documental":
+    case "analise-doc-bt-casos":
+      t.submodules = [
+        {
+          id: `${t.id}-ln-urbana`,
+          title: "Ligação nova — área urbana",
+          desc: "Documentos necessários, variações permitidas e não permitidas, casos específicos urbanos.",
+          available: false,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-ln-rural`,
+          title: "Ligação nova — área rural",
+          desc: "Documentos de posse e propriedade, coerência territorial, casos específicos rurais.",
+          available: false,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-ac`,
+          title: "Alteração de carga",
+          desc: "Exigências documentais para AC, variações permitidas e situações que exigem correção.",
+          available: false,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-emp-rural`,
+          title: "Empreendimento rural",
+          desc: "Documentos para empreendimentos rurais: comprovação de área, atividade e regularidade.",
+          available: false,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-emp-urbano`,
+          title: "Empreendimento urbano",
+          desc: "Documentos para empreendimentos urbanos: regularidade do imóvel e coerência dos dados.",
+          available: false,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-hibrido`,
+          title: "Ligação nova — cenário híbrido",
+          desc: "Solicitações que combinam elementos urbanos e rurais, exigindo análise mais criteriosa.",
+          available: false,
+          type: "deck",
+        },
+      ];
+      break;
+
+    case "analise-doc-bt-etapas":
       t.submodules = [
         {
           id: `${t.id}-introducao`,
           title: "Introdução à análise documental",
-          desc: "Conheça os conceitos, critérios e fundamentos que orientam a análise documental e ambiental dos pedidos.",
+          desc: "Objetivo da etapa, como ela se organiza, e a hierarquia entre conferências gerais, específicas e especiais.",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-geral`,
           title: "Documentação geral",
-          desc: "Aprenda quais documentos são exigidos na maioria dos pedidos e como verificar sua conformidade.",
+          desc: "Dados básicos, documentos de posse, regularidade urbana e rural, identificação de pedidos com e sem RT.",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-especifica`,
           title: "Documentação específica",
-          desc: "Entenda os documentos adicionais requeridos para situações e modalidades de atendimento específicas.",
+          desc: "Variações por tipo de pedido: remoção de poste, ligação provisória, RT, procuração, irrigação, parcelamento, Termo de Opção BT e tarifa monômia.",
           available: true,
           type: "deck",
         },
         {
           id: `${t.id}-especial`,
           title: "Casos especiais",
-          desc: "Saiba identificar e tratar situações excepcionais que exigem análise diferenciada.",
+          desc: "Situações com restrição legal: parcelamento irregular, análise ambiental, APP, reserva legal, territórios indígenas e quilombolas.",
           available: true,
           type: "deck",
         },
@@ -274,3 +329,30 @@ TRAININGS.forEach((t) => {
   // Marca somente quem realmente possui submódulos
   t.hasSubmodules = !!t.submodules?.length;
 });
+
+const REFERENCES = [
+  {
+    title: "POP Analisar Carga - BT",
+    description:
+      "Metodologia de análise documental para as solicitações de carga com conexão em baixa tensão (BT)",
+    file: "docs/POP Analisar Carga - BT.pdf",
+  },
+  {
+    title: "POP Análise de Documentação - BT",
+    description:
+      "Metodologia de análise de carga para as solicitações de conexão em baixa tensão (BT)",
+    file: "docs/POP Análise de Documentação - BT.pdf",
+  },
+  {
+    title: "Norma CEMIG ND 5.2",
+    description:
+      "Fornecimento de Energia Elétrica em Tensão Secundária Rede de Distribuição Aérea – Edificações Coletivas",
+    file: "docs/ND 5.2.pdf",
+  },
+  {
+    title: "Norma CEMIG ND 5.1",
+    description:
+      "Fornecimento de Energia Elétrica em Tensão Secundária Rede de Distribuição Aérea – Edificações Individuais",
+    file: "docs/ND 5.1.pdf",
+  },
+];

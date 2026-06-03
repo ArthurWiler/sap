@@ -1,4 +1,4 @@
-      :root {
+:root {
         --bg: #f5f6f7;
         --surface: #ffffff;
         --border: #d9d9d9;
@@ -2429,4 +2429,67 @@
       }
       .deck-dot.quiz.correct {
         background: #2eb872;
+      }
+
+      /* ===== REFERENCES SECTION (material de apoio) ===== */
+      .ref-section {
+        margin-top: 28px;
+      }
+      .ref-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 10px;
+      }
+      .ref-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px 14px;
+        text-decoration: none;
+        color: var(--text);
+        transition:
+          border-color 150ms ease,
+          box-shadow 150ms ease,
+          transform 150ms ease;
+      }
+      .ref-card:hover {
+        border-color: var(--cemig-green);
+        box-shadow: 0 2px 10px rgba(0, 131, 62, 0.08);
+        transform: translateY(-1px);
+      }
+      .ref-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: #e8f5ee;
+        color: var(--cemig-green);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .ref-body {
+        flex: 1;
+        min-width: 0;
+      }
+      .ref-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 2px;
+      }
+      .ref-desc {
+        font-size: 12px;
+        color: var(--text-secondary);
+        line-height: 1.4;
+      }
+      .ref-download {
+        color: var(--text-secondary);
+        flex-shrink: 0;
+      }
+      .ref-card:hover .ref-download {
+        color: var(--cemig-green);
       }

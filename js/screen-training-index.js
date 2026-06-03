@@ -28,9 +28,9 @@ function TrainingIndexPage({ progress, onOpenTraining }) {
         <div style={{ flex: 1 }}>
           <h1>Análise inicial: Equipe Carga</h1>
           <p>
-            Escolha um treinamento abaixo para começar. Cada módulo simula
-            um fluxo real ou processo de navegação do SAP com telas e
-            dados gerados sob medida.
+            Escolha um treinamento abaixo para começar. Cada módulo simula um
+            fluxo real ou processo de navegação do SAP com telas e dados gerados
+            sob medida.
           </p>
           <ProgressBar done={overall.done} total={overall.total} big />
         </div>
@@ -63,9 +63,7 @@ function TrainingIndexPage({ progress, onOpenTraining }) {
                           "training-card " +
                           (t.available ? "available" : "locked")
                         }
-                        onClick={() =>
-                          t.available && onOpenTraining(t.id)
-                        }
+                        onClick={() => t.available && onOpenTraining(t.id)}
                       >
                         {!t.available && (
                           <span className="locked-badge">Em breve</span>
@@ -112,8 +110,40 @@ function TrainingIndexPage({ progress, onOpenTraining }) {
               </div>
             ),
         )}
+
+        {typeof REFERENCES !== "undefined" && REFERENCES.length > 0 && (
+          <div className="training-group ref-section">
+            <div className="training-section-title">
+              <Icon name="doc-attach" size={13} /> Material de apoio
+            </div>
+            <div className="ref-list">
+              {REFERENCES.map((ref, i) => (
+                <a
+                  key={i}
+                  className="ref-card"
+                  href={ref.file}
+                  target="_blank"
+                  rel="noopener"
+                  download
+                >
+                  <div className="ref-icon">
+                    <Icon name="doc-attach" size={20} />
+                  </div>
+                  <div className="ref-body">
+                    <div className="ref-title">{ref.title}</div>
+                    {ref.description && (
+                      <div className="ref-desc">{ref.description}</div>
+                    )}
+                  </div>
+                  <div className="ref-download">
+                    <Icon name="external" size={16} />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 }
-

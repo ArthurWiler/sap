@@ -32,9 +32,7 @@ function SubmoduleIndexPage({
           <Icon name="arrow-left" size={18} />
         </div>
         <div style={{ flex: 1 }}>
-          <div className="crumb">
-            Treinamentos / {training.difficulty}
-          </div>
+          <div className="crumb">Treinamentos / {training.difficulty}</div>
           <h1>
             {training.title}
             <span className="difficulty-pill">
@@ -68,9 +66,7 @@ function SubmoduleIndexPage({
                   (available ? "" : " locked") +
                   (isDone ? " done" : "")
                 }
-                onClick={() =>
-                  available && onStartSubmodule(training.id, s.id)
-                }
+                onClick={() => available && onStartSubmodule(training.id, s.id)}
               >
                 <div className="sub-num">
                   {isDone ? (
@@ -106,4 +102,3 @@ function SubmoduleIndexPage({
     </div>
   );
 }
-
