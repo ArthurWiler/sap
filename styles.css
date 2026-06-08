@@ -2493,3 +2493,24 @@
       .ref-card:hover .ref-download {
         color: var(--cemig-green);
       }
+      
+      .deck-sap-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 18px;
+        padding: 8px 14px;
+        background: var(--cemig-green);
+        color: white;
+        border: 1px solid var(--cemig-green);
+        border-radius: 6px;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        align-self: flex-start;
+        transition: background 150ms ease;
+      }
+      .deck-sap-link:hover {
+        background: var(--cemig-green-dark);
+      }

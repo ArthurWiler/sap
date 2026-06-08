@@ -3,13 +3,21 @@
    Slides come from decks.json (loaded once in app.js), indexed by submoduleId.
 
    Slide types:
-   - type: "info" (default) - title + body + image placeholder
-   - type: "quiz" - question + options[] with one correct.
+   - type: "info" (default) — title + body + image placeholder
+   - type: "quiz" — question + options[] with one correct.
      After correct answer, shows explanation per option. Próximo only enables on correct.
 */
 
-function DeckPage({ deck, submodule, training, onComplete, onExit }) {
-  const [idx, setIdx] = useState(0);
+function DeckPage({
+  deck,
+  submodule,
+  training,
+  onComplete,
+  onExit,
+  onOpenSapTour,
+  initialSlideIdx = 0,
+}) {
+  const [idx, setIdx] = useState(initialSlideIdx);
   // Per-slide quiz state: { [idx]: { selected, correct, revealed } }
   const [quizState, setQuizState] = useState({});
 
@@ -127,7 +135,14 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
             onSelect={handleQuizSelect}
           />
         ) : (
-          <InfoSlide slide={slide} />
+          <InfoSlide
+            slide={slide}
+            onOpenSapTour={
+              slide.sapTour && onOpenSapTour
+                ? () => onOpenSapTour(slide.sapTour, idx)
+                : null
+            }
+          />
         )}
       </div>
 
@@ -186,7 +201,7 @@ function DeckPage({ deck, submodule, training, onComplete, onExit }) {
 }
 
 /* ===== Info slide (title + body + image) ===== */
-function InfoSlide({ slide }) {
+function InfoSlide({ slide, onOpenSapTour }) {
   return (
     <div className="deck-card">
       <div className="deck-image">
@@ -210,6 +225,11 @@ function InfoSlide({ slide }) {
               <li key={i}>{b}</li>
             ))}
           </ul>
+        )}
+        {onOpenSapTour && (
+          <button className="deck-sap-link" onClick={onOpenSapTour}>
+            <Icon name="external" size={14} /> Ver no SAP
+          </button>
         )}
       </div>
     </div>

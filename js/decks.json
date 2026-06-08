@@ -199,9 +199,7 @@
       },
       {
         "title": "Módulo 2 - Ligação provisória",
-        "bullets": [
-          "Ligação para eventos (LP)"
-        ],
+        "bullets": ["Ligação para eventos (LP)"],
         "body": "Atendimento temporário, com prazo de vigência definido. Comum em festas, shows, obras civis e canteiros. A descrição da nota sempre traz a data de início e fim do evento, além do endereço ou coordenada.",
         "image": null,
         "imageAlt": "Tenda de evento com ligação provisória"
@@ -616,9 +614,7 @@
       {
         "title": "Caso 15 - Iluminação Pública",
         "context": "Módulo: 4 • Código nota: PSIP • Solicitação: OIP • Nº caixas: não possui • Anexos: GEDEX",
-        "bullets": [
-          "Nos documentos sempre haverá um projeto de rede"
-        ],
+        "bullets": ["Nos documentos sempre haverá um projeto de rede"],
         "body": "Solicitação de extensão de rede para iluminação pública, geralmente vinda de prefeituras. A presença do projeto anexo é a confirmação visual.",
         "image": null,
         "imageAlt": "Luminária pública sendo instalada"
@@ -1097,7 +1093,7 @@
         "body": "A documentação apresentada deve mostrar que o imóvel está regular, ou seja, em conformidade com as exigências legais. Isso ajuda a garantir que o local está apto a ser atendido, sem pendências ou irregularidades.",
         "bullets": [
           "Matrícula atualizada do imóvel",
-          "Certidão de registro", 
+          "Certidão de registro",
           "IPTU (A-1)",
           "Certidão negativa de débitos",
           "Certidão de número emitida pela prefeitura"
@@ -1639,6 +1635,653 @@
         "body": "Este submódulo de ligação nova demonstra toda a documentação que é aceita, apresenta exeplos de documentos e conduz em alguns casos específicos.",
         "image": null,
         "imageAlt": "Atendimento híbrido"
+      }
+    ]
+  },
+  "rede-i-introducao": {
+    "title": "Introdução à análise de redes elétricas",
+    "slides": [
+      {
+        "title": "Bem-vindo à análise de redes elétricas",
+        "body": "Neste módulo você conhecerá os fundamentos da análise de redes elétricas: seu objetivo, quando se aplica, quais resultados orientam a decisão e qual é o papel da equipe na avaliação técnica das solicitações recebidas.",
+        "image": null,
+        "imageAlt": "Capa do módulo de análise de redes elétricas"
+      },
+      {
+        "title": "O que é a análise de rede?",
+        "body": "A análise de rede elétrica avalia se a rede atual suporta o pedido do cliente ou se será necessária obra de reforço. Durante o estudo, os seguintes pontos são observados em conjunto:",
+        "bullets": [
+          "Carga declarada pelo cliente",
+          "Tensão no ponto de conexão",
+          "Motores presentes na instalação",
+          "Dispositivo de proteção solicitado",
+          "Perfil da rede elétrica existente"
+        ],
+        "image": null,
+        "imageAlt": "Conceito de análise de rede e itens observados"
+      },
+      {
+        "title": "Quando a análise é necessária?",
+        "body": "A análise é obrigatória para todo pedido de conexão à rede CEMIG. A única exceção é a ligação nova ou alteração de carga em área urbana com dispositivo de proteção limitado a:",
+        "bullets": [
+          "Um disjuntor bipolar de até 63 A",
+          "Um disjuntor monopolar de até 63 A",
+          "Combinação de até 3 disjuntores das categorias anteriores"
+        ],
+        "image": null,
+        "imageAlt": "Exceções à análise de rede"
+      },
+      {
+        "title": "Resultados da análise — parte 1",
+        "body": "Três pontos principais são observados no resultado da análise para decidir entre liberar a conexão ou elaborar projeto de reforço:",
+        "bullets": [
+          "Tensão no ponto de conexão",
+          "Carregamento do transformador",
+          "Necessidade de conversão ou extensão de rede de BT ou MT"
+        ],
+        "image": null,
+        "imageAlt": "Três critérios principais de decisão"
+      },
+      {
+        "title": "Resultados da análise — parte 2",
+        "body": "Além dos critérios principais, outros fatores influenciam a decisão e serão detalhados futuramente:",
+        "bullets": [
+          "Necessidade de obra na média tensão (MT)",
+          "Configuração espacial da rede de BT",
+          "Avaliação dos motores declarados",
+          "Compatibilidade do dispositivo de proteção com o transformador"
+        ],
+        "image": null,
+        "imageAlt": "Fatores complementares de decisão"
+      },
+      {
+        "title": "Visão geral dos próximos submódulos",
+        "body": "Nos próximos submódulos você vai aprender as ferramentas utilizadas na análise, onde estão os dados necessários, as regras técnicas previstas em norma e as exceções de aplicação.",
+        "image": null,
+        "imageAlt": "Estrutura dos submódulos seguintes"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual é o objetivo principal da análise de rede elétrica?",
+        "options": [
+          {
+            "text": "Avaliar se a rede atual suporta o pedido ou se será necessária obra de reforço",
+            "correct": true,
+            "explanation": "Correto. A análise responde uma pergunta única e objetiva: a rede atende, ou precisa de reforço? Toda a decisão sobre liberação ou projeto parte daí."
+          },
+          {
+            "text": "Aprovar automaticamente todos os pedidos de conexão recebidos",
+            "correct": false,
+            "explanation": "A análise existe justamente para qualificar o pedido — não para aprovar tudo. Pedidos que excedem a capacidade da rede vão para reforço, não para aprovação automática."
+          },
+          {
+            "text": "Substituir a análise documental e a análise de carga feitas pelo cliente",
+            "correct": false,
+            "explanation": "A análise de rede é uma etapa específica do processo, focada na infraestrutura elétrica. Ela não substitui análise documental nem o cálculo de carga apresentado pelo cliente — complementa essas etapas."
+          },
+          {
+            "text": "Definir o valor da fatura de energia do cliente",
+            "correct": false,
+            "explanation": "Faturamento depende de consumo, modalidade tarifária e classe — temas que ficam fora do escopo da análise de rede. A análise se preocupa com a viabilidade técnica da conexão, não com o valor da conta."
+          }
+        ]
+      }
+    ]
+  },
+  "rede-i-onde": {
+    "title": "Ferramentas utilizadas na análise",
+    "slides": [
+      {
+        "title": "As três ferramentas da análise técnica",
+        "body": "Neste submódulo você conhecerá os sistemas que a equipe usa para realizar análises de rede e consultar informações técnicas. São três ferramentas com papéis complementares: CEMIG ON, Electric Office e GEMINI.",
+        "image": null,
+        "imageAlt": "Apresentação das três ferramentas"
+      },
+      {
+        "title": "CEMIG ON",
+        "body": "Ferramenta oficial de simulação de rede elétrica da CEMIG. Acessa o banco de dados completo da rede, com informações de todos os clientes, e calcula o fluxo de potência via OpenDSS. É a ferramenta de cálculo mais precisa atualmente em uso.",
+        "bullets": [
+          "Base: banco de dados completo da rede CEMIG",
+          "Motor de cálculo: OpenDSS",
+          "Saída: perfil de tensão, carregamento e recomendação técnica",
+          "Uso recomendado: análises padrão de todos os pedidos"
+        ],
+        "image": null,
+        "imageAlt": "Tela e funcionamento do CEMIG ON"
+      },
+      {
+        "title": "Acesso ao CEMIG ON",
+        "body": "O acesso é liberado pelo coordenador da equipe. Após a liberação, o login é automático com as credenciais do sistema corporativo. O acesso é via navegador web — o link específico é divulgado internamente pela coordenação.",
+        "image": null,
+        "imageAlt": "Fluxo de acesso ao CEMIG ON"
+      },
+      {
+        "title": "Electric Office",
+        "body": "Ferramenta oficial de visualização da rede CEMIG. Permite consultar toda a rede instalada e obter informações detalhadas (topográficas, ambientais, equipamentos). Serve como base de dados para o próprio CEMIG ON.",
+        "bullets": [
+          "Visualização da rede completa em mapa",
+          "Dados topográficos e ambientais",
+          "Detalhes de equipamentos (transformadores, redes, postes)",
+          "Base de dados consumida pelo CEMIG ON"
+        ],
+        "image": null,
+        "imageAlt": "Interface do Electric Office"
+      },
+      {
+        "title": "Acesso ao Electric Office",
+        "body": "O acesso é solicitado pelo coordenador da equipe via chamado à TI. Todo o uso é feito por aplicativo web; o link de acesso é fornecido após a liberação do chamado.",
+        "image": null,
+        "imageAlt": "Fluxo de acesso ao Electric Office"
+      },
+      {
+        "title": "GEMINI",
+        "body": "Sistema legado, ainda em uso em casos específicos para conferência. Possui banco de dados atualizado, mas deve ser descontinuado nos próximos meses. Seu motor de cálculo interno usa dados estatísticos — menos preciso que o do CEMIG ON.",
+        "bullets": [
+          "Banco de dados: ainda atualizado",
+          "Motor de cálculo: estatístico (inferior ao OpenDSS)",
+          "Status: em vias de descontinuação",
+          "Uso: conferência pontual quando necessário"
+        ],
+        "image": null,
+        "imageAlt": "Tela do GEMINI"
+      },
+      {
+        "title": "Acesso ao GEMINI",
+        "body": "Mesmo procedimento do Electric Office: o coordenador abre chamado para a TI, e a aplicação é acessada via navegador após a liberação.",
+        "image": null,
+        "imageAlt": "Fluxo de acesso ao GEMINI"
+      },
+      {
+        "title": "Boas práticas de utilização",
+        "body": "Use sempre que possível o CEMIG ON para a análise e o Electric Office para consulta visual da rede. O GEMINI deve ser usado com cautela e apenas para conferência, dado que será descontinuado. Para detalhes sobre o uso do Electric Office, consulte o treinamento específico da ferramenta.",
+        "image": null,
+        "imageAlt": "Resumo das boas práticas"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual ferramenta deve ser usada preferencialmente para a análise de rede elétrica?",
+        "options": [
+          {
+            "text": "CEMIG ON para o cálculo, em conjunto com o Electric Office para consulta visual da rede",
+            "correct": true,
+            "explanation": "Correto. Essa é a combinação recomendada: CEMIG ON faz o cálculo com OpenDSS sobre o banco completo, e o Electric Office complementa com a visualização e dados topográficos."
+          },
+          {
+            "text": "GEMINI, por ser mais rápido e direto",
+            "correct": false,
+            "explanation": "GEMINI é um sistema legado em vias de descontinuação. Seu motor estatístico é menos preciso que o OpenDSS do CEMIG ON e seu uso deve ficar restrito a conferências pontuais."
+          },
+          {
+            "text": "Qualquer uma das três, sem preferência técnica",
+            "correct": false,
+            "explanation": "Há diferença de precisão clara: CEMIG ON usa OpenDSS sobre dados completos, enquanto GEMINI usa cálculo estatístico. Tratar as três como equivalentes pode levar a decisões erradas."
+          },
+          {
+            "text": "Electric Office sozinho, já que ele tem motor de cálculo embutido",
+            "correct": false,
+            "explanation": "Electric Office é ferramenta de visualização — não realiza simulação de fluxo de potência. Quem calcula é o CEMIG ON, usando o banco de dados que o Electric Office mantém."
+          }
+        ]
+      }
+    ]
+  },
+  "rede-i-dados": {
+    "title": "Dados utilizados na análise",
+    "slides": [
+      {
+        "title": "Os dados que orientam a decisão",
+        "body": "Este submódulo apresenta os dados consultados durante a análise: o que vem da solicitação do cliente, o que vem da rede existente e o que aparece como resultado da simulação. Cada um cumpre um papel específico na decisão final.",
+        "image": null,
+        "imageAlt": "Mapa dos dados usados na análise"
+      },
+      {
+        "title": "Dados da solicitação — carga declarada (kW)",
+        "body": "Carga declarada pelo cliente, registrada no SAP. É usada para verificar a coerência da demanda calculada e a compatibilidade entre rede e disjuntor solicitado.",
+        "image": null,
+        "imageAlt": "Campo de carga declarada no SAP",
+        "sapTour": "rede-i-carga-kw"
+      },
+      {
+        "title": "Dados da solicitação — demanda calculada (kVA)",
+        "body": "Demanda calculada conforme o procedimento da norma CEMIG ND 5.1, presente no formulário ou diretamente no SAP. É a base para verificar se a rede e o dispositivo de proteção suportam o pedido.",
+        "image": null,
+        "imageAlt": "Demanda calculada no formulário e no SAP",
+        "sapTour": "rede-i-demanda"
+      },
+      {
+        "title": "Dados da solicitação — dispositivo de proteção",
+        "body": "Disjuntor escolhido pelo cliente. Precisa estar dentro da faixa de proteção compatível, conforme a ND 5.1, e ser coerente com a demanda calculada e a rede disponível.",
+        "image": null,
+        "imageAlt": "Disjuntor selecionado pelo cliente",
+        "sapTour": "rede-i-disjuntor"
+      },
+      {
+        "title": "Informações da rede — transformador",
+        "body": "No transformador, três informações são essenciais para a análise:",
+        "bullets": [
+          "Número de fases (monofásico ou trifásico)",
+          "Potência nominal (kVA)",
+          "Número de clientes já conectados"
+        ],
+        "body2": "Observação: a CEMIG não opera transformadores com rede de média trifásica direta — para atender BT bifásica via MT, utiliza-se transformador monofásico.",
+        "image": null,
+        "imageAlt": "Características do transformador"
+      },
+      {
+        "title": "Informações da rede — perfil da rede",
+        "body": "O perfil da rede é analisado para identificar o ponto exato de conexão do solicitante e medir a distância até o transformador. Essa distância impacta diretamente o desvio de tensão calculado.",
+        "image": null,
+        "imageAlt": "Perfil da rede com ponto de conexão destacado"
+      },
+      {
+        "title": "Simulação — demanda simulada e impacto na rede",
+        "body": "Após rodar a simulação, o CEMIG ON retorna a demanda diversificada (kVA), que é o valor real aplicado à rede no estudo. Esse valor é sempre menor que a carga declarada e que a demanda calculada, porque considera a diversidade de uso entre os clientes. A partir dele se calcula o novo carregamento do transformador e o perfil de tensão atualizado.",
+        "image": null,
+        "imageAlt": "Resultado da simulação no CEMIG ON"
+      },
+      {
+        "title": "Simulação — perfil de tensão",
+        "body": "O perfil de tensão precisa ser verificado em toda a extensão da rede. Basta uma infração ao limite normativo em qualquer trecho para que seja necessária obra de reforço.",
+        "image": null,
+        "imageAlt": "Perfil de tensão ao longo da rede"
+      },
+      {
+        "title": "Outros itens observados",
+        "body": "Além dos dados centrais, a análise considera fatores complementares como presença de motores na instalação, necessidade de avaliar a rede de média tensão e particularidades dos pedidos coletivos. Esses pontos serão aprofundados nos próximos volumes do treinamento.",
+        "image": null,
+        "imageAlt": "Fatores complementares da análise"
+      },
+      {
+        "title": "Documentos de apoio",
+        "body": "Materiais complementares que precisam ser consultados durante a análise:",
+        "bullets": [
+          "Formulário de carga (individual ou coletivo, quando aplicável)",
+          "Formulário de partida de motores",
+          "Projeto elétrico (para empreendimentos)"
+        ],
+        "image": null,
+        "imageAlt": "Documentos consultados na análise"
+      },
+      {
+        "title": "Validação dos dados",
+        "body": "Todos os dados analisados devem ser coerentes entre si, aparecer consistentemente em todas as fontes (SAP, formulário, projeto, simulação) e estar conforme a norma. Inconsistências entre fontes são sinal de pendência ou erro, e devem ser tratadas antes da decisão final.",
+        "image": null,
+        "imageAlt": "Validação cruzada dos dados"
+      },
+      {
+        "type": "quiz",
+        "question": "Por que a demanda simulada é sempre menor que a carga declarada pelo cliente?",
+        "options": [
+          {
+            "text": "Porque a simulação considera a diversidade de uso — nem toda a carga é consumida ao mesmo tempo",
+            "correct": true,
+            "explanation": "Correto. A demanda diversificada reflete o uso real: clientes não consomem toda a carga instalada simultaneamente. Por isso o valor simulado fica sempre abaixo da carga declarada e da demanda calculada."
+          },
+          {
+            "text": "Porque o simulador erra por padrão para baixo, como margem de segurança",
+            "correct": false,
+            "explanation": "O CEMIG ON não 'erra para baixo' arbitrariamente. A redução vem de modelagem estatística da diversidade de uso, não de uma margem fixa de erro."
+          },
+          {
+            "text": "Porque a simulação desconsidera os motores presentes na instalação",
+            "correct": false,
+            "explanation": "Pelo contrário — motores e suas correntes de partida são fatores que a análise leva em conta. O motivo da redução é a diversidade de uso, não a exclusão de cargas."
+          },
+          {
+            "text": "Porque retira a margem de segurança do dispositivo de proteção do cliente",
+            "correct": false,
+            "explanation": "A demanda simulada nada tem a ver com o dispositivo de proteção. O disjuntor é avaliado em separado, contra a faixa de proteção da ND 5.1, não pela simulação."
+          }
+        ]
+      }
+    ]
+  },
+  "rede-i-regras": {
+    "title": "Regras e critérios técnicos",
+    "slides": [
+      {
+        "title": "As regras que orientam a análise",
+        "body": "Neste submódulo são apresentados os critérios e premissas técnicas que orientam a tomada de decisão durante a análise de rede.",
+        "image": null,
+        "imageAlt": "Capa do submódulo de regras"
+      },
+      {
+        "title": "Normas aplicáveis",
+        "body": "Os critérios apresentados aqui são extraídos das normas CEMIG ND 5.1 (atendimento em baixa tensão) e ND 5.2 (atendimento em média tensão). Sempre que houver dúvida na aplicação, a norma é a referência final.",
+        "image": null,
+        "imageAlt": "ND 5.1 e ND 5.2 como referência"
+      },
+      {
+        "title": "Critério de carregamento do transformador",
+        "body": "O carregamento do transformador é a causa mais comum de obra de reforço quando já existe rede no local. Os limites adotados pela engenharia da CEMIG combinam as exigências normativas com as obras em andamento e devem ser seguidos por todas as áreas:",
+        "bullets": [
+          "Transformador convencional, 1 infração isolada: carregamento até 160% da potência nominal",
+          "Transformador convencional, 2 infrações subsequentes: carregamento até 150% da potência nominal",
+          "Transformador autoprotegido, 1 infração: carregamento até 90% da potência nominal"
+        ],
+        "image": null,
+        "imageAlt": "Limites de carregamento por tipo de transformador"
+      },
+      {
+        "title": "Critério de desvio de tensão",
+        "body": "O desvio de tensão é avaliado conforme o estabelecido pela ANEEL e pela NBR 5410. O limite normativo é de ±5% sobre o valor nominal do transformador.",
+        "bullets": [
+          "Redes monofásicas: valor nominal de referência 120/240 V",
+          "Redes trifásicas: valor nominal de referência 127/220 V",
+          "Tolerância: ±5% em qualquer ponto da rede",
+          "Infração em qualquer trecho → necessidade de reforço"
+        ],
+        "image": null,
+        "imageAlt": "Limites de desvio de tensão"
+      },
+      {
+        "title": "Premissas técnicas — análise integral da rede",
+        "body": "Carregamento e desvio de tensão são os critérios mais visíveis, mas não são os únicos. A rede precisa ser avaliada como um todo, considerando também motores, configuração espacial, capacidade da MT e compatibilidade entre dispositivo de proteção e transformador. Esses outros critérios serão detalhados nos próximos volumes do treinamento.",
+        "image": null,
+        "imageAlt": "Visão integral da análise"
+      },
+      {
+        "type": "quiz",
+        "question": "Qual o limite de carregamento de um transformador convencional para o caso de 2 infrações subsequentes?",
+        "options": [
+          {
+            "text": "150% da potência nominal",
+            "correct": true,
+            "explanation": "Correto. Para 2 infrações subsequentes em transformador convencional, o limite é 150%. Para 1 infração isolada o limite é mais permissivo (160%), e para autoprotegido é bem mais restrito (90%)."
+          },
+          {
+            "text": "160% da potência nominal",
+            "correct": false,
+            "explanation": "160% é o limite para 1 infração isolada em transformador convencional. Quando as infrações são subsequentes (duas seguidas), o limite cai para 150%."
+          },
+          {
+            "text": "120% da potência nominal",
+            "correct": false,
+            "explanation": "120% não está entre os limites adotados. Os valores oficiais são 160% (1 infração convencional), 150% (2 subsequentes convencional) e 90% (autoprotegido)."
+          },
+          {
+            "text": "90% da potência nominal",
+            "correct": false,
+            "explanation": "90% é o limite específico do transformador autoprotegido. Os equipamentos convencionais têm limites mais permissivos: 160% ou 150%, conforme o padrão de infração."
+          }
+        ]
+      }
+    ]
+  },
+  "rede-ii-intermediario": {
+    "title": "Análise de Rede Elétrica - BT",
+    "slides": [
+      {
+        "title": "Bem-vindo à análise de baixa tensão",
+        "body": "Neste módulo você aprenderá os principais critérios utilizados nas análises de rede em baixa tensão e como eles são aplicados para decidir entre liberar a conexão ou exigir obras de reforço."
+      },
+      {
+        "title": "O papel da análise BT",
+        "body": "A análise de baixa tensão verifica se a rede existente consegue atender a nova carga sem comprometer os limites operacionais estabelecidos pela CEMIG."
+      },
+      {
+        "title": "Critérios avaliados",
+        "body": "A decisão depende da avaliação conjunta de diversos critérios técnicos.",
+        "bullets": [
+          "Carregamento do transformador",
+          "Perfil de tensão",
+          "Compatibilidade do disjuntor",
+          "Presença de motores",
+          "Topologia da rede",
+          "Necessidade de análise MT"
+        ]
+      },
+      {
+        "title": "Visão geral dos próximos módulos",
+        "body": "Os próximos submódulos detalham cada critério utilizado pela equipe durante as análises de rede."
+      }
+    ]
+  },
+  "rede-ii-criterios-i": {
+    "title": "Motores",
+    "slides": [
+      {
+        "title": "Por que os motores exigem atenção?",
+        "body": "Motores apresentam correntes de partida significativamente superiores à corrente nominal, podendo provocar afundamentos de tensão e impactos na rede."
+      },
+      {
+        "title": "Quando analisar motores",
+        "body": "A análise é necessária sempre que o cliente declarar motores em sua instalação."
+      },
+      {
+        "title": "Informações necessárias",
+        "bullets": [
+          "Potência do motor",
+          "Quantidade de motores",
+          "Operação simultânea"
+        ]
+      },
+      {
+        "title": "Como é feita a análise dos motores?",
+        "body": "A análise dos motores é feita em paralelo com a simulação da carga na rede CEMIG. Primeiro deve ser cálculada a potência demandada dos motores conforme a ND 5.1. A partir do resultado obtido, observa-se o que é maior entre a demanda calculada dos motores ou a demanda diversificada do cliente. Deve ser simulada a maior entre elas."
+      },
+      {
+        "title": "O que a norma limita?",
+        "body": "A norma CEMIG estabelece limites máximos de potência para ligação de motores, considerando o tipo de fornecimento e o método de partida utilizado.",
+        "bullets": [
+          "Tipo de fornecimento",
+          "Tensão de atendimento",
+          "Número de fases",
+          "Método de partida",
+          "Potência do motor"
+        ]
+      },
+      {
+        "title": "Motores monofásicos",
+        "body": "Para motores monofásicos os limites variam conforme o padrão de fornecimento.",
+        "bullets": [
+          "127/120 V (2 fios): até 2 CV com partida direta",
+          "220/240 V (3 fios): até 5 CV com partida direta",
+          "120/240 V (3 fios): até 10 CV com partida direta",
+          "120/240 V (3 fios): até 15 CV com chave série-paralelo"
+        ]
+      },
+      {
+        "title": "Motores trifásicos",
+        "body": "Motores trifásicos permitem potências maiores, dependendo do método de partida adotado.",
+        "bullets": [
+          "220 V: até 5 CV com partida direta",
+          "220 V: até 15 CV com chave série-paralelo",
+          "220 V: até 15 CV com chave estrela-triângulo",
+          "220 V: até 10 CV com rotor bobinado"
+        ]
+      },
+      {
+        "title": "Métodos de partida",
+        "body": "Dispositivos auxiliares reduzem a corrente de partida e permitem a conexão de motores de maior potência.",
+        "bullets": [
+          "Chave série-paralelo",
+          "Chave estrela-triângulo",
+          "Compensador de partida",
+          "Resistência ou reatância primária",
+          "Rotor bobinado"
+        ]
+      },
+      {
+        "title": "Exemplo prático",
+        "body": "Um motor trifásico de 10 CV em 220 V não pode ser ligado diretamente à rede, pois excede o limite de 5 CV para partida direta. Nesse caso, será necessário utilizar um método de partida auxiliar previsto na norma."
+      },
+      {
+        "title": "Quando reprovar ou solicitar adequação",
+        "body": "Sempre que a potência declarada ultrapassar o limite permitido para o método de partida informado, o pedido deve ser ajustado ou complementado antes da aprovação da análise."
+      },
+      {
+        "type": "quiz",
+        "question": "Um motor trifásico de 12 CV em 220 V com partida direta atende aos critérios da norma?",
+        "options": [
+          {
+            "text": "Não. O limite para partida direta é de 5 CV.",
+            "correct": true,
+            "explanation": "Correto. Para fornecimento trifásico 220 V, a norma limita a partida direta a 5 CV."
+          },
+          {
+            "text": "Sim. Qualquer motor até 15 CV pode utilizar partida direta.",
+            "correct": false,
+            "explanation": "Os 15 CV somente são permitidos quando utilizados métodos auxiliares específicos de partida."
+          },
+          {
+            "text": "Sim. Porque motores trifásicos não possuem limite de potência.",
+            "correct": false,
+            "explanation": "Todos os motores possuem limites definidos pela norma."
+          },
+          {
+            "text": "Depende apenas da potência do transformador.",
+            "correct": false,
+            "explanation": "A potência do transformador é apenas um dos critérios. Os limites normativos de partida também precisam ser respeitados."
+          }
+        ]
+      }
+    ]
+  },
+  "rede-ii-criterios-ii": {
+  "title": "Compatibilidade disjuntor-rede",
+  "slides": [
+    {
+      "title": "Objetivo da análise",
+      "body": "Neste módulo você aprenderá a verificar se o dispositivo de proteção informado pelo cliente é compatível com a demanda calculada e com o tipo de fornecimento solicitado."
+    },
+    {
+      "title": "Por que essa verificação é importante?",
+      "body": "O disjuntor define o limite máximo de corrente que poderá ser utilizada pela instalação. Um dimensionamento incorreto pode comprometer a segurança da instalação e provocar incompatibilidades com a rede elétrica."
+    },
+    {
+      "title": "Onde encontrar a informação",
+      "body": "A potência instalada, a demanda calculada e o dispositivo de proteção podem ser consultados no SAP e nos documentos anexados à solicitação."
+    },
+    {
+      "title": "As tabelas da ND 5.1",
+      "body": "A norma estabelece faixas de atendimento para cada tipo de fornecimento. Cada faixa possui um disjuntor máximo permitido e requisitos específicos para a entrada de serviço."
+    },
+    {
+      "title": "Fornecimentos monofásicos",
+      "body": "As tabelas G e H definem os limites para atendimentos em redes primárias monofásicas (120/240 V), relacionando demanda provável e proteção instalada."
+    },
+    {
+      "title": "Fornecimentos trifásicos",
+      "body": "As tabelas A, B, C e F definem os limites para atendimentos em redes secundárias trifásicas (127/220 V), relacionando carga instalada, demanda provável e corrente nominal do disjuntor."
+    },
+    {
+      "title": "Regra prática da análise",
+      "body": "O disjuntor informado deve estar dentro da faixa prevista para a demanda calculada. Quando o dispositivo estiver acima ou abaixo do permitido pela norma, a solicitação deve ser corrigida antes da aprovação."
+    },
+    {
+      "title": "Exemplo 1",
+      "body": "Uma unidade com demanda provável de 20 kVA enquadra-se na faixa C1. Para essa faixa, a proteção prevista é de 63 A. Caso o cliente solicite proteção significativamente superior, a informação deve ser revisada."
+    },
+    {
+      "title": "Exemplo 2",
+      "body": "Uma unidade com demanda provável de 50 kVA enquadra-se na faixa C5. Nessa situação a norma prevê proteção de 150 A e os demais componentes da entrada devem acompanhar esse dimensionamento."
+    },
+    {
+      "title": "Quando reprovar a solicitação",
+      "body": "A análise deve apontar pendência quando houver incompatibilidade entre demanda calculada, disjuntor informado, tipo de fornecimento ou padrão de entrada previsto pela norma."
+    },
+    {
+      "type": "quiz",
+      "question": "Qual é o principal objetivo da análise de compatibilidade disjuntor-rede?",
+      "options": [
+        {
+          "text": "Verificar se o dispositivo de proteção está compatível com a demanda e com o padrão de fornecimento",
+          "correct": true,
+          "explanation": "Correto. O objetivo é garantir aderência às faixas estabelecidas pela ND 5.1."
+        },
+        {
+          "text": "Avaliar o carregamento do transformador",
+          "correct": false,
+          "explanation": "O carregamento do transformador é outro critério da análise de rede."
+        },
+        {
+          "text": "Determinar a tensão da rede",
+          "correct": false,
+          "explanation": "A tensão é característica do fornecimento e não é definida pelo disjuntor."
+        },
+        {
+          "text": "Calcular a demanda da unidade consumidora",
+          "correct": false,
+          "explanation": "A demanda já deve estar calculada antes da verificação de compatibilidade."
+        }
+      ]
+    }
+  ]
+  },
+  "rede-ii-criterios-iii": {
+    "title": "Topologia da rede de baixa tensão",
+    "slides": [
+      {
+        "title": "O que é topologia da rede",
+        "body": "A topologia representa a configuração física da rede e a forma como consumidores e equipamentos estão conectados."
+      },
+      {
+        "title": "Importância para a análise",
+        "body": "A disposição dos circuitos influencia diretamente o carregamento dos trechos e o perfil de tensão."
+      },
+      {
+        "title": "Aspectos observados",
+        "bullets": [
+          "Distância ao transformador",
+          "Trechos críticos",
+          "Fim de rede",
+          "Extensão da rede"
+        ]
+      },
+      {
+        "title": "Impactos na decisão",
+        "body": "Mesmo quando o transformador possui capacidade disponível, a configuração da rede pode exigir reforços ou adequações."
+      }
+    ]
+  },
+  "rede-ii-regras": {
+    "title": "Análise de Média Tensão",
+    "slides": [
+      {
+        "title": "Quando a MT entra na análise",
+        "body": "Algumas solicitações exigem avaliação além da rede de baixa tensão, tornando necessária a análise da média tensão.",
+        "bullets": [
+          "Carga elevada - deve ser consultado o limite de cada município",
+          "Motor trifásico acima de 50 CV",
+          "Motor monofásica acima de 15 CV",
+          "Modificação na rede de média tensão acima de 500 m em área urbana",
+          "Modificação na rede de média tensão acima de 5,0 km em área rural"
+        ]
+      },
+      {
+        "title": "Responsabilidade da análise",
+        "body": "Todo caso em que é necessária a análise da rede de média tensão deve ser acionada a equipe do planejamento. Essa é a equipe resonsável pela análise da rede de média tensão. A equipe do planejamento é acionada via medida específica. A falha na criação desta medida impacta diretamente o andamento do processo, provocando atrasos e custos para a CEMIG."
+      },
+      {
+        "title": "Impactos para o cliente",
+        "body": "A necessidade de intervenção na MT normalmente aumenta a complexidade do projeto, do atendimento além de aumentar o tempo de obra."
+      }
+    ]
+  },
+  "rede-ii-norma": {
+    "title": "Relação com as normas CEMIG",
+    "slides": [
+      {
+        "title": "A norma como referência",
+        "body": "Todas as decisões tomadas durante a análise devem possuir respaldo nos documentos normativos vigentes."
+      },
+      {
+        "title": "Principais normas",
+        "bullets": [
+          "ND 5.1",
+          "ND 5.2",
+          "Procedimentos internos",
+          "Normas técnicas complementares"
+        ]
+      },
+      {
+        "title": "Como consultar a norma",
+        "body": "O analista deve ser capaz de localizar rapidamente os requisitos aplicáveis a cada situação encontrada."
+      },
+      {
+        "title": "Aplicação prática",
+        "body": "Os critérios apresentados nos módulos anteriores são derivados diretamente dos requisitos normativos."
       }
     ]
   }

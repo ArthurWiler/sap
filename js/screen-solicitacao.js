@@ -105,12 +105,7 @@ function SolicitacaoPage({ data, onBack }) {
               />
             </div>
             <div className="grow" />
-            <Field
-              label="Dt.Status"
-              value={data.dtStatus}
-              w="md"
-              lw="sm"
-            />
+            <Field label="Dt.Status" value={data.dtStatus} w="md" lw="sm" />
           </div>
 
           <div className="frow">
@@ -147,9 +142,7 @@ function SolicitacaoPage({ data, onBack }) {
         {/* === Tabs === */}
         <div className="sub-tabs solic-tabs">
           <div
-            className={
-              "stab" + (tab === "dados-basicos" ? " active" : "")
-            }
+            className={"stab" + (tab === "dados-basicos" ? " active" : "")}
             onClick={() => setTab("dados-basicos")}
           >
             Dados Básicos
@@ -179,9 +172,7 @@ function SolicitacaoPage({ data, onBack }) {
             Rel. Carga
           </div>
           <div
-            className={
-              "stab" + (tab === "rel-carga-res" ? " active" : "")
-            }
+            className={"stab" + (tab === "rel-carga-res" ? " active" : "")}
             onClick={() => setTab("rel-carga-res")}
           >
             Rel. Carga - Resumo
@@ -197,8 +188,7 @@ function SolicitacaoPage({ data, onBack }) {
             }}
           >
             <em>
-              Conteúdo desta aba não implementado nesta demonstração
-              visual.
+              Conteúdo desta aba não implementado nesta demonstração visual.
             </em>
           </div>
         ) : (
@@ -208,12 +198,7 @@ function SolicitacaoPage({ data, onBack }) {
               <div className="solic-section-title">Endereço</div>
 
               <div className="frow">
-                <Field
-                  label="Região"
-                  value={data.regiao}
-                  w="sm"
-                  lw="sm"
-                />
+                <Field label="Região" value={data.regiao} w="sm" lw="sm" />
                 <Field
                   label="Cidade"
                   value={data.cidade}
@@ -230,12 +215,7 @@ function SolicitacaoPage({ data, onBack }) {
                 <Radio label="Rural" />
                 <Radio label="Não cadastrada" />
                 <div className="grow" />
-                <Field
-                  label="Código postal"
-                  value={data.cep}
-                  w="md"
-                  lw="md"
-                />
+                <Field label="Código postal" value={data.cep} w="md" lw="md" />
                 <Field
                   label="Bairro"
                   value={data.bairro}
@@ -246,7 +226,13 @@ function SolicitacaoPage({ data, onBack }) {
               </div>
 
               <div className="frow">
-                <Field label="Rua" value={data.rua} w="xl" lw="sm" tourId="ender" />
+                <Field
+                  label="Rua"
+                  value={data.rua}
+                  w="xl"
+                  lw="sm"
+                  tourId="ender"
+                />
                 <div className="grow" />
                 <Field label="Nº" value={data.numero} w="sm" lw="sm" />
               </div>
@@ -290,12 +276,7 @@ function SolicitacaoPage({ data, onBack }) {
                   tourId="ref"
                 />
                 <Field label="Latitude" value={data.lat} w="md" lw="sm" />
-                <Field
-                  label="Longitude"
-                  value={data.lng}
-                  w="md"
-                  lw="sm"
-                />
+                <Field label="Longitude" value={data.lng} w="md" lw="sm" />
               </div>
             </div>
 
@@ -334,12 +315,7 @@ function SolicitacaoPage({ data, onBack }) {
                 />
               </div>
               <div className="frow">
-                <Field
-                  label="Adesão Fatura E-mail"
-                  value=""
-                  w="xl"
-                  lw="lg"
-                />
+                <Field label="Adesão Fatura E-mail" value="" w="xl" lw="lg" />
               </div>
             </div>
 
@@ -374,7 +350,13 @@ function SolicitacaoPage({ data, onBack }) {
                   w="sm"
                   lw="md"
                 />
-                <Select label="Grupo" value={data.grupo} w="sm" lw="md" tourId="grp" />
+                <Select
+                  label="Grupo"
+                  value={data.grupo}
+                  w="sm"
+                  lw="md"
+                  tourId="grp"
+                />
               </div>
               <div className="frow">
                 <Select
@@ -441,21 +423,14 @@ function SolicitacaoPage({ data, onBack }) {
                   lw="lg"
                 />
                 <Select label="Coordenograma?" value="" w="sm" lw="md" />
-                <Select
-                  label="Projeto Elétrico?"
-                  value=""
-                  w="sm"
-                  lw="md"
-                />
+                <Select label="Projeto Elétrico?" value="" w="sm" lw="md" />
                 <Check label="Tarifa Branca" />
               </div>
             </div>
 
             {/* === Faturamento globalizado === */}
             <div className="solic-section">
-              <div className="solic-section-title">
-                Faturamento globalizado
-              </div>
+              <div className="solic-section-title">Faturamento globalizado</div>
               <div className="frow">
                 <Field label="Cta.contrato" value="" w="md" lw="sm" />
                 <Field label="Nome contrato" value="" w="xl" lw="md" />
@@ -466,9 +441,7 @@ function SolicitacaoPage({ data, onBack }) {
 
             {/* === Outras informações === */}
             <div className="solic-section">
-              <div className="solic-section-title">
-                Outras informações
-              </div>
+              <div className="solic-section-title">Outras informações</div>
               <div className="frow">
                 <Check
                   checked={data.possuiLaudoMed}
@@ -498,10 +471,7 @@ function SolicitacaoPage({ data, onBack }) {
                   checked={data.possuiVE}
                   label="Possui estação de recarga para veículo elétrico"
                 />
-                <Check
-                  checked={data.padraoGratuito}
-                  label="Padrão Gratuito"
-                />
+                <Check checked={data.padraoGratuito} label="Padrão Gratuito" />
               </div>
             </div>
 
@@ -567,6 +537,7 @@ function SolicitacaoPage({ data, onBack }) {
                   value={data.cargaKw}
                   w="md"
                   lw="xl"
+                  tourId="carga-kw"
                 />
               </div>
               <div className="frow">
@@ -594,9 +565,7 @@ function SolicitacaoPage({ data, onBack }) {
 
             {/* === Aprovação de projeto === */}
             <div className="solic-section">
-              <div className="solic-section-title">
-                Aprovação de projeto
-              </div>
+              <div className="solic-section-title">Aprovação de projeto</div>
               <div className="frow">
                 <Field
                   label="ART de projeto"
@@ -650,4 +619,3 @@ function SolicitacaoPage({ data, onBack }) {
     </Fragment>
   );
 }
-

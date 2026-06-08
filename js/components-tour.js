@@ -4,12 +4,20 @@ function TourBanner({ tour }) {
   const step = tour.steps[tour.currentStep] || {};
   return (
     <div className="tour-banner">
-      <span className="tour-label">Treinamento</span>
+      <span className="tour-label">
+        {tour.fromDeck ? "Ver no SAP" : "Treinamento"}
+      </span>
       <span className="tour-title">
-        {tour.title} - Passo {tour.currentStep + 1} de {tour.steps.length}
+        {tour.title} — Passo {tour.currentStep + 1} de {tour.steps.length}
       </span>
       <button className="tour-exit" onClick={tour.onExit}>
-        Pular tutorial
+        {tour.fromDeck ? (
+          <>
+            <Icon name="arrow-left" size={12} /> Voltar ao treinamento
+          </>
+        ) : (
+          "Pular tutorial"
+        )}
       </button>
     </div>
   );

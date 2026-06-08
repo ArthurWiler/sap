@@ -35,10 +35,19 @@ function App() {
   // Tour state
   const [tourStep, setTourStep] = useState(0);
   const [tourActive, setTourActive] = useState(false);
+  // currentTourId is the key into TOUR_STEPS. For submódulo SAP it equals
+  // submoduleId; for deck-triggered tours it's the slide's sapTour value.
+  const [currentTourId, setCurrentTourId] = useState(null);
+  // When a tour was opened from the middle of a deck, remember where to
+  // return to. Shape: { trainingId, submoduleId, slideIdx } | null.
+  const [interruptedDeck, setInterruptedDeck] = useState(null);
+
   const activeTour = useMemo(() => {
-    if (!tourActive || !activeSubmodule) return null;
-    return TOUR_STEPS[activeSubmodule.submoduleId] || null;
-  }, [tourActive, activeSubmodule]);
+    if (!tourActive || !currentTourId) return null;
+    return TOUR_STEPS[currentTourId] || null;
+  }, [tourActive, currentTourId]);
+
+  const tourFromDeck = !!interruptedDeck;
 
   const dataset = useMemo(() => generateDataset(seed), [seed]);
   const visibleData = useMemo(
@@ -71,15 +80,18 @@ function App() {
     const training = TRAININGS.find((x) => x.id === trainingId);
     const submodule = training?.submodules?.find((s) => s.id === submoduleId);
     setActiveSubmodule({ trainingId, submoduleId });
+    setInterruptedDeck(null); // clear any deck interruption when entering new submódulo
 
     if (submodule?.type === "deck") {
-      // Theoretical submódulo - slide deck, no SAP tour
+      // Theoretical submódulo — slide deck, no SAP tour
       setTourActive(false);
       setTourStep(0);
+      setCurrentTourId(null);
       setRoute({ page: "deck-page", trainingId, submoduleId });
     } else {
       // Default: SAP submódulo with guided tour
       setTourStep(0);
+      setCurrentTourId(submoduleId);
       setTourActive(!!TOUR_STEPS[submoduleId]);
       setRoute({
         page: "nota-detail",
@@ -138,11 +150,59 @@ function App() {
   }, []);
 
   // === Tour controls ===
+  const returnToDeck = useCallback(() => {
+    if (!interruptedDeck) return;
+    setTourActive(false);
+    setTourStep(0);
+    setCurrentTourId(null);
+    setRoute({
+      page: "deck-page",
+      trainingId: interruptedDeck.trainingId,
+      submoduleId: interruptedDeck.submoduleId,
+      initialSlideIdx: interruptedDeck.slideIdx,
+    });
+    setInterruptedDeck(null);
+  }, [interruptedDeck]);
+
+  // Called by DeckPage when user clicks "Ver no SAP" on a slide.
+  const openSapTour = useCallback(
+    (tourId, slideIdx) => {
+      if (!TOUR_STEPS[tourId]) return;
+      if (activeSubmodule) {
+        setInterruptedDeck({
+          trainingId: activeSubmodule.trainingId,
+          submoduleId: activeSubmodule.submoduleId,
+          slideIdx,
+        });
+      }
+      setCurrentTourId(tourId);
+      setTourStep(0);
+      setTourActive(true);
+      // Route directly to Solicitação — that's where most rede-related fields live
+      setRoute({ page: "solicitacao" });
+    },
+    [activeSubmodule],
+  );
+
   const advanceTour = useCallback(() => {
     setTourStep((prev) => {
       const steps = activeTour?.steps || [];
       if (prev + 1 >= steps.length) {
-        // last step → mark done and return to submodule index
+        // Last step → branch on whether the tour was deck-triggered or submódulo-driven
+        if (interruptedDeck) {
+          // Return to the deck where the user left off
+          setTourActive(false);
+          setCurrentTourId(null);
+          setRoute({
+            page: "deck-page",
+            trainingId: interruptedDeck.trainingId,
+            submoduleId: interruptedDeck.submoduleId,
+            initialSlideIdx: interruptedDeck.slideIdx,
+          });
+          setInterruptedDeck(null);
+          return 0;
+        }
+        // Otherwise: mark submódulo done and return to submódulo index
         if (activeSubmodule) {
           markSubmoduleDone(
             activeSubmodule.trainingId,
@@ -150,6 +210,7 @@ function App() {
           );
         }
         setTourActive(false);
+        setCurrentTourId(null);
         setRoute((r) =>
           activeSubmodule
             ? {
@@ -162,12 +223,18 @@ function App() {
       }
       return prev + 1;
     });
-  }, [activeTour, activeSubmodule, markSubmoduleDone]);
+  }, [activeTour, activeSubmodule, markSubmoduleDone, interruptedDeck]);
 
   const exitTour = useCallback(() => {
+    if (interruptedDeck) {
+      // From deck: return to deck instead of just clearing tour
+      returnToDeck();
+      return;
+    }
     setTourActive(false);
     setTourStep(0);
-  }, []);
+    setCurrentTourId(null);
+  }, [interruptedDeck, returnToDeck]);
 
   // Handle events from NotaDetailPage to auto-advance tour
   const handleTourEvent = useCallback(
@@ -194,6 +261,7 @@ function App() {
         currentStep: tourStep,
         onAdvance: advanceTour,
         onExit: exitTour,
+        fromDeck: tourFromDeck,
       }
     : null;
 
@@ -239,7 +307,12 @@ function App() {
       />
     );
   } else if (route.page === "solicitacao") {
-    page = <SolicitacaoPage data={visibleData} onBack={backToDetail} />;
+    page = (
+      <SolicitacaoPage
+        data={visibleData}
+        onBack={interruptedDeck ? returnToDeck : backToDetail}
+      />
+    );
   } else if (route.page === "text-editor") {
     page = (
       <ModificarTextoMedidaPage
@@ -260,6 +333,8 @@ function App() {
         training={training}
         onComplete={exitFlow}
         onExit={exitFlow}
+        onOpenSapTour={openSapTour}
+        initialSlideIdx={route.initialSlideIdx || 0}
       />
     );
   } else {
