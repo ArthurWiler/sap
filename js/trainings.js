@@ -66,24 +66,34 @@ const TRAININGS = [
     tags: ["Avançado", "IW52", "Ações"],
   },
   {
-    id: "fundiario",
+    id: "analise-fundiaria",
     title: "Treinamento fundiário",
-    desc: "Capacitação em processos fundiários, incluindo envio de documentos, preenchimento de informações técnicas e conclusão de solicitações.",
-    available: false,
-    difficulty: "Avançado",
+    desc: "Capacitação em processos fundiários, incluindo critérios de análise e informações técnicas.",
+    available: true,
+    difficulty: "Intermediário",
     platform: "web",
     hasSubmodules: true,
-    tags: ["Avançado", "Processos", "Documentação"],
+    tags: ["Intermediário", "Processos", "Documentação"],
   },
   {
-    id: "ambiental",
-    title: "Treinamento ambiental",
-    desc: "Aprenda os procedimentos relacionados à gestão ambiental, documentação necessária e etapas para finalização de demandas.",
-    available: false,
-    difficulty: "Avançado",
+    id: "analise-documental",
+    title: "Treinamento documental",
+    desc: "Capacitação na análise documental e análise de informações técnicas.",
+    available: true,
+    difficulty: "Intermediário",
     platform: "web",
     hasSubmodules: true,
-    tags: ["Avançado", "Processos", "Documentação"],
+    tags: ["Intermediário", "Processos", "Documentação"],
+  },
+  {
+    id: "analise-ambiental",
+    title: "Treinamento ambiental",
+    desc: "Aprenda os procedimentos relacionados à gestão ambiental e documentação necessária.",
+    available: true,
+    difficulty: "Intermediário",
+    platform: "web",
+    hasSubmodules: true,
+    tags: ["Intermediário", "Processos", "Documentação"],
   },
   {
     id: "carga-i",
@@ -174,6 +184,91 @@ TRAININGS.forEach((t) => {
           title: "Cadastro de Ações em Medidas",
           desc: "Veja como consultar e cadastrar ações vinculadas a uma medida no SAP.",
           available: true,
+        },
+      ];
+      break;
+
+    case "analise-documental":
+      t.submodules = [
+        {
+          id: `${t.id}-introducao`,
+          title: "Introdução à Análise Documental",
+          desc: "Conheça os objetivos da análise documental, sua importância para o processo de conexão e os principais tipos de solicitações avaliadas pela equipe.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-LN`,
+          title: "Ligação Nova",
+          desc: "Aprenda a analisar a documentação exigida para pedidos de ligação nova, identificando requisitos, variações e possíveis pendências.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-AC`,
+          title: "Aumento de Carga",
+          desc: "Conheça os documentos necessários para solicitações de aumento de carga e os critérios utilizados para validação de cada processo.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-empreendimento`,
+          title: "Empreendimentos",
+          desc: "Entenda os requisitos documentais aplicáveis a empreendimentos e as particularidades desse tipo de solicitação.",
+          available: true,
+          type: "deck",
+        },
+      ];
+      break;
+
+    case "analise-fundiaria":
+      t.submodules = [
+        {
+          id: `${t.id}-introducao`,
+          title: "Introdução à Análise Fundiária",
+          desc: "Conheça o objetivo da análise fundiária e sua importância na validação de solicitações de conexão e regularização.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-documentos`,
+          title: "Documentação Fundiária",
+          desc: "Aprenda a identificar e validar os documentos utilizados para comprovação de posse, propriedade e ocupação dos imóveis.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-casos`,
+          title: "Casos Especiais",
+          desc: "Conheça situações fundiárias que exigem tratamento diferenciado e os procedimentos adotados em cada cenário.",
+          available: true,
+          type: "deck",
+        },
+      ];
+      break;
+
+    case "analise-ambiental":
+      t.submodules = [
+        {
+          id: `${t.id}-introducao`,
+          title: "Introdução à Análise Ambiental",
+          desc: "Conheça o papel da análise ambiental no processo de conexão e os principais requisitos avaliados pela equipe.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-documentos`,
+          title: "Documentação Ambiental",
+          desc: "Aprenda a identificar e validar licenças, autorizações e demais documentos ambientais exigidos para cada solicitação.",
+          available: true,
+          type: "deck",
+        },
+        {
+          id: `${t.id}-casos`,
+          title: "Casos Especiais",
+          desc: "Entenda como tratar situações que envolvem restrições ambientais, condicionantes ou documentações específicas.",
+          available: true,
+          type: "deck",
         },
       ];
       break;

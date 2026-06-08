@@ -2139,75 +2139,75 @@
     ]
   },
   "rede-ii-criterios-ii": {
-  "title": "Compatibilidade disjuntor-rede",
-  "slides": [
-    {
-      "title": "Objetivo da análise",
-      "body": "Neste módulo você aprenderá a verificar se o dispositivo de proteção informado pelo cliente é compatível com a demanda calculada e com o tipo de fornecimento solicitado."
-    },
-    {
-      "title": "Por que essa verificação é importante?",
-      "body": "O disjuntor define o limite máximo de corrente que poderá ser utilizada pela instalação. Um dimensionamento incorreto pode comprometer a segurança da instalação e provocar incompatibilidades com a rede elétrica."
-    },
-    {
-      "title": "Onde encontrar a informação",
-      "body": "A potência instalada, a demanda calculada e o dispositivo de proteção podem ser consultados no SAP e nos documentos anexados à solicitação."
-    },
-    {
-      "title": "As tabelas da ND 5.1",
-      "body": "A norma estabelece faixas de atendimento para cada tipo de fornecimento. Cada faixa possui um disjuntor máximo permitido e requisitos específicos para a entrada de serviço."
-    },
-    {
-      "title": "Fornecimentos monofásicos",
-      "body": "As tabelas G e H definem os limites para atendimentos em redes primárias monofásicas (120/240 V), relacionando demanda provável e proteção instalada."
-    },
-    {
-      "title": "Fornecimentos trifásicos",
-      "body": "As tabelas A, B, C e F definem os limites para atendimentos em redes secundárias trifásicas (127/220 V), relacionando carga instalada, demanda provável e corrente nominal do disjuntor."
-    },
-    {
-      "title": "Regra prática da análise",
-      "body": "O disjuntor informado deve estar dentro da faixa prevista para a demanda calculada. Quando o dispositivo estiver acima ou abaixo do permitido pela norma, a solicitação deve ser corrigida antes da aprovação."
-    },
-    {
-      "title": "Exemplo 1",
-      "body": "Uma unidade com demanda provável de 20 kVA enquadra-se na faixa C1. Para essa faixa, a proteção prevista é de 63 A. Caso o cliente solicite proteção significativamente superior, a informação deve ser revisada."
-    },
-    {
-      "title": "Exemplo 2",
-      "body": "Uma unidade com demanda provável de 50 kVA enquadra-se na faixa C5. Nessa situação a norma prevê proteção de 150 A e os demais componentes da entrada devem acompanhar esse dimensionamento."
-    },
-    {
-      "title": "Quando reprovar a solicitação",
-      "body": "A análise deve apontar pendência quando houver incompatibilidade entre demanda calculada, disjuntor informado, tipo de fornecimento ou padrão de entrada previsto pela norma."
-    },
-    {
-      "type": "quiz",
-      "question": "Qual é o principal objetivo da análise de compatibilidade disjuntor-rede?",
-      "options": [
-        {
-          "text": "Verificar se o dispositivo de proteção está compatível com a demanda e com o padrão de fornecimento",
-          "correct": true,
-          "explanation": "Correto. O objetivo é garantir aderência às faixas estabelecidas pela ND 5.1."
-        },
-        {
-          "text": "Avaliar o carregamento do transformador",
-          "correct": false,
-          "explanation": "O carregamento do transformador é outro critério da análise de rede."
-        },
-        {
-          "text": "Determinar a tensão da rede",
-          "correct": false,
-          "explanation": "A tensão é característica do fornecimento e não é definida pelo disjuntor."
-        },
-        {
-          "text": "Calcular a demanda da unidade consumidora",
-          "correct": false,
-          "explanation": "A demanda já deve estar calculada antes da verificação de compatibilidade."
-        }
-      ]
-    }
-  ]
+    "title": "Compatibilidade disjuntor-rede",
+    "slides": [
+      {
+        "title": "Objetivo da análise",
+        "body": "Neste módulo você aprenderá a verificar se o dispositivo de proteção informado pelo cliente é compatível com a demanda calculada e com o tipo de fornecimento solicitado."
+      },
+      {
+        "title": "Por que essa verificação é importante?",
+        "body": "O disjuntor define o limite máximo de corrente que poderá ser utilizada pela instalação. Um dimensionamento incorreto pode comprometer a segurança da instalação e provocar incompatibilidades com a rede elétrica."
+      },
+      {
+        "title": "Onde encontrar a informação",
+        "body": "A potência instalada, a demanda calculada e o dispositivo de proteção podem ser consultados no SAP e nos documentos anexados à solicitação."
+      },
+      {
+        "title": "As tabelas da ND 5.1",
+        "body": "A norma estabelece faixas de atendimento para cada tipo de fornecimento. Cada faixa possui um disjuntor máximo permitido e requisitos específicos para a entrada de serviço."
+      },
+      {
+        "title": "Fornecimentos monofásicos",
+        "body": "As tabelas G e H definem os limites para atendimentos em redes primárias monofásicas (120/240 V), relacionando demanda provável e proteção instalada."
+      },
+      {
+        "title": "Fornecimentos trifásicos",
+        "body": "As tabelas A, B, C e F definem os limites para atendimentos em redes secundárias trifásicas (127/220 V), relacionando carga instalada, demanda provável e corrente nominal do disjuntor."
+      },
+      {
+        "title": "Regra prática da análise",
+        "body": "O disjuntor informado deve estar dentro da faixa prevista para a demanda calculada. Quando o dispositivo estiver acima ou abaixo do permitido pela norma, a solicitação deve ser corrigida antes da aprovação."
+      },
+      {
+        "title": "Exemplo 1",
+        "body": "Uma unidade com demanda provável de 20 kVA enquadra-se na faixa C1. Para essa faixa, a proteção prevista é de 63 A. Caso o cliente solicite proteção significativamente superior, a informação deve ser revisada."
+      },
+      {
+        "title": "Exemplo 2",
+        "body": "Uma unidade com demanda provável de 50 kVA enquadra-se na faixa C5. Nessa situação a norma prevê proteção de 150 A e os demais componentes da entrada devem acompanhar esse dimensionamento."
+      },
+      {
+        "title": "Quando reprovar a solicitação",
+        "body": "A análise deve apontar pendência quando houver incompatibilidade entre demanda calculada, disjuntor informado, tipo de fornecimento ou padrão de entrada previsto pela norma."
+      },
+      {
+        "type": "quiz",
+        "question": "Qual é o principal objetivo da análise de compatibilidade disjuntor-rede?",
+        "options": [
+          {
+            "text": "Verificar se o dispositivo de proteção está compatível com a demanda e com o padrão de fornecimento",
+            "correct": true,
+            "explanation": "Correto. O objetivo é garantir aderência às faixas estabelecidas pela ND 5.1."
+          },
+          {
+            "text": "Avaliar o carregamento do transformador",
+            "correct": false,
+            "explanation": "O carregamento do transformador é outro critério da análise de rede."
+          },
+          {
+            "text": "Determinar a tensão da rede",
+            "correct": false,
+            "explanation": "A tensão é característica do fornecimento e não é definida pelo disjuntor."
+          },
+          {
+            "text": "Calcular a demanda da unidade consumidora",
+            "correct": false,
+            "explanation": "A demanda já deve estar calculada antes da verificação de compatibilidade."
+          }
+        ]
+      }
+    ]
   },
   "rede-ii-criterios-iii": {
     "title": "Topologia da rede de baixa tensão",
@@ -2282,6 +2282,316 @@
       {
         "title": "Aplicação prática",
         "body": "Os critérios apresentados nos módulos anteriores são derivados diretamente dos requisitos normativos."
+      }
+    ]
+  },
+  "analise-fundiaria-introducao": {
+    "title": "Introdução à análise fundiária",
+    "slides": [
+      {
+        "title": "Bem-vindo à análise fundiária",
+        "body": "Neste módulo você conhecerá o papel da análise fundiária no processo de conexão. O objetivo é verificar a situação da área, identificar a natureza da ocupação e determinar quais documentos são necessários para o atendimento."
+      },
+      {
+        "title": "Por que a análise fundiária é necessária?",
+        "body": "A análise fundiária garante que o atendimento seja realizado em local com situação territorial conhecida e compatível com as regras da distribuidora e da legislação vigente."
+      },
+      {
+        "title": "O que é avaliado",
+        "body": "A análise considera aspectos como zona urbana ou rural, comprovação de posse ou propriedade, existência de parcelamento do solo, empreendimentos, herança e outras situações especiais."
+      },
+      {
+        "title": "Principais classificações",
+        "bullets": [
+          "Imóvel urbano",
+          "Imóvel rural",
+          "Empreendimento",
+          "Parcelamento do solo",
+          "Área indígena",
+          "Área quilombola"
+        ]
+      },
+      {
+        "title": "Fluxo da análise",
+        "body": "Primeiro é identificada a natureza da área. Em seguida são avaliados os documentos apresentados e, por fim, verificadas possíveis situações especiais ou restrições."
+      }
+    ]
+  },
+  "analise-fundiaria-documentos": {
+    "title": "Documentação fundiária",
+    "slides": [
+      {
+        "title": "Documentos de posse e propriedade",
+        "body": "Todo atendimento exige documentação que demonstre vínculo legítimo com o imóvel ou área solicitada."
+      },
+      {
+        "title": "Documentos aceitos",
+        "bullets": [
+          "Escritura pública",
+          "Registro de imóvel",
+          "Contrato de compra e venda",
+          "Contrato de arrendamento",
+          "Contrato de comodato",
+          "Termo de doação",
+          "Termo de permissão de uso"
+        ]
+      },
+      {
+        "title": "Área urbana",
+        "body": "Além da posse ou propriedade, normalmente é necessária comprovação de regularidade urbana emitida pelo município."
+      },
+      {
+        "title": "Área rural",
+        "body": "A análise verifica documentos rurais como CCIR, CAR e registros do imóvel."
+      },
+      {
+        "title": "Imóveis abaixo da FMP",
+        "body": "Áreas rurais inferiores à Fração Mínima de Parcelamento exigem atenção especial e documentação complementar."
+      },
+      {
+        "title": "Regularização fundiária",
+        "body": "Pedidos vinculados à REURB ou outros processos de regularização devem apresentar documentação emitida pelo poder público."
+      }
+    ]
+  },
+  "analise-fundiaria-casos": {
+    "title": "Casos especiais fundiários",
+    "slides": [
+      {
+        "title": "Parcelamento irregular do solo",
+        "body": "A análise busca identificar loteamentos informais, chacreamentos e subdivisões não regularizadas."
+      },
+      {
+        "title": "Empreendimentos",
+        "body": "Quando houver empreendimento implantado ou em implantação, a responsabilidade pela infraestrutura deve ser avaliada conforme a regulamentação vigente."
+      },
+      {
+        "title": "Terras indígenas",
+        "body": "O atendimento depende da documentação emitida pela comunidade e, quando aplicável, da FUNAI."
+      },
+      {
+        "title": "Territórios quilombolas",
+        "body": "A análise deve observar os documentos emitidos pela Fundação Cultural Palmares, INCRA e lideranças locais."
+      }
+    ]
+  },
+  "analise-ambiental-introducao": {
+    "title": "Introdução à análise ambiental",
+    "slides": [
+      {
+        "title": "Bem-vindo à análise ambiental",
+        "body": "Este módulo apresenta os principais conceitos da análise ambiental aplicada aos pedidos de conexão."
+      },
+      {
+        "title": "Quando a análise ambiental é necessária?",
+        "body": "Sempre que o imóvel estiver localizado em área sujeita a restrições ambientais ou exigir autorização específica."
+      },
+      {
+        "title": "O que é avaliado",
+        "bullets": [
+          "Área de Preservação Permanente",
+          "Reserva Legal",
+          "Unidade de Conservação",
+          "Área de Proteção Ambiental",
+          "Nascentes e cursos d'água"
+        ]
+      },
+      {
+        "title": "Objetivo da análise",
+        "body": "Garantir que o atendimento seja compatível com a legislação ambiental vigente."
+      }
+    ]
+  },
+  "analise-ambiental-documentos": {
+    "title": "Documentação ambiental",
+    "slides": [
+      {
+        "title": "Documentação básica",
+        "body": "A análise ambiental normalmente complementa a análise fundiária."
+      },
+      {
+        "title": "Documentos frequentemente exigidos",
+        "bullets": [
+          "CAR",
+          "CCIR",
+          "Licença ambiental",
+          "Autorização ambiental",
+          "Declaração de órgão ambiental"
+        ]
+      },
+      {
+        "title": "Cadastro Ambiental Rural",
+        "body": "O CAR permite identificar áreas protegidas, reservas legais e demais características ambientais do imóvel."
+      },
+      {
+        "title": "Licenciamento",
+        "body": "Dependendo da atividade ou localização, o atendimento pode exigir licenciamento ou autorização específica."
+      }
+    ]
+  },
+  "analise-ambiental-casos": {
+    "title": "Casos especiais ambientais",
+    "slides": [
+      {
+        "title": "Área de Preservação Permanente",
+        "body": "Atendimentos em APP exigem avaliação específica e podem depender de autorização do órgão competente."
+      },
+      {
+        "title": "Reserva Legal",
+        "body": "Novos atendimentos dentro de reserva legal possuem restrições previstas no Código Florestal."
+      },
+      {
+        "title": "Unidade de Conservação",
+        "body": "A análise deve verificar a categoria da unidade e a existência de autorização para intervenção."
+      },
+      {
+        "title": "Nascentes e cursos d'água",
+        "body": "A proximidade com corpos hídricos pode gerar restrições adicionais."
+      },
+      {
+        "title": "Quando encaminhar para análise especializada",
+        "body": "Sempre que houver dúvida sobre a regularidade ambiental ou necessidade de manifestação de órgão competente."
+      }
+    ]
+  },
+  "analise-documental-introducao": {
+    "title": "Introdução à análise documental",
+    "slides": [
+      {
+        "title": "Bem-vindo à análise documental",
+        "body": "Neste módulo você conhecerá o papel da análise documental no processo de atendimento. A documentação é a primeira etapa de validação da solicitação e garante que o pedido possua informações suficientes para prosseguir."
+      },
+      {
+        "title": "Qual é o objetivo da análise documental?",
+        "body": "A análise documental verifica se os documentos apresentados são compatíveis com o tipo de solicitação, se estão completos e se permitem o correto enquadramento do pedido."
+      },
+      {
+        "title": "O que é analisado",
+        "bullets": [
+          "Documentos de posse ou propriedade",
+          "Documentos de regularidade",
+          "Documentos de representação",
+          "Documentação técnica",
+          "Documentação complementar"
+        ]
+      },
+      {
+        "title": "Como a análise se relaciona com outras etapas",
+        "body": "A análise documental fornece as informações necessárias para análises técnicas, fundiárias e ambientais. Inconsistências identificadas nesta etapa podem impedir o avanço do processo."
+      },
+      {
+        "title": "Principais causas de pendência",
+        "bullets": [
+          "Documentos incompletos",
+          "Informações divergentes",
+          "Ausência de comprovação de vínculo com o imóvel",
+          "Documentação incompatível com o tipo de pedido"
+        ]
+      }
+    ]
+  },
+  "analise-documental-LN": {
+    "title": "Documentação para Ligação Nova",
+    "slides": [
+      {
+        "title": "Quando aplicar este fluxo",
+        "body": "Este módulo aborda a documentação exigida para solicitações de ligação nova em baixa tensão."
+      },
+      {
+        "title": "Documentação básica",
+        "bullets": [
+          "Documento de posse ou propriedade",
+          "Documento de identificação",
+          "Endereço ou localização do imóvel",
+          "Informações da unidade consumidora"
+        ]
+      },
+      {
+        "title": "Regularidade do imóvel",
+        "body": "Dependendo da localização, podem ser exigidos documentos emitidos pelo município ou documentos rurais para comprovação da situação do imóvel."
+      },
+      {
+        "title": "Situações que exigem atenção",
+        "bullets": [
+          "Área rural",
+          "Parcelamento do solo",
+          "Empreendimentos",
+          "Áreas com restrição ambiental"
+        ]
+      },
+      {
+        "title": "Principais motivos de reprovação",
+        "bullets": [
+          "Ausência de comprovação de vínculo",
+          "Documentação ilegível",
+          "Endereço incompatível",
+          "Informações divergentes"
+        ]
+      }
+    ]
+  },
+  "analise-documental-AC": {
+    "title": "Documentação para Aumento de Carga",
+    "slides": [
+      {
+        "title": "Objetivo da análise",
+        "body": "Solicitações de aumento de carga exigem a validação da documentação existente e, em alguns casos, documentação técnica complementar."
+      },
+      {
+        "title": "O que deve ser conferido",
+        "bullets": [
+          "Titularidade da unidade",
+          "Dados da instalação",
+          "Carga solicitada",
+          "Compatibilidade das informações"
+        ]
+      },
+      {
+        "title": "Pedidos com Responsável Técnico",
+        "body": "Quando exigido, devem ser apresentados documentos técnicos emitidos por profissional habilitado."
+      },
+      {
+        "title": "ART, TRT e RRT",
+        "body": "A análise deve verificar se o documento apresentado é compatível com a atividade declarada e está vinculado ao profissional responsável."
+      },
+      {
+        "title": "Quando encaminhar para análise técnica",
+        "body": "Solicitações que envolvam aumento significativo de carga ou exigências normativas específicas devem seguir para análise de rede."
+      }
+    ]
+  },
+  "analise-documental-empreendimento": {
+    "title": "Documentação para Empreendimentos",
+    "slides": [
+      {
+        "title": "Empreendimentos e análise documental",
+        "body": "Empreendimentos possuem requisitos específicos devido ao impacto na infraestrutura elétrica e à necessidade de comprovação da regularidade do parcelamento."
+      },
+      {
+        "title": "Documentação normalmente exigida",
+        "bullets": [
+          "Projeto aprovado pela prefeitura",
+          "Documento de posse ou propriedade",
+          "Licença ambiental, quando aplicável",
+          "Documentação de regularização fundiária"
+        ]
+      },
+      {
+        "title": "Empreendimento implantado",
+        "body": "Quando o empreendimento já possui infraestrutura implantada, a análise verifica a regularidade documental e a compatibilidade com o pedido."
+      },
+      {
+        "title": "Empreendimento em implantação",
+        "body": "Empreendimentos ainda não implantados exigem avaliação da responsabilidade pela infraestrutura elétrica e da documentação urbanística."
+      },
+      {
+        "title": "Pontos de atenção",
+        "bullets": [
+          "Parcelamento regular do solo",
+          "REURB",
+          "Licenciamento ambiental",
+          "Infraestrutura interna"
+        ]
       }
     ]
   }
