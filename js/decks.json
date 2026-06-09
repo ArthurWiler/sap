@@ -199,7 +199,9 @@
       },
       {
         "title": "Módulo 2 - Ligação provisória",
-        "bullets": ["Ligação para eventos (LP)"],
+        "bullets": [
+          "Ligação para eventos (LP)"
+        ],
         "body": "Atendimento temporário, com prazo de vigência definido. Comum em festas, shows, obras civis e canteiros. A descrição da nota sempre traz a data de início e fim do evento, além do endereço ou coordenada.",
         "image": null,
         "imageAlt": "Tenda de evento com ligação provisória"
@@ -614,7 +616,9 @@
       {
         "title": "Caso 15 - Iluminação Pública",
         "context": "Módulo: 4 • Código nota: PSIP • Solicitação: OIP • Nº caixas: não possui • Anexos: GEDEX",
-        "bullets": ["Nos documentos sempre haverá um projeto de rede"],
+        "bullets": [
+          "Nos documentos sempre haverá um projeto de rede"
+        ],
         "body": "Solicitação de extensão de rede para iluminação pública, geralmente vinda de prefeituras. A presença do projeto anexo é a confirmação visual.",
         "image": null,
         "imageAlt": "Luminária pública sendo instalada"
@@ -1231,11 +1235,11 @@
       },
       {
         "title": "Parcelamento regular do solo",
-        "body": "Quando há parcelamento regular do solo, a análise documental precisa considerar a regularidade do empreendimento, a existência de documentação de aprovação e a coerência entre o loteamento e a solicitação.",
+        "body": "Quando há parcelamento regular do solo, a análise documental precisa considerar a regularidade do empreendimento, a existência de documentação de aprovação e a coerência entre o loteamento e a solicitação. Lembre-se: a infraestrutura interna de energia é de responsabilidade do empreendedor.",
         "bullets": [
           "Projeto aprovado pela prefeitura com arruamento e posteamento indicado",
-          "Licensa ambiental",
-          "REURB ou lei municipal comprovando a regulalidade do empreendimento"
+          "Licença ambiental",
+          "REURB ou lei municipal comprovando a regularidade do empreendimento"
         ],
         "image": null,
         "imageAlt": "Parcelamento regular do solo"
@@ -1330,19 +1334,19 @@
       },
       {
         "title": "Área de preservação permanente",
-        "body": "Em áreas de preservação permanente, a análise depende da situação do ponto e da documentação apresentada. A verificação precisa considerar a restrição ambiental e a possibilidade legal de atendimento.",
+        "body": "Em APP, o atendimento depende da comprovação de regularidade da residência ou benfeitoria. Documentos aceitos incluem TAC, comprovação de uso antrópico consolidado, declaração de interesse social/utilidade pública (propriedade rural) ou declaração do órgão ambiental.",
         "image": null,
         "imageAlt": "Análise em área de preservação permanente"
       },
       {
         "title": "Reserva legal",
-        "body": "Quando o ponto estiver em reserva legal, é necessário confirmar se há documentação que permita o atendimento ou se o cliente precisa reposicionar o ponto de conexão.",
+        "body": "Quando o ponto estiver em reserva legal (averbada ou não), o fornecimento não pode ser realizado até que a situação seja regularizada pelos órgãos competentes. Não basta reposicionar o ponto: trata-se de recusa de atendimento prevista no Código Florestal (Lei nº 12.651/2012).",
         "image": null,
         "imageAlt": "Situação em reserva legal"
       },
       {
         "title": "Unidade de conservação",
-        "body": "Se a solicitação estiver inserida em unidade de conservação, a documentação precisa indicar se existe autorização do órgão responsável e se o atendimento pode seguir as exigências legais.",
+        "body": "Se a solicitação estiver inserida em unidade de conservação ou em sua zona de amortecimento, verifique a esfera (federal, estadual ou municipal). Em obras de extensão de rede, é necessária autorização do órgão gestor da unidade; em UC municipal, costuma-se exigir também declaração da prefeitura. O cliente deve comprovar a regularização fundiária (escritura/matrícula e CAR, se rural).",
         "image": null,
         "imageAlt": "Unidade de conservação"
       },
@@ -2294,7 +2298,25 @@
       },
       {
         "title": "Por que a análise fundiária é necessária?",
-        "body": "A análise fundiária garante que o atendimento seja realizado em local com situação territorial conhecida e compatível com as regras da distribuidora e da legislação vigente."
+        "body": "A análise fundiária garante que o atendimento seja realizado em local com situação territorial conhecida e compatível com as regras da distribuidora e da legislação vigente. Ela também define o enquadramento do orçamento de conexão — gratuito, com participação financeira ou 100% do consumidor."
+      },
+      {
+        "title": "Dois limiares que não se confundem",
+        "body": "Na análise aparecem dois valores de carga distintos. Não os misture:",
+        "bullets": [
+          "50 kW: limite para direito à gratuidade da conexão (arts. 104/105 da REN 1.000/2021)",
+          "75 kW: limite prático entre atendimento em BT e MT usado na classificação do POP",
+          "Um pedido pode estar abaixo de 75 kW (BT) e ainda assim acima de 50 kW (sem gratuidade)"
+        ]
+      },
+      {
+        "title": "Urbano ou rural: o que define?",
+        "body": "O critério determinante NÃO é a localização geográfica, e sim a destinação do imóvel. Um imóvel pode estar no perímetro urbano e ainda ser rural se mantiver vocação produtiva (agrícola, pecuária, extrativa). Da mesma forma, sítios de lazer são tratados como urbanos pela finalidade, mesmo em zona rural.",
+        "bullets": [
+          "Destinação econômica produtiva → imóvel rural",
+          "Finalidade tipicamente urbana (moradia, comércio, lazer) → imóvel urbano",
+          "A aparência física do local não define a natureza"
+        ]
       },
       {
         "title": "O que é avaliado",
@@ -2305,15 +2327,16 @@
         "bullets": [
           "Imóvel urbano",
           "Imóvel rural",
-          "Empreendimento",
-          "Parcelamento do solo",
+          "Empreendimento (loteamento, desmembramento, chacreamento, condomínio)",
+          "Parcelamento do solo regular ou irregular",
+          "REURB (regularização fundiária urbana)",
           "Área indígena",
           "Área quilombola"
         ]
       },
       {
         "title": "Fluxo da análise",
-        "body": "Primeiro é identificada a natureza da área. Em seguida são avaliados os documentos apresentados e, por fim, verificadas possíveis situações especiais ou restrições."
+        "body": "Primeiro é identificada a natureza da área (urbana/rural e regular/irregular). Em seguida são avaliados os documentos apresentados e, por fim, verificadas possíveis situações especiais ou restrições que alterem o enquadramento do orçamento."
       }
     ]
   },
@@ -2328,7 +2351,7 @@
         "title": "Documentos aceitos",
         "bullets": [
           "Escritura pública",
-          "Registro de imóvel",
+          "Registro de imóvel (matrícula)",
           "Contrato de compra e venda",
           "Contrato de arrendamento",
           "Contrato de comodato",
@@ -2338,19 +2361,35 @@
       },
       {
         "title": "Área urbana",
-        "body": "Além da posse ou propriedade, normalmente é necessária comprovação de regularidade urbana emitida pelo município."
+        "body": "Além da posse ou propriedade, normalmente é necessária comprovação de regularidade urbana emitida pelo município (ex.: IPTU, projeto aprovado pela prefeitura ou declaração municipal)."
       },
       {
-        "title": "Área rural",
-        "body": "A análise verifica documentos rurais como CCIR, CAR e registros do imóvel."
+        "title": "Área rural — documentos cadastrais",
+        "body": "Para imóveis rurais, a análise verifica a regularidade cadastral junto ao INCRA e à Receita Federal.",
+        "bullets": [
+          "CCIR — Certificado de Cadastro de Imóvel Rural (regularidade cadastral no INCRA)",
+          "ITR — comprovante do Imposto sobre a Propriedade Territorial Rural",
+          "CAR — Cadastro Ambiental Rural (identifica APP, reserva legal e demais áreas protegidas)",
+          "Registro do imóvel (matrícula)"
+        ]
       },
       {
-        "title": "Imóveis abaixo da FMP",
-        "body": "Áreas rurais inferiores à Fração Mínima de Parcelamento exigem atenção especial e documentação complementar."
+        "title": "Fração Mínima de Parcelamento (FMP)",
+        "body": "A FMP é a menor área em que um imóvel rural pode ser dividido para constituir novo imóvel. Não é permitido registrar imóvel rural com área inferior à FMP (Lei nº 5.868/1972). Por isso, na prática, áreas rurais abaixo da FMP geralmente não possuem registro individualizado.",
+        "bullets": [
+          "Abaixo da FMP: registro de novo imóvel não é permitido",
+          "Sem registro próprio: exige comprovação de posse e cobrança de CCIR individualizado",
+          "Cada gleba resultante de desmembramento deve ter cadastro próprio no INCRA"
+        ]
       },
       {
-        "title": "Regularização fundiária",
-        "body": "Pedidos vinculados à REURB ou outros processos de regularização devem apresentar documentação emitida pelo poder público."
+        "title": "Regularização fundiária (REURB)",
+        "body": "Pedidos vinculados à REURB ou a outros processos de regularização devem apresentar documentação emitida pelo poder público. A REURB corrige núcleos urbanos informais que surgiram sem a infraestrutura essencial exigida pela Lei nº 6.766/1979.",
+        "bullets": [
+          "REURB-E (interesse específico): custeada pelos beneficiários privados",
+          "REURB-S (interesse social): pode ser custeada pelo município",
+          "Documento típico: projeto aprovado, CRF, lei/decreto municipal ou IPTU"
+        ]
       }
     ]
   },
@@ -2359,11 +2398,49 @@
     "slides": [
       {
         "title": "Parcelamento irregular do solo",
-        "body": "A análise busca identificar loteamentos informais, chacreamentos e subdivisões não regularizadas."
+        "body": "A análise busca identificar loteamentos informais, chacreamentos e subdivisões não regularizadas. Sinais de alerta incluem terrenos subdivididos, abertura de vias, casas aglomeradas e urbanização em área rural — especialmente em propriedades com menos de 2 ha.",
+        "bullets": [
+          "Abertura de vias e arruamento informal",
+          "Divisão de glebas sem aprovação",
+          "Casas aglomeradas / adensamento",
+          "Urbanização em área declarada rural"
+        ]
       },
       {
-        "title": "Empreendimentos",
-        "body": "Quando houver empreendimento implantado ou em implantação, a responsabilidade pela infraestrutura deve ser avaliada conforme a regulamentação vigente."
+        "title": "Modalidades de parcelamento do solo",
+        "body": "O parcelamento do solo urbano é disciplinado pela Lei nº 6.766/1979 e ocorre em duas modalidades principais.",
+        "bullets": [
+          "Loteamento: divisão da gleba com abertura de novas vias de circulação",
+          "Desmembramento: divisão aproveitando o sistema viário existente, sem abrir novas vias"
+        ]
+      },
+      {
+        "title": "Empreendimentos — responsabilidade pela infraestrutura",
+        "body": "Este é o ponto mais importante da análise de empreendimentos: a infraestrutura interna de energia elétrica é de responsabilidade do empreendedor, não da distribuidora. A CEMIG pode até executar a obra, mas como atividade acessória contratada — nunca custeando.",
+        "bullets": [
+          "Infraestrutura interna do empreendimento: responsabilidade do empreendedor (arts. 480 a 484 da REN 1.000/2021)",
+          "Vale inclusive para loteamentos aprovados antes de 1999",
+          "Distribuidora pode executar como atividade acessória (art. 629 da REN 1.000/2021)",
+          "Empreendimento já implantado e incorporado: novas ligações seguem as regras gerais"
+        ]
+      },
+      {
+        "title": "Chacreamento — as três naturezas",
+        "body": "O chacreamento (sítios de recreio) tem enquadramento que depende da finalidade do uso do solo. Identificar a natureza correta define os documentos exigidos e o tipo de orçamento.",
+        "bullets": [
+          "Desmembramento rural simples: regras de imóvel individual; enquadra nos arts. 104/105 (pode ter gratuidade)",
+          "Colonização particular (loteamento rural): tratado como empreendimento; arts. 480 a 484",
+          "Sítios de lazer (urbano): tratado como empreendimento; exige projeto aprovado e audiência do INCRA"
+        ]
+      },
+      {
+        "title": "Imóvel rural — requisitos para orçar",
+        "body": "Antes de emitir o orçamento de um pedido rural, confira a regularidade da área e a natureza do parcelamento.",
+        "bullets": [
+          "Desmembramento simples acima da FMP: comprovação de posse",
+          "Chacreamento com finalidade urbana/lazer: audiência do INCRA + projeto aprovado pela prefeitura",
+          "Abaixo da FMP sem registro: cobrar CCIR individualizado"
+        ]
       },
       {
         "title": "Terras indígenas",
@@ -2380,25 +2457,33 @@
     "slides": [
       {
         "title": "Bem-vindo à análise ambiental",
-        "body": "Este módulo apresenta os principais conceitos da análise ambiental aplicada aos pedidos de conexão."
+        "body": "Este módulo apresenta os principais conceitos da análise ambiental aplicada aos pedidos de conexão. O objetivo é identificar quando o ponto de ligação está em área protegida e qual documentação o cliente precisa apresentar."
       },
       {
         "title": "Quando a análise ambiental é necessária?",
-        "body": "Sempre que o imóvel estiver localizado em área sujeita a restrições ambientais ou exigir autorização específica."
+        "body": "Sempre que o imóvel ou o ponto de ligação estiver localizado em área sujeita a restrições ambientais ou exigir autorização específica. A verificação considera tanto o ponto de entrega quanto o traçado da rede (extensão)."
       },
       {
         "title": "O que é avaliado",
         "bullets": [
-          "Área de Preservação Permanente",
+          "Unidade de Conservação (federal, estadual ou municipal)",
+          "Zona de amortecimento de Unidade de Conservação",
+          "Área de Preservação Permanente (APP)",
           "Reserva Legal",
-          "Unidade de Conservação",
-          "Área de Proteção Ambiental",
           "Nascentes e cursos d'água"
         ]
       },
       {
+        "title": "Extensão de rede x rede à porta",
+        "body": "A exigência muda conforme a obra. Quando há extensão de rede dentro de área protegida, a CEMIG precisa solicitar autorização ao órgão gestor da unidade. Quando a rede já está à porta (sem obra de extensão), basta a regularização fundiária do cliente.",
+        "bullets": [
+          "Extensão de rede: depende de autorização do órgão ambiental",
+          "Rede à porta: foco na regularização fundiária do imóvel"
+        ]
+      },
+      {
         "title": "Objetivo da análise",
-        "body": "Garantir que o atendimento seja compatível com a legislação ambiental vigente."
+        "body": "Garantir que o atendimento seja compatível com a legislação ambiental vigente e que o cliente apresente a documentação que comprove a regularidade da ocupação."
       }
     ]
   },
@@ -2407,25 +2492,28 @@
     "slides": [
       {
         "title": "Documentação básica",
-        "body": "A análise ambiental normalmente complementa a análise fundiária."
+        "body": "A análise ambiental normalmente complementa a análise fundiária. O documento central é a comprovação de regularização fundiária do imóvel."
       },
       {
         "title": "Documentos frequentemente exigidos",
         "bullets": [
-          "CAR",
-          "CCIR",
-          "Licença ambiental",
-          "Autorização ambiental",
-          "Declaração de órgão ambiental"
+          "Escritura do imóvel e/ou Certidão de Inteiro Teor da matrícula",
+          "CAR — Cadastro Ambiental Rural (quando propriedade rural)",
+          "Declaração da prefeitura atestando a regularização (em UC municipal)",
+          "Licença ou autorização ambiental, quando aplicável"
         ]
       },
       {
-        "title": "Cadastro Ambiental Rural",
-        "body": "O CAR permite identificar áreas protegidas, reservas legais e demais características ambientais do imóvel."
+        "title": "Cadastro Ambiental Rural (CAR)",
+        "body": "O CAR permite identificar áreas protegidas, reservas legais e demais características ambientais do imóvel. É obrigatório para todos os imóveis rurais (Lei nº 12.651/2012) e pode ser apresentado tanto por proprietários quanto por possuidores."
       },
       {
-        "title": "Licenciamento",
-        "body": "Dependendo da atividade ou localização, o atendimento pode exigir licenciamento ou autorização específica."
+        "title": "Licenciamento e autorização do órgão gestor",
+        "body": "Dependendo da atividade ou da localização, o atendimento pode exigir licenciamento ou autorização específica. Em obras de extensão de rede dentro de UC, a autorização do órgão responsável pela administração da unidade é condição para executar a obra.",
+        "bullets": [
+          "O órgão ambiental pode solicitar documentos complementares a qualquer momento",
+          "A análise da viabilidade fica a critério do órgão gestor da UC"
+        ]
       }
     ]
   },
@@ -2433,24 +2521,53 @@
     "title": "Casos especiais ambientais",
     "slides": [
       {
-        "title": "Área de Preservação Permanente",
-        "body": "Atendimentos em APP exigem avaliação específica e podem depender de autorização do órgão competente."
+        "title": "Unidade de Conservação — por esfera",
+        "body": "A documentação e o órgão a ser acionado dependem da esfera da UC. O texto-padrão de retorno ao cliente muda conforme o caso.",
+        "bullets": [
+          "UC federal (ex.: APA Federal Morro da Pedreira): regularização fundiária + CAR",
+          "UC estadual (ex.: Parque Estadual da Serra do Papagaio): regularização fundiária + CAR",
+          "UC municipal (ex.: APA Municipal Piranga): acrescenta declaração da prefeitura"
+        ]
+      },
+      {
+        "title": "Zona de amortecimento",
+        "body": "O entorno de uma UC (zona de amortecimento) também impõe restrições. Para extensão de rede, a CEMIG solicita autorização ao órgão gestor; o requerente deve comprovar a regularização fundiária (escritura/matrícula e CAR, se rural)."
+      },
+      {
+        "title": "Área de Preservação Permanente (APP)",
+        "body": "Quando o imóvel está em APP, o cliente precisa comprovar que a residência ou benfeitoria é regular. A análise depende da documentação apresentada e da possibilidade legal de atendimento.",
+        "bullets": [
+          "Termo de Ajustamento de Conduta (TAC)",
+          "Comprovação de uso antrópico consolidado",
+          "Declaração de interesse social ou utilidade pública (propriedade rural)",
+          "Declaração do órgão ambiental"
+        ]
       },
       {
         "title": "Reserva Legal",
-        "body": "Novos atendimentos dentro de reserva legal possuem restrições previstas no Código Florestal."
+        "body": "Em área de reserva legal — averbada ou não — definida pela Lei nº 12.651/2012, a CEMIG não pode realizar o fornecimento até que a situação seja regularizada pelos órgãos competentes. É uma recusa de atendimento, não apenas reposicionamento de ponto.",
+        "bullets": [
+          "Reserva legal (não averbada): fornecimento suspenso até regularização",
+          "Reserva legal averbada de interesse de preservação: fornecimento não realizado"
+        ]
       },
       {
-        "title": "Unidade de Conservação",
-        "body": "A análise deve verificar a categoria da unidade e a existência de autorização para intervenção."
+        "title": "Parcelamento de solo em área não passível de aprovação",
+        "body": "Quando a propriedade apresenta características de parcelamento de solo (menos de 2 ha, casas aglomeradas, abertura de vias, divisão de glebas) em área não passível de aprovação, o fornecimento fica suspenso até regularização junto aos órgãos competentes.",
+        "bullets": [
+          "Planta georreferenciada do empreendimento (escala 1:1000)",
+          "Lei e/ou decreto municipal de aprovação",
+          "Licença ambiental ou declaração de não passível de licenciamento",
+          "Manifestação favorável da prefeitura"
+        ]
       },
       {
         "title": "Nascentes e cursos d'água",
-        "body": "A proximidade com corpos hídricos pode gerar restrições adicionais."
+        "body": "A proximidade com corpos hídricos pode gerar restrições adicionais, frequentemente associadas a APP. Verifique o traçado da rede e o ponto de entrega."
       },
       {
         "title": "Quando encaminhar para análise especializada",
-        "body": "Sempre que houver dúvida sobre a regularidade ambiental ou necessidade de manifestação de órgão competente."
+        "body": "Sempre que houver dúvida sobre a regularidade ambiental ou necessidade de manifestação de órgão competente, encaminhe para análise especializada antes de emitir o orçamento."
       }
     ]
   },
@@ -2577,18 +2694,28 @@
         ]
       },
       {
+        "title": "Responsabilidade pela infraestrutura interna",
+        "body": "Ponto-chave: a infraestrutura interna de energia elétrica do empreendimento é de responsabilidade do empreendedor (ou beneficiário, na REURB), e não da distribuidora. A CEMIG pode executar a obra apenas como atividade acessória contratada, sem custeá-la.",
+        "bullets": [
+          "Empreendedor custeia/implanta a infraestrutura interna (arts. 480 a 484 da REN 1.000/2021)",
+          "Regra vale inclusive para loteamentos aprovados antes de 1999",
+          "Distribuidora como executora acessória: art. 629 da REN 1.000/2021"
+        ]
+      },
+      {
         "title": "Empreendimento implantado",
-        "body": "Quando o empreendimento já possui infraestrutura implantada, a análise verifica a regularidade documental e a compatibilidade com o pedido."
+        "body": "Quando o empreendimento já possui infraestrutura implantada e incorporada pela distribuidora, novas ligações seguem as regras gerais de atendimento. A análise verifica a regularidade documental e a compatibilidade com o pedido."
       },
       {
         "title": "Empreendimento em implantação",
-        "body": "Empreendimentos ainda não implantados exigem avaliação da responsabilidade pela infraestrutura elétrica e da documentação urbanística."
+        "body": "Empreendimentos ainda não implantados (ou com parcelas não concluídas) exigem avaliação da responsabilidade pela infraestrutura elétrica e da documentação urbanística. A responsabilidade pelas parcelas não concluídas permanece com o responsável pela implantação."
       },
       {
         "title": "Pontos de atenção",
         "bullets": [
-          "Parcelamento regular do solo",
-          "REURB",
+          "Parcelamento regular do solo (loteamento x desmembramento)",
+          "REURB-E (beneficiário custeia) x REURB-S (município pode custear)",
+          "Chacreamento: distinguir desmembramento simples de loteamento rural",
           "Licenciamento ambiental",
           "Infraestrutura interna"
         ]
